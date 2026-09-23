@@ -1,546 +1,1009 @@
+     
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Capital Letters | KDCreativeLab</title>
+<title>Capital Letters | KDCreativeLab</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f9ff;
-            color: #263238;
-            line-height: 1.6;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            color: white;
-            text-align: center;
-            padding: 32px 18px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f5ff;
+    color: #333;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+/* HEADER */
 
-        header p {
-            margin: 8px 0 0;
-            font-size: 17px;
-        }
+header {
+    background: linear-gradient(135deg, #6c5ce7, #8e7dff);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
 
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 22px 15px 40px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 34px;
+}
 
-        .card {
-            background: white;
-            border-radius: 18px;
-            padding: 22px;
-            margin-bottom: 22px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        }
+header p {
+    margin-top: 10px;
+    font-size: 17px;
+}
 
-        .intro {
-            text-align: center;
-        }
+.badge {
+    display: inline-block;
+    background: white;
+    color: #6c5ce7;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
 
-        .badge {
-            display: inline-block;
-            background: #dcfce7;
-            color: #166534;
-            padding: 6px 13px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-        }
 
-        .intro h2 {
-            color: #4f46e5;
-            margin-bottom: 5px;
-        }
+/* MAIN */
 
-        .big-letter {
-            font-size: 85px;
-            font-weight: bold;
-            color: #4f46e5;
-            margin: 5px 0;
-        }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 18px;
+}
 
-        h2 {
-            color: #4f46e5;
-            margin-top: 0;
-        }
+.section {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
 
-        .learning-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-        }
+.section h2 {
+    color: #5b4bb7;
+    margin-top: 0;
+}
 
-        .letter-card {
-            background: #f8faff;
-            border: 2px solid #e5e7eb;
-            border-radius: 15px;
-            padding: 15px;
-            text-align: center;
-        }
 
-        .letter {
-            font-size: 48px;
-            font-weight: bold;
-            color: #4f46e5;
-        }
+/* INTRO */
 
-        .picture {
-            font-size: 42px;
-            margin: 5px 0;
-        }
+.intro-letter {
+    font-size: 80px;
+    font-weight: bold;
+    color: #6c5ce7;
+    text-align: center;
+    margin: 10px;
+}
 
-        .word {
-            font-size: 17px;
-            font-weight: bold;
-        }
 
-        .sound {
-            font-size: 14px;
-            color: #64748b;
-        }
+/* PICTURE CARDS */
 
-        .phonics-text {
-            margin-top: 8px;
-            font-weight: bold;
-            color: #5b4bb7;
-            font-size: 16px;
-        }
+.picture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
 
-        .listen-btn {
-            display: inline-block;
-            margin: 10px 4px 0;
-            padding: 10px 14px;
-            border: none;
-            border-radius: 25px;
-            background: #6c5ce7;
-            color: white;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.picture-card {
+    background: #f5f2ff;
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+}
 
-        .listen-btn:active {
-            transform: scale(0.95);
-        }
+.picture-card .big-picture {
+    font-size: 55px;
+}
 
-        .tip {
-            background: #fff7ed;
-            border-left: 5px solid #f59e0b;
-            padding: 15px;
-            border-radius: 10px;
-        }
+.picture-card h3 {
+    margin: 8px 0 4px;
+    color: #5b4bb7;
+}
 
-        .trace {
-            background: #fafafa;
-            border: 2px dashed #c7d2fe;
-            border-radius: 12px;
-            padding: 18px;
-            margin-top: 12px;
-            text-align: center;
-            font-size: 40px;
-            letter-spacing: 10px;
-            color: #c7d2fe;
-            font-weight: bold;
-        }
 
-        .practice-box {
-            background: #eef2ff;
-            padding: 15px;
-            border-radius: 15px;
-        }
+/* LETTER GRID */
 
-        .question {
-            background: white;
-            padding: 15px;
-            margin: 12px 0;
-            border-radius: 12px;
-        }
+.letter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 15px;
+}
 
-        .answer-line {
-            display: inline-block;
-            width: 100px;
-            border-bottom: 2px solid #64748b;
-            height: 24px;
-            vertical-align: bottom;
-        }
+.letter-card {
+    background: #faf9ff;
+    border: 2px solid #e7e2ff;
+    border-radius: 18px;
+    padding: 18px 10px;
+    text-align: center;
+    transition: 0.2s;
+}
 
-        .back {
-            display: inline-block;
-            text-decoration: none;
-            background: #4f46e5;
-            color: white;
-            padding: 11px 18px;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+.letter-card:hover {
+    transform: translateY(-3px);
+}
 
-        footer {
-            text-align: center;
-            background: #1f2937;
-            color: white;
-            padding: 22px 15px;
-        }
+.letter {
+    font-size: 45px;
+    font-weight: bold;
+    color: #6c5ce7;
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 27px;
-            }
+.word {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
 
-            .big-letter {
-                font-size: 70px;
-            }
 
-            .learning-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+/* PHONICS TEXT */
 
-            .listen-btn {
-                font-size: 14px;
-                padding: 9px 12px;
-            }
-        }
-    </style>
+.phonics-text {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #5b4bb7;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+/* BUTTONS */
+
+.listen-btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 25px;
+    background: #6c5ce7;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.listen-btn:active {
+    transform: scale(0.96);
+}
+
+.phonics-btn {
+    background: #00a884;
+}
+
+
+/* TRACE */
+
+.trace-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.trace-card {
+    border: 3px dashed #b7aaff;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    background: #fbfaff;
+}
+
+.trace-letter {
+    font-size: 75px;
+    color: #d5cffc;
+    font-weight: bold;
+}
+
+
+/* PRACTICE */
+
+.question {
+    background: #f7f5ff;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.question strong {
+    color: #5b4bb7;
+}
+
+.option {
+    display: inline-block;
+    padding: 9px 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 8px 5px 0 0;
+}
+
+
+/* REMEMBER */
+
+.remember {
+    background: #fff8d9;
+    border-left: 6px solid #f0c419;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+
+/* BACK BUTTON */
+
+.back-btn {
+    display: inline-block;
+    background: #6c5ce7;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+    .letter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .picture-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
+    <div class="badge">BEGINNER LEVEL</div>
+
     <h1>🔤 Capital Letters</h1>
-    <p>See it • Say it • Recognise it • Practise it 🌟</p>
+
+    <p>Look • Listen • Say • Practice • Learn</p>
+
 </header>
+
+
 
 <div class="container">
 
-    <div class="card intro">
-        <span class="badge">BEGINNER LEVEL</span>
 
-        <h2>🌈 Let's Learn Capital Letters!</h2>
+<!-- INTRO -->
 
-        <div class="big-letter">A</div>
+<section class="section">
 
-        <p>
-            This is a <strong>Capital Letter A</strong>.
-        </p>
+    <h2>🌟 Meet Capital Letters</h2>
 
-        <p>
-            Say it aloud: <strong>A</strong>!
-        </p>
+    <div class="intro-letter">A</div>
 
-        <p>
-            We will learn capital letters from <strong>A to Z</strong>.
-        </p>
-    </div>
+    <p style="text-align:center;">
+        Capital letters are the big letters of the alphabet.
+        Let's learn them with pictures, sounds and practice.
+    </p>
 
-    <div class="card">
+</section>
 
-        <h2>👀 Look, Say & Learn</h2>
 
-        <p>
-            Look at the letter, see the picture and say the word aloud.
-        </p>
 
-        <div class="learning-grid">
+<!-- LOOK SAY LEARN -->
 
-            <div class="letter-card">
-                <div class="letter">A</div>
-                <div class="picture">🍎</div>
-                <div class="word">Apple</div>
-                <div class="sound">A for Apple</div>
-            </div>
+<section class="section">
 
-            <div class="letter-card">
-                <div class="letter">B</div>
-                <div class="picture">⚽</div>
-                <div class="word">Ball</div>
-                <div class="sound">B for Ball</div>
-            </div>
+    <h2>👀 Look, Say & Learn</h2>
 
-            <div class="letter-card">
-                <div class="letter">C</div>
-                <div class="picture">🐱</div>
-                <div class="word">Cat</div>
-                <div class="sound">C for Cat</div>
-            </div>
+    <div class="picture-grid">
 
-            <div class="letter-card">
-                <div class="letter">D</div>
-                <div class="picture">🐶</div>
-                <div class="word">Dog</div>
-                <div class="sound">D for Dog</div>
-            </div>
-
-            <div class="letter-card">
-                <div class="letter">E</div>
-                <div class="picture">🐘</div>
-                <div class="word">Elephant</div>
-                <div class="sound">E for Elephant</div>
-            </div>
-
-            <div class="letter-card">
-                <div class="letter">F</div>
-                <div class="picture">🐟</div>
-                <div class="word">Fish</div>
-                <div class="sound">F for Fish</div>
-            </div>
-
+        <div class="picture-card">
+            <div class="big-picture">🍎</div>
+            <h3>A — Apple</h3>
+            <p>A says /æ/</p>
         </div>
-    </div>
 
-    <div class="card">
-
-        <h2>🔤 Capital Letters A–Z</h2>
-
-        <p>
-            Explore all the capital letters and their picture words.
-        </p>
-
-        <div class="learning-grid">
-
-            <div class="letter-card"><div class="letter">A</div><div class="picture">🍎</div><div class="word">Apple</div></div>
-
-            <div class="letter-card"><div class="letter">B</div><div class="picture">⚽</div><div class="word">Ball</div></div>
-
-            <div class="letter-card"><div class="letter">C</div><div class="picture">🐱</div><div class="word">Cat</div></div>
-
-            <div class="letter-card"><div class="letter">D</div><div class="picture">🐶</div><div class="word">Dog</div></div>
-
-            <div class="letter-card"><div class="letter">E</div><div class="picture">🐘</div><div class="word">Elephant</div></div>
-
-            <div class="letter-card"><div class="letter">F</div><div class="picture">🐟</div><div class="word">Fish</div></div>
-
-            <div class="letter-card"><div class="letter">G</div><div class="picture">🍇</div><div class="word">Grapes</div></div>
-
-            <div class="letter-card"><div class="letter">H</div><div class="picture">🏠</div><div class="word">House</div></div>
-
-            <div class="letter-card"><div class="letter">I</div><div class="picture">🍦</div><div class="word">Ice Cream</div></div>
-
-            <div class="letter-card"><div class="letter">J</div><div class="picture">🧃</div><div class="word">Juice</div></div>
-
-            <div class="letter-card"><div class="letter">K</div><div class="picture">🪁</div><div class="word">Kite</div></div>
-
-            <div class="letter-card"><div class="letter">L</div><div class="picture">🦁</div><div class="word">Lion</div></div>
-
-            <div class="letter-card"><div class="letter">M</div><div class="picture">🥭</div><div class="word">Mango</div></div>
-
-            <div class="letter-card"><div class="letter">N</div><div class="picture">👃</div><div class="word">Nose</div></div>
-
-            <div class="letter-card"><div class="letter">O</div><div class="picture">🍊</div><div class="word">Orange</div></div>
-
-            <div class="letter-card"><div class="letter">P</div><div class="picture">✏️</div><div class="word">Pencil</div></div>
-
-            <div class="letter-card"><div class="letter">Q</div><div class="picture">👑</div><div class="word">Queen</div></div>
-
-            <div class="letter-card"><div class="letter">R</div><div class="picture">🌈</div><div class="word">Rainbow</div></div>
-
-            <div class="letter-card"><div class="letter">S</div><div class="picture">☀️</div><div class="word">Sun</div></div>
-
-            <div class="letter-card"><div class="letter">T</div><div class="picture">🌳</div><div class="word">Tree</div></div>
-
-            <div class="letter-card"><div class="letter">U</div><div class="picture">☂️</div><div class="word">Umbrella</div></div>
-
-            <div class="letter-card"><div class="letter">V</div><div class="picture">🚐</div><div class="word">Van</div></div>
-
-            <div class="letter-card"><div class="letter">W</div><div class="picture">⌚</div><div class="word">Watch</div></div>
-
-            <div class="letter-card"><div class="letter">X</div><div class="picture">🎄</div><div class="word">Xmas</div></div>
-
-            <div class="letter-card"><div class="letter">Y</div><div class="picture">🪀</div><div class="word">Yo-yo</div></div>
-
-            <div class="letter-card"><div class="letter">Z</div><div class="picture">🦓</div><div class="word">Zebra</div></div>
-
+        <div class="picture-card">
+            <div class="big-picture">⚽</div>
+            <h3>B — Ball</h3>
+            <p>B says /b/</p>
         </div>
-    </div>
 
-    <div class="card">
-
-        <h2>✏️ Trace the Letters</h2>
-
-        <p>
-            Trace the letters carefully with your finger or pencil.
-        </p>
-
-        <div class="trace">A A A</div>
-        <div class="trace">B B B</div>
-        <div class="trace">C C C</div>
-        <div class="trace">D D D</div>
-
-    </div>
-
-    <div class="card">
-
-        <h2>🧠 Think & Practise</h2>
-
-        <div class="practice-box">
-
-            <div class="question">
-                <strong>1. Which word starts with A?</strong>
-                <br><br>
-                🍎 Apple &nbsp;&nbsp;&nbsp; 🐶 Dog
-            </div>
-
-            <div class="question">
-                <strong>2. Which capital letter starts the word "Ball"?</strong>
-                <br><br>
-                A &nbsp;&nbsp;&nbsp;&nbsp; B &nbsp;&nbsp;&nbsp;&nbsp; C
-            </div>
-
-            <div class="question">
-                <strong>3. Complete the word:</strong>
-                <br><br>
-                <span class="answer-line"></span>pple
-            </div>
-
-            <div class="question">
-                <strong>4. Find the capital letter:</strong>
-                <br><br>
-                a &nbsp;&nbsp;&nbsp; B &nbsp;&nbsp;&nbsp; c &nbsp;&nbsp;&nbsp; d
-            </div>
-
+        <div class="picture-card">
+            <div class="big-picture">🐱</div>
+            <h3>C — Cat</h3>
+            <p>C says /k/</p>
         </div>
-    </div>
 
-    <div class="card">
+        <div class="picture-card">
+            <div class="big-picture">🐶</div>
+            <h3>D — Dog</h3>
+            <p>D says /d/</p>
+        </div>
 
-        <h2>⭐ Remember</h2>
+        <div class="picture-card">
+            <div class="big-picture">🐘</div>
+            <h3>E — Elephant</h3>
+            <p>E says /e/</p>
+        </div>
 
-        <div class="tip">
-
-            <strong>Capital letters are BIG letters.</strong>
-
-            <br><br>
-
-            We use capital letters at the beginning of a sentence
-            and for names.
-
-            <br><br>
-
-            Example:
-
-            <strong>My name is Riya.</strong>
-
+        <div class="picture-card">
+            <div class="big-picture">🐟</div>
+            <h3>F — Fish</h3>
+            <p>F says /f/</p>
         </div>
 
     </div>
 
-    <a href="beginner.html" class="back">
-        ← Back to Beginner Learning
-    </a>
+</section>
+
+
+
+<!-- A-Z -->
+
+<section class="section">
+
+    <h2>🔤 Learn A–Z with Phonics</h2>
+
+    <p>
+        Listen to the letter name and then practise its beginner phonics sound.
+    </p>
+
+
+    <div class="letter-grid">
+
+
+        <div class="letter-card">
+            <div class="letter">A</div>
+            <div class="word">Apple 🍎</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">B</div>
+            <div class="word">Ball ⚽</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">C</div>
+            <div class="word">Cat 🐱</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">D</div>
+            <div class="word">Dog 🐶</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">E</div>
+            <div class="word">Elephant 🐘</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">F</div>
+            <div class="word">Fish 🐟</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">G</div>
+            <div class="word">Goat 🐐</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">H</div>
+            <div class="word">Hat 🎩</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">I</div>
+            <div class="word">Igloo 🧊</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">J</div>
+            <div class="word">Jam 🍓</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">K</div>
+            <div class="word">Kite 🪁</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">L</div>
+            <div class="word">Lion 🦁</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">M</div>
+            <div class="word">Mug ☕</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">N</div>
+            <div class="word">Nest 🪺</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">O</div>
+            <div class="word">Octopus 🐙</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">P</div>
+            <div class="word">Pen 🖊️</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">Q</div>
+            <div class="word">Queen 👑</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">R</div>
+            <div class="word">Rabbit 🐰</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">S</div>
+            <div class="word">Sun ☀️</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">T</div>
+            <div class="word">Top 🔝</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">U</div>
+            <div class="word">Umbrella ☂️</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">V</div>
+            <div class="word">Van 🚐</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">W</div>
+            <div class="word">Web 🕸️</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">X</div>
+            <div class="word">Box 📦</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">Y</div>
+            <div class="word">Yellow 🟡</div>
+        </div>
+
+
+        <div class="letter-card">
+            <div class="letter">Z</div>
+            <div class="word">Zoo 🦓</div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- TRACE -->
+
+<section class="section">
+
+    <h2>✍️ Finger Tracing Practice</h2>
+
+    <p>
+        Trace each letter with your finger on the screen.
+    </p>
+
+    <div class="trace-box">
+
+        <div class="trace-card">
+            <div class="trace-letter">A</div>
+            <p>Trace A</p>
+        </div>
+
+        <div class="trace-card">
+            <div class="trace-letter">B</div>
+            <p>Trace B</p>
+        </div>
+
+        <div class="trace-card">
+            <div class="trace-letter">C</div>
+            <p>Trace C</p>
+        </div>
+
+        <div class="trace-card">
+            <div class="trace-letter">D</div>
+            <p>Trace D</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PRACTICE -->
+
+<section class="section">
+
+    <h2>🎯 Let's Practice</h2>
+
+
+    <div class="question">
+
+        <strong>1. Which word starts with A?</strong>
+
+        <div>
+            <span class="option">🍎 Apple</span>
+            <span class="option">🐶 Dog</span>
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>2. Which capital letter starts Ball?</strong>
+
+        <div>
+            <span class="option">A</span>
+            <span class="option">B</span>
+            <span class="option">C</span>
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>3. Complete the word:</strong>
+
+        <p>_pple</p>
+
+        <div>
+            <span class="option">A</span>
+            <span class="option">B</span>
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>4. Find the capital letter:</strong>
+
+        <div>
+            <span class="option">a</span>
+            <span class="option">B</span>
+            <span class="option">c</span>
+            <span class="option">d</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- REMEMBER -->
+
+<section class="section">
+
+    <h2>⭐ Remember</h2>
+
+    <div class="remember">
+
+        <p>
+            Capital letters are big letters.
+        </p>
+
+        <p>
+            We use capital letters at the beginning of names
+            and sentences.
+        </p>
+
+        <p>
+            Example: <strong>My name is Riya.</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<a href="beginner.html" class="back-btn">
+    ← Back to Beginner Learning
+</a>
+
 
 </div>
 
+
+
 <footer>
 
-    <p>
-        © 2026 KDCreativeLab • Learn from the basics, grow step by step. 🌱
-    </p>
+    🌱 KDCreativeLab • Learn • Practice • Grow
 
 </footer>
 
+
+
 <script>
+
+/*
+   PHONICS DATA
+
+   IMPORTANT:
+   The spoken cue is intentionally short.
+   We do NOT make the browser repeat:
+   "B B B" or "K K K".
+
+   Instead:
+   B → "buh, ball"
+   C → "kuh, cat"
+   K → "kuh, kite"
+   Z → "zzz, zoo"
+*/
+
+const phonicsData = {
+
+    A: {
+        sound: "/æ/",
+        word: "apple",
+        speak: "aah, apple"
+    },
+
+    B: {
+        sound: "/b/",
+        word: "ball",
+        speak: "buh, ball"
+    },
+
+    C: {
+        sound: "/k/",
+        word: "cat",
+        speak: "kuh, cat"
+    },
+
+    D: {
+        sound: "/d/",
+        word: "dog",
+        speak: "duh, dog"
+    },
+
+    E: {
+        sound: "/e/",
+        word: "elephant",
+        speak: "eh, elephant"
+    },
+
+    F: {
+        sound: "/f/",
+        word: "fish",
+        speak: "fff, fish"
+    },
+
+    G: {
+        sound: "/g/",
+        word: "goat",
+        speak: "guh, goat"
+    },
+
+    H: {
+        sound: "/h/",
+        word: "hat",
+        speak: "hhh, hat"
+    },
+
+    I: {
+        sound: "/ɪ/",
+        word: "igloo",
+        speak: "ih, igloo"
+    },
+
+    J: {
+        sound: "/dʒ/",
+        word: "jam",
+        speak: "juh, jam"
+    },
+
+    K: {
+        sound: "/k/",
+        word: "kite",
+        speak: "kuh, kite"
+    },
+
+    L: {
+        sound: "/l/",
+        word: "lion",
+        speak: "lll, lion"
+    },
+
+    M: {
+        sound: "/m/",
+        word: "mug",
+        speak: "mmm, mug"
+    },
+
+    N: {
+        sound: "/n/",
+        word: "nest",
+        speak: "nnn, nest"
+    },
+
+    O: {
+        sound: "/ɒ/",
+        word: "octopus",
+        speak: "o, octopus"
+    },
+
+    P: {
+        sound: "/p/",
+        word: "pen",
+        speak: "puh, pen"
+    },
+
+    Q: {
+        sound: "/kw/",
+        word: "queen",
+        speak: "kwuh, queen"
+    },
+
+    R: {
+        sound: "/r/",
+        word: "rabbit",
+        speak: "rrr, rabbit"
+    },
+
+    S: {
+        sound: "/s/",
+        word: "sun",
+        speak: "sss, sun"
+    },
+
+    T: {
+        sound: "/t/",
+        word: "top",
+        speak: "tuh, top"
+    },
+
+    U: {
+        sound: "/ʌ/",
+        word: "umbrella",
+        speak: "uh, umbrella"
+    },
+
+    V: {
+        sound: "/v/",
+        word: "van",
+        speak: "vvv, van"
+    },
+
+    W: {
+        sound: "/w/",
+        word: "web",
+        speak: "wuh, web"
+    },
+
+    X: {
+        sound: "/ks/",
+        word: "box",
+        speak: "ks, box"
+    },
+
+    Y: {
+        sound: "/j/",
+        word: "yellow",
+        speak: "yuh, yellow"
+    },
+
+    Z: {
+        sound: "/z/",
+        word: "zoo",
+        speak: "zzz, zoo"
+    }
+
+};
+
+
+
+/* LETTER NAME */
+
 function speakLetter(letter) {
+
     window.speechSynthesis.cancel();
 
-    const speech = new SpeechSynthesisUtterance(letter);
+    const speech =
+        new SpeechSynthesisUtterance(letter);
+
     speech.lang = "en-US";
-    speech.rate = 0.7;
+    speech.rate = 0.75;
     speech.pitch = 1;
 
     window.speechSynthesis.speak(speech);
 }
 
-const phonicsData = {
 
-    A: { sound: "/æ/", speak: "A as in apple" },
-    B: { sound: "/b/", speak: "buh, as in ball" },
-    C: { sound: "/k/", speak: "kuh, as in cat" },
-    D: { sound: "/d/", speak: "duh, as in dog" },
-    E: { sound: "/ɛ/", speak: "eh, as in elephant" },
-    F: { sound: "/f/", speak: "fff, as in fish" },
-    G: { sound: "/g/", speak: "guh, as in goat" },
-    H: { sound: "/h/", speak: "hhh, as in hat" },
-    I: { sound: "/ɪ/", speak: "ih, as in igloo" },
-    J: { sound: "/dʒ/", speak: "juh, as in jam" },
-    K: { sound: "/k/", speak: "kuh, as in kite" },
-    L: { sound: "/l/", speak: "lll, as in lion" },
-    M: { sound: "/m/", speak: "mmm, as in moon" },
-    N: { sound: "/n/", speak: "nnn, as in nest" },
-    O: { sound: "/ɒ/", speak: "o, as in octopus" },
-    P: { sound: "/p/", speak: "puh, as in pen" },
-    Q: { sound: "/kw/", speak: "kwuh, as in queen" },
-    R: { sound: "/r/", speak: "rrr, as in rabbit" },
-    S: { sound: "/s/", speak: "sss, as in sun" },
-    T: { sound: "/t/", speak: "tuh, as in top" },
-    U: { sound: "/ʌ/", speak: "uh, as in umbrella" },
-    V: { sound: "/v/", speak: "vvv, as in van" },
-    W: { sound: "/w/", speak: "wuh, as in web" },
-    X: { sound: "/ks/", speak: "ks, as in box" },
-    Y: { sound: "/j/", speak: "yuh, as in yellow" },
-    Z: { sound: "/z/", speak: "zzz, as in zoo" }
 
-};
+/* PHONICS */
 
-document.querySelectorAll(".letter-card").forEach(card => {
+function speakPhonics(letter) {
 
-    const letterElement = card.querySelector(".letter");
+    window.speechSynthesis.cancel();
 
-    if (!letterElement) return;
-
-    const letter = letterElement.textContent.trim().toUpperCase();
     const data = phonicsData[letter];
 
-    if (!data) return;
+    if (!data) {
+        return;
+    }
 
-    const soundText = document.createElement("div");
-    soundText.className = "phonics-text";
-    soundText.textContent = "Phonics: " + data.sound;
+    const speech =
+        new SpeechSynthesisUtterance(data.speak);
 
-    const letterButton = document.createElement("button");
-    letterButton.className = "listen-btn";
-    letterButton.innerHTML = "🔊 Letter";
+    speech.lang = "en-US";
+    speech.rate = 0.65;
+    speech.pitch = 1;
 
-    letterButton.onclick = () => {
-        speakLetter(letter);
-    };
+    window.speechSynthesis.speak(speech);
+}
 
-    const phonicsButton = document.createElement("button");
-    phonicsButton.className = "listen-btn";
-    phonicsButton.innerHTML = "🔊 Phonics";
 
-    phonicsButton.onclick = () => {
 
-        window.speechSynthesis.cancel();
+/* CREATE BUTTONS FOR A-Z */
 
-        const speech = new SpeechSynthesisUtterance(data.speak);
-        speech.lang = "en-US";
-        speech.rate = 0.7;
-        speech.pitch = 1;
+document
+    .querySelectorAll(".letter-card")
+    .forEach(function(card) {
 
-        window.speechSynthesis.speak(speech);
-    };
+        const letterElement =
+            card.querySelector(".letter");
 
-    card.appendChild(soundText);
-    card.appendChild(letterButton);
-    card.appendChild(phonicsButton);
+        if (!letterElement) {
+            return;
+        }
 
-});
+        const letter =
+            letterElement.textContent
+            .trim()
+            .charAt(0)
+            .toUpperCase();
+
+        const data =
+            phonicsData[letter];
+
+        if (!data) {
+            return;
+        }
+
+
+        /* PHONICS INFORMATION */
+
+        const phonicsText =
+            document.createElement("div");
+
+        phonicsText.className =
+            "phonics-text";
+
+        phonicsText.textContent =
+            "Phonics: " +
+            data.sound +
+            " • " +
+            data.word;
+
+        card.appendChild(phonicsText);
+
+
+
+        /* LETTER BUTTON */
+
+        const letterButton =
+            document.createElement("button");
+
+        letterButton.className =
+            "listen-btn";
+
+        letterButton.textContent =
+            "🔊 Letter Name";
+
+        letterButton.onclick =
+            function() {
+
+                speakLetter(letter);
+
+            };
+
+        card.appendChild(letterButton);
+
+
+
+        /* PHONICS BUTTON */
+
+        const phonicsButton =
+            document.createElement("button");
+
+        phonicsButton.className =
+            "listen-btn phonics-btn";
+
+        phonicsButton.textContent =
+            "🔊 Phonics Sound";
+
+        phonicsButton.onclick =
+            function() {
+
+                speakPhonics(letter);
+
+            };
+
+        card.appendChild(phonicsButton);
+
+    });
+
 </script>
+
 
 </body>
 </html>
