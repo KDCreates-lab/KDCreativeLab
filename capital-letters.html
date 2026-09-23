@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Capital Letters | KDCreativeLab</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f9ff;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 32px 18px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 22px 15px 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 22px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 6px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .intro h2 {
+            color: #4f46e5;
+            margin-bottom: 5px;
+        }
+
+        .big-letter {
+            font-size: 85px;
+            font-weight: bold;
+            color: #4f46e5;
+            margin: 5px 0;
+        }
+
+        h2 {
+            color: #4f46e5;
+            margin-top: 0;
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .letter-card {
+            background: #f8faff;
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .letter {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        .picture {
+            font-size: 42px;
+            margin: 5px 0;
+        }
+
+        .word {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .sound {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .tip {
+            background: #fff7ed;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .trace {
+            background: #fafafa;
+            border: 2px dashed #c7d2fe;
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 40px;
+            letter-spacing: 10px;
+            color: #c7d2fe;
+            font-weight: bold;
+        }
+
+        .practice-box {
+            background: #eef2ff;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .question {
+            background: white;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 12px;
+        }
+
+        .answer-line {
+            display: inline-block;
+            width: 100px;
+            border-bottom: 2px solid #64748b;
+            height: 24px;
+            vertical-align: bottom;
+        }
+
+        .back {
+            display: inline-block;
+            text-decoration: none;
+            background: #4f46e5;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            background: #1f2937;
+            color: white;
+            padding: 22px 15px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            .big-letter {
+                font-size: 70px;
+            }
+
+            .learning-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔤 Capital Letters</h1>
+    <p>See it • Say it • Recognise it • Practise it 🌟</p>
+</header>
+
+<div class="container">
+
+    <div class="card intro">
+        <span class="badge">BEGINNER LEVEL</span>
+
+        <h2>🌈 Let's Learn Capital Letters!</h2>
+
+        <div class="big-letter">A</div>
+
+        <p>
+            This is a <strong>Capital Letter A</strong>.
+        </p>
+
+        <p>
+            Say it aloud: <strong>A</strong>!
+        </p>
+
+        <p>
+            We will learn capital letters from <strong>A to Z</strong>.
+        </p>
+    </div>
+
+
+    <div class="card">
+
+        <h2>👀 Look, Say & Learn</h2>
+
+        <p>
+            Look at the letter, see the picture and say the word aloud.
+        </p>
+
+        <div class="learning-grid">
+
+            <div class="letter-card">
+                <div class="letter">A</div>
+                <div class="picture">🍎</div>
+                <div class="word">Apple</div>
+                <div class="sound">A for Apple</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">B</div>
+                <div class="picture">⚽</div>
+                <div class="word">Ball</div>
+                <div class="sound">B for Ball</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">C</div>
+                <div class="picture">🐱</div>
+                <div class="word">Cat</div>
+                <div class="sound">C for Cat</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">D</div>
+                <div class="picture">🐶</div>
+                <div class="word">Dog</div>
+                <div class="sound">D for Dog</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">E</div>
+                <div class="picture">🐘</div>
+                <div class="word">Elephant</div>
+                <div class="sound">E for Elephant</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">F</div>
+                <div class="picture">🐟</div>
+                <div class="word">Fish</div>
+                <div class="sound">F for Fish</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="card">
+
+        <h2>🔤 Capital Letters A–Z</h2>
+
+        <p>
+            Explore all the capital letters and their picture words.
+        </p>
+
+        <div class="learning-grid">
+
+            <div class="letter-card">
+                <div class="letter">A</div>
+                <div class="picture">🍎</div>
+                <div class="word">Apple</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">B</div>
+                <div class="picture">⚽</div>
+                <div class="word">Ball</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">C</div>
+                <div class="picture">🐱</div>
+                <div class="word">Cat</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">D</div>
+                <div class="picture">🐶</div>
+                <div class="word">Dog</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">E</div>
+                <div class="picture">🐘</div>
+                <div class="word">Elephant</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">F</div>
+                <div class="picture">🐟</div>
+                <div class="word">Fish</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">G</div>
+                <div class="picture">🍇</div>
+                <div class="word">Grapes</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">H</div>
+                <div class="picture">🏠</div>
+                <div class="word">House</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">I</div>
+                <div class="picture">🍦</div>
+                <div class="word">Ice Cream</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">J</div>
+                <div class="picture">🧃</div>
+                <div class="word">Juice</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">K</div>
+                <div class="picture">🪁</div>
+                <div class="word">Kite</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">L</div>
+                <div class="picture">🦁</div>
+                <div class="word">Lion</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">M</div>
+                <div class="picture">🥭</div>
+                <div class="word">Mango</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">N</div>
+                <div class="picture">👃</div>
+                <div class="word">Nose</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">O</div>
+                <div class="picture">🍊</div>
+                <div class="word">Orange</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">P</div>
+                <div class="picture">✏️</div>
+                <div class="word">Pencil</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">Q</div>
+                <div class="picture">👑</div>
+                <div class="word">Queen</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">R</div>
+                <div class="picture">🌈</div>
+                <div class="word">Rainbow</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">S</div>
+                <div class="picture">☀️</div>
+                <div class="word">Sun</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">T</div>
+                <div class="picture">🌳</div>
+                <div class="word">Tree</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">U</div>
+                <div class="picture">☂️</div>
+                <div class="word">Umbrella</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">V</div>
+                <div class="picture">🚐</div>
+                <div class="word">Van</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">W</div>
+                <div class="picture">⌚</div>
+                <div class="word">Watch</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">X</div>
+                <div class="picture">🎄</div>
+                <div class="word">Xmas</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">Y</div>
+                <div class="picture">🪀</div>
+                <div class="word">Yo-yo</div>
+            </div>
+
+            <div class="letter-card">
+                <div class="letter">Z</div>
+                <div class="picture">🦓</div>
+                <div class="word">Zebra</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="card">
+
+        <h2>✏️ Trace the Letters</h2>
+
+        <p>
+            Trace the letters carefully with your finger or pencil.
+        </p>
+
+        <div class="trace">
+            A A A
+        </div>
+
+        <div class="trace">
+            B B B
+        </div>
+
+        <div class="trace">
+            C C C
+        </div>
+
+        <div class="trace">
+            D D D
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🧠 Think & Practise</h2>
+
+        <div class="practice-box">
+
+            <div class="question">
+                <strong>1. Which word starts with A?</strong>
+                <br><br>
+                🍎 Apple &nbsp;&nbsp;&nbsp; 🐶 Dog
+            </div>
+
+            <div class="question">
+                <strong>2. Which capital letter starts the word "Ball"?</strong>
+                <br><br>
+                A &nbsp;&nbsp;&nbsp;&nbsp; B &nbsp;&nbsp;&nbsp;&nbsp; C
+            </div>
+
+            <div class="question">
+                <strong>3. Complete the word:</strong>
+                <br><br>
+                <span class="answer-line"></span>pple
+            </div>
+
+            <div class="question">
+                <strong>4. Find the capital letter:</strong>
+                <br><br>
+                a &nbsp;&nbsp;&nbsp; B &nbsp;&nbsp;&nbsp; c &nbsp;&nbsp;&nbsp; d
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="card">
+
+        <h2>⭐ Remember</h2>
+
+        <div class="tip">
+
+            <strong>Capital letters are BIG letters.</strong>
+
+            <br><br>
+
+            We use capital letters at the beginning of a sentence
+            and for names.
+
+            <br><br>
+
+            Example:
+
+            <strong>My name is Riya.</strong>
+
+        </div>
+
+    </div>
+
+
+    <a href="beginner.html" class="back">
+        ← Back to Beginner Learning
+    </a>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 KDCreativeLab • Learn from the basics, grow step by step. 🌱
+    </p>
+
+</footer>
+
+</body>
+</html>
