@@ -570,6 +570,18 @@ function speakLetter(letter) {
     window.speechSynthesis.speak(speech);
 }
     </script>
+    <script>
+document.querySelectorAll(".letter-card").forEach(card => {
+    const letter = card.querySelector(".letter").textContent.trim();
+
+    const button = document.createElement("button");
+    button.className = "listen-btn";
+    button.innerHTML = "🔊 Listen";
+    button.onclick = () => speakLetter(letter);
+
+    card.appendChild(button);
+});
+    </script>
 
 </body>
 </html>
