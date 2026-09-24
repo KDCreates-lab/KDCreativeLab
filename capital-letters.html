@@ -1,4 +1,3 @@
-     
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +98,7 @@ header p {
     text-align: center;
 }
 
-.picture-card .big-picture {
+.big-picture {
     font-size: 55px;
 }
 
@@ -142,9 +141,6 @@ header p {
     margin-top: 5px;
 }
 
-
-/* PHONICS TEXT */
-
 .phonics-text {
     margin-top: 10px;
     font-weight: bold;
@@ -174,7 +170,7 @@ header p {
     transform: scale(0.96);
 }
 
-.phonics-btn {
+.example-btn {
     background: #00a884;
 }
 
@@ -183,26 +179,75 @@ header p {
 
 .trace-box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 15px;
 }
 
 .trace-card {
     border: 3px dashed #b7aaff;
     border-radius: 18px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     background: #fbfaff;
 }
 
-.trace-letter {
-    font-size: 75px;
-    color: #d5cffc;
+.trace-card h3 {
+    color: #6c5ce7;
+    font-size: 30px;
+    margin: 5px;
+}
+
+canvas {
+    width: 100%;
+    height: 230px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    touch-action: none;
+}
+
+.trace-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.trace-actions button {
+    flex: 1;
+    padding: 9px;
+    border: none;
+    border-radius: 12px;
+    background: #eee;
     font-weight: bold;
 }
 
 
 /* PRACTICE */
+
+.practice-box {
+    text-align: center;
+    background: #f5f2ff;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.practice-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin: 15px auto;
+}
+
+.practice-options button {
+    padding: 15px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 .question {
     background: #f7f5ff;
@@ -217,11 +262,19 @@ header p {
 
 .option {
     display: inline-block;
-    padding: 9px 15px;
+    padding: 10px 15px;
     background: white;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin: 8px 5px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.feedback {
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 20px;
 }
 
 
@@ -278,6 +331,10 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .practice-options {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
 }
 
 </style>
@@ -298,7 +355,6 @@ footer {
     <p>Look • Listen • Say • Practice • Learn</p>
 
 </header>
-
 
 
 <div class="container">
@@ -332,37 +388,37 @@ footer {
         <div class="picture-card">
             <div class="big-picture">🍎</div>
             <h3>A — Apple</h3>
-            <p>A says /æ/</p>
+            <p>A starts <strong>apple</strong>.</p>
         </div>
 
         <div class="picture-card">
             <div class="big-picture">⚽</div>
             <h3>B — Ball</h3>
-            <p>B says /b/</p>
+            <p>B starts <strong>ball</strong>.</p>
         </div>
 
         <div class="picture-card">
             <div class="big-picture">🐱</div>
             <h3>C — Cat</h3>
-            <p>C says /k/</p>
+            <p>C starts <strong>cat</strong>.</p>
         </div>
 
         <div class="picture-card">
             <div class="big-picture">🐶</div>
             <h3>D — Dog</h3>
-            <p>D says /d/</p>
+            <p>D starts <strong>dog</strong>.</p>
         </div>
 
         <div class="picture-card">
             <div class="big-picture">🐘</div>
             <h3>E — Elephant</h3>
-            <p>E says /e/</p>
+            <p>E starts <strong>elephant</strong>.</p>
         </div>
 
         <div class="picture-card">
             <div class="big-picture">🐟</div>
             <h3>F — Fish</h3>
-            <p>F says /f/</p>
+            <p>F starts <strong>fish</strong>.</p>
         </div>
 
     </div>
@@ -375,208 +431,81 @@ footer {
 
 <section class="section">
 
-    <h2>🔤 Learn A–Z with Phonics</h2>
+    <h2>🔤 Learn A–Z</h2>
 
     <p>
-        Listen to the letter name and then practise its beginner phonics sound.
+        See the capital letter, its example word and its beginner
+        sound symbol. Use <strong>Letter Name</strong> to hear the
+        letter and <strong>Example Word</strong> to hear the complete word.
     </p>
 
-
-    <div class="letter-grid">
-
-
-        <div class="letter-card">
-            <div class="letter">A</div>
-            <div class="word">Apple 🍎</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">B</div>
-            <div class="word">Ball ⚽</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">C</div>
-            <div class="word">Cat 🐱</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">D</div>
-            <div class="word">Dog 🐶</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">E</div>
-            <div class="word">Elephant 🐘</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">F</div>
-            <div class="word">Fish 🐟</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">G</div>
-            <div class="word">Goat 🐐</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">H</div>
-            <div class="word">Hat 🎩</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">I</div>
-            <div class="word">Igloo 🧊</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">J</div>
-            <div class="word">Jam 🍓</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">K</div>
-            <div class="word">Kite 🪁</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">L</div>
-            <div class="word">Lion 🦁</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">M</div>
-            <div class="word">Mug ☕</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">N</div>
-            <div class="word">Nest 🪺</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">O</div>
-            <div class="word">Octopus 🐙</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">P</div>
-            <div class="word">Pen 🖊️</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">Q</div>
-            <div class="word">Queen 👑</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">R</div>
-            <div class="word">Rabbit 🐰</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">S</div>
-            <div class="word">Sun ☀️</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">T</div>
-            <div class="word">Top 🔝</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">U</div>
-            <div class="word">Umbrella ☂️</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">V</div>
-            <div class="word">Van 🚐</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">W</div>
-            <div class="word">Web 🕸️</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">X</div>
-            <div class="word">Box 📦</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">Y</div>
-            <div class="word">Yellow 🟡</div>
-        </div>
-
-
-        <div class="letter-card">
-            <div class="letter">Z</div>
-            <div class="word">Zoo 🦓</div>
-        </div>
-
-
-    </div>
+    <div class="letter-grid" id="letterGrid"></div>
 
 </section>
 
 
 
-<!-- TRACE -->
+<!-- FINGER TRACING -->
 
 <section class="section">
 
     <h2>✍️ Finger Tracing Practice</h2>
 
     <p>
-        Trace each letter with your finger on the screen.
+        Use your finger on the screen to practise writing the letter.
     </p>
 
     <div class="trace-box">
 
-        <div class="trace-card">
-            <div class="trace-letter">A</div>
-            <p>Trace A</p>
-        </div>
+
+        <!-- A -->
 
         <div class="trace-card">
-            <div class="trace-letter">B</div>
-            <p>Trace B</p>
+
+            <h3>A</h3>
+
+            <canvas id="canvasA"></canvas>
+
+            <div class="trace-actions">
+
+                <button onclick="clearCanvas('canvasA')">
+                    Clear
+                </button>
+
+                <button onclick="showTraceTip('A')">
+                    Tip
+                </button>
+
+            </div>
+
+            <div id="tipA" class="feedback"></div>
+
         </div>
 
-        <div class="trace-card">
-            <div class="trace-letter">C</div>
-            <p>Trace C</p>
-        </div>
+
+
+        <!-- B -->
 
         <div class="trace-card">
-            <div class="trace-letter">D</div>
-            <p>Trace D</p>
+
+            <h3>B</h3>
+
+            <canvas id="canvasB"></canvas>
+
+            <div class="trace-actions">
+
+                <button onclick="clearCanvas('canvasB')">
+                    Clear
+                </button>
+
+                <button onclick="showTraceTip('B')">
+                    Tip
+                </button>
+
+            </div>
+
+            <div id="tipB" class="feedback"></div>
+
         </div>
 
     </div>
@@ -585,62 +514,141 @@ footer {
 
 
 
-<!-- PRACTICE -->
+<!-- FIND CAPITAL LETTER -->
 
 <section class="section">
 
-    <h2>🎯 Let's Practice</h2>
+    <h2>🎯 Find the Capital Letter</h2>
 
+    <div class="practice-box">
+
+        <p>
+            Which capital letter is <strong>A</strong>?
+        </p>
+
+        <div class="practice-options">
+
+            <button onclick="checkFind(this, 'A')">
+                A
+            </button>
+
+            <button onclick="checkFind(this, 'A')">
+                a
+            </button>
+
+            <button onclick="checkFind(this, 'A')">
+                B
+            </button>
+
+            <button onclick="checkFind(this, 'A')">
+                c
+            </button>
+
+        </div>
+
+        <div id="findFeedback" class="feedback"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- QUESTIONS -->
+
+<section class="section">
+
+    <h2>🧩 Which Letter Starts the Word?</h2>
+
+
+    <!-- QUESTION 1 -->
 
     <div class="question">
 
-        <strong>1. Which word starts with A?</strong>
+        <strong>
+            1. 🍎 Apple starts with:
+        </strong>
 
-        <div>
-            <span class="option">🍎 Apple</span>
-            <span class="option">🐶 Dog</span>
-        </div>
+        <br>
+
+        <span class="option"
+              onclick="answer(this, true, 'q1')">
+            A
+        </span>
+
+        <span class="option"
+              onclick="answer(this, false, 'q1')">
+            D
+        </span>
+
+        <span class="option"
+              onclick="answer(this, false, 'q1')">
+            B
+        </span>
+
+        <div id="q1" class="feedback"></div>
 
     </div>
 
 
+
+    <!-- QUESTION 2 -->
+
     <div class="question">
 
-        <strong>2. Which capital letter starts Ball?</strong>
+        <strong>
+            2. 🐶 Dog starts with:
+        </strong>
 
-        <div>
-            <span class="option">A</span>
-            <span class="option">B</span>
-            <span class="option">C</span>
-        </div>
+        <br>
+
+        <span class="option"
+              onclick="answer(this, false, 'q2')">
+            C
+        </span>
+
+        <span class="option"
+              onclick="answer(this, true, 'q2')">
+            D
+        </span>
+
+        <span class="option"
+              onclick="answer(this, false, 'q2')">
+            F
+        </span>
+
+        <div id="q2" class="feedback"></div>
 
     </div>
 
 
-    <div class="question">
 
-        <strong>3. Complete the word:</strong>
-
-        <p>_pple</p>
-
-        <div>
-            <span class="option">A</span>
-            <span class="option">B</span>
-        </div>
-
-    </div>
-
+    <!-- QUESTION 3 -->
 
     <div class="question">
 
-        <strong>4. Find the capital letter:</strong>
+        <strong>
+            3. 🐱 Cat starts with:
+        </strong>
 
-        <div>
-            <span class="option">a</span>
-            <span class="option">B</span>
-            <span class="option">c</span>
-            <span class="option">d</span>
-        </div>
+        <br>
+
+        <span class="option"
+              onclick="answer(this, true, 'q3')">
+            C
+        </span>
+
+        <span class="option"
+              onclick="answer(this, false, 'q3')">
+            K
+        </span>
+
+        <span class="option"
+              onclick="answer(this, false, 'q3')">
+            G
+        </span>
+
+        <div id="q3" class="feedback"></div>
 
     </div>
 
@@ -657,7 +665,9 @@ footer {
     <div class="remember">
 
         <p>
-            Capital letters are big letters.
+            <strong>
+                Capital letters are big letters.
+            </strong>
         </p>
 
         <p>
@@ -666,7 +676,8 @@ footer {
         </p>
 
         <p>
-            Example: <strong>My name is Riya.</strong>
+            Example:
+            <strong>My name is Riya.</strong>
         </p>
 
     </div>
@@ -694,313 +705,455 @@ footer {
 
 <script>
 
-/*
-   PHONICS DATA
 
-   IMPORTANT:
-   The spoken cue is intentionally short.
-   We do NOT make the browser repeat:
-   "B B B" or "K K K".
+/* =========================================
+   A-Z LEARNING DATA
+========================================= */
 
-   Instead:
-   B → "buh, ball"
-   C → "kuh, cat"
-   K → "kuh, kite"
-   Z → "zzz, zoo"
-*/
+const data = [
 
-const phonicsData = {
+    ['A', 'Apple', '🍎', '/æ/'],
 
-    A: {
-        sound: "/æ/",
-        word: "apple",
-        speak: "aah, apple"
-    },
+    ['B', 'Ball', '⚽', '/b/'],
 
-    B: {
-        sound: "/b/",
-        word: "ball",
-        speak: "buh, ball"
-    },
+    ['C', 'Cat', '🐱', '/k/'],
 
-    C: {
-        sound: "/k/",
-        word: "cat",
-        speak: "kuh, cat"
-    },
+    ['D', 'Dog', '🐶', '/d/'],
 
-    D: {
-        sound: "/d/",
-        word: "dog",
-        speak: "duh, dog"
-    },
+    ['E', 'Elephant', '🐘', '/ɛ/'],
 
-    E: {
-        sound: "/e/",
-        word: "elephant",
-        speak: "eh, elephant"
-    },
+    ['F', 'Fish', '🐟', '/f/'],
 
-    F: {
-        sound: "/f/",
-        word: "fish",
-        speak: "fff, fish"
-    },
+    ['G', 'Goat', '🐐', '/g/'],
 
-    G: {
-        sound: "/g/",
-        word: "goat",
-        speak: "guh, goat"
-    },
+    ['H', 'Hat', '🎩', '/h/'],
 
-    H: {
-        sound: "/h/",
-        word: "hat",
-        speak: "hhh, hat"
-    },
+    ['I', 'Igloo', '🧊', '/ɪ/'],
 
-    I: {
-        sound: "/ɪ/",
-        word: "igloo",
-        speak: "ih, igloo"
-    },
+    ['J', 'Jam', '🍓', '/dʒ/'],
 
-    J: {
-        sound: "/dʒ/",
-        word: "jam",
-        speak: "juh, jam"
-    },
+    ['K', 'Kite', '🪁', '/k/'],
 
-    K: {
-        sound: "/k/",
-        word: "kite",
-        speak: "kuh, kite"
-    },
+    ['L', 'Lion', '🦁', '/l/'],
 
-    L: {
-        sound: "/l/",
-        word: "lion",
-        speak: "lll, lion"
-    },
+    ['M', 'Mug', '☕', '/m/'],
 
-    M: {
-        sound: "/m/",
-        word: "mug",
-        speak: "mmm, mug"
-    },
+    ['N', 'Nest', '🪺', '/n/'],
 
-    N: {
-        sound: "/n/",
-        word: "nest",
-        speak: "nnn, nest"
-    },
+    ['O', 'Octopus', '🐙', '/ɒ/'],
 
-    O: {
-        sound: "/ɒ/",
-        word: "octopus",
-        speak: "o, octopus"
-    },
+    ['P', 'Pen', '🖊️', '/p/'],
 
-    P: {
-        sound: "/p/",
-        word: "pen",
-        speak: "puh, pen"
-    },
+    ['Q', 'Queen', '👑', '/kw/'],
 
-    Q: {
-        sound: "/kw/",
-        word: "queen",
-        speak: "kwuh, queen"
-    },
+    ['R', 'Rabbit', '🐰', '/r/'],
 
-    R: {
-        sound: "/r/",
-        word: "rabbit",
-        speak: "rrr, rabbit"
-    },
+    ['S', 'Sun', '☀️', '/s/'],
 
-    S: {
-        sound: "/s/",
-        word: "sun",
-        speak: "sss, sun"
-    },
+    ['T', 'Top', '🔝', '/t/'],
 
-    T: {
-        sound: "/t/",
-        word: "top",
-        speak: "tuh, top"
-    },
+    ['U', 'Umbrella', '☂️', '/ʌ/'],
 
-    U: {
-        sound: "/ʌ/",
-        word: "umbrella",
-        speak: "uh, umbrella"
-    },
+    ['V', 'Van', '🚐', '/v/'],
 
-    V: {
-        sound: "/v/",
-        word: "van",
-        speak: "vvv, van"
-    },
+    ['W', 'Web', '🕸️', '/w/'],
 
-    W: {
-        sound: "/w/",
-        word: "web",
-        speak: "wuh, web"
-    },
+    ['X', 'Box', '📦', '/ks/'],
 
-    X: {
-        sound: "/ks/",
-        word: "box",
-        speak: "ks, box"
-    },
+    ['Y', 'Yellow', '🟡', '/j/'],
 
-    Y: {
-        sound: "/j/",
-        word: "yellow",
-        speak: "yuh, yellow"
-    },
+    ['Z', 'Zoo', '🦓', '/z/']
 
-    Z: {
-        sound: "/z/",
-        word: "zoo",
-        speak: "zzz, zoo"
-    }
-
-};
+];
 
 
 
-/* LETTER NAME */
+/* =========================================
+   SPEAK
+========================================= */
 
-function speakLetter(letter) {
+function speak(text) {
 
     window.speechSynthesis.cancel();
 
     const speech =
-        new SpeechSynthesisUtterance(letter);
+        new SpeechSynthesisUtterance(text);
 
-    speech.lang = "en-US";
+    speech.lang = 'en-US';
+
     speech.rate = 0.75;
+
     speech.pitch = 1;
 
     window.speechSynthesis.speak(speech);
+
 }
 
 
 
-/* PHONICS */
+/* =========================================
+   CREATE A-Z CARDS
+========================================= */
 
-function speakPhonics(letter) {
+const grid =
+    document.getElementById('letterGrid');
 
-    window.speechSynthesis.cancel();
 
-    const data = phonicsData[letter];
+data.forEach(function(item) {
 
-    if (!data) {
-        return;
+    const letter = item[0];
+
+    const word = item[1];
+
+    const emoji = item[2];
+
+    const sound = item[3];
+
+
+    const card =
+        document.createElement('div');
+
+    card.className = 'letter-card';
+
+
+    card.innerHTML =
+
+        '<div class="letter">' +
+        letter +
+        '</div>' +
+
+        '<div class="word">' +
+        word +
+        ' ' +
+        emoji +
+        '</div>' +
+
+        '<div class="phonics-text">' +
+        'Beginner sound: ' +
+        sound +
+        '</div>';
+
+
+
+    /* LETTER NAME BUTTON */
+
+    const letterButton =
+        document.createElement('button');
+
+    letterButton.className =
+        'listen-btn';
+
+    letterButton.textContent =
+        '🔊 Letter Name';
+
+
+    letterButton.onclick =
+        function() {
+
+            speak(letter);
+
+        };
+
+
+    card.appendChild(letterButton);
+
+
+
+    /* EXAMPLE WORD BUTTON */
+
+    const wordButton =
+        document.createElement('button');
+
+    wordButton.className =
+        'listen-btn example-btn';
+
+    wordButton.textContent =
+        '🔊 Example Word';
+
+
+    wordButton.onclick =
+        function() {
+
+            speak(word);
+
+        };
+
+
+    card.appendChild(wordButton);
+
+
+    grid.appendChild(card);
+
+});
+
+
+
+/* =========================================
+   FINGER TRACING
+========================================= */
+
+function setupCanvas(id) {
+
+    const canvas =
+        document.getElementById(id);
+
+    const ctx =
+        canvas.getContext('2d');
+
+
+    function resizeCanvas() {
+
+        const ratio =
+            window.devicePixelRatio || 1;
+
+        const width =
+            canvas.clientWidth;
+
+        const height =
+            canvas.clientHeight;
+
+
+        canvas.width =
+            width * ratio;
+
+        canvas.height =
+            height * ratio;
+
+
+        ctx.setTransform(
+            ratio,
+            0,
+            0,
+            ratio,
+            0,
+            0
+        );
+
+
+        ctx.lineWidth = 5;
+
+        ctx.lineCap = 'round';
+
+        ctx.lineJoin = 'round';
+
     }
 
-    const speech =
-        new SpeechSynthesisUtterance(data.speak);
 
-    speech.lang = "en-US";
-    speech.rate = 0.65;
-    speech.pitch = 1;
+    resizeCanvas();
 
-    window.speechSynthesis.speak(speech);
+
+    window.addEventListener(
+        'resize',
+        resizeCanvas
+    );
+
+
+    let drawing = false;
+
+
+    function getPosition(event) {
+
+        const rect =
+            canvas.getBoundingClientRect();
+
+
+        return [
+
+            event.clientX - rect.left,
+
+            event.clientY - rect.top
+
+        ];
+
+    }
+
+
+    canvas.addEventListener(
+        'pointerdown',
+        function(event) {
+
+            drawing = true;
+
+            canvas.setPointerCapture(
+                event.pointerId
+            );
+
+
+            const position =
+                getPosition(event);
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                position[0],
+                position[1]
+            );
+
+        }
+    );
+
+
+    canvas.addEventListener(
+        'pointermove',
+        function(event) {
+
+            if (!drawing) {
+                return;
+            }
+
+
+            const position =
+                getPosition(event);
+
+
+            ctx.lineTo(
+                position[0],
+                position[1]
+            );
+
+            ctx.stroke();
+
+        }
+    );
+
+
+    canvas.addEventListener(
+        'pointerup',
+        function() {
+
+            drawing = false;
+
+        }
+    );
+
+
+    canvas.addEventListener(
+        'pointercancel',
+        function() {
+
+            drawing = false;
+
+        }
+    );
+
+}
+
+
+setupCanvas('canvasA');
+
+setupCanvas('canvasB');
+
+
+
+/* CLEAR CANVAS */
+
+function clearCanvas(id) {
+
+    const canvas =
+        document.getElementById(id);
+
+    const ctx =
+        canvas.getContext('2d');
+
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
 }
 
 
 
-/* CREATE BUTTONS FOR A-Z */
+/* TRACE TIP */
 
-document
-    .querySelectorAll(".letter-card")
-    .forEach(function(card) {
+function showTraceTip(letter) {
 
-        const letterElement =
-            card.querySelector(".letter");
+    document.getElementById(
+        'tip' + letter
+    ).textContent =
 
-        if (!letterElement) {
-            return;
-        }
+        '⭐ Start at the top and follow the shape of ' +
+        letter +
+        '.';
 
-        const letter =
-            letterElement.textContent
-            .trim()
-            .charAt(0)
-            .toUpperCase();
-
-        const data =
-            phonicsData[letter];
-
-        if (!data) {
-            return;
-        }
-
-
-        /* PHONICS INFORMATION */
-
-        const phonicsText =
-            document.createElement("div");
-
-        phonicsText.className =
-            "phonics-text";
-
-        phonicsText.textContent =
-            "Phonics: " +
-            data.sound +
-            " • " +
-            data.word;
-
-        card.appendChild(phonicsText);
+}
 
 
 
-        /* LETTER BUTTON */
+/* =========================================
+   CAPITAL LETTER PRACTICE
+========================================= */
 
-        const letterButton =
-            document.createElement("button");
+function checkFind(button, correct) {
 
-        letterButton.className =
-            "listen-btn";
-
-        letterButton.textContent =
-            "🔊 Letter Name";
-
-        letterButton.onclick =
-            function() {
-
-                speakLetter(letter);
-
-            };
-
-        card.appendChild(letterButton);
+    const feedback =
+        document.getElementById(
+            'findFeedback'
+        );
 
 
+    if (
+        button.textContent.trim() ===
+        correct
+    ) {
 
-        /* PHONICS BUTTON */
+        feedback.textContent =
+            '✅ Great! That is a capital A.';
 
-        const phonicsButton =
-            document.createElement("button");
+        feedback.style.color =
+            '#16804b';
 
-        phonicsButton.className =
-            "listen-btn phonics-btn";
+    }
 
-        phonicsButton.textContent =
-            "🔊 Phonics Sound";
+    else {
 
-        phonicsButton.onclick =
-            function() {
+        feedback.textContent =
+            '🔄 Try again. Look for the big letter A.';
 
-                speakPhonics(letter);
+        feedback.style.color =
+            '#b06b00';
 
-            };
+    }
 
-        card.appendChild(phonicsButton);
+}
 
-    });
+
+
+/* =========================================
+   QUESTIONS
+========================================= */
+
+function answer(button, correct, id) {
+
+    const feedback =
+        document.getElementById(id);
+
+
+    if (correct) {
+
+        feedback.textContent =
+            '✅ Correct! Well done!';
+
+        feedback.style.color =
+            '#16804b';
+
+    }
+
+    else {
+
+        feedback.textContent =
+            '🔄 Try again!';
+
+        feedback.style.color =
+            '#b06b00';
+
+    }
+
+}
 
 </script>
 
