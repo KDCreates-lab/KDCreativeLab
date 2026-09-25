@@ -1,91 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Beginner Learning | KDCreativeLab</title>
+    <title>Beginner Learning Path | KDCreativeLab</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f7f9fc;
-    color: #333;
-}
+    <meta name="description" content="Beginner English learning path with letters, sounds, words, sentences and reading practice.">
 
-header {
-    background: #4f46e5;
-    color: white;
-    text-align: center;
-    padding: 25px 15px;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 30px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fbfd;
+            color: #1f2933;
+            line-height: 1.6;
+        }
 
-header p {
-    margin: 8px 0 0;
-}
+        /* HEADER */
+        header {
+            background: #173b5c;
+            color: white;
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 25px 15px;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-.section {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
+        nav {
+            display: flex;
+            gap: 20px;
+        }
 
-h2 {
-    color: #4f46e5;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
 
-ul {
-    line-height: 1.8;
-}
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #173b5c, #167d7f);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-.back {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    background: #4f46e5;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-}
-</style>
+        .badge {
+            display: inline-block;
+            background: #f6c85f;
+            color: #173b5c;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* CONTENT */
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .intro h2 {
+            color: #173b5c;
+            margin-bottom: 10px;
+        }
+
+        /* STEPS */
+        .step {
+            margin-bottom: 45px;
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .step-number {
+            background: #167d7f;
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .step-title h2 {
+            color: #173b5c;
+            font-size: 25px;
+        }
+
+        /* LESSON CARDS */
+        .lessons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 22px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #1f2933;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .lesson:hover {
+            transform: translateY(-4px);
+            border-color: #167d7f;
+        }
+
+        .lesson-icon {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h3 {
+            color: #173b5c;
+            margin-bottom: 6px;
+        }
+
+        .lesson p {
+            font-size: 14px;
+            color: #5f6c76;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            background: #ddeee3;
+            color: #167d7f;
+        }
+
+        .coming {
+            background: #eef6fb;
+            color: #5f6c76;
+        }
+
+        /* GOAL */
+        .goal {
+            background: #fff8df;
+            padding: 28px;
+            border-radius: 16px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .goal h2 {
+            color: #173b5c;
+            margin-bottom: 10px;
+        }
+
+        /* BACK BUTTON */
+        .back {
+            text-align: center;
+            margin: 45px 0 10px;
+        }
+
+        .back a {
+            display: inline-block;
+            background: #173b5c;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #173b5c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 30px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .lessons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .lessons {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 50px 18px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .step-title h2 {
+                font-size: 22px;
+            }
+
+            .container {
+                padding: 40px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🌱 Beginner Learning</h1>
-    <p>Start learning step by step</p>
-</header>
+    <!-- HEADER -->
+    <header>
 
-<div class="container">
+        <div class="logo">🌱 KDCreativeLab</div>
 
-    <div class="section">
-        <h2>📚 What You Will Learn</h2>
-        <ul>
-            <li><a href="capital-letters.html">🔤 Capital Letters</a></li>
-            <li>🔡 Small Letters</li>
-            <li>🔊 Letter Sounds</li>
-            <li>📝 Simple Words</li>
-            <li>💬 Basic Sentences</li>
-            <li>📖 Easy Reading</li>
-        </ul>
-    </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="beginner.html">Learn</a>
+            <a href="#">Worksheets</a>
+            <a href="#">Reading</a>
+            <a href="#">Speaking</a>
+        </nav>
 
-    <div class="section">
-        <h2>🔤 Let's Start with Letters</h2>
-        <p>Aa &nbsp; Bb &nbsp; Cc &nbsp; Dd &nbsp; Ee</p>
-        <
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="badge">BEGINNER LEVEL</div>
+
+        <h1>🌱 Beginner Learning Path</h1>
+
+        <p>
+            Start from the basics and build your English skills
+            step by step.
+        </p>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <div class="intro">
+
+            <h2>Let's Start Learning! 📚</h2>
+
+            <p>
+                Follow the lessons in order. Each step will help you
+                prepare for the next one.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 1 -->
+        <section class="step">
+
+            <div class="step-title">
+
+                <div class="step-number">1</div>
+
+                <h2>🔤 Letters</h2>
+
+            </div>
+
+            <div class="lessons">
+
+                <a href="capital-letters.html" class="lesson">
+
+                    <div class="lesson-icon">🔠</div>
+
+                    <h3>Capital Letters</h3>
+
+                    <p>
+                        Learn A–Z capital letters with examples
+                        and practice activities.
+                    </p>
+
+                    <span class="status">Start Learning →</span>
+
+                </a>
+
+
+                <a href="#" class="lesson">
+
+                    <div class="lesson-icon">🔡</div>
+
+                    <h3>Small Letters</h3>
+
+                    <p>
+                        Learn a–z small letters and recognise
+                        their shapes.
+                    </p>
+
+                    <span class="status coming">Coming Soon</span>
+
+                </a>
+
+
+                <a href="#" class="lesson">
+
+                    <div class="lesson-icon">🔄</div>
+
+                    <h3>Capital & Small Matching</h3>
+
+                    <p>
+                        Match uppercase letters with their
+                        lowercase partners.
+                    </p>
+
+                    <span class="status coming">Coming Soon</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 2 -->
+        <section class="step">
+
+            <div class="step-title">
+
+                <div class="step-number">2</div>
+
+                <h2>🔊 Sounds</h2>
+
+            </div>
+
+            <div class="lessons">
+
+                <a href="#" class="lesson">
+
+                    <div class="lesson-icon">🔊</div>
+
+                    <h3>Letter Sounds</h3>
+
+                    <p>
+                        Learn the basic sounds connected with
+                        letters.
+                    </p>
+
+                    <span class="status coming">Coming Soon</span>
+
+                </a>
+
+
+                <a href="#" class="lesson">
+
+                    <div class="lesson-icon">👂</div>
+
+                    <h3>Beginning Sounds</h3>
+
+                    <p>
+                        Listen and identify the beginning sound
+                        of simple words.
+                    </p>
+
+                    <span class="status coming">Coming Soon</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 3 -->
+        <section class="step">
+
+            <div class="step-title">
+
+                <div class="step-number">3</div>
+
+                <h2>📝 First Words</h2>
+
+            </div>
+
+            <div class="lessons">
+
+                <a href="#" class="lesson">
+
+                    <div class="lesson-icon">🧩</div>
+
+                    <h3>First Words</h3>
+
+                    <p>
+                        Learn simple words using familiar
