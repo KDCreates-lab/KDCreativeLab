@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Small Letters | KDCreativeLab</title>
+
+<title>Beginner Learning Path | KDCreativeLab</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -17,14 +19,13 @@ body{
   color:#34313d;
 }
 
+/* HEADER */
+
 header{
   background:white;
   padding:18px 20px;
-  text-align:center;
   border-bottom:1px solid #eee8f5;
-  position:sticky;
-  top:0;
-  z-index:10;
+  text-align:center;
 }
 
 header h1{
@@ -38,228 +39,170 @@ header p{
   color:#777;
 }
 
+/* MAIN */
+
 .container{
   max-width:950px;
   margin:auto;
-  padding:25px 16px 50px;
+  padding:30px 16px 50px;
 }
 
-.letter-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(55px,1fr));
-  gap:9px;
-  margin-bottom:25px;
-}
+/* HERO */
 
-.letter-btn{
-  border:0;
-  background:white;
-  border:2px solid #e8e0f2;
-  border-radius:14px;
-  padding:13px 5px;
-  font-size:25px;
-  font-weight:bold;
-  color:#66578a;
-  cursor:pointer;
-}
-
-.letter-btn.active{
-  background:#eee8f8;
-  border-color:#9b88bd;
-}
-
-.lesson{
-  background:white;
+.hero{
+  text-align:center;
+  background:linear-gradient(135deg,#f3eef9,#fff);
   border-radius:25px;
-  padding:25px;
-  box-shadow:0 5px 20px rgba(80,60,100,.08);
+  padding:35px 20px;
+  margin-bottom:30px;
 }
 
-.lesson-title{
-  text-align:center;
-}
-
-.big-letter{
-  font-size:100px;
-  font-weight:bold;
+.hero h2{
+  margin:0;
   color:#66578a;
-  line-height:1;
+  font-size:32px;
 }
 
-.lesson-title h2{
-  margin:5px 0;
-  font-size:30px;
+.hero p{
+  max-width:650px;
+  margin:12px auto 0;
+  line-height:1.6;
+  color:#666;
 }
 
-.sound{
-  display:inline-block;
-  background:#f1ecf8;
-  padding:8px 16px;
-  border-radius:20px;
-  margin-top:8px;
-  font-weight:bold;
-}
+/* STEPS */
 
-.section{
-  margin-top:28px;
-}
-
-.section h3{
-  color:#66578a;
-  border-bottom:2px solid #eee8f5;
-  padding-bottom:8px;
-}
-
-.pictures{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
-  gap:12px;
-}
-
-.picture-card{
-  background:#faf7fd;
-  border:1px solid #eee5f6;
-  border-radius:18px;
-  padding:15px;
-  text-align:center;
-}
-
-.picture{
-  font-size:48px;
-}
-
-.picture-card strong{
-  display:block;
-  margin-top:7px;
-}
-
-button{
-  font-family:inherit;
-}
-
-.action{
-  background:#66578a;
-  color:white;
-  border:0;
-  border-radius:12px;
-  padding:11px 17px;
-  cursor:pointer;
-  margin:5px;
-  font-size:15px;
-}
-
-.secondary{
-  background:#eee9f6;
-  color:#54476f;
-}
-
-.tracing-area{
-  display:flex;
-  flex-wrap:wrap;
-  gap:25px;
-  justify-content:center;
-}
-
-.trace-box{
-  text-align:center;
-}
-
-canvas{
-  width:260px;
-  height:260px;
-  border:2px solid #ded5eb;
-  border-radius:18px;
-  background:#fff;
-  touch-action:none;
-  cursor:crosshair;
-}
-
-.trace-letter{
-  font-size:145px;
-  color:#e3dced;
-  font-weight:bold;
-  line-height:260px;
-}
-
-.rhyme,.story{
-  background:#faf7fd;
-  border-radius:16px;
-  padding:18px;
-  line-height:1.7;
-}
-
-.practice{
-  background:#f8f5fb;
-  border-radius:18px;
-  padding:20px;
-  margin-top:15px;
-}
-
-.options{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:10px;
-  margin-top:15px;
-}
-
-.option{
+.step{
   background:white;
-  border:2px solid #e4dcef;
-  padding:14px;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:16px;
+  border-radius:22px;
+  padding:24px;
+  margin-bottom:22px;
+  box-shadow:0 5px 18px rgba(80,60,100,.07);
+  border:1px solid #eee8f5;
 }
 
-.option:hover{
-  background:#f0ebf7;
-}
-
-.result{
-  margin-top:12px;
-  font-weight:bold;
-  min-height:24px;
-}
-
-.answer{
-  display:none;
-  background:#eee8f7;
-  padding:12px;
-  border-radius:12px;
-  margin-top:12px;
-}
-
-.navigation{
+.step-title{
   display:flex;
-  justify-content:space-between;
-  gap:10px;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.step-number{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#eee8f7;
+  color:#66578a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.step-title h3{
+  margin:0;
+  color:#66578a;
+  font-size:23px;
+}
+
+/* LESSON CARDS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;
+}
+
+.card{
+  display:block;
+  text-decoration:none;
+  background:#faf7fd;
+  border:1px solid #e8e0f2;
+  border-radius:17px;
+  padding:18px;
+  color:#34313d;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 15px rgba(80,60,100,.10);
+}
+
+.card-icon{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.card h4{
+  margin:0 0 6px;
+  color:#66578a;
+  font-size:18px;
+}
+
+.card p{
+  margin:0;
+  color:#777;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* GOAL */
+
+.goal{
+  background:#f2edf8;
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
   margin-top:30px;
 }
 
-.home{
-  text-align:center;
-  margin-top:25px;
+.goal h3{
+  margin-top:0;
+  color:#66578a;
 }
 
+.goal p{
+  line-height:1.6;
+  color:#555;
+}
+
+/* HOME BUTTON */
+
+.home{
+  text-align:center;
+  margin-top:30px;
+}
+
+.home a{
+  display:inline-block;
+  text-decoration:none;
+  background:#66578a;
+  color:white;
+  padding:12px 20px;
+  border-radius:12px;
+}
+
+/* MOBILE */
+
 @media(max-width:600px){
-  .lesson{
+
+  .hero h2{
+    font-size:27px;
+  }
+
+  .step{
     padding:18px;
   }
 
-  .big-letter{
-    font-size:80px;
+  .step-title h3{
+    font-size:20px;
   }
 
-  canvas{
-    width:230px;
-    height:230px;
-  }
-
-  .trace-letter{
-    line-height:230px;
-    font-size:125px;
-  }
 }
+
 </style>
 </head>
 
@@ -267,118 +210,278 @@ canvas{
 
 <header>
   <h1>KDCreativeLab</h1>
-  <p>Small Letters Learning</p>
+  <p>Learn English Step by Step</p>
 </header>
 
 <div class="container">
 
-  <div class="letter-grid" id="letterGrid"></div>
+  <!-- HERO -->
 
-  <div class="lesson">
+  <section class="hero">
 
-    <div class="lesson-title">
-      <div class="big-letter" id="bigLetter">a</div>
-      <h2 id="title">Small Letter a</h2>
-      <div class="sound" id="sound">Sound: /a/</div>
-      <br>
-      <button class="action" id="soundBtn">🔊 Listen</button>
+    <h2>🌱 Beginner Learning Path</h2>
+
+    <p>
+      Start your English learning journey from the very beginning.
+      Learn letters, sounds, words, sentences and reading step by step.
+    </p>
+
+  </section>
+
+
+  <!-- STEP 1 -->
+
+  <section class="step">
+
+    <div class="step-title">
+
+      <div class="step-number">1</div>
+
+      <h3>🔤 Letters</h3>
+
     </div>
 
-    <div class="section">
-      <h3>🖼️ Look and Learn</h3>
-      <div class="pictures" id="pictures"></div>
+
+    <div class="cards">
+
+      <!-- CAPITAL LETTERS -->
+
+      <a class="card" href="capital-letters.html">
+
+        <div class="card-icon">🔠</div>
+
+        <h4>Capital Letters</h4>
+
+        <p>
+          Learn A–Z capital letters with pictures,
+          sounds, tracing and activities.
+        </p>
+
+      </a>
+
+
+      <!-- SMALL LETTERS - CONNECTED -->
+
+      <a class="card" href="small-letters.html">
+
+        <div class="card-icon">🔡</div>
+
+        <h4>Small Letters</h4>
+
+        <p>
+          Learn a–z small letters with pictures,
+          sounds, tracing and practice.
+        </p>
+
+      </a>
+
+
+      <!-- CAPITAL & SMALL MATCHING -->
+
+      <a class="card" href="#">
+
+        <div class="card-icon">🔄</div>
+
+        <h4>Capital & Small Matching</h4>
+
+        <p>
+          Match capital letters with their
+          corresponding small letters.
+        </p>
+
+      </a>
+
     </div>
 
-    <div class="section">
-      <h3>✍️ Trace the Letter</h3>
+  </section>
 
-      <div class="tracing-area">
 
-        <div class="trace-box">
-          <p><strong>Trace small letter</strong></p>
-          <canvas id="traceCanvas" width="260" height="260"></canvas>
-          <br>
-          <button class="action secondary" onclick="clearCanvas()">Clear</button>
-        </div>
+  <!-- STEP 2 -->
 
-        <div class="trace-box">
-          <p><strong>Practice independently</strong></p>
-          <div style="width:260px;height:260px;border:2px solid #ded5eb;border-radius:18px;background:white;">
-            <div class="trace-letter" id="guideLetter">a</div>
-          </div>
-        </div>
+  <section class="step">
 
-      </div>
+    <div class="step-title">
+
+      <div class="step-number">2</div>
+
+      <h3>🔊 Sounds</h3>
+
     </div>
 
-    <div class="section">
-      <h3>🎵 Letter Rhyme</h3>
-      <div class="rhyme" id="rhyme"></div>
-      <button class="action" id="rhymeBtn">🔊 Listen to Rhyme</button>
+
+    <div class="cards">
+
+      <a class="card" href="#">
+
+        <div class="card-icon">🔊</div>
+
+        <h4>Letter Sounds</h4>
+
+        <p>
+          Learn the sounds of letters and
+          practise hearing them.
+        </p>
+
+      </a>
+
+
+      <a class="card" href="#">
+
+        <div class="card-icon">👂</div>
+
+        <h4>Beginning Sounds</h4>
+
+        <p>
+          Identify the beginning sound
+          of simple words.
+        </p>
+
+      </a>
+
     </div>
 
-    <div class="section">
-      <h3>📖 Short Story</h3>
-      <div class="story" id="story"></div>
-      <button class="action" id="storyBtn">🔊 Listen to Story</button>
+  </section>
+
+
+  <!-- STEP 3 -->
+
+  <section class="step">
+
+    <div class="step-title">
+
+      <div class="step-number">3</div>
+
+      <h3>📝 First Words</h3>
+
     </div>
 
-    <div class="section">
-      <h3>🎯 Practice 1 — Find the Beginning Sound</h3>
 
-      <div class="practice">
-        <p id="question1"></p>
+    <div class="cards">
 
-        <div class="options" id="options1"></div>
+      <a class="card" href="#">
 
-        <div class="result" id="result1"></div>
+        <div class="card-icon">📚</div>
 
-        <button class="action secondary" id="showAnswer">
-          Show Answer
-        </button>
+        <h4>First Words</h4>
 
-        <div class="answer" id="answerBox"></div>
-      </div>
+        <p>
+          Learn simple words using
+          familiar letters and sounds.
+        </p>
+
+      </a>
+
+
+      <a class="card" href="#">
+
+        <div class="card-icon">🧩</div>
+
+        <h4>CVC Words</h4>
+
+        <p>
+          Build and read simple
+          consonant-vowel-consonant words.
+        </p>
+
+      </a>
+
     </div>
 
-    <div class="section">
-      <h3>🔎 Practice 2 — Find the Letter</h3>
+  </section>
 
-      <div class="practice">
-        <p>Which one is the small letter <strong id="questionLetter">a</strong>?</p>
 
-        <div class="options" id="letterOptions"></div>
+  <!-- STEP 4 -->
 
-        <div class="result" id="result2"></div>
-      </div>
+  <section class="step">
+
+    <div class="step-title">
+
+      <div class="step-number">4</div>
+
+      <h3>✏️ Simple Sentences</h3>
+
     </div>
 
-    <div class="navigation">
-      <button class="action secondary" id="prevBtn">← Previous</button>
-      <button class="action" id="nextBtn">Next →</button>
+
+    <div class="cards">
+
+      <a class="card" href="#">
+
+        <div class="card-icon">💬</div>
+
+        <h4>Simple Sentences</h4>
+
+        <p>
+          Start reading and understanding
+          short simple sentences.
+        </p>
+
+      </a>
+
     </div>
 
-  </div>
+  </section>
+
+
+  <!-- STEP 5 -->
+
+  <section class="step">
+
+    <div class="step-title">
+
+      <div class="step-number">5</div>
+
+      <h3>📖 First Reading</h3>
+
+    </div>
+
+
+    <div class="cards">
+
+      <a class="card" href="#">
+
+        <div class="card-icon">📖</div>
+
+        <h4>First Reading</h4>
+
+        <p>
+          Read short, easy passages using
+          the sounds and words you have learned.
+        </p>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- GOAL -->
+
+  <section class="goal">
+
+    <h3>🎯 Beginner Goal</h3>
+
+    <p>
+      By completing this learning path, children will
+      gradually move from recognising letters and sounds
+      to reading simple words, sentences and short passages.
+    </p>
+
+  </section>
+
+
+  <!-- HOME -->
 
   <div class="home">
-    <button class="action" onclick="location.href='beginner.html'">
-      ← Back to Beginner
-    </button>
+
+    <a href="index.html">
+      ← Back to Home
+    </a>
+
   </div>
 
 </div>
 
-<script>
-
-const lessons = {
-
-a:{
-sound:"/a/",
-pictures:[
-["🍎","apple"],
-["🐜","ant"],
-["🐊","alligator"],
-["🥑","avocado"],
-["✈️","aeroplane"]
-],
-rhyme:"A is for apple, red and bright. A is for ant, so small and light. A says its sound as
+</body>
+</html>
