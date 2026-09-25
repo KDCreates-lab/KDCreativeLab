@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jolly Phonics Group 3 | KDCreativeLab</title>
 
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f7fbff;
+ color:#243447;
+}
+header{
+ background:#123c69;
+ color:white;
+ padding:20px;
+ text-align:center;
+}
+header h1{margin:0;font-size:28px}
+nav{
+ background:#0d2f52;
+ padding:10px;
+ text-align:center;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ margin:0 10px;
+}
+.container{
+ max-width:1000px;
+ margin:auto;
+ padding:20px;
+}
+.hero{
+ background:#e8f4ff;
+ padding:25px;
+ border-radius:18px;
+ text-align:center;
+ margin-bottom:25px;
+}
+h2{color:#123c69}
+.sound-grid,.word-grid,.sentence-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+ gap:15px;
+}
+.card{
+ background:white;
+ padding:20px;
+ border-radius:16px;
+ box-shadow:0 3px 12px rgba(0,0,0,.08);
+ text-align:center;
+}
+.sound{
+ font-size:42px;
+ font-weight:bold;
+ color:#e85d04;
+}
+.example{
+ font-size:22px;
+ margin-top:8px;
+}
+button{
+ background:#123c69;
+ color:white;
+ border:0;
+ padding:10px 18px;
+ border-radius:8px;
+ cursor:pointer;
+ margin-top:10px;
+}
+.word{
+ font-size:25px;
+ font-weight:bold;
+ color:#d62828;
+}
+.blend{
+ background:#fff4d6;
+ padding:18px;
+ border-radius:14px;
+ margin:10px 0;
+ font-size:22px;
+ text-align:center;
+}
+.story,.practice{
+ background:white;
+ padding:20px;
+ border-radius:16px;
+ margin-top:20px;
+ line-height:1.7;
+ box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+.back{
+ display:inline-block;
+ margin-bottom:20px;
+ text-decoration:none;
+ color:#123c69;
+ font-weight:bold;
+}
+footer{
+ text-align:center;
+ padding:25px;
+ background:#123c69;
+ color:white;
+ margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌟 KDCreativeLab</h1>
+<p>Jolly Phonics – Group 3</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="beginner.html">Beginner</a>
+<a href="phonics-group-1.html">Group 1</a>
+<a href="phonics-group-2.html">Group 2</a>
+</nav>
+
+<div class="container">
+
+<a class="back" href="beginner.html">← Back to Beginner</a>
+
+<section class="hero">
+<h2>🎵 Jolly Phonics Group 3</h2>
+<p><strong>g, o, u, l, f, b</strong></p>
+<p>Learn the sounds, make words, blend and start reading!</p>
+</section>
+
+<h2>🔤 Meet the Sounds</h2>
+
+<div class="sound-grid">
+
+<div class="card">
+<div class="sound">g</div>
+<h3>/g/</h3>
+<p>goat • gum • gap</p>
+</div>
+
+<div class="card">
+<div class="sound">o</div>
+<h3>/o/</h3>
+<p>orange • ox • pot</p>
+</div>
+
+<div class="card">
+<div class="sound">u</div>
+<h3>/u/</h3>
+<p>up • sun • cup</p>
+</div>
+
+<div class="card">
+<div class="sound">l</div>
+<h3>/l/</h3>
+<p>leg • log • lip</p>
+</div>
+
+<div class="card">
+<div class="sound">f</div>
+<h3>/f/</h3>
+<p>fish • fan • fox</p>
+</div>
+
+<div class="card">
+<div class="sound">b</div>
+<h3>/b/</h3>
+<p>bat • bus • bag</p>
+</div>
+
+</div>
+
+<h2>🧩 Make New Words</h2>
+
+<div class="word-grid">
+
+<div class="card"><div class="word">bag</div><p>b-a-g</p></div>
+<div class="card"><div class="word">big</div><p>b-i-g</p></div>
+<div class="card"><div class="word">bug</div><p>b-u-g</p></div>
+<div class="card"><div class="word">log</div><p>l-o-g</p></div>
+<div class="card"><div class="word">fog</div><p>f-o-g</p></div>
+<div class="card"><div class="word">fun</div><p>f-u-n</p></div>
+<div class="card"><div class="word">bun</div><p>b-u-n</p></div>
+<div class="card"><div class="word">gum</div><p>g-u-m</p></div>
+<div class="card"><div class="word">sun</div><p>s-u-n</p></div>
+<div class="card"><div class="word">cup</div><p>c-u-p</p></div>
+
+</div>
+
+<h2>🔊 Blend the Sounds</h2>
+
+<div class="blend">g + u + m → <strong>gum</strong></div>
+<div class="blend">b + u + n → <strong>bun</strong></div>
+<div class="blend">f + o + g → <strong>fog</strong></div>
+<div class="blend">l + o + g → <strong>log</strong></div>
+<div class="blend">b + a + g → <strong>bag</strong></div>
+
+<div class="story">
+<h2>📖 Short Story</h2>
+<h3>The Big Bug</h3>
+<p>
+A big bug is on a log.<br>
+The bug is red.<br>
+A boy has a bag.<br>
+The boy looks at the bug.<br>
+The bug can run.
+</p>
+</div>
+
+<div class="practice">
+<h2>✏️ Practice</h2>
+<p>1. Circle the word that starts with <strong>/b/</strong>.</p>
+<p>bag &nbsp;&nbsp; fog &nbsp;&nbsp; log</p>
+
+<p>2. Complete the word:</p>
+<p>b + u + __ = bun</p>
+
+<p>3. Read aloud:</p>
+<p><strong>bag – bug – log – fog – bun – gum</strong></p>
+</div>
+
+<div class="story">
+<h2>🎯 Group 3 Goal</h2>
+<p>
+I can recognise the Group 3 sounds, blend sounds together,
+read simple words and understand short sentences.
+</p>
+</div>
+
+</div>
+
+<footer>
+KDCreativeLab 🌱 | Learn • Practice • Grow
+</footer>
+
+</body>
+</html>
