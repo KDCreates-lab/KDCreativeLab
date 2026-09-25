@@ -1,1 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Jolly Phonics Group 2 | KDCreativeLab</title>
+
+  <meta name="description"
+        content="Learn Jolly Phonics Group 2 sounds c, k, e, h, r and d with pictures, words, blending, tracing and reading practice.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f9fc;
+      color: #203040;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #173b5c;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 0 50px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #167d7f;
+      font-weight: bold;
+    }
+
+    .intro {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      color: #173b5c;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .intro p {
+      font-size: 16px;
+    }
+
+    .progress {
+      margin-top: 18px;
+      background: #e8f1f5;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .progress-bar {
+      width: 33%;
+      height: 100%;
+      background: #167d7f;
+    }
+
+    .section {
+      background: white;
+      padding: 24px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      color: #173b5c;
+      margin-bottom: 8px;
+      font-size: 24px;
+    }
+
+    .section-intro {
+      margin-bottom: 20px;
+      color: #52616b;
+    }
+
+    .sound-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .sound-card {
+      border: 2px solid #e2edf2;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      background: #fbfdfe;
+    }
+
+    .big-letter {
+      font-size: 65px;
+      font-weight: bold;
+      color: #167d7f;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .sound {
+      font-weight: bold;
+      color: #173b5c;
+      margin-bottom: 12px;
+    }
+
+    .picture-box {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+    }
+
+    .picture {
+      background: #eef6fb;
+      border-radius: 12px;
+      padding: 10px;
+      min-width: 70px;
+      font-size: 14px;
+    }
+
+    .picture span {
+      display: block;
+      font-size: 35px;
+      margin-bottom: 3px;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 11px 16px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .sound-btn {
+      background: #167d7f;
+      color: white;
+    }
+
+    .trace-btn {
+      background: #f6c85f;
+      color: #203040;
+    }
+
+    .audio-note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #687780;
+    }
+
+    .trace-area {
+      text-align: center;
+      background: #f7fbfd;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .trace-letter {
+      font-size: 110px;
+      font-weight: bold;
+      color: #d5e4ea;
+      border: 3px dashed #a9c3cf;
+      border-radius: 20px;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 250px;
+      user-select: none;
+    }
+
+    .trace-message {
+      font-size: 15px;
+      color: #52616b;
+    }
+
+    .word-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .word {
+      background: #eef6fb;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-size: 21px;
+      font-weight: bold;
+      color: #173b5c;
+    }
+
+    .blend-box {
+      background: #f0f8f5;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .blend {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      color: #167d7f;
+      margin: 12px 0;
+    }
+
+    .sentence {
+      background: #fff9e8;
+      border-left: 5px solid #f6c85f;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .quiz-question {
+      margin-bottom: 25px;
+      padding: 18px;
+      background: #f8fbfc;
+      border-radius: 14px;
+    }
+
+    .quiz-question h3 {
+      margin-bottom: 12px;
+    }
+
+    .option {
+      display: block;
+      width: 100%;
+      background: white;
+      border: 2px solid #dce9ee;
+      text-align: left;
+      margin: 8px 0;
+    }
+
+    .option:hover {
+      background: #eef8f8;
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .poem {
+      background: #eef6fb;
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .story {
+      background: #fffaf0;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .story h3 {
+      color: #173b5c;
+      margin-bottom: 10px;
+    }
+
+    .next-box {
+      text-align: center;
+      background: #173b5c;
+      color: white;
+      padding: 28px 20px;
+      border-radius: 20px;
+    }
+
+    .next-box h2 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .next-btn {
+      background: #f6c85f;
+      color: #203040;
+      text-decoration: none;
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      background: #173b5c;
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 94%;
+      }
+
+      .intro h2 {
+        font-size: 24px;
+      }
+
+      .section {
+        padding: 18px;
+      }
+
+      .sound-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .big-letter {
+        font-size: 58px;
+      }
+
+      .trace-letter {
+        font-size: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>KDCreativeLab</h1>
+  <p>Learn • Practise • Read • Grow 🌱</p>
+</header>
+
+<div class="container">
+
+  <a class="back" href="beginner.html">
+    ← Back to Beginner Learning
+  </a>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h2>🎵 Jolly Phonics — Group 2</h2>
+
+    <p>
+      Let's learn five new sounds:
+      <strong>c/k, e, h, r, d</strong>
+    </p>
+
+    <p>
+      Listen → Look → Say → Trace → Blend → Read
+    </p>
+
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+
+    <p style="margin-top:8px;font-size:13px;">
+      Group 2 of 7
+    </p>
+  </section>
+
+
+  <!-- SOUNDS -->
+  <section class="section">
+
+    <h2>🔤 Meet Our New Sounds</h2>
+
+    <p class="section-intro">
+      Learn each sound slowly. Listen carefully and repeat the sound.
+    </p>
+
+    <div class="sound-grid">
+
+      <!-- C/K -->
+      <div class="sound-card">
+
+        <div class="big-letter">C / K</div>
+
+        <div class="sound">
+          Sound: /k/
+        </div>
+
+        <div class="picture-box">
+
+          <div class="picture">
+            <span>🐱</span>
+            cat
+          </div>
+
+          <div class="picture">
+            <span>🎵</span>
+            key
+          </div>
+
+          <div class="picture">
+            <span>👑</span>
+            king
+          </div>
+
+        </div>
+
+        <button class="sound-btn"
+                onclick="playSound('ck')">
+          🔊 Hear /k/
+        </button>
+
+        <p class="audio-note">
+          Use the real recorded phonics audio for this sound.
+        </p>
+
+      </div>
+
+
+      <!-- E -->
+      <div class="sound-card">
+
+        <div class="big-letter">E</div>
+
+        <div class="sound">
+          Sound: /e/
+        </div>
+
+        <div class="picture-box">
+
+          <div class="picture">
+            <span>🥚</span>
+            egg
+          </div>
+
+          <div class="picture">
+            <span>🐘</span>
+            elephant
+          </div>
+
+          <div class="picture">
+            <span>✉️</span>
+            envelope
+          </div>
+
+        </div>
+
+        <button class="sound-btn"
+                onclick="playSound('e')">
+          🔊 Hear /e/
+        </button>
+
+        <p class="audio-note">
+          Listen and repeat the short vowel sound.
+        </p>
+
+      </div>
+
+
+      <!-- H -->
+      <div class="sound-card">
+
+        <div class="big-letter">H</div>
+
+        <div class="sound">
+          Sound: /h/
+        </div>
+
+        <div class="picture-box">
+
+          <div class="picture">
+            <span>🐴</span>
+            horse
+          </div>
+
+          <div class="picture">
+            <span>🏠</span>
+            house
+          </div>
+
+          <div class="picture">
+            <span>🎩</span>
+            hat
+          </div>
+
+        </div>
+
+        <button class="sound-btn"
+                onclick="playSound('h')">
+          🔊 Hear /h/
+        </button>
+
+        <p class="audio-note">
+          Listen and repeat.
+        </p>
+
+      </div>
+
+
+      <!-- R -->
+      <div class="sound-card">
+
+        <div class="big-letter">R</div>
+
+        <div class="sound">
+          Sound: /r/
+        </div>
+
+        <div class="picture-box">
+
+          <div class="picture">
+            <span>🐀</span>
+            rat
+          </div>
+
+          <div class="picture">
+            <span>🌈</span>
+            rainbow
+          </div>
+
+          <div class="picture">
+            <span>🚀</span>
+            rocket
+          </div>
+
+        </div>
+
+        <button class="sound-btn"
+                onclick="playSound('r')">
+          🔊 Hear /r/
+        </button>
+
+        <p class="audio-note">
+          Listen and repeat.
+        </p>
+
+      </div>
+
+
+      <!-- D -->
+      <div class="sound-card">
+
+        <div class="big-letter">D</div>
+
+        <div class="sound">
+          Sound: /d/
+        </div>
+
+        <div class="picture-box">
+
+          <div class="picture">
+            <span>🐶</span>
+            dog
+          </div>
+
+          <div class="picture">
+            <span>🦆</span>
+            duck
+          </div>
+
+          <div class="picture">
+            <span>🥁</span>
+            drum
+          </div>
+
+        </div>
+
+        <button class="sound-btn"
+                onclick="playSound('d')">
+          🔊 Hear /d/
+        </button>
+
+        <p class="audio-note">
+          Listen and repeat.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TRACING -->
+  <section class="section">
+
+    <h2>✏️ Trace the New Letters</h2>
+
+    <p class="section-intro">
+      Trace each letter with your finger first. Then practise writing it on paper.
+    </p>
+
+    <div class="trace-area">
+
+      <div class="trace-letter">
+        C c
+      </div>
+
+      <div class="trace-letter">
+        E e
+      </div>
+
+      <div class="trace-letter">
+        H h
+      </div>
+
+      <div class="trace-letter">
+        R r
+      </div>
+
+      <div class="trace-letter">
+        D d
+      </div>
+
+      <p class="trace-message">
+        👆 Trace slowly from the correct starting point.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORDS -->
+  <section class="section">
+
+    <h2>🧩 Let's Make Words</h2>
+
+    <p class="section-intro">
+      Now let's use Group 1 and Group 2 sounds together.
+    </p>
+
+    <h3>Words with sounds we already know</h3>
+
+    <div class="word-list">
+
+      <div class="word">red</div>
+      <div class="word">hen</div>
+      <div class="word">den</div>
+      <div class="word">pen</div>
+      <div class="word">ten</div>
+      <div class="word">bed</div>
+      <div class="word">net</div>
+      <div class="word">pet</div>
+      <div class="word">get</div>
+      <div class="word">hat</div>
+      <div class="word">had</div>
+      <div class="word">hot</div>
+      <div class="word">hit</div>
+      <div class="word">run</div>
+      <div class="word">red</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BLENDING -->
+  <section class="section">
+
+    <h2>🔗 Blend the Sounds</h2>
+
+    <p class="section-intro">
+      Say each sound slowly. Then join the sounds together.
+    </p>
+
+    <div class="blend-box">
+
+      <p>Example 1</p>
+
+      <div class="blend">
+        h — e — n
+      </div>
+
+      <strong>hen</strong>
+
+    </div>
+
+
+    <div class="blend-box">
+
+      <p>Example 2</p>
+
+      <div class="blend">
+        r — e — d
+      </div>
+
+      <strong>red</strong>
+
+    </div>
+
+
+    <div class="blend-box">
+
+      <p>Example 3</p>
+
+      <div class="blend">
+        p — e — t
+      </div>
+
+      <strong>pet</strong>
+
+    </div>
+
+
+    <div class="blend-box">
+
+      <p>Example 4</p>
+
+      <div class="blend">
+        h — a — t
+      </div>
+
+      <strong>hat</strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORD READING -->
+  <section class="section">
+
+    <h2>📖 Read the Words</h2>
+
+    <p class="section-intro">
+      Point to each word. Say the sounds. Blend them. Then read the whole word.
+    </p>
+
+    <div class="word-list">
+
+      <div class="word">hen</div>
+      <div class="word">red</div>
+      <div class="word">bed</div>
+      <div class="word">pet</div>
+      <div class="word">hat</div>
+      <div class="word">had</div>
+      <div class="word">hot</div>
+      <div class="word">hit</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SENTENCES -->
+  <section class="section">
+
+    <h2>📚 Read Simple Sentences</h2>
+
+    <p class="section-intro">
+      Read the words slowly. Then read the whole sentence.
+    </p>
+
+    <div class="sentence">
+      The cat sat.
+    </div>
+
+    <div class="sentence">
+      The hen is red.
+    </div>
+
+    <div class="sentence">
+      A rat sat.
+    </div>
+
+    <div class="sentence">
+      The dog is hot.
+    </div>
+
+    <div class="sentence">
+      The hen had a red hat.
+    </div>
+
+  </section>
+
+
+  <!-- POEM -->
+  <section class="section">
+
+    <h2>🎵 Sound Practice Poem</h2>
+
+    <div class="poem">
+
+      <p>
+        H says /h/, h says /h/,
+      </p>
+
+      <p>
+        <strong>H</strong> is for <strong>hat</strong>.
+      </p>
+
+      <p>
+        R says /r/, r says /r/,
+      </p>
+
+      <p>
+        <strong>R</strong> is for <strong>rat</strong>.
+      </p>
+
+      <p>
+        D says /d/, d says /d/,
+      </p>
+
+      <p>
+        <strong>D</strong> is for <strong>dog</strong>.
+      </p>
+
+      <p style="margin-top:12px;">
+        Listen, say, blend and read! 🌱
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- STORY -->
+  <section class="section">
+
+    <h2>📖 Little Sound Story</h2>
+
+    <div class="story">
+
+      <h3>🐱 The Cat and the Red Hen</h3>
+
+      <p>
+        A cat sat on a mat.
+        A red hen sat near the cat.
+      </p>
+
+      <p>
+        The hen had a hat.
+        The cat had a nap.
+      </p>
+
+      <p>
+        The hen ran.
+        The cat ran too.
+      </p>
+
+      <p>
+        They had fun!
+      </p>
+
+      <p style="margin-top:12px;">
+        <strong>Try:</strong> Point to the words you can read.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUIZ -->
+  <section class="section">
+
+    <h2>🧠 Check What You Learned</h2>
+
+    <div class="quiz-question">
+
+      <h3>1. Which letter makes /h/?</h3>
+
+      <button class="option"
+              onclick="checkAnswer(this, true)">
+        H
+      </button>
+
+      <button class="option"
+              onclick="checkAnswer(this, false)">
+        R
+      </button>
+
+      <button class="option"
+              onclick="checkAnswer(this, false)">
+        D
+      </button>
+
+      <p class="feedback"></p>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+      <h3>2. Which word begins with /r/?</h3>
+
+      <button class="option"
+              onclick="checkAnswer(this, false)">
+        dog
+      </button>
+
+      <button class="option"
+              onclick="checkAnswer(this, true)">
+        rat
+      </button>
+
+      <button class="option"
+              onclick="checkAnswer(this, false)">
+        hen
+      </button>
+
+      <p class="feedback"></p>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+      <h3>3. Blend: h — e — n</h3>
+
+      <button class="option"
+              onclick="checkAnswer(this, true)">
+        hen
+      </button>
+
+      <button class="option"
+              onclick="checkAnswer(this, false)">
+        hat
+      </button>
+
+      <button class="option"
+              onclick="checkAnswer(this, false)">
+        red
+      </button>
+
+      <p class="feedback"></p>
+
+    </div>
+
+  </section>
+
+
+  <!-- NEXT -->
+  <section class="next-box">
+
+    <h2>🌟 Great Work!</h2>
+
+    <p>
+      You learned the Group 2 sounds:
+      <strong>c/k, e, h, r, d</strong>
+    </p>
+
+    <p>
+      Keep practising the sounds, words and blending.
+    </p>
+
+    <a class="next-btn"
+       href="beginner.html">
+      ← Back to Beginner Learning
+    </a>
+
+  </section>
+
+</div>
+
+
+<footer>
+  © 2026 KDCreativeLab • Learn • Practise • Read • Grow
+</footer>
+
+
+<script>
+
+  /*
+    IMPORTANT:
+    These buttons are prepared for REAL audio files.
+
+    Do NOT use browser text-to-speech for phonics.
+
+    Later, when your licensed/recorded audio files
+    are added to your GitHub repository, replace
+    the file paths inside playSound().
+  */
+
+  function playSound(sound) {
+
+    const audioFiles = {
+
+      ck: "audio/phonics/group2/c-k.mp3",
+      e:  "audio/phonics/group2/e.mp3",
+      h:  "audio/phonics/group2/h.mp3",
+      r:  "audio/phonics/group2/r.mp3",
+      d:  "audio/phonics/group2/d.mp3"
+
+    };
+
+    if (!audioFiles[sound]) {
+      return;
+    }
+
+    const audio = new Audio(audioFiles[sound]);
+
+    audio.play().catch(function() {
+
+      alert(
+        "Audio file is not connected yet. " +
+        "Add the correct licensed/recorded audio file to the audio folder."
+      );
+
+    });
+
+  }
+
+
+  function checkAnswer(button, correct) {
+
+    const question = button.parentElement;
+    const feedback = question.querySelector(".feedback");
+
+    if (correct) {
+
+      feedback.textContent = "✓ Correct! Great job!";
+      feedback.style.color = "#167d7f";
+
+    } else {
+
+      feedback.textContent = "Try again. Listen to the sound carefully.";
+      feedback.style.color = "#b44";
+
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
