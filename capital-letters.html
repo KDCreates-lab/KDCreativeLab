@@ -7,94 +7,81 @@
 <title>Capital Letters | KDCreativeLab</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
 
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:#EEF6FB;
-  color:#1F2933;
+  font-family:Arial,sans-serif;
+  background:#f7fbff;
+  color:#243447;
 }
 
 header{
-  background:#173B5C;
+  background:#123c69;
   color:white;
-  padding:18px 20px;
   text-align:center;
+  padding:22px 15px;
 }
 
 header h1{
   margin:0;
-  font-size:28px;
+  font-size:30px;
+}
+
+header p{
+  margin:8px 0 0;
 }
 
 nav{
-  margin-top:12px;
+  background:#0d2f52;
+  padding:12px;
+  text-align:center;
 }
 
 nav a{
   color:white;
   text-decoration:none;
   margin:0 8px;
-  font-size:14px;
-}
-
-.hero{
-  text-align:center;
-  padding:35px 20px 25px;
-  background:white;
-}
-
-.hero h2{
-  margin:0 0 10px;
-  color:#173B5C;
-  font-size:32px;
-}
-
-.hero p{
-  max-width:750px;
-  margin:auto;
-  line-height:1.6;
 }
 
 .container{
   max-width:1100px;
   margin:auto;
-  padding:25px 18px;
+  padding:20px;
 }
 
-/* LETTER GRID */
+.back{
+  display:inline-block;
+  margin-bottom:20px;
+  color:#123c69;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* LETTER SELECTOR */
 
 .letter-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
-  gap:12px;
-  margin:25px 0 35px;
+  gap:10px;
+  margin-bottom:25px;
 }
 
 .letter-btn{
-  border:none;
-  border-radius:14px;
   background:white;
-  color:#173B5C;
-  font-size:28px;
+  border:2px solid #d9e7f5;
+  border-radius:12px;
+  padding:14px 5px;
+  font-size:26px;
   font-weight:bold;
-  padding:18px 8px;
+  color:#123c69;
   cursor:pointer;
-  box-shadow:0 3px 10px rgba(0,0,0,0.08);
-  transition:0.2s;
 }
 
 .letter-btn:hover{
-  transform:translateY(-3px);
-}
-
-.letter-btn.active{
-  background:#167D7F;
-  color:white;
+  background:#e8f4ff;
 }
 
 /* LESSON */
@@ -102,1201 +89,915 @@ nav a{
 .lesson{
   background:white;
   border-radius:20px;
-  padding:28px;
-  box-shadow:0 5px 18px rgba(0,0,0,0.08);
+  padding:25px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-.lesson-title{
+.letter-title{
   text-align:center;
+  font-size:75px;
+  color:#e85d04;
+  margin:5px 0;
 }
 
-.big-letter{
-  font-size:90px;
-  font-weight:bold;
-  color:#173B5C;
-  line-height:1;
-}
-
-.lesson-title h2{
-  margin:10px 0;
-  color:#167D7F;
-}
-
-.sound-box{
-  background:#F6C85F;
-  border-radius:16px;
-  padding:18px;
+.sound{
   text-align:center;
-  margin:25px 0;
-}
-
-.sound-box .sound{
-  font-size:32px;
+  font-size:25px;
   font-weight:bold;
-}
-
-.sound-note{
-  margin-top:8px;
-  font-size:14px;
+  color:#123c69;
 }
 
 /* VIDEO */
 
-.video-section{
-  margin:25px 0;
-  padding:20px;
-  background:#EEF6FB;
+.video-box{
+  margin-top:25px;
+  background:#f1f7fc;
+  padding:18px;
   border-radius:16px;
-  text-align:center;
 }
 
-.video-section h3{
-  color:#173B5C;
+.video-box h2{
+  text-align:center;
+  color:#123c69;
 }
 
 .video-wrapper{
   position:relative;
   width:100%;
   max-width:760px;
-  margin:18px auto;
+  margin:auto;
   aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:15px;
 }
 
 .video-wrapper iframe{
   width:100%;
   height:100%;
   border:0;
-  border-radius:14px;
 }
 
 /* WORDS */
 
-.section{
-  margin:30px 0;
-}
-
-.section h3{
-  color:#173B5C;
-  font-size:23px;
-}
-
-.picture-grid{
+.word-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:15px;
+  margin-top:15px;
 }
 
 .word-card{
-  background:#EEF6FB;
+  background:#fff7e6;
+  padding:18px;
   border-radius:15px;
-  padding:18px 10px;
   text-align:center;
-  font-size:18px;
-  font-weight:bold;
 }
 
 .word-card .emoji{
+  font-size:45px;
+}
+
+.word-card strong{
   display:block;
-  font-size:48px;
-  margin-bottom:8px;
+  font-size:22px;
+  margin-top:8px;
 }
 
 /* TRACING */
 
 .trace-box{
+  margin-top:25px;
+  padding:20px;
+  background:#f8f8f8;
+  border-radius:16px;
   text-align:center;
 }
 
-canvas{
-  width:100%;
-  max-width:650px;
-  height:250px;
-  background:#fff;
-  border:3px dashed #167D7F;
-  border-radius:15px;
-  touch-action:none;
-}
-
 .trace-letter{
-  font-size:110px;
-  color:#DDEFE3;
-  margin-bottom:-210px;
-  position:relative;
-  pointer-events:none;
-}
-
-.trace-buttons{
-  margin-top:15px;
-}
-
-button{
-  font-family:inherit;
-}
-
-.clear-btn,
-.practice-btn,
-.next-btn{
-  border:none;
-  background:#167D7F;
-  color:white;
-  padding:12px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  margin:5px;
-  font-size:15px;
-}
-
-/* POEM */
-
-.rhyme-box{
-  background:#FFF9E8;
-  border-left:6px solid #F6C85F;
+  font-size:130px;
+  color:#cbd5df;
+  font-weight:bold;
+  border:3px dashed #9eb5ca;
   padding:20px;
-  border-radius:10px;
-  line-height:1.8;
-  font-size:18px;
+  border-radius:15px;
 }
 
-/* STORY */
+/* POEM STORY */
 
-.story-box{
-  background:#F4FAF5;
+.content-box{
+  background:#eef7ff;
   padding:20px;
-  border-radius:14px;
+  border-radius:16px;
+  margin-top:20px;
   line-height:1.7;
+}
+
+.content-box h2{
+  color:#123c69;
 }
 
 /* PRACTICE */
 
-.practice-box{
-  background:#EEF6FB;
+.practice{
+  background:#fff4d6;
   padding:20px;
-  border-radius:15px;
+  border-radius:16px;
+  margin-top:20px;
 }
 
-.option{
-  display:block;
-  width:100%;
-  text-align:left;
-  background:white;
-  border:2px solid #D8E4EA;
-  padding:14px;
-  margin:8px 0;
-  border-radius:10px;
+.practice button{
+  background:#123c69;
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:10px 18px;
+  margin:5px;
   cursor:pointer;
-  font-size:17px;
-}
-
-.option:hover{
-  border-color:#167D7F;
-}
-
-.result{
-  font-weight:bold;
-  margin-top:12px;
 }
 
 /* NAVIGATION */
 
-.lesson-navigation{
+.navigation{
   display:flex;
   justify-content:space-between;
   gap:10px;
-  margin-top:35px;
+  margin-top:25px;
 }
 
-.lesson-navigation button{
-  flex:1;
-  border:none;
-  padding:14px;
-  border-radius:10px;
-  background:#173B5C;
+.navigation button{
+  background:#123c69;
   color:white;
+  border:0;
+  padding:12px 20px;
+  border-radius:10px;
   cursor:pointer;
-  font-size:15px;
-}
-
-.back{
-  text-align:center;
-  margin:30px 0;
-}
-
-.back a{
-  color:#167D7F;
-  font-weight:bold;
-  text-decoration:none;
 }
 
 footer{
-  background:#173B5C;
+  margin-top:35px;
+  background:#123c69;
   color:white;
   text-align:center;
   padding:25px;
-  margin-top:30px;
-  font-size:14px;
 }
-
-/* MOBILE */
 
 @media(max-width:600px){
-
-  header h1{
-    font-size:23px;
+  .letter-grid{
+    grid-template-columns:repeat(6,1fr);
   }
 
-  nav a{
-    display:inline-block;
-    margin:5px;
+  .letter-btn{
+    font-size:21px;
+    padding:10px 2px;
   }
-
-  .hero h2{
-    font-size:27px;
-  }
-
-  .lesson{
-    padding:18px;
-  }
-
-  .big-letter{
-    font-size:75px;
-  }
-
-  .trace-letter{
-    font-size:90px;
-  }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>KDCreativeLab</h1>
+<h1>🌟 KDCreativeLab</h1>
+<p>Capital Letters – Learn One Letter at a Time</p>
+</header>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="beginner.html">Beginner</a>
-<a href="capital-letters.html">Capital Letters</a>
-<a href="small-letters.html">Small Letters</a>
 </nav>
-
-</header>
-
-
-<section class="hero">
-
-<h2>🔤 Learn Capital Letters A–Z</h2>
-
-<p>
-Learn every capital letter through its sound, picture words,
-Jolly Phonics, tracing, stories and practice.
-</p>
-
-</section>
-
 
 <div class="container">
 
-<h2 style="text-align:center;color:#173B5C;">
-Choose a Letter
-</h2>
+<a class="back" href="beginner.html">← Back to Beginner</a>
+
+<h2>🔤 Choose a Letter</h2>
 
 <div class="letter-grid" id="letterGrid"></div>
 
+<section class="lesson">
 
-<div class="lesson" id="lesson"></div>
+<div class="letter-title" id="letter">A</div>
 
+<div class="sound" id="sound">
+Sound: /a/
+</div>
 
-<div class="back">
-<a href="beginner.html">← Back to Beginner Learning Path</a>
+<!-- JOLLY PHONICS VIDEO -->
+
+<div class="video-box">
+
+<h2>🎵 Jolly Phonics Sound</h2>
+
+<p style="text-align:center;">
+Tap play to hear the <strong>Jolly Phonics song for this letter only.</strong>
+</p>
+
+<div class="video-wrapper">
+
+<iframe
+id="jollyVideo"
+src=""
+title="Jolly Phonics"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
 </div>
 
 </div>
 
+<!-- WORDS -->
+
+<div class="content-box">
+
+<h2>🖼️ Words for this Letter</h2>
+
+<div class="word-grid" id="words"></div>
+
+</div>
+
+<!-- TRACING -->
+
+<div class="trace-box">
+
+<h2>✏️ Trace the Letter</h2>
+
+<div class="trace-letter" id="traceLetter">
+A
+</div>
+
+<p>Trace the letter with your finger or pencil.</p>
+
+</div>
+
+<!-- POEM -->
+
+<div class="content-box">
+
+<h2>🎵 Letter Poem</h2>
+
+<p id="poem"></p>
+
+</div>
+
+<!-- STORY -->
+
+<div class="content-box">
+
+<h2>📖 Short Story</h2>
+
+<p id="story"></p>
+
+</div>
+
+<!-- PRACTICE -->
+
+<div class="practice">
+
+<h2>🧠 Practice</h2>
+
+<p id="practiceQuestion"></p>
+
+<button onclick="showAnswer()">Show Answer</button>
+
+<p id="answer"></p>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<button onclick="previousLetter()">← Previous</button>
+
+<button onclick="nextLetter()">Next →</button>
+
+</div>
+
+</section>
+
+</div>
 
 <footer>
-
-KDCreativeLab © 2026  
-<br>
-Learn • Practice • Grow 🌱
-
+KDCreativeLab 🌱 | Learn • Practice • Grow
 </footer>
 
 
 <script>
 
-/* --------------------------------
-   LETTER DATA
--------------------------------- */
+/*
+====================================================
+LETTER DATA
+====================================================
+*/
 
 const letters = {
 
 A:{
- sound:"/æ/",
- words:[
-  ["🐜","Ant"],
-  ["🍎","Apple"],
-  ["🐊","Alligator"],
-  ["⚓","Anchor"],
-  ["🐾","Animal"],
-  ["💪","Arm"]
- ],
- rhyme:"A, a — ants on my arms!",
- story:"An ant walks onto an arm. Another ant joins it. Soon there are many ants! The child gently brushes them away.",
- correct:["Ant","Apple","Alligator","Anchor"],
- wrong:["Ball","Cat","Dog","Fish"]
+sound:"/a/",
+video:"Ak4V3cZYAfY",
+words:[
+["🍎","apple"],
+["🐜","ant"],
+["🐊","alligator"],
+["🪓","axe"],
+["🐒","ape"]
+],
+poem:"A is for apple, red and round. A is for ant, walking on the ground. A says /a/ — let's say it together!",
+story:"An ant walks to an apple. The ant sees a big apple. The ant is happy.",
+question:"Which word begins with A?  apple / ball / cat",
+answer:"Apple 🍎"
 },
 
 B:{
- sound:"/b/",
- words:[
-  ["⚽","Ball"],
-  ["🎈","Balloon"],
-  ["🦋","Butterfly"],
-  ["🍌","Banana"],
-  ["🚌","Bus"],
-  ["🐝","Bee"]
- ],
- rhyme:"B, b — bring your ball!",
- story:"Ben brings his blue ball. He bounces the ball and plays with his friends.",
- correct:["Ball","Banana","Bus","Bee"],
- wrong:["Apple","Cat","Dog","Fish"]
+sound:"/b/",
+video:"REPLACE_WITH_B_VIDEO_ID",
+words:[
+["⚽","ball"],
+["🦋","butterfly"],
+["🐝","bee"],
+["🎈","balloon"],
+["🍌","banana"]
+],
+poem:"B is for ball and B is for bee. B says /b/ — say it with me!",
+story:"Ben has a big ball. The ball is blue. Ben plays with his ball.",
+question:"Which word begins with B?  ball / cat / dog",
+answer:"Ball ⚽"
 },
 
 C:{
- sound:"/k/",
- words:[
-  ["🐱","Cat"],
-  ["🚗","Car"],
-  ["🍰","Cake"],
-  ["🕯️","Candle"],
-  ["🐪","Camel"],
-  ["🥕","Carrot"]
- ],
- rhyme:"C, c — cats can climb!",
- story:"A little cat climbs onto a chair. It looks around and then jumps down.",
- correct:["Cat","Car","Cake","Camel"],
- wrong:["Ball","Dog","Fish","Apple"]
+sound:"/k/",
+video:"REPLACE_WITH_C_VIDEO_ID",
+words:[
+["🐱","cat"],
+["🚗","car"],
+["🍰","cake"],
+["🐄","cow"],
+["🕯️","candle"]
+],
+poem:"C is for cat and C is for car. C says /k/ — now say it!",
+story:"A cat sits near a car. The cat sees a cake. The cat is happy.",
+question:"Which word begins with C?  cat / dog / fish",
+answer:"Cat 🐱"
 },
 
 D:{
- sound:"/d/",
- words:[
-  ["🐶","Dog"],
-  ["🦆","Duck"],
-  ["🥁","Drum"],
-  ["🚪","Door"],
-  ["🐬","Dolphin"],
-  ["🍩","Donut"]
- ],
- rhyme:"D, d — drum and dance!",
- story:"Dan has a little drum. He taps the drum and dances happily.",
- correct:["Dog","Duck","Drum","Door"],
- wrong:["Apple","Ball","Cat","Fish"]
+sound:"/d/",
+video:"REPLACE_WITH_D_VIDEO_ID",
+words:[
+["🐶","dog"],
+["🦆","duck"],
+["🥁","drum"],
+["🍩","donut"],
+["🦖","dinosaur"]
+],
+poem:"D is for dog and D is for drum. D says /d/. Here it comes!",
+story:"Dan has a drum. His dog sits near him. Dan taps the drum.",
+question:"Which word begins with D?  dog / fish / goat",
+answer:"Dog 🐶"
 },
 
 E:{
- sound:"/e/",
- words:[
-  ["🥚","Egg"],
-  ["🐘","Elephant"],
-  ["🦅","Eagle"],
-  ["✏️","Eraser"],
-  ["🌍","Earth"],
-  ["🚪","Entrance"]
- ],
- rhyme:"E, e — every egg is easy!",
- story:"Ella sees an elephant near the edge of the forest. She watches it quietly.",
- correct:["Egg","Elephant","Eagle","Eraser"],
- wrong:["Ball","Cat","Dog","Fish"]
+sound:"/e/",
+video:"REPLACE_WITH_E_VIDEO_ID",
+words:[
+["🥚","egg"],
+["🐘","elephant"],
+["👂","ear"],
+["🦅","eagle"],
+["🚪","entry"]
+],
+poem:"E is for egg and E is for elephant. E says /e/ — say it!",
+story:"An elephant sees an egg. The egg is small. The elephant walks away.",
+question:"Which word begins with E?  egg / ball / cat",
+answer:"Egg 🥚"
 },
 
 F:{
- sound:"/f/",
- words:[
-  ["🐟","Fish"],
-  ["🦊","Fox"],
-  ["🌸","Flower"],
-  ["🐸","Frog"],
-  ["🔥","Fire"],
-  ["🍴","Fork"]
- ],
- rhyme:"F, f — fish can flip!",
- story:"A little fish flips in the water. A frog watches from a leaf.",
- correct:["Fish","Fox","Flower","Frog"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/f/",
+video:"REPLACE_WITH_F_VIDEO_ID",
+words:[
+["🐟","fish"],
+["🦊","fox"],
+["🐸","frog"],
+["🌸","flower"],
+["🪭","fan"]
+],
+poem:"F is for fish and F is for fox. F says /f/ — no stopping us!",
+story:"A fox sees a fish. The fish swims away. The fox sits near the pond.",
+question:"Which word begins with F?  fish / goat / hat",
+answer:"Fish 🐟"
 },
 
 G:{
- sound:"/g/",
- words:[
-  ["🐐","Goat"],
-  ["🦒","Giraffe"],
-  ["🎁","Gift"],
-  ["🍇","Grapes"],
-  ["🌿","Grass"],
-  ["🥛","Glass"]
- ],
- rhyme:"G, g — green grass grows!",
- story:"A goat walks across green grass. It stops near a garden and looks at the grapes.",
- correct:["Goat","Giraffe","Grapes","Grass"],
- wrong:["Apple","Ball","Cat","Fish"]
+sound:"/g/",
+video:"REPLACE_WITH_G_VIDEO_ID",
+words:[
+["🐐","goat"],
+["🎁","gift"],
+["🍇","grapes"],
+["🦒","giraffe"],
+["🌳","garden"]
+],
+poem:"G is for goat and G is for grapes. G says /g/ — let's make the sound!",
+story:"A goat is in the garden. It sees some grapes. The goat is hungry.",
+question:"Which word begins with G?  goat / hen / fish",
+answer:"Goat 🐐"
 },
 
 H:{
- sound:"/h/",
- words:[
-  ["🐴","Horse"],
-  ["🏠","House"],
-  ["🎩","Hat"],
-  ["✋","Hand"],
-  ["❤️","Heart"],
-  ["🐹","Hamster"]
- ],
- rhyme:"H, h — hop and hurry!",
- story:"Harry puts on his hat and hurries home. His horse is waiting near the house.",
- correct:["Horse","House","Hat","Hand"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/h/",
+video:"REPLACE_WITH_H_VIDEO_ID",
+words:[
+["🐔","hen"],
+["🏠","house"],
+["🎩","hat"],
+["🐴","horse"],
+["✋","hand"]
+],
+poem:"H is for hat and H is for hen. H says /h/ — say it again!",
+story:"A hen sits near a house. A hat is on the chair. The hen walks away.",
+question:"Which word begins with H?  hat / apple / dog",
+answer:"Hat 🎩"
 },
 
 I:{
- sound:"/ɪ/",
- words:[
-  ["🦎","Iguana"],
-  ["🖋️","Ink"],
-  ["🐞","Insect"],
-  ["🍦","Ice cream"],
-  ["🏝️","Island"],
-  ["🧊","Ice"]
- ],
- rhyme:"I, i — insects inside!",
- story:"An insect lands near a little pot of ink. It quickly flies away.",
- correct:["Insect","Ink","Iguana","Ice"],
- wrong:["Ball","Cat","Dog","Fish"]
+sound:"/i/",
+video:"REPLACE_WITH_I_VIDEO_ID",
+words:[
+["🦎","iguana"],
+["🍦","ice cream"],
+["🖋️","ink"],
+["🧊","ice"],
+["🐜","insect"]
+],
+poem:"I is for insect and I is for ink. I says /i/ — now think!",
+story:"An insect sits near some ink. It walks across the table.",
+question:"Which word begins with I?  insect / dog / cat",
+answer:"Insect 🐜"
 },
 
 J:{
- sound:"/dʒ/",
- words:[
-  ["🫙","Jar"],
-  ["🧃","Juice"],
-  ["🧥","Jacket"],
-  ["🦒","Jellyfish"],
-  ["🛩️","Jet"],
-  ["🕹️","Joystick"]
- ],
- rhyme:"J, j — jump and jog!",
- story:"Jack drinks juice from a jar. Then he puts on his jacket and goes outside.",
- correct:["Jar","Juice","Jacket","Jet"],
- wrong:["Apple","Ball","Cat","Fish"]
+sound:"/j/",
+video:"REPLACE_WITH_J_VIDEO_ID",
+words:[
+["🍓","jam"],
+["🧃","juice"],
+["🧥","jacket"],
+["🦘","jaguar"],
+["🪼","jellyfish"]
+],
+poem:"J is for jam and J is for juice. J says /j/ — let's produce!",
+story:"Jane has some jam. She puts jam on her bread. Jane drinks juice.",
+question:"Which word begins with J?  jam / fish / goat",
+answer:"Jam 🍓"
 },
 
 K:{
- sound:"/k/",
- words:[
-  ["🪁","Kite"],
-  ["🔑","Key"],
-  ["🐨","Koala"],
-  ["🥝","Kiwi"],
-  ["👑","King"],
-  ["🥋","Karate"]
- ],
- rhyme:"K, k — kick the kite!",
- story:"Kate flies a kite in the sky. She holds the kite string carefully.",
- correct:["Kite","Key","Koala","Kiwi"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/k/",
+video:"REPLACE_WITH_K_VIDEO_ID",
+words:[
+["🐱","kitten"],
+["🪁","kite"],
+["🔑","key"],
+["👑","king"],
+["🥝","kiwi"]
+],
+poem:"K is for kite and K is for key. K says /k/ — say it with me!",
+story:"Kiran has a kite. The kite flies high. Kiran holds the key.",
+question:"Which word begins with K?  kite / dog / fish",
+answer:"Kite 🪁"
 },
 
 L:{
- sound:"/l/",
- words:[
-  ["🦁","Lion"],
-  ["🍋","Lemon"],
-  ["🦎","Lizard"],
-  ["🍃","Leaf"],
-  ["💡","Lamp"],
-  ["🪜","Ladder"]
- ],
- rhyme:"L, l — little leaves!",
- story:"A lion rests under a tree. A little leaf falls beside him.",
- correct:["Lion","Lemon","Lizard","Leaf"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/l/",
+video:"REPLACE_WITH_L_VIDEO_ID",
+words:[
+["🦁","lion"],
+["🍋","lemon"],
+["💡","lamp"],
+["🍃","leaf"],
+["🦎","lizard"]
+],
+poem:"L is for lion and L is for leaf. L says /l/ — nice and clear!",
+story:"A lion walks near a tree. A leaf falls down. The lion looks at it.",
+question:"Which word begins with L?  lion / cat / dog",
+answer:"Lion 🦁"
 },
 
 M:{
- sound:"/m/",
- words:[
-  ["🐒","Monkey"],
-  ["🌙","Moon"],
-  ["🥭","Mango"],
-  ["🐭","Mouse"],
-  ["🥛","Milk"],
-  ["👩","Mother"]
- ],
- rhyme:"M, m — monkeys move!",
- story:"A monkey climbs a tree and finds a sweet mango.",
- correct:["Monkey","Moon","Mango","Mouse"],
- wrong:["Ball","Cat","Dog","Fish"]
+sound:"/m/",
+video:"REPLACE_WITH_M_VIDEO_ID",
+words:[
+["🐒","monkey"],
+["🌙","moon"],
+["🥭","mango"],
+["🐭","mouse"],
+["🥛","milk"]
+],
+poem:"M is for monkey and M is for moon. M says /m/ — say it soon!",
+story:"A monkey sees the moon. It eats a mango and drinks some milk.",
+question:"Which word begins with M?  mango / dog / fish",
+answer:"Mango 🥭"
 },
 
 N:{
- sound:"/n/",
- words:[
-  ["👃","Nose"],
-  ["🪺","Nest"],
-  ["🌙","Night"],
-  ["📰","Newspaper"],
-  ["👩‍⚕️","Nurse"],
-  ["🥜","Nut"]
- ],
- rhyme:"N, n — nose and nest!",
- story:"A little bird builds a nest near a tree. It brings small twigs to make it strong.",
- correct:["Nose","Nest","Night","Nurse"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/n/",
+video:"REPLACE_WITH_N_VIDEO_ID",
+words:[
+["👃","nose"],
+["🪺","nest"],
+["🌙","night"],
+["🥜","nut"],
+["📰","newspaper"]
+],
+poem:"N is for nose and N is for nest. N says /n/ — you know the rest!",
+story:"A bird has a nest. It rests in the nest at night.",
+question:"Which word begins with N?  nest / ball / dog",
+answer:"Nest 🪺"
 },
 
 O:{
- sound:"/ɒ/",
- words:[
-  ["🐙","Octopus"],
-  ["🍊","Orange"],
-  ["🦉","Owl"],
-  ["🐂","Ox"],
-  ["🫒","Olive"],
-  ["🔥","Oven"]
- ],
- rhyme:"O, o — octopus in the ocean!",
- story:"An octopus swims through the ocean. It moves its arms gently through the water.",
- correct:["Octopus","Orange","Owl","Ox"],
- wrong:["Ball","Cat","Dog","Fish"]
+sound:"/o/",
+video:"REPLACE_WITH_O_VIDEO_ID",
+words:[
+["🍊","orange"],
+["🐙","octopus"],
+["🐂","ox"],
+["🦉","owl"],
+["🫒","olive"]
+],
+poem:"O is for orange and O is for ox. O says /o/ — let's talk!",
+story:"An ox sees an orange. An owl sits in a tree nearby.",
+question:"Which word begins with O?  orange / fish / goat",
+answer:"Orange 🍊"
 },
 
 P:{
- sound:"/p/",
- words:[
-  ["🐷","Pig"],
-  ["🐧","Penguin"],
-  ["🍕","Pizza"],
-  ["✏️","Pencil"],
-  ["🌱","Plant"],
-  ["🥞","Pancake"]
- ],
- rhyme:"P, p — pick a pencil!",
- story:"Pia picks up her pencil and draws a pretty plant.",
- correct:["Pig","Penguin","Pizza","Pencil"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/p/",
+video:"REPLACE_WITH_P_VIDEO_ID",
+words:[
+["🐷","pig"],
+["🍕","pizza"],
+["✏️","pencil"],
+["🦜","parrot"],
+["🥞","pancake"]
+],
+poem:"P is for pig and P is for pizza. P says /p/ — isn't that easy?",
+story:"A pig sees a pizza. It wants to eat it. But the pizza is for Pam!",
+question:"Which word begins with P?  pig / dog / cat",
+answer:"Pig 🐷"
 },
 
 Q:{
- sound:"/kw/",
- words:[
-  ["👑","Queen"],
-  ["❓","Question"],
-  ["🪶","Quill"],
-  ["🛏️","Quilt"],
-  ["🏃","Quick"],
-  ["⚔️","Quest"]
- ],
- rhyme:"Q, q — queen asks a question!",
- story:"The queen has a question. She asks it politely and waits for an answer.",
- correct:["Queen","Question","Quill","Quilt"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/kw/",
+video:"REPLACE_WITH_Q_VIDEO_ID",
+words:[
+["👸","queen"],
+["🪶","quill"],
+["❓","question"],
+["🧩","quiz"],
+["🛏️","quilt"]
+],
+poem:"Q is for queen and Q is for quilt. Q says /kw/ — say it!",
+story:"The queen has a quilt. She sits on the quilt and reads a book.",
+question:"Which word begins with Q?  queen / dog / fish",
+answer:"Queen 👸"
 },
 
 R:{
- sound:"/r/",
- words:[
-  ["🐇","Rabbit"],
-  ["🌈","Rainbow"],
-  ["🚀","Rocket"],
-  ["🤖","Robot"],
-  ["🌹","Rose"],
-  ["💍","Ring"]
- ],
- rhyme:"R, r — run, rabbit, run!",
- story:"A rabbit runs across the grass and stops near a red rose.",
- correct:["Rabbit","Rainbow","Rocket","Rose"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/r/",
+video:"REPLACE_WITH_R_VIDEO_ID",
+words:[
+["🐇","rabbit"],
+["🌈","rainbow"],
+["🚀","rocket"],
+["🌹","rose"],
+["🐀","rat"]
+],
+poem:"R is for rabbit and R is for rose. R says /r/ — off it goes!",
+story:"A rabbit sees a rainbow. It runs near a red rose.",
+question:"Which word begins with R?  rabbit / cat / dog",
+answer:"Rabbit 🐇"
 },
 
 S:{
- sound:"/s/",
- words:[
-  ["🐍","Snake"],
-  ["☀️","Sun"],
-  ["⭐","Star"],
-  ["🧦","Sock"],
-  ["🥄","Spoon"],
-  ["🐌","Snail"]
- ],
- rhyme:"S, s — snake in the grass!",
- story:"A small snake slides through the grass. It stops under a sunny tree.",
- correct:["Snake","Sun","Star","Sock"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/s/",
+video:"REPLACE_WITH_S_VIDEO_ID",
+words:[
+["☀️","sun"],
+["🐍","snake"],
+["⭐","star"],
+["🧦","sock"],
+["🥪","sandwich"]
+],
+poem:"S is for sun and S is for snake. S says /s/ — make the sound!",
+story:"The sun is up. A snake sits near a stone. It sees a star.",
+question:"Which word begins with S?  sun / dog / cat",
+answer:"Sun ☀️"
 },
 
 T:{
- sound:"/t/",
- words:[
-  ["🐯","Tiger"],
-  ["🐢","Turtle"],
-  ["🌳","Tree"],
-  ["🚌","Train"],
-  ["🎪","Tent"],
-  ["🍅","Tomato"]
- ],
- rhyme:"T, t — tap the table!",
- story:"Tom sees a turtle near a tree. The turtle moves slowly across the grass.",
- correct:["Tiger","Turtle","Tree","Tomato"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/t/",
+video:"REPLACE_WITH_T_VIDEO_ID",
+words:[
+["🐯","tiger"],
+["🌳","tree"],
+["🐢","turtle"],
+["🍅","tomato"],
+["🚂","train"]
+],
+poem:"T is for tiger and T is for tree. T says /t/ — say it with me!",
+story:"A tiger walks near a tree. A turtle sits under the tree.",
+question:"Which word begins with T?  tiger / dog / fish",
+answer:"Tiger 🐯"
 },
 
 U:{
- sound:"/ʌ/",
- words:[
-  ["☂️","Umbrella"],
-  ["🦄","Unicorn"],
-  ["👖","Underwear"],
-  ["⬆️","Up"],
-  ["☔","Under"],
-  ["🎁","Unwrap"]
- ],
- rhyme:"U, u — up, up, up!",
- story:"Uma opens her umbrella when the rain begins. She looks up at the cloudy sky.",
- correct:["Umbrella","Unicorn","Up","Under"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/u/",
+video:"REPLACE_WITH_U_VIDEO_ID",
+words:[
+["☂️","umbrella"],
+["🦄","unicorn"],
+["⬆️","up"],
+["🧥","uniform"],
+["🪑","upholstery"]
+],
+poem:"U is for up and U is for umbrella. U says /u/!",
+story:"Uma has an umbrella. She looks up at the sky.",
+question:"Which word begins with U?  umbrella / dog / cat",
+answer:"Umbrella ☂️"
 },
 
 V:{
- sound:"/v/",
- words:[
-  ["🚐","Van"],
-  ["🎻","Violin"],
-  ["🌋","Volcano"],
-  ["🥕","Vegetable"],
-  ["🦺","Vest"],
-  ["🏺","Vase"]
- ],
- rhyme:"V, v — violin vibrates!",
- story:"Vina plays a violin. The music fills the room.",
- correct:["Van","Violin","Volcano","Vegetable"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/v/",
+video:"REPLACE_WITH_V_VIDEO_ID",
+words:[
+["🚐","van"],
+["🎻","violin"],
+["🌋","volcano"],
+["🐦","vulture"],
+["💼","vest"]
+],
+poem:"V is for van and V is for violin. V says /v/ — let's begin!",
+story:"A van stops near a violin shop. Vikram sees a violin.",
+question:"Which word begins with V?  van / dog / fish",
+answer:"Van 🚐"
 },
 
 W:{
- sound:"/w/",
- words:[
-  ["🐋","Whale"],
-  ["🍉","Watermelon"],
-  ["⌚","Watch"],
-  ["🌊","Water"],
-  ["🪟","Window"],
-  ["🐺","Wolf"]
- ],
- rhyme:"W, w — water and waves!",
- story:"A whale swims through the water. Big waves move behind it.",
- correct:["Whale","Watermelon","Water","Window"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/w/",
+video:"REPLACE_WITH_W_VIDEO_ID",
+words:[
+["🐳","whale"],
+["🍉","watermelon"],
+["🌊","water"],
+["⌚","watch"],
+["🐺","wolf"]
+],
+poem:"W is for water and W is for whale. W says /w/!",
+story:"A whale swims in the water. A wolf watches from the shore.",
+question:"Which word begins with W?  whale / cat / dog",
+answer:"Whale 🐳"
 },
 
 X:{
- sound:"/ks/",
- words:[
-  ["🩻","X-ray"],
-  ["🎼","Xylophone"],
-  ["📦","X-box"],
-  ["❌","X mark"]
- ],
- rhyme:"X, x — x-ray helps us see!",
- story:"The doctor uses an X-ray to look at a bone.",
- correct:["X-ray","Xylophone","X-box","X mark"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/ks/",
+video:"REPLACE_WITH_X_VIDEO_ID",
+words:[
+["📦","box"],
+["🦊","fox"],
+["6️⃣","six"],
+["🧱","wax"],
+["🎁","box"]
+],
+poem:"X is special! You often hear /ks/ at the end of words like fox and box.",
+story:"A fox sees a box. The box is on the floor. The fox sits near it.",
+question:"Which word contains the X sound?  fox / dog / hen",
+answer:"Fox 🦊"
 },
 
 Y:{
- sound:"/j/",
- words:[
-  ["🪀","Yo-yo"],
-  ["🧶","Yarn"],
-  ["🛥️","Yacht"],
-  ["🧘","Yoga"],
-  ["🍳","Yolk"],
-  ["🐃","Yak"]
- ],
- rhyme:"Y, y — yo-yo goes down!",
- story:"Yara plays with a yo-yo. It goes down and comes back up.",
- correct:["Yo-yo","Yarn","Yoga","Yak"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/y/",
+video:"REPLACE_WITH_Y_VIDEO_ID",
+words:[
+["🪀","yo-yo"],
+["💛","yellow"],
+["🧶","yarn"],
+["🛶","yacht"],
+["🥔","yam"]
+],
+poem:"Y is for yellow and Y is for yo-yo. Y says /y/!",
+story:"Yash has a yellow yo-yo. He plays with it in the yard.",
+question:"Which word begins with Y?  yellow / dog / fish",
+answer:"Yellow 💛"
 },
 
 Z:{
- sound:"/z/",
- words:[
-  ["🦓","Zebra"],
-  ["🦓","Zoo"],
-  ["🧭","Zigzag"],
-  ["💡","Zero"],
-  ["⚡","Zap"],
-  ["🤐","Zip"]
- ],
- rhyme:"Z, z — zigzag and zip!",
- story:"Zara visits the zoo. She sees a zebra walking in a zigzag path.",
- correct:["Zebra","Zoo","Zigzag","Zip"],
- wrong:["Apple","Ball","Cat","Dog"]
+sound:"/z/",
+video:"REPLACE_WITH_Z_VIDEO_ID",
+words:[
+["🦓","zebra"],
+["🦁","zoo"],
+["🤐","zip"],
+["🧥","zipper"],
+["⚡","zero"]
+],
+poem:"Z is for zebra and Z is for zoo. Z says /z/ — say it too!",
+story:"Zara goes to the zoo. She sees a zebra and smiles.",
+question:"Which word begins with Z?  zebra / dog / cat",
+answer:"Zebra 🦓"
 }
 
 };
 
 
-/* --------------------------------
-   CREATE LETTER BUTTONS
--------------------------------- */
+/*
+====================================================
+LETTER BUTTONS
+====================================================
+*/
 
 const letterGrid = document.getElementById("letterGrid");
 
-const alphabet = Object.keys(letters);
-
-alphabet.forEach(letter => {
+Object.keys(letters).forEach(letter => {
 
   const button = document.createElement("button");
 
   button.className = "letter-btn";
   button.textContent = letter;
 
-  button.onclick = () => showLesson(letter);
+  button.onclick = () => loadLetter(letter);
 
   letterGrid.appendChild(button);
 
 });
 
 
-/* --------------------------------
-   SHOW LESSON
--------------------------------- */
+/*
+====================================================
+LOAD LETTER
+====================================================
+*/
 
-let currentLetter = "A";
+let currentIndex = 0;
 
-function showLesson(letter){
-
-  currentLetter = letter;
-
-  document.querySelectorAll(".letter-btn")
-    .forEach(btn => {
-      btn.classList.toggle(
-        "active",
-        btn.textContent === letter
-      );
-    });
+function loadLetter(letter){
 
   const data = letters[letter];
 
-  const wordsHTML = data.words.map(word => `
-    <div class="word-card">
-      <span class="emoji">${word[0]}</span>
-      ${word[1]}
-    </div>
-  `).join("");
+  document.getElementById("letter").textContent = letter;
 
+  document.getElementById("sound").textContent =
+    "Sound: " + data.sound;
 
-  const correctHTML = data.correct.map(word => `
-    <button class="option"
-      onclick="checkAnswer(this, '${word}', '${letter}')">
-      ${word}
-    </button>
-  `).join("");
+  document.getElementById("traceLetter").textContent =
+    letter;
 
+  document.getElementById("poem").textContent =
+    data.poem;
 
-  const wrongHTML = data.wrong.slice(0,2).map(word => `
-    <button class="option"
-      onclick="checkAnswer(this, '${word}', '${letter}')">
-      ${word}
-    </button>
-  `).join("");
+  document.getElementById("story").textContent =
+    data.story;
 
+  document.getElementById("practiceQuestion").textContent =
+    data.question;
 
-  document.getElementById("lesson").innerHTML = `
+  document.getElementById("answer").textContent = "";
 
-    <div class="lesson-title">
+  /*
+  IMPORTANT:
+  Each letter gets its own official video ID.
+  */
 
-      <div class="big-letter">
-        ${letter}
-      </div>
+  const video = document.getElementById("jollyVideo");
 
-      <h2>Letter ${letter}</h2>
+  if(data.video.startsWith("REPLACE_")){
 
-      <p>
-        Learn the letter, sound and words that begin with it.
-      </p>
+    video.src = "";
 
-    </div>
-
-
-    <div class="sound-box">
-
-      <div>
-        <strong>Phonics Sound</strong>
-      </div>
-
-      <div class="sound">
-        ${data.sound}
-      </div>
-
-      <div class="sound-note">
-        This sound should be learned from the Jolly Phonics audio below.
-      </div>
-
-    </div>
-
-
-    <!-- JOLLY PHONICS VIDEO -->
-
-    <div class="video-section">
-
-      <h3>🎵 Jolly Phonics Sound & Song</h3>
-
-      <p>
-        Listen to the original Jolly Phonics A–Z resource.
-        Say the sound and watch the action.
-      </p>
-
-      <div class="video-wrapper">
-
-        <iframe
-          src="https://www.youtube.com/embed/wDmDWi-JaAc"
-          title="Jolly Phonics letters sound A-Z"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-
-      </div>
-
-      <p style="font-size:13px;">
-        Original video is hosted on YouTube.
-      </p>
-
-    </div>
-
-
-    <!-- WORDS -->
-
-    <div class="section">
-
-      <h3>🖼️ Words Beginning With ${letter}</h3>
-
-      <p>
-        Look at the pictures and say the beginning sound.
-      </p>
-
-      <div class="picture-grid">
-        ${wordsHTML}
-      </div>
-
-    </div>
-
-
-    <!-- TRACING -->
-
-    <div class="section trace-box">
-
-      <h3>✏️ Trace Letter ${letter}</h3>
-
-      <p>
-        Use your finger or mouse to trace the letter.
-      </p>
-
-      <div style="position:relative;">
-
-        <div class="trace-letter">
-          ${letter}
-        </div>
-
-        <canvas id="traceCanvas"
-                width="650"
-                height="250">
-        </canvas>
-
-      </div>
-
-      <div class="trace-buttons">
-
-        <button class="clear-btn"
-          onclick="clearCanvas()">
-          Clear
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- RHYME -->
-
-    <div class="section">
-
-      <h3>🎶 Jolly Phonics Reminder</h3>
-
-      <div class="rhyme-box">
-        ${data.rhyme}
-      </div>
-
-      <p style="font-size:14px;">
-        Use the original Jolly Phonics song/video above for
-        the complete song and action.
-      </p>
-
-    </div>
-
-
-    <!-- STORY -->
-
-    <div class="section">
-
-      <h3>📖 ${letter} Story</h3>
-
-      <div class="story-box">
-        ${data.story}
-      </div>
-
-    </div>
-
-
-    <!-- PRACTICE -->
-
-    <div class="section">
-
-      <h3>🔎 Find Words Beginning With ${letter}</h3>
-
-      <div class="practice-box">
-
-        <p>
-          Which words begin with the ${letter} sound?
-        </p>
-
-        ${correctHTML}
-        ${wrongHTML}
-
-        <div class="result" id="result"></div>
-
-      </div>
-
-    </div>
-
-
-    <!-- NAVIGATION -->
-
-    <div class="lesson-navigation">
-
-      <button onclick="previousLetter()">
-        ← Previous
-      </button>
-
-      <button onclick="nextLetter()">
-        Next →
-      </button>
-
-    </div>
-
-  `;
-
-
-  setupCanvas(letter);
-
-  window.scrollTo({
-    top:document.getElementById("lesson").offsetTop - 20,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* --------------------------------
-   PRACTICE ANSWER
--------------------------------- */
-
-function checkAnswer(button, word, letter){
-
-  const result = document.getElementById("result");
-
-  const data = letters[letter];
-
-  if(data.correct.includes(word)){
-
-    result.textContent =
-      "✅ Correct! " + word +
-      " begins with the " + letter + " sound.";
-
-    button.style.borderColor = "#167D7F";
+    video.parentElement.innerHTML =
+      "<div style='padding:35px;text-align:center;background:white;border-radius:12px;'>" +
+      "🎵 Official Jolly Phonics video for <strong>" +
+      letter +
+      "</strong> will be connected here." +
+      "</div>";
 
   }else{
 
-    result.textContent =
-      "❌ Try again. Listen to the sound carefully.";
+    video.src =
+      "https://www.youtube.com/embed/" +
+      data.video +
+      "?rel=0";
 
   }
+
+
+  /*
+  WORDS
+  */
+
+  const wordsBox = document.getElementById("words");
+
+  wordsBox.innerHTML = "";
+
+  data.words.forEach(item => {
+
+    const card = document.createElement("div");
+
+    card.className = "word-card";
+
+    card.innerHTML =
+      "<div class='emoji'>" +
+      item[0] +
+      "</div>" +
+      "<strong>" +
+      item[1] +
+      "</strong>";
+
+    wordsBox.appendChild(card);
+
+  });
+
+
+  /*
+  CURRENT INDEX
+  */
+
+  currentIndex =
+    Object.keys(letters).indexOf(letter);
 
 }
 
 
-/* --------------------------------
-   PREVIOUS / NEXT
--------------------------------- */
+/*
+====================================================
+PRACTICE ANSWER
+====================================================
+*/
+
+function showAnswer(){
+
+  const letter =
+    Object.keys(letters)[currentIndex];
+
+  document.getElementById("answer").textContent =
+    "Answer: " + letters[letter].answer;
+
+}
+
+
+/*
+====================================================
+PREVIOUS
+====================================================
+*/
 
 function previousLetter(){
 
-  let index = alphabet.indexOf(currentLetter);
+  const allLetters =
+    Object.keys(letters);
 
-  if(index > 0){
+  currentIndex--;
 
-    showLesson(
-      alphabet[index - 1]
-    );
-
+  if(currentIndex < 0){
+    currentIndex = allLetters.length - 1;
   }
+
+  loadLetter(allLetters[currentIndex]);
 
 }
 
+
+/*
+====================================================
+NEXT
+====================================================
+*/
 
 function nextLetter(){
 
-  let index = alphabet.indexOf(currentLetter);
+  const allLetters =
+    Object.keys(letters);
 
-  if(index < alphabet.length - 1){
+  currentIndex++;
 
-    showLesson(
-      alphabet[index + 1]
-    );
-
+  if(currentIndex >= allLetters.length){
+    currentIndex = 0;
   }
+
+  loadLetter(allLetters[currentIndex]);
 
 }
 
 
-/* --------------------------------
-   TRACING CANVAS
--------------------------------- */
+/*
+====================================================
+START WITH A
+====================================================
+*/
 
-let canvas;
-let ctx;
-let drawing = false;
-
-function setupCanvas(letter){
-
-  canvas = document.getElementById("traceCanvas");
-
-  if(!canvas) return;
-
-  ctx = canvas.getContext("2d");
-
-  ctx.lineWidth = 6;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-
-
-  function getPosition(event){
-
-    const rect = canvas.getBoundingClientRect();
-
-    let clientX;
-    let clientY;
-
-    if(event.touches && event.touches.length){
-
-      clientX = event.touches[0].clientX;
-      clientY = event.touches[0].clientY;
-
-    }else{
-
-      clientX = event.clientX;
-      clientY = event.clientY;
-
-    }
-
-    return {
-      x:(clientX - rect.left) *
-        (canvas.width / rect.width),
-
-      y:(clientY - rect.top) *
-        (canvas.height / rect.height)
-    };
-
-  }
-
-
-  function startDrawing(event){
-
-    drawing = true;
-
-    const pos = getPosition(event);
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-      pos.x,
-      pos.y
-    );
-
-    event.preventDefault();
-
-  }
-
-
-  function draw(event){
-
-    if(!drawing) return;
-
-    const pos = getPosition(event);
-
-    ctx.lineTo(
-      pos.x,
-      pos.y
-    );
-
-    ctx.stroke();
-
-    event.preventDefault();
-
-  }
-
-
-  function stopDrawing(){
-
-    drawing = false;
-
-  }
-
-
-  canvas.onpointerdown = startDrawing;
-  canvas.onpointermove = draw;
-  canvas.onpointerup = stopDrawing;
-  canvas.onpointerleave = stopDrawing;
-
-}
-
-
-function clearCanvas(){
-
-  if(canvas && ctx){
-
-    ctx.clearRect(
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-
-  }
-
-}
-
-
-/* --------------------------------
-   START WITH A
--------------------------------- */
-
-showLesson("A");
+loadLetter("A");
 
 </script>
 
