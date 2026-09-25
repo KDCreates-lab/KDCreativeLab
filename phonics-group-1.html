@@ -1,1 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Jolly Phonics Group 1 | KDCreativeLab</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#EEF6FB;
+  color:#1F2933;
+}
+
+header{
+  background:#173B5C;
+  color:white;
+  text-align:center;
+  padding:18px;
+}
+
+header h1{
+  margin:0;
+  font-size:27px;
+}
+
+nav{
+  margin-top:12px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 7px;
+  font-size:14px;
+}
+
+.hero{
+  background:white;
+  text-align:center;
+  padding:35px 20px;
+}
+
+.hero h2{
+  color:#173B5C;
+  font-size:31px;
+  margin:0 0 12px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.6;
+}
+
+.container{
+  max-width:1050px;
+  margin:auto;
+  padding:25px 18px;
+}
+
+.section{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:25px;
+  box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.section h2{
+  color:#173B5C;
+  text-align:center;
+}
+
+.section h3{
+  color:#167D7F;
+}
+
+/* SOUND CARDS */
+
+.sound-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.sound-card{
+  background:#EEF6FB;
+  border-radius:15px;
+  padding:20px 10px;
+  text-align:center;
+}
+
+.sound-letter{
+  font-size:45px;
+  font-weight:bold;
+  color:#173B5C;
+}
+
+.sound{
+  font-size:25px;
+  color:#167D7F;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+/* VIDEO */
+
+.video-box{
+  text-align:center;
+}
+
+.video-wrapper{
+  position:relative;
+  width:100%;
+  max-width:760px;
+  aspect-ratio:16/9;
+  margin:20px auto;
+}
+
+.video-wrapper iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:15px;
+}
+
+/* WORD CARDS */
+
+.word-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:14px;
+}
+
+.word-card{
+  background:#F4FAF5;
+  border-radius:14px;
+  padding:18px;
+  text-align:center;
+}
+
+.word-card .word{
+  font-size:25px;
+  font-weight:bold;
+  color:#173B5C;
+}
+
+.word-card .meaning{
+  margin-top:6px;
+  font-size:14px;
+}
+
+/* BLENDING */
+
+.blend-card{
+  background:#FFF9E8;
+  border-left:6px solid #F6C85F;
+  border-radius:12px;
+  padding:20px;
+  margin:15px 0;
+}
+
+.blend{
+  font-size:28px;
+  font-weight:bold;
+  letter-spacing:7px;
+  text-align:center;
+  color:#173B5C;
+}
+
+.arrow{
+  text-align:center;
+  font-size:24px;
+  margin:8px;
+}
+
+.answer{
+  text-align:center;
+  font-size:32px;
+  font-weight:bold;
+  color:#167D7F;
+}
+
+/* PRACTICE */
+
+.practice{
+  background:#EEF6FB;
+  padding:20px;
+  border-radius:15px;
+  margin-top:15px;
+}
+
+.option{
+  display:block;
+  width:100%;
+  background:white;
+  border:2px solid #D8E4EA;
+  border-radius:10px;
+  padding:14px;
+  margin:9px 0;
+  text-align:left;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.option:hover{
+  border-color:#167D7F;
+}
+
+.result{
+  font-weight:bold;
+  margin-top:12px;
+}
+
+/* SENTENCES */
+
+.sentence{
+  background:#F4FAF5;
+  padding:16px;
+  margin:10px 0;
+  border-radius:12px;
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* WORD BUILDER */
+
+.builder{
+  text-align:center;
+}
+
+.letters{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:20px 0;
+}
+
+.letter-button{
+  border:none;
+  background:#173B5C;
+  color:white;
+  width:55px;
+  height:55px;
+  border-radius:12px;
+  font-size:25px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.current-word{
+  min-height:55px;
+  background:#EEF6FB;
+  border-radius:12px;
+  padding:15px;
+  font-size:30px;
+  font-weight:bold;
+  color:#167D7F;
+}
+
+.clear-button{
+  border:none;
+  background:#167D7F;
+  color:white;
+  padding:12px 22px;
+  border-radius:10px;
+  cursor:pointer;
+  margin-top:12px;
+}
+
+/* READING */
+
+.reading-box{
+  background:#FFF9E8;
+  padding:22px;
+  border-radius:15px;
+  line-height:2;
+  font-size:22px;
+}
+
+/* GOAL */
+
+.goal{
+  background:#DDEFE3;
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+}
+
+.goal h2{
+  color:#173B5C;
+}
+
+.back{
+  text-align:center;
+  padding:15px;
+}
+
+.back a{
+  color:#167D7F;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  background:#173B5C;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:20px;
+}
+
+@media(max-width:600px){
+
+  header h1{
+    font-size:23px;
+  }
+
+  .hero h2{
+    font-size:26px;
+  }
+
+  .section{
+    padding:18px;
+  }
+
+  .blend{
+    font-size:23px;
+  }
+
+  .sentence{
+    font-size:19px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<h1>KDCreativeLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="beginner.html">Beginner</a>
+<a href="capital-letters.html">Capital Letters</a>
+<a href="phonics-group-1.html">Phonics Group 1</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h2>🔤 Jolly Phonics Group 1</h2>
+
+<p>
+Learn the first six sounds and use them to build words,
+blend sounds and begin reading.
+</p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- INTRODUCTION -->
+
+<div class="section">
+
+<h2>🌱 Meet Group 1</h2>
+
+<p style="text-align:center;line-height:1.7;">
+
+In Group 1 we learn these six sounds:
+
+<br><br>
+
+<strong>s • a • t • i • p • n</strong>
+
+<br><br>
+
+Once we know these sounds, we can start blending them
+to read simple words.
+
+</p>
+
+
+<div class="sound-grid">
+
+<div class="sound-card">
+<div class="sound-letter">s</div>
+<div class="sound">/s/</div>
+</div>
+
+<div class="sound-card">
+<div class="sound-letter">a</div>
+<div class="sound">/æ/</div>
+</div>
+
+<div class="sound-card">
+<div class="sound-letter">t</div>
+<div class="sound">/t/</div>
+</div>
+
+<div class="sound-card">
+<div class="sound-letter">i</div>
+<div class="sound">/ɪ/</div>
+</div>
+
+<div class="sound-card">
+<div class="sound-letter">p</div>
+<div class="sound">/p/</div>
+</div>
+
+<div class="sound-card">
+<div class="sound-letter">n</div>
+<div class="sound">/n/</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- JOLLY PHONICS -->
+
+<div class="section video-box">
+
+<h2>🎵 Jolly Phonics Sound & Action</h2>
+
+<p>
+Listen to the original Jolly Phonics resource and practise
+the sound with its action.
+</p>
+
+<div class="video-wrapper">
+
+<iframe
+src="https://www.youtube.com/embed/wDmDWi-JaAc"
+title="Jolly Phonics letters sound A-Z"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<p style="font-size:13px;">
+Original resource is hosted on YouTube.
+</p>
+
+</div>
+
+
+<!-- SOUND PRACTICE -->
+
+<div class="section">
+
+<h2>👂 Hear the Sound</h2>
+
+<p style="text-align:center;line-height:1.7;">
+
+Look at each letter. Say its sound clearly.
+
+<br><br>
+
+<strong>
+s → /s/
+&nbsp;&nbsp;
+a → /æ/
+&nbsp;&nbsp;
+t → /t/
+&nbsp;&nbsp;
+i → /ɪ/
+&nbsp;&nbsp;
+p → /p/
+&nbsp;&nbsp;
+n → /n/
+</strong>
+
+</p>
+
+<div class="practice">
+
+<h3>Which letter makes the /s/ sound?</h3>
+
+<button class="option" onclick="soundAnswer(this,true)">
+A
+</button>
+
+<button class="option" onclick="soundAnswer(this,false)">
+S
+</button>
+
+<button class="option" onclick="soundAnswer(this,false)">
+T
+</button>
+
+<div id="soundResult" class="result"></div>
+
+</div>
+
+</div>
+
+
+<!-- FIRST WORDS -->
+
+<div class="section">
+
+<h2>🖼️ Our First Words</h2>
+
+<p>
+These words can be made using the sounds we have learned.
+</p>
+
+<div class="word-grid">
+
+<div class="word-card">
+<div class="word">at</div>
+<div class="meaning">📍 at</div>
+</div>
+
+<div class="word-card">
+<div class="word">an</div>
+<div class="meaning">🔤 an</div>
+</div>
+
+<div class="word-card">
+<div class="word">as</div>
+<div class="meaning">🔤 as</div>
+</div>
+
+<div class="word-card">
+<div class="word">sat</div>
+<div class="meaning">🪑 sat</div>
+</div>
+
+<div class="word-card">
+<div class="word">sit</div>
+<div class="meaning">🪑 sit</div>
+</div>
+
+<div class="word-card">
+<div class="word">tap</div>
+<div class="meaning">👆 tap</div>
+</div>
+
+<div class="word-card">
+<div class="word">tip</div>
+<div class="meaning">☝️ tip</div>
+</div>
+
+<div class="word-card">
+<div class="word">pin</div>
+<div class="meaning">📌 pin</div>
+</div>
+
+<div class="word-card">
+<div class="word">pan</div>
+<div class="meaning">🍳 pan</div>
+</div>
+
+<div class="word-card">
+<div class="word">nap</div>
+<div class="meaning">😴 nap</div>
+</div>
+
+<div class="word-card">
+<div class="word">pit</div>
+<div class="meaning">🕳️ pit</div>
+</div>
+
+<div class="word-card">
+<div class="word">pat</div>
+<div class="meaning">👋 pat</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BLENDING -->
+
+<div class="section">
+
+<h2>🔗 Let's Blend!</h2>
+
+<p style="text-align:center;">
+Say each sound slowly. Then join the sounds together.
+</p>
+
+
+<div class="blend-card">
+
+<div class="blend">
+s + a + t
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+<div class="answer">
+sat
+</div>
+
+</div>
+
+
+<div class="blend-card">
+
+<div class="blend">
+s + i + t
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+<div class="answer">
+sit
+</div>
+
+</div>
+
+
+<div class="blend-card">
+
+<div class="blend">
+p + i + n
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+<div class="answer">
+pin
+</div>
+
+</div>
+
+
+<div class="blend-card">
+
+<div class="blend">
+p + a + n
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+<div class="answer">
+pan
+</div>
+
+</div>
+
+
+<div class="blend-card">
+
+<div class="blend">
+n + a + p
+</div>
+
+<div class="arrow">
+↓
+</div>
+
+<div class="answer">
+nap
+</div>
+
+</div>
+
+</div>
+
+
+<!-- WORD BUILDER -->
+
+<div class="section builder">
+
+<h2>🧩 Build a Word</h2>
+
+<p>
+Tap the letters to build a word.
+</p>
+
+<div class="current-word" id="currentWord">
+_
+</div>
+
+<div class="letters">
+
+<button class="letter-button"
+onclick="addLetter('s')">
+s
+</button>
+
+<button class="letter-button"
+onclick="addLetter('a')">
+a
+</button>
+
+<button class="letter-button"
+onclick="addLetter('t')">
+t
+</button>
+
+<button class="letter-button"
+onclick="addLetter('i')">
+i
+</button>
+
+<button class="letter-button"
+onclick="addLetter('p')">
+p
+</button>
+
+<button class="letter-button"
+onclick="addLetter('n')">
+n
+</button>
+
+</div>
+
+<button class="clear-button"
+onclick="clearWord()">
+Clear
+</button>
+
+</div>
+
+
+<!-- READING -->
+
+<div class="section">
+
+<h2>📖 First Reading</h2>
+
+<p>
+Read the words slowly. Blend the sounds if needed.
+</p>
+
+<div class="reading-box">
+
+sat &nbsp;&nbsp; sit &nbsp;&nbsp; tap &nbsp;&nbsp; tip
+
+<br>
+
+pin &nbsp;&nbsp; pan &nbsp;&nbsp; nap &nbsp;&nbsp; pat
+
+<br>
+
+at &nbsp;&nbsp; an &nbsp;&nbsp; as &nbsp;&nbsp; pit
+
+</div>
+
+</div>
+
+
+<!-- SENTENCES -->
+
+<div class="section">
+
+<h2>📚 First Sentences</h2>
+
+<p>
+Read only after the child is comfortable blending the words.
+</p>
+
+<div class="sentence">
+I sit.
+</div>
+
+<div class="sentence">
+I nap.
+</div>
+
+<div class="sentence">
+I tap.
+</div>
+
+<div class="sentence">
+I sit at a pit.
+</div>
+
+<p style="font-size:14px;">
+<strong>Teacher note:</strong>
+As new phonics groups are introduced, we will gradually
+increase the number of words and sentences the child can read.
+</p>
+
+</div>
+
+
+<!-- PRACTICE -->
+
+<div class="section">
+
+<h2>🎯 Can You Read?</h2>
+
+<div class="practice">
+
+<h3>What word do these sounds make?</h3>
+
+<p style="font-size:24px;text-align:center;">
+p + i + n
+</p>
+
+<button class="option"
+onclick="wordAnswer(this,false)">
+pan
+</button>
+
+<button class="option"
+onclick="wordAnswer(this,true)">
+pin
+</button>
+
+<button class="option"
+onclick="wordAnswer(this,false)">
+nap
+</button>
+
+<div id="wordResult" class="result"></div>
+
+</div>
+
+
+<div class="practice">
+
+<h3>Which word starts with /s/?</h3>
+
+<button class="option"
+onclick="startAnswer(this,true)">
+sat
+</button>
+
+<button class="option"
+onclick="startAnswer(this,false)">
+pin
+</button>
+
+<button class="option"
+onclick="startAnswer(this,false)">
+tap
+</button>
+
+<div id="startResult" class="result"></div>
+
+</div>
+
+</div>
+
+
+<!-- GROUP GOAL -->
+
+<div class="goal">
+
+<h2>🌟 Group 1 Goal</h2>
+
+<p style="line-height:1.7;">
+
+By the end of Group 1, the child should be able to:
+
+<br><br>
+
+<strong>
+✔ Recognise s, a, t, i, p, n
+<br>
+✔ Say their sounds
+<br>
+✔ Blend simple sounds
+<br>
+✔ Read simple Group 1 words
+<br>
+✔ Build words using learned letters
+<br>
+✔ Begin reading simple sentences
+</strong>
+
+</p>
+
+</div>
+
+
+<div class="back">
+
+<a href="beginner.html">
+← Back to Beginner Learning Path
+</a>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+KDCreativeLab © 2026
+<br>
+Learn • Practice • Grow 🌱
+
+</footer>
+
+
+<script>
+
+
+/* SOUND PRACTICE */
+
+function soundAnswer(button,correct){
+
+const result =
+document.getElementById("soundResult");
+
+if(correct){
+
+result.textContent =
+"✅ Correct! S makes the /s/ sound.";
+
+}else{
+
+result.textContent =
+"❌ Try again. Listen carefully to the sound.";
+
+}
+
+}
+
+
+/* WORD ANSWER */
+
+function wordAnswer(button,correct){
+
+const result =
+document.getElementById("wordResult");
+
+if(correct){
+
+result.textContent =
+"✅ Correct! p + i + n = pin.";
+
+}else{
+
+result.textContent =
+"❌ Try again. Blend the sounds slowly.";
+
+}
+
+}
+
+
+/* STARTING SOUND */
+
+function startAnswer(button,correct){
+
+const result =
+document.getElementById("startResult");
+
+if(correct){
+
+result.textContent =
+"✅ Correct! sat starts with /s/.";
+
+}else{
+
+result.textContent =
+"❌ Try again. Say the first sound.";
+
+}
+
+}
+
+
+/* WORD BUILDER */
+
+let currentWord = "";
+
+function addLetter(letter){
+
+currentWord += letter;
+
+document.getElementById("currentWord")
+.textContent = currentWord;
+
+}
+
+
+function clearWord(){
+
+currentWord = "";
+
+document.getElementById("currentWord")
+.textContent = "_";
+
+}
+
+</script>
+
+
+</body>
+</html>
