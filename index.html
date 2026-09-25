@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KDCreativeLab - Learn & Grow</title>
+
+    <title>KDCreativeLab | Learn, Practice & Grow</title>
+
+    <meta name="description" content="KDCreativeLab is a simple learning space for children, teachers and parents with English lessons, practice activities and educational resources.">
 
     <style>
         * {
@@ -14,121 +17,248 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #f7f9fc;
-            color: #222;
+            background: #f8fbfd;
+            color: #1f2933;
             line-height: 1.6;
         }
 
+        /* HEADER */
         header {
-            background: #ffffff;
-            padding: 18px 30px;
+            background: #173b5c;
+            color: white;
+            padding: 16px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: bold;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #333;
-            margin-left: 20px;
-            font-weight: 600;
+        nav {
+            display: flex;
+            gap: 20px;
         }
 
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
         .hero {
+            background: linear-gradient(135deg, #173b5c, #167d7f);
+            color: white;
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #eaf3ff, #ffffff);
+            padding: 75px 20px;
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 44px;
             margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 18px;
             max-width: 650px;
             margin: auto;
-            color: #555;
+            font-size: 18px;
         }
 
-        .button {
+        .hero-buttons {
+            margin-top: 28px;
+        }
+
+        .btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 13px 25px;
-            background: #2563eb;
-            color: white;
+            padding: 13px 24px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 8px;
             font-weight: bold;
+            margin: 6px;
         }
 
+        .primary-btn {
+            background: #f6c85f;
+            color: #173b5c;
+        }
+
+        .secondary-btn {
+            background: white;
+            color: #173b5c;
+        }
+
+        /* GENERAL */
         section {
-            padding: 55px 20px;
-            max-width: 1100px;
-            margin: auto;
+            padding: 55px 7%;
         }
 
-        section h2 {
+        .section-title {
             text-align: center;
-            margin-bottom: 30px;
             font-size: 30px;
+            color: #173b5c;
+            margin-bottom: 10px;
         }
 
+        .section-subtitle {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 35px;
+            color: #5f6c76;
+        }
+
+        /* LEVEL CARDS */
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .card {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            text-align: center;
+            padding: 25px 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #1f2933;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 2px solid transparent;
         }
 
-        .card h3 {
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #167d7f;
+        }
+
+        .card-icon {
+            font-size: 38px;
             margin-bottom: 10px;
         }
 
-        .card p {
-            color: #666;
+        .card h3 {
+            color: #173b5c;
+            margin-bottom: 8px;
         }
 
-        footer {
+        /* LEARNING JOURNEY */
+        .journey {
+            background: #eef6fb;
+        }
+
+        .journey-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .journey-step {
+            background: white;
+            padding: 18px 20px;
+            border-radius: 12px;
             text-align: center;
-            padding: 25px;
-            background: #1f2937;
-            color: white;
-            margin-top: 30px;
+            min-width: 130px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 12px;
-                padding: 15px;
+        .arrow {
+            font-size: 25px;
+            color: #167d7f;
+        }
+
+        /* RESOURCES */
+        .resource-card {
+            text-align: center;
+        }
+
+        /* TEACHERS / PARENTS */
+        .support {
+            background: #ddeee3;
+        }
+
+        /* WHY SECTION */
+        .why-list {
+            max-width: 700px;
+            margin: auto;
+            display: grid;
+            gap: 14px;
+        }
+
+        .why-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #173b5c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* MOBILE */
+        @media (max-width: 850px) {
+            nav {
+                display: none;
             }
 
-            nav a {
-                margin: 5px;
-                display: inline-block;
-                font-size: 14px;
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 55px 18px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 45px 18px;
+            }
+
+            .journey-container {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            .section-title {
+                font-size: 26px;
             }
         }
     </style>
@@ -136,107 +266,276 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
-        <div class="logo">KDCreativeLab</div>
+        <div class="logo">🌱 KDCreativeLab</div>
 
         <nav>
-            <a href="#home">Home</a>
-            <a href="#learn">Learn</a>
-            <a href="#worksheets">Worksheets</a>
-            <a href="#reading">Reading</a>
-            <a href="#speaking">Speaking</a>
+            <a href="index.html">Home</a>
+            <a href="beginner.html">Learn</a>
+            <a href="#">Worksheets</a>
+            <a href="#">Reading</a>
+            <a href="#">Speaking</a>
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <h1>Learn, Practice & Grow 🌱</h1>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <h1>Learn. Practice. Grow. 🌱</h1>
 
         <p>
-            A learning space designed to help children build strong foundations,
-            improve their skills and learn step by step.
+            A simple learning space where children can build strong English
+            foundations through lessons, practice and activities.
         </p>
 
-        <a href="#learn" class="button">Start Learning</a>
+        <div class="hero-buttons">
+            <a href="beginner.html" class="btn primary-btn">
+                Start Learning →
+            </a>
+
+            <a href="#resources" class="btn secondary-btn">
+                Explore Resources
+            </a>
+        </div>
+
     </section>
 
-    <section id="learn">
-        <h2>📚 Learning Levels</h2>
+
+    <!-- LEARNING LEVELS -->
+    <section>
+
+        <h2 class="section-title">Choose Your Learning Level</h2>
+
+        <p class="section-subtitle">
+            Start from the level that matches your learning journey.
+        </p>
 
         <div class="cards">
 
             <a href="beginner.html" class="card">
-                <h3>🟢 Beginner</h3>
-                <p>Start with letters, sounds, words and basic sentences.</p>
+                <div class="card-icon">🌱</div>
+                <h3>Beginner</h3>
+                <p>
+                    Letters, sounds, simple words and basic reading.
+                </p>
+            </a>
+
+            <a href="#" class="card">
+                <div class="card-icon">🌿</div>
+                <h3>Elementary</h3>
+                <p>
+                    Vocabulary, sentences, grammar and reading practice.
+                </p>
+            </a>
+
+            <a href="#" class="card">
+                <div class="card-icon">🌳</div>
+                <h3>Developing</h3>
+                <p>
+                    Grammar, writing, comprehension and speaking skills.
+                </p>
+            </a>
+
+            <a href="#" class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Advanced</h3>
+                <p>
+                    Advanced English, communication and writing skills.
+                </p>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEARNING JOURNEY -->
+    <section class="journey">
+
+        <h2 class="section-title">Your Learning Journey</h2>
+
+        <p class="section-subtitle">
+            Learn step by step — from letters to confident communication.
+        </p>
+
+        <div class="journey-container">
+
+            <div class="journey-step">
+                🔤<br>
+                <strong>Letters</strong>
             </div>
 
-            <div class="card">
-                <h3>🟡 Elementary</h3>
-                <p>Build vocabulary, grammar, reading and writing skills.</p>
+            <div class="arrow">→</div>
+
+            <div class="journey-step">
+                🔊<br>
+                <strong>Sounds</strong>
             </div>
 
-            <div class="card">
-                <h3>🟠 Developing</h3>
-                <p>Improve grammar, comprehension and communication.</p>
+            <div class="arrow">→</div>
+
+            <div class="journey-step">
+                📝<br>
+                <strong>Words</strong>
             </div>
 
-            <div class="card">
-                <h3>🔵 Advanced</h3>
-                <p>Develop confident speaking, writing and creative skills.</p>
+            <div class="arrow">→</div>
+
+            <div class="journey-step">
+                💬<br>
+                <strong>Sentences</strong>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="journey-step">
+                📖<br>
+                <strong>Reading</strong>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="journey-step">
+                🗣️<br>
+                <strong>Speaking</strong>
             </div>
 
         </div>
+
     </section>
 
-    <section id="worksheets">
-        <h2>📝 Worksheets</h2>
+
+    <!-- RESOURCES -->
+    <section id="resources">
+
+        <h2 class="section-title">Practice & Resources</h2>
+
+        <p class="section-subtitle">
+            Learn something new and then practise it.
+        </p>
 
         <div class="cards">
-            <div class="card">
-                <h3>English Practice</h3>
-                <p>Practice activities for different learning levels.</p>
-            </div>
 
-            <div class="card">
-                <h3>Grammar Practice</h3>
-                <p>Simple grammar exercises to strengthen understanding.</p>
-            </div>
-        </div>
-    </section>
+            <a href="#" class="card resource-card">
+                <div class="card-icon">📄</div>
+                <h3>Worksheets</h3>
+                <p>
+                    Printable practice sheets for children.
+                </p>
+            </a>
 
-    <section id="reading">
-        <h2>📖 Reading Corner</h2>
-
-        <div class="cards">
-            <div class="card">
-                <h3>Beginner Stories</h3>
-                <p>Short and simple stories for early readers.</p>
-            </div>
-
-            <div class="card">
+            <a href="#" class="card resource-card">
+                <div class="card-icon">📖</div>
                 <h3>Reading Practice</h3>
-                <p>Passages with questions and vocabulary practice.</p>
-            </div>
+                <p>
+                    Short and simple reading activities.
+                </p>
+            </a>
+
+            <a href="#" class="card resource-card">
+                <div class="card-icon">🗣️</div>
+                <h3>Speaking Practice</h3>
+                <p>
+                    Useful English sentences for daily communication.
+                </p>
+            </a>
+
+            <a href="#" class="card resource-card">
+                <div class="card-icon">🎯</div>
+                <h3>Activities</h3>
+                <p>
+                    Interactive activities for better practice.
+                </p>
+            </a>
+
         </div>
+
     </section>
 
-    <section id="speaking">
-        <h2>🗣️ Speaking Corner</h2>
+
+    <!-- TEACHERS & PARENTS -->
+    <section class="support">
+
+        <h2 class="section-title">For Teachers & Parents</h2>
+
+        <p class="section-subtitle">
+            Resources that make learning easier both inside and outside the classroom.
+        </p>
 
         <div class="cards">
-            <div class="card">
-                <h3>Daily English</h3>
-                <p>Useful sentences for everyday communication.</p>
-            </div>
 
-            <div class="card">
-                <h3>Conversation Practice</h3>
-                <p>Simple conversations to build speaking confidence.</p>
-            </div>
+            <a href="#" class="card">
+                <div class="card-icon">👩‍🏫</div>
+                <h3>For Teachers</h3>
+                <p>
+                    Lesson plans, classroom activities and teaching resources.
+                </p>
+            </a>
+
+            <a href="#" class="card">
+                <div class="card-icon">👨‍👩‍👧</div>
+                <h3>For Parents</h3>
+                <p>
+                    Simple ways to support children's learning at home.
+                </p>
+            </a>
+
         </div>
+
     </section>
 
+
+    <!-- WHY KDCREATIVELAB -->
+    <section>
+
+        <h2 class="section-title">Why KDCreativeLab?</h2>
+
+        <p class="section-subtitle">
+            Learning should be simple, useful and enjoyable.
+        </p>
+
+        <div class="why-list">
+
+            <div class="why-item">
+                🌱 <strong>Step-by-step learning</strong> — Start with the basics and move forward gradually.
+            </div>
+
+            <div class="why-item">
+                📚 <strong>Practice-based learning</strong> — Learn, practise and revise.
+            </div>
+
+            <div class="why-item">
+                🎯 <strong>Simple activities</strong> — Designed to make practice easier.
+            </div>
+
+            <div class="why-item">
+                👩‍🏫 <strong>Teacher-friendly resources</strong> — Useful classroom support.
+            </div>
+
+            <div class="why-item">
+                👨‍👩‍👧 <strong>Parent-friendly</strong> — Simple resources for learning at home.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 KDCreativeLab • Learn from the basics, grow step by step.</p>
+
+        <h3>🌱 KDCreativeLab</h3>
+
+        <p>Learn • Practice • Grow</p>
+
+        <p>
+            A creative space for learning, teaching and educational resources.
+        </p>
+
+        <p>© 2026 KDCreativeLab</p>
+
     </footer>
 
 </body>
