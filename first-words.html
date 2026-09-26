@@ -1,1 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>First Words | KDCreativeLab</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f8f7fc;
+  color:#343143;
+  line-height:1.6;
+}
+
+header{
+  background:#fff;
+  padding:17px 20px;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  color:#66578a;
+}
+
+.logo span{
+  color:#df8b9b;
+}
+
+.back{
+  text-decoration:none;
+  color:#66578a;
+  font-weight:600;
+}
+
+.hero{
+  text-align:center;
+  padding:45px 20px 35px;
+  background:
+    radial-gradient(circle at 10% 20%,#eee7ff 0,transparent 28%),
+    radial-gradient(circle at 90% 20%,#ffe8ed 0,transparent 28%),
+    #fff;
+}
+
+.badge{
+  display:inline-block;
+  background:#eee8fa;
+  color:#66578a;
+  padding:7px 15px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  font-size:38px;
+  color:#403957;
+  margin-bottom:10px;
+}
+
+.hero p{
+  max-width:680px;
+  margin:auto;
+  color:#6e6a79;
+}
+
+.container{
+  max-width:900px;
+  margin:30px auto;
+  padding:0 18px;
+}
+
+.game-card{
+  background:#fff;
+  border-radius:25px;
+  padding:28px;
+  box-shadow:0 8px 30px rgba(76,61,110,.10);
+}
+
+/* PROGRESS */
+
+.progress-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:12px;
+}
+
+.progress-text{
+  font-weight:bold;
+  color:#66578a;
+}
+
+.score{
+  background:#fff0f3;
+  color:#c65f76;
+  padding:7px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.progress-bar{
+  height:9px;
+  background:#eeeaf4;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:30px;
+}
+
+.progress-fill{
+  height:100%;
+  width:0;
+  background:#9b8ac2;
+  transition:.3s;
+}
+
+/* WORD */
+
+.lesson-title{
+  text-align:center;
+  color:#403957;
+  font-size:23px;
+  margin-bottom:7px;
+}
+
+.instruction{
+  text-align:center;
+  color:#777383;
+  margin-bottom:25px;
+}
+
+/* WORD IMAGE */
+
+.word-picture{
+  width:145px;
+  height:145px;
+  margin:0 auto 20px;
+  border-radius:28px;
+  background:#faf7ff;
+  border:3px solid #eee7f7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:75px;
+}
+
+/* SOUND DISPLAY */
+
+.sound-display{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  min-height:75px;
+  margin-bottom:20px;
+}
+
+.sound-box{
+  width:65px;
+  height:65px;
+  border-radius:16px;
+  background:#f0ebff;
+  border:2px solid #dfd6f2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  font-weight:bold;
+  color:#66578a;
+}
+
+.plus{
+  font-size:25px;
+  color:#aaa2b4;
+  font-weight:bold;
+}
+
+/* TARGET */
+
+.target-label{
+  text-align:center;
+  color:#777383;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.target-word{
+  text-align:center;
+  font-size:38px;
+  font-weight:bold;
+  letter-spacing:5px;
+  color:#403957;
+  min-height:55px;
+  margin-bottom:25px;
+}
+
+/* LETTER OPTIONS */
+
+.choose-title{
+  text-align:center;
+  color:#403957;
+  font-size:19px;
+  margin-bottom:15px;
+}
+
+.letter-options{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+  max-width:650px;
+  margin:auto;
+}
+
+.letter-btn{
+  height:58px;
+  border:2px solid #e6e0ef;
+  background:#fff;
+  border-radius:15px;
+  font-size:27px;
+  font-weight:bold;
+  color:#4d4960;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.letter-btn:hover{
+  transform:translateY(-2px);
+  border-color:#b7a8d5;
+  background:#faf8ff;
+}
+
+.letter-btn.used{
+  background:#eeeaf5;
+  color:#aaa4b1;
+  border-color:#ddd7e7;
+  cursor:default;
+}
+
+.letter-btn.correct{
+  background:#e8f8ee;
+  border-color:#65b987;
+  color:#26754a;
+}
+
+.letter-btn.wrong{
+  background:#fff0f2;
+  border-color:#e48b9a;
+  color:#b23d54;
+}
+
+/* FEEDBACK */
+
+.feedback{
+  min-height:32px;
+  text-align:center;
+  margin-top:20px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.correct-text{
+  color:#26754a;
+}
+
+.wrong-text{
+  color:#b23d54;
+}
+
+/* CONTROLS */
+
+.controls{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:20px;
+}
+
+.control-btn{
+  border:none;
+  padding:11px 19px;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.clear-btn{
+  background:#f0ebff;
+  color:#66578a;
+}
+
+.next-btn{
+  background:#66578a;
+  color:white;
+}
+
+/* NAVIGATION */
+
+.navigation{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:30px;
+}
+
+.nav-btn{
+  border:none;
+  padding:12px 21px;
+  border-radius:30px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.previous{
+  background:#f0ebff;
+  color:#66578a;
+}
+
+.next{
+  background:#66578a;
+  color:white;
+}
+
+.nav-btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+/* RESULT */
+
+.result{
+  display:none;
+  text-align:center;
+  padding:25px 5px;
+}
+
+.result-icon{
+  font-size:70px;
+}
+
+.result h2{
+  font-size:30px;
+  color:#403957;
+  margin:10px 0;
+}
+
+.result p{
+  color:#777383;
+}
+
+.final-score{
+  font-size:24px;
+  color:#66578a;
+  font-weight:bold;
+  margin:18px 0 25px;
+}
+
+.restart{
+  border:none;
+  background:#66578a;
+  color:#fff;
+  padding:13px 25px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  color:#898493;
+  font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .game-card{
+    padding:20px 14px;
+  }
+
+  .letter-options{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .sound-display{
+    gap:6px;
+  }
+
+  .sound-box{
+    width:55px;
+    height:55px;
+    font-size:24px;
+  }
+
+  .target-word{
+    font-size:32px;
+  }
+
+  .navigation{
+    flex-direction:column;
+  }
+
+  .nav-btn{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      KD<span>Creative</span>Lab
+    </div>
+
+    <a href="beginner.html" class="back">
+      ← Beginner
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="badge">
+    📖 Step 3 · First Words
+  </div>
+
+  <h1>Build Your First Words</h1>
+
+  <p>
+    Listen to the sounds, blend them together,
+    and build your first readable words.
+  </p>
+
+</section>
+
+
+<div class="container">
+
+  <div class="game-card">
+
+    <div id="game">
+
+      <div class="progress-row">
+
+        <div class="progress-text" id="progressText">
+          Word 1 of 18
+        </div>
+
+        <div class="score" id="scoreText">
+          ⭐ Score: 0
+        </div>
+
+      </div>
+
+
+      <div class="progress-bar">
+
+        <div
+          class="progress-fill"
+          id="progressFill">
+        </div>
+
+      </div>
+
+
+      <h2 class="lesson-title">
+        🧩 Build the Word
+      </h2>
+
+      <p class="instruction">
+        Tap the letters in the correct order.
+      </p>
+
+
+      <div
+        class="word-picture"
+        id="wordPicture">
+        🐱
+      </div>
+
+
+      <div
+        class="sound-display"
+        id="soundDisplay">
+      </div>
+
+
+      <div class="target-label">
+        Your word:
+      </div>
+
+      <div
+        class="target-word"
+        id="targetWord">
+        _
+      </div>
+
+
+      <div class="choose-title">
+        Choose the next letter
+      </div>
+
+
+      <div
+        class="letter-options"
+        id="letterOptions">
+      </div>
+
+
+      <div
+        class="feedback"
+        id="feedback">
+      </div>
+
+
+      <div class="controls">
+
+        <button
+          class="control-btn clear-btn"
+          id="clearBtn">
+          ↩ Clear
+        </button>
+
+        <button
+          class="control-btn next-btn"
+          id="nextWordBtn"
+          style="display:none;">
+          Next Word →
+        </button>
+
+      </div>
+
+
+      <div class="navigation">
+
+        <button
+          class="nav-btn previous"
+          id="previousBtn">
+          ← Previous
+        </button>
+
+        <button
+          class="nav-btn next"
+          id="skipBtn">
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="result"
+      id="result">
+
+      <div class="result-icon">
+        🎉
+      </div>
+
+      <h2>
+        Amazing Reading!
+      </h2>
+
+      <p>
+        You completed your first-word practice.
+      </p>
+
+      <div
+        class="final-score"
+        id="finalScore">
+        Score: 0 / 18
+      </div>
+
+      <button
+        class="restart"
+        onclick="restartGame()">
+        🔄 Practice Again
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  © 2026 KDCreativeLab · Learn English with confidence 🌱
+</footer>
+
+
+<script>
+
+/*
+  IMPORTANT:
+  These words use only the Group 1 sounds:
+  s, a, t, i, p, n
+
+  No later phonics patterns are introduced here.
+*/
+
+const words = [
+
+  {
+    word:"at",
+    letters:["a","t"],
+    picture:"📍"
+  },
+
+  {
+    word:"an",
+    letters:["a","n"],
+    picture:"👤"
+  },
+
+  {
+    word:"as",
+    letters:["a","s"],
+    picture:"➡️"
+  },
+
+  {
+    word:"in",
+    letters:["i","n"],
+    picture:"📦"
+  },
+
+  {
+    word:"is",
+    letters:["i","s"],
+    picture:"❓"
+  },
+
+  {
+    word:"it",
+    letters:["i","t"],
+    picture:"👉"
+  },
+
+  {
+    word:"sat",
+    letters:["s","a","t"],
+    picture:"🪑"
+  },
+
+  {
+    word:"sit",
+    letters:["s","i","t"],
+    picture:"🧘"
+  },
+
+  {
+    word:"tap",
+    letters:["t","a","p"],
+    picture:"👆"
+  },
+
+  {
+    word:"tip",
+    letters:["t","i","p"],
+    picture:"📌"
+  },
+
+  {
+    word:"pat",
+    letters:["p","a","t"],
+    picture:"👏"
+  },
+
+  {
+    word:"pan",
+    letters:["p","a","n"],
+    picture:"🍳"
+  },
+
+  {
+    word:"pin",
+    letters:["p","i","n"],
+    picture:"📍"
+  },
+
+  {
+    word:"pit",
+    letters:["p","i","t"],
+    picture:"🕳️"
+  },
+
+  {
+    word:"nap",
+    letters:["n","a","p"],
+    picture:"😴"
+  },
+
+  {
+    word:"nip",
+    letters:["n","i","p"],
+    picture:"🤏"
+  },
+
+  {
+    word:"snip",
+    letters:["s","n","i","p"],
+    picture:"✂️"
+  },
+
+  {
+    word:"spin",
+    letters:["s","p","i","n"],
+    picture:"🌀"
+  }
+
+];
+
+
+let currentIndex = 0;
+let score = 0;
+let builtLetters = [];
+let wordFinished = false;
+
+
+const wordPicture =
+  document.getElementById("wordPicture");
+
+const soundDisplay =
+  document.getElementById("soundDisplay");
+
+const targetWord =
+  document.getElementById("targetWord");
+
+const letterOptions =
+  document.getElementById("letterOptions");
+
+const feedback =
+  document.getElementById("feedback");
+
+const progressText =
+  document.getElementById("progressText");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const scoreText =
+  document.getElementById("scoreText");
+
+const previousBtn =
+  document.getElementById("previousBtn");
+
+const skipBtn =
+  document.getElementById("skipBtn");
+
+const clearBtn =
+  document.getElementById("clearBtn");
+
+const nextWordBtn =
+  document.getElementById("nextWordBtn");
+
+
+/* LOAD WORD */
+
+function loadWord(){
+
+  const item =
+    words[currentIndex];
+
+  builtLetters = [];
+
+  wordFinished = false;
+
+  wordPicture.textContent =
+    item.picture;
+
+  targetWord.textContent =
+    "_".repeat(item.letters.length);
+
+  feedback.textContent = "";
+
+  feedback.className =
+    "feedback";
+
+  nextWordBtn.style.display =
+    "none";
+
+
+  progressText.textContent =
+    `Word ${currentIndex + 1} of ${words.length}`;
+
+
+  progressFill.style.width =
+    `${((currentIndex + 1) / words.length) * 100}%`;
+
+
+  scoreText.textContent =
+    `⭐ Score: ${score}`;
+
+
+  previousBtn.disabled =
+    currentIndex === 0;
+
+
+  skipBtn.textContent =
+    currentIndex === words.length - 1
+      ? "Finish ✓"
+      : "Next →";
+
+
+  createSoundBoxes(item);
+
+  createLetterOptions(item);
+
+}
+
+
+/* SOUND BOXES */
+
+function createSoundBoxes(item){
+
+  soundDisplay.innerHTML = "";
+
+  item.letters.forEach((letter,index) => {
+
+    const box =
+      document.createElement("div");
+
+    box.className =
+      "sound-box";
+
+    box.textContent =
+      letter;
+
+    soundDisplay.appendChild(box);
+
+
+    if(index < item.letters.length - 1){
+
+      const plus =
+        document.createElement("div");
+
+      plus.className =
+        "plus";
+
+      plus.textContent =
+        "+";
+
+      soundDisplay.appendChild(plus);
+
+    }
+
+  });
+
+}
+
+
+/* LETTER OPTIONS */
+
+function createLetterOptions(item){
+
+  letterOptions.innerHTML = "";
+
+  let choices =
+    [...new Set(item.letters)];
+
+  /*
+    Add a few distractor letters.
+  */
+
+  const distractors =
+    ["a","i","n","p","s","t"]
+      .filter(letter =>
+        !choices.includes(letter)
+      );
+
+  while(
+    choices.length < 6 &&
+    distractors.length > 0
+  ){
+
+    choices.push(
+      distractors.shift()
+    );
+
+  }
+
+
+  choices.sort(() =>
+    Math.random() - 0.5
+  );
+
+
+  choices.forEach(letter => {
+
+    const button =
+      document.createElement("button");
+
+    button.className =
+      "letter-btn";
+
+    button.textContent =
+      letter;
+
+    button.addEventListener(
+      "click",
+      () => selectLetter(button,letter,item)
+    );
+
+    letterOptions.appendChild(button);
+
+  });
+
+}
+
+
+/* SELECT LETTER */
+
+function selectLetter(button,letter,item){
+
+  if(wordFinished) return;
+
+  const position =
+    builtLetters.length;
+
+  const correctLetter =
+    item.letters[position];
+
+
+  if(letter === correctLetter){
+
+    builtLetters.push(letter);
+
+    button.classList.add("used");
+
+    button.disabled = true;
+
+    updateTargetWord();
+
+
+    if(builtLetters.length === item.letters.length){
+
+      completeWord();
+
+    }else{
+
+      feedback.textContent =
+        "✓ Good! Now choose the next letter.";
+
+      feedback.className =
+        "feedback correct-text";
+
+    }
+
+  }else{
+
+    button.classList.add("wrong");
+
+    feedback.textContent =
+      `Try again. Look at the word pattern.`;
+
+    feedback.className =
+      "feedback wrong-text";
+
+
+    setTimeout(() => {
+
+      button.classList.remove("wrong");
+
+    },500);
+
+  }
+
+}
+
+
+/* UPDATE WORD */
+
+function updateTargetWord(){
+
+  const item =
+    words[currentIndex];
+
+  let display = "";
+
+  for(
+    let i = 0;
+    i < item.letters.length;
+    i++
+  ){
+
+    if(i < builtLetters.length){
+
+      display +=
+        builtLetters[i];
+
+    }else{
+
+      display += "_";
+
+    }
+
+  }
+
+  targetWord.textContent =
+    display;
+
+}
+
+
+/* COMPLETE WORD */
+
+function completeWord(){
+
+  wordFinished = true;
+
+  score++;
+
+  scoreText.textContent =
+    `⭐ Score: ${score}`;
+
+  feedback.textContent =
+    `🎉 Great! You built "${words[currentIndex].word}".`;
+
+  feedback.className =
+    "feedback correct-text";
+
+  nextWordBtn.style.display =
+    "inline-block";
+
+}
+
+
+/* CLEAR */
+
+clearBtn.addEventListener(
+  "click",
+  () => {
+
+    loadWord();
+
+  }
+);
+
+
+/* NEXT WORD */
+
+nextWordBtn.addEventListener(
+  "click",
+  () => {
+
+    moveNext();
+
+  }
+);
+
+
+/* SKIP / NEXT */
+
+skipBtn.addEventListener(
+  "click",
+  () => {
+
+    if(
+      currentIndex === words.length - 1
+    ){
+
+      showResult();
+
+    }else{
+
+      moveNext();
+
+    }
+
+  }
+);
+
+
+function moveNext(){
+
+  if(currentIndex < words.length - 1){
+
+    currentIndex++;
+
+    loadWord();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }else{
+
+    showResult();
+
+  }
+
+}
+
+
+/* PREVIOUS */
+
+previousBtn.addEventListener(
+  "click",
+  () => {
+
+    if(currentIndex > 0){
+
+      currentIndex--;
+
+      loadWord();
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    }
+
+  }
+);
+
+
+/* RESULT */
+
+function showResult(){
+
+  document.getElementById("game").style.display =
+    "none";
+
+  document.getElementById("result").style.display =
+    "block";
+
+  document.getElementById("finalScore").textContent =
+    `Score: ${score} / ${words.length}`;
+
+}
+
+
+/* RESTART */
+
+function restartGame(){
+
+  currentIndex = 0;
+
+  score = 0;
+
+  document.getElementById("result").style.display =
+    "none";
+
+  document.getElementById("game").style.display =
+    "block";
+
+  loadWord();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* START */
+
+loadWord();
+
+</script>
+
+</body>
+</html>
