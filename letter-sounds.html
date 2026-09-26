@@ -1,1 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Letter Sounds | KDCreativeLab</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f8f7fc;
+  color:#343143;
+  line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+  background:rgba(255,255,255,.96);
+  padding:17px 20px;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  color:#66578a;
+}
+
+.logo span{
+  color:#df8b9b;
+}
+
+.back{
+  text-decoration:none;
+  color:#66578a;
+  font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  padding:45px 20px 35px;
+  background:
+    radial-gradient(circle at 10% 20%,#eee7ff 0,transparent 28%),
+    radial-gradient(circle at 90% 20%,#ffe8ed 0,transparent 28%),
+    #fff;
+}
+
+.badge{
+  display:inline-block;
+  background:#eee8fa;
+  color:#66578a;
+  padding:7px 15px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  font-size:38px;
+  color:#403957;
+  margin-bottom:10px;
+}
+
+.hero p{
+  max-width:680px;
+  margin:auto;
+  color:#6e6a79;
+}
+
+/* MAIN */
+
+.container{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 18px;
+}
+
+.lesson{
+  background:white;
+  border-radius:25px;
+  padding:28px;
+  box-shadow:0 8px 30px rgba(76,61,110,.10);
+}
+
+/* PROGRESS */
+
+.progress-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:12px;
+}
+
+.progress-text{
+  font-weight:bold;
+  color:#66578a;
+}
+
+.score{
+  background:#fff0f3;
+  color:#c65f76;
+  padding:7px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.progress-bar{
+  height:9px;
+  background:#eeeaf4;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:28px;
+}
+
+.progress-fill{
+  height:100%;
+  width:4%;
+  background:#9b8ac2;
+  transition:.3s;
+}
+
+/* LETTER */
+
+.letter-area{
+  text-align:center;
+}
+
+.big-letter{
+  width:150px;
+  height:150px;
+  margin:10px auto 15px;
+  border-radius:28px;
+  background:#f0ebff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:90px;
+  font-weight:bold;
+  color:#66578a;
+  box-shadow:inset 0 0 0 3px #e3dcf5;
+}
+
+.small-letter{
+  font-size:28px;
+  color:#df8b9b;
+  font-weight:bold;
+}
+
+.sound-label{
+  margin-top:8px;
+  font-size:21px;
+  color:#4d4960;
+  font-weight:bold;
+}
+
+/* SOUND BUTTON */
+
+.sound-btn{
+  margin-top:18px;
+  border:none;
+  background:#66578a;
+  color:white;
+  padding:12px 22px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.sound-btn:hover{
+  background:#554775;
+}
+
+.audio-note{
+  max-width:550px;
+  margin:12px auto 0;
+  padding:10px 15px;
+  border-radius:15px;
+  background:#faf8ff;
+  color:#777383;
+  font-size:13px;
+}
+
+/* PICTURES */
+
+.section-title{
+  text-align:center;
+  margin:32px 0 18px;
+  color:#403957;
+  font-size:22px;
+}
+
+.picture-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  max-width:800px;
+  margin:auto;
+}
+
+.picture-card{
+  background:#faf8ff;
+  border:2px solid #eee8f7;
+  border-radius:18px;
+  padding:16px 10px;
+  text-align:center;
+}
+
+.picture{
+  font-size:45px;
+  margin-bottom:7px;
+}
+
+.picture-word{
+  font-weight:bold;
+  color:#4d4960;
+}
+
+.beginning{
+  font-size:13px;
+  color:#8a8495;
+  margin-top:2px;
+}
+
+/* PRACTICE */
+
+.practice{
+  margin-top:35px;
+  padding:25px;
+  border-radius:22px;
+  background:#fbf9ff;
+  border:1px solid #eee8f7;
+}
+
+.practice h2{
+  text-align:center;
+  color:#403957;
+  margin-bottom:7px;
+}
+
+.practice p{
+  text-align:center;
+  color:#777383;
+  margin-bottom:22px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+  max-width:650px;
+  margin:auto;
+}
+
+.option{
+  border:2px solid #e7e1f0;
+  background:white;
+  border-radius:17px;
+  min-height:70px;
+  padding:10px;
+  font-size:18px;
+  font-weight:bold;
+  color:#4d4960;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.option:hover{
+  transform:translateY(-2px);
+  border-color:#b6a7d5;
+}
+
+.option.correct{
+  background:#e8f8ee;
+  border-color:#67b987;
+  color:#27734a;
+}
+
+.option.wrong{
+  background:#fff0f2;
+  border-color:#e38b99;
+  color:#b23e55;
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+/* FEEDBACK */
+
+.feedback{
+  text-align:center;
+  min-height:30px;
+  margin-top:18px;
+  font-size:17px;
+  font-weight:bold;
+}
+
+.correct-text{
+  color:#27734a;
+}
+
+.wrong-text{
+  color:#b23e55;
+}
+
+/* NAVIGATION */
+
+.navigation{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:30px;
+}
+
+.nav-btn{
+  border:none;
+  padding:12px 20px;
+  border-radius:28px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.previous{
+  background:#f0ebff;
+  color:#66578a;
+}
+
+.next{
+  background:#66578a;
+  color:white;
+}
+
+.nav-btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+/* RESULT */
+
+.result{
+  display:none;
+  text-align:center;
+  padding:25px 5px;
+}
+
+.result-icon{
+  font-size:65px;
+}
+
+.result h2{
+  font-size:30px;
+  color:#403957;
+  margin:10px 0;
+}
+
+.final-score{
+  font-size:23px;
+  font-weight:bold;
+  color:#66578a;
+  margin:15px 0 25px;
+}
+
+.restart{
+  border:none;
+  background:#66578a;
+  color:white;
+  padding:13px 24px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  color:#898493;
+  font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .lesson{
+    padding:20px 14px;
+  }
+
+  .picture-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .options{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .big-letter{
+    width:125px;
+    height:125px;
+    font-size:75px;
+  }
+
+  .navigation{
+    flex-direction:column;
+  }
+
+  .nav-btn{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      KD<span>Creative</span>Lab
+    </div>
+
+    <a href="beginner.html" class="back">
+      ← Beginner
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="badge">
+    🔊 Step 2 · Letter Sounds
+  </div>
+
+  <h1>Letter Sounds</h1>
+
+  <p>
+    Learn the sound of each letter and identify words
+    that begin with that sound.
+  </p>
+
+</section>
+
+
+<div class="container">
+
+  <div class="lesson">
+
+    <!-- GAME -->
+
+    <div id="game">
+
+      <div class="progress-row">
+
+        <div class="progress-text" id="progressText">
+          Letter 1 of 26
+        </div>
+
+        <div class="score" id="scoreText">
+          ⭐ Score: 0
+        </div>
+
+      </div>
+
+
+      <div class="progress-bar">
+
+        <div
+          class="progress-fill"
+          id="progressFill">
+        </div>
+
+      </div>
+
+
+      <!-- LETTER -->
+
+      <div class="letter-area">
+
+        <div
+          class="big-letter"
+          id="bigLetter">
+          A
+        </div>
+
+        <div
+          class="small-letter"
+          id="smallLetter">
+          a
+        </div>
+
+        <div
+          class="sound-label"
+          id="soundLabel">
+          Sound: /ă/
+        </div>
+
+
+        <button
+          class="sound-btn"
+          id="soundButton">
+          🔊 Listen to Sound
+        </button>
+
+
+        <div class="audio-note">
+
+          Real phonics audio will be connected
+          with the verified phonics recording for
+          each letter. No browser TTS is used here.
+
+        </div>
+
+      </div>
+
+
+      <!-- PICTURES -->
+
+      <h2 class="section-title">
+        🖼️ Words Beginning With This Sound
+      </h2>
+
+
+      <div
+        class="picture-grid"
+        id="pictureGrid">
+      </div>
+
+
+      <!-- PRACTICE -->
+
+      <div class="practice">
+
+        <h2>
+          🎯 Beginning Sound Practice
+        </h2>
+
+        <p id="question">
+          Which word begins with the sound?
+        </p>
+
+
+        <div
+          class="options"
+          id="options">
+        </div>
+
+
+        <div
+          class="feedback"
+          id="feedback">
+        </div>
+
+      </div>
+
+
+      <!-- NAVIGATION -->
+
+      <div class="navigation">
+
+        <button
+          class="nav-btn previous"
+          id="previousBtn">
+          ← Previous
+        </button>
+
+        <button
+          class="nav-btn next"
+          id="nextBtn">
+          Next Letter →
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div
+      class="result"
+      id="result">
+
+      <div class="result-icon">
+        🎉
+      </div>
+
+      <h2>
+        Great Work!
+      </h2>
+
+      <p>
+        You completed the Letter Sounds practice.
+      </p>
+
+      <div
+        class="final-score"
+        id="finalScore">
+        Score: 0 / 26
+      </div>
+
+      <button
+        class="restart"
+        onclick="restartGame()">
+        🔄 Practice Again
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  © 2026 KDCreativeLab · Learn English with confidence 🌱
+</footer>
+
+
+<script>
+
+/*
+  LETTER DATA
+
+  The sound labels are learner-friendly representations.
+  Official phonics audio should be connected separately.
+*/
+
+const letters = [
+
+  {
+    letter:"A",
+    small:"a",
+    sound:"/ă/",
+    words:[
+      ["🍎","apple"],
+      ["🐜","ant"],
+      ["🐊","alligator"],
+      ["🦙","animal"]
+    ],
+    options:["apple","ball","cat"]
+  },
+
+  {
+    letter:"B",
+    small:"b",
+    sound:"/b/",
+    words:[
+      ["⚽","ball"],
+      ["🐻","bear"],
+      ["🍌","banana"],
+      ["🚌","bus"]
+    ],
+    options:["ball","cat","fish"]
+  },
+
+  {
+    letter:"C",
+    small:"c",
+    sound:"/k/",
+    words:[
+      ["🐱","cat"],
+      ["🚗","car"],
+      ["🍰","cake"],
+      ["🐄","cow"]
+    ],
+    options:["cat","dog","fish"]
+  },
+
+  {
+    letter:"D",
+    small:"d",
+    sound:"/d/",
+    words:[
+      ["🐶","dog"],
+      ["🦆","duck"],
+      ["🥁","drum"],
+      ["🍩","donut"]
+    ],
+    options:["dog","apple","sun"]
+  },
+
+  {
+    letter:"E",
+    small:"e",
+    sound:"/ĕ/",
+    words:[
+      ["🥚","egg"],
+      ["🐘","elephant"],
+      ["👂","ear"],
+      ["🦅","eagle"]
+    ],
+    options:["egg","fish","ball"]
+  },
+
+  {
+    letter:"F",
+    small:"f",
+    sound:"/f/",
+    words:[
+      ["🐟","fish"],
+      ["🐸","frog"],
+      ["🌸","flower"],
+      ["🦊","fox"]
+    ],
+    options:["fish","dog","cat"]
+  },
+
+  {
+    letter:"G",
+    small:"g",
+    sound:"/g/",
+    words:[
+      ["🐐","goat"],
+      ["🍇","grapes"],
+      ["🎁","gift"],
+      ["🦒","giraffe"]
+    ],
+    options:["goat","apple","fish"]
+  },
+
+  {
+    letter:"H",
+    small:"h",
+    sound:"/h/",
+    words:[
+      ["🐴","horse"],
+      ["🏠","house"],
+      ["🎩","hat"],
+      ["✋","hand"]
+    ],
+    options:["horse","cat","ball"]
+  },
+
+  {
+    letter:"I",
+    small:"i",
+    sound:"/ĭ/",
+    words:[
+      ["🦎","insect"],
+      ["🍦","ice cream"],
+      ["🧊","ice"],
+      ["🏝️","island"]
+    ],
+    options:["insect","dog","sun"]
+  },
+
+  {
+    letter:"J",
+    small:"j",
+    sound:"/j/",
+    words:[
+      ["🫙","jar"],
+      ["🧃","juice"],
+      ["🧥","jacket"],
+      ["🪼","jellyfish"]
+    ],
+    options:["jar","cat","fish"]
+  },
+
+  {
+    letter:"K",
+    small:"k",
+    sound:"/k/",
+    words:[
+      ["🐨","kangaroo"],
+      ["🪁","kite"],
+      ["🔑","key"],
+      ["🥝","kiwi"]
+    ],
+    options:["kite","dog","apple"]
+  },
+
+  {
+    letter:"L",
+    small:"l",
+    sound:"/l/",
+    words:[
+      ["🦁","lion"],
+      ["🍋","lemon"],
+      ["💡","lamp"],
+      ["🍃","leaf"]
+    ],
+    options:["lion","cat","ball"]
+  },
+
+  {
+    letter:"M",
+    small:"m",
+    sound:"/m/",
+    words:[
+      ["🐒","monkey"],
+      ["🌙","moon"],
+      ["🥭","mango"],
+      ["🐭","mouse"]
+    ],
+    options:["monkey","dog","fish"]
+  },
+
+  {
+    letter:"N",
+    small:"n",
+    sound:"/n/",
+    words:[
+      ["👃","nose"],
+      ["🥜","nut"],
+      ["🪺","nest"],
+      ["🌙","night"]
+    ],
+    options:["nose","cat","ball"]
+  },
+
+  {
+    letter:"O",
+    small:"o",
+    sound:"/ŏ/",
+    words:[
+      ["🐙","octopus"],
+      ["🍊","orange"],
+      ["🦉","owl"],
+      ["🐂","ox"]
+    ],
+    options:["orange","dog","fish"]
+  },
+
+  {
+    letter:"P",
+    small:"p",
+    sound:"/p/",
+    words:[
+      ["🐷","pig"],
+      ["✏️","pencil"],
+      ["🍕","pizza"],
+      ["🦜","parrot"]
+    ],
+    options:["pig","cat","sun"]
+  },
+
+  {
+    letter:"Q",
+    small:"q",
+    sound:"/kw/",
+    words:[
+      ["👑","queen"],
+      ["❓","question"],
+      ["🪶","quill"],
+      ["🛏️","quilt"]
+    ],
+    options:["queen","dog","fish"]
+  },
+
+  {
+    letter:"R",
+    small:"r",
+    sound:"/r/",
+    words:[
+      ["🐰","rabbit"],
+      ["🌈","rainbow"],
+      ["🚀","rocket"],
+      ["🌹","rose"]
+    ],
+    options:["rabbit","cat","ball"]
+  },
+
+  {
+    letter:"S",
+    small:"s",
+    sound:"/s/",
+    words:[
+      ["☀️","sun"],
+      ["🐍","snake"],
+      ["⭐","star"],
+      ["🧦","sock"]
+    ],
+    options:["sun","dog","fish"]
+  },
+
+  {
+    letter:"T",
+    small:"t",
+    sound:"/t/",
+    words:[
+      ["🐯","tiger"],
+      ["🌳","tree"],
+      ["🚂","train"],
+      ["🍅","tomato"]
+    ],
+    options:["tiger","cat","ball"]
+  },
+
+  {
+    letter:"U",
+    small:"u",
+    sound:"/ŭ/",
+    words:[
+      ["☂️","umbrella"],
+      ["🦄","unicorn"],
+      ["🦔","urchin"],
+      ["👤","uncle"]
+    ],
+    options:["umbrella","dog","fish"]
+  },
+
+  {
+    letter:"V",
+    small:"v",
+    sound:"/v/",
+    words:[
+      ["🚐","van"],
+      ["🎻","violin"],
+      ["🌋","volcano"],
+      ["🦺","vest"]
+    ],
+    options:["van","cat","ball"]
+  },
+
+  {
+    letter:"W",
+    small:"w",
+    sound:"/w/",
+    words:[
+      ["🐳","whale"],
+      ["🍉","watermelon"],
+      ["⌚","watch"],
+      ["🌊","wave"]
+    ],
+    options:["whale","dog","fish"]
+  },
+
+  {
+    letter:"X",
+    small:"x",
+    sound:"/ks/",
+    words:[
+      ["📦","box"],
+      ["🦊","fox"],
+      ["🐂","ox"],
+      ["6️⃣","six"]
+    ],
+    options:["box","cat","sun"]
+  },
+
+  {
+    letter:"Y",
+    small:"y",
+    sound:"/y/",
+    words:[
+      ["🪀","yo-yo"],
+      ["🧶","yarn"],
+      ["🥛","yogurt"],
+      ["🛶","yacht"]
+    ],
+    options:["yo-yo","dog","fish"]
+  },
+
+  {
+    letter:"Z",
+    small:"z",
+    sound:"/z/",
+    words:[
+      ["🦓","zebra"],
+      ["🦁","zoo"],
+      ["🤐","zip"],
+      ["0️⃣","zero"]
+    ],
+    options:["zebra","cat","ball"]
+  }
+
+];
+
+
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+
+
+/* ELEMENTS */
+
+const bigLetter =
+  document.getElementById("bigLetter");
+
+const smallLetter =
+  document.getElementById("smallLetter");
+
+const soundLabel =
+  document.getElementById("soundLabel");
+
+const pictureGrid =
+  document.getElementById("pictureGrid");
+
+const options =
+  document.getElementById("options");
+
+const feedback =
+  document.getElementById("feedback");
+
+const progressText =
+  document.getElementById("progressText");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const scoreText =
+  document.getElementById("scoreText");
+
+const previousBtn =
+  document.getElementById("previousBtn");
+
+const nextBtn =
+  document.getElementById("nextBtn");
+
+const soundButton =
+  document.getElementById("soundButton");
+
+
+/* LOAD LETTER */
+
+function loadLetter(){
+
+  answered = false;
+
+  const item = letters[currentIndex];
+
+  bigLetter.textContent = item.letter;
+
+  smallLetter.textContent = item.small;
+
+  soundLabel.textContent =
+    "Sound: " + item.sound;
+
+
+  progressText.textContent =
+    `Letter ${currentIndex + 1} of ${letters.length}`;
+
+
+  progressFill.style.width =
+    `${((currentIndex + 1) / letters.length) * 100}%`;
+
+
+  scoreText.textContent =
+    `⭐ Score: ${score}`;
+
+
+  feedback.textContent = "";
+
+  feedback.className = "feedback";
+
+
+  previousBtn.disabled =
+    currentIndex === 0;
+
+
+  nextBtn.textContent =
+    currentIndex === letters.length - 1
+      ? "Finish ✓"
+      : "Next Letter →";
+
+
+  loadPictures(item);
+
+  loadOptions(item);
+
+}
+
+
+/* PICTURES */
+
+function loadPictures(item){
+
+  pictureGrid.innerHTML = "";
+
+  item.words.forEach(word => {
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "picture-card";
+
+    card.innerHTML = `
+
+      <div class="picture">
+        ${word[0]}
+      </div>
+
+      <div class="picture-word">
+        ${word[1]}
+      </div>
+
+      <div class="beginning">
+        Begins with ${item.letter}
+      </div>
+
+    `;
+
+    pictureGrid.appendChild(card);
+
+  });
+
+}
+
+
+/* OPTIONS */
+
+function loadOptions(item){
+
+  options.innerHTML = "";
+
+  let choices = [...item.options];
+
+  choices.sort(() => Math.random() - 0.5);
+
+
+  choices.forEach(word => {
+
+    const button =
+      document.createElement("button");
+
+    button.className =
+      "option";
+
+    button.textContent =
+      word;
+
+    button.addEventListener(
+      "click",
+      () => checkAnswer(button, word, item)
+    );
+
+    options.appendChild(button);
+
+  });
+
+}
+
+
+/* CHECK ANSWER */
+
+function checkAnswer(button, selected, item){
+
+  if(answered) return;
+
+  answered = true;
+
+  const allButtons =
+    document.querySelectorAll(".option");
+
+  allButtons.forEach(btn => {
+    btn.disabled = true;
+  });
+
+
+  const correctWord =
+    item.words[0][1];
+
+
+  if(selected === correctWord){
+
+    button.classList.add("correct");
+
+    feedback.textContent =
+      `✓ Correct! "${correctWord}" begins with ${item.letter}.`;
+
+    feedback.classList.add("correct-text");
+
+    score++;
+
+    scoreText.textContent =
+      `⭐ Score: ${score}`;
+
+  }else{
+
+    button.classList.add("wrong");
+
+    feedback.textContent =
+      `✗ Try again next time. "${correctWord}" begins with ${item.letter}.`;
+
+    feedback.classList.add("wrong-text");
+
+    allButtons.forEach(btn => {
+
+      if(btn.textContent === correctWord){
+
+        btn.classList.add("correct");
+
+      }
+
+    });
+
+  }
+
+}
+
+
+/* SOUND BUTTON */
+
+soundButton.addEventListener("click", () => {
+
+  const item = letters[currentIndex];
+
+  /*
+    Intentionally no browser SpeechSynthesis here.
+
+    This button is reserved for the verified
+    phonics audio that will be connected later.
+  */
+
+  alert(
+    "Verified phonics audio for " +
+    item.letter +
+    " will be connected here."
+  );
+
+});
+
+
+/* PREVIOUS */
+
+previousBtn.addEventListener("click", () => {
+
+  if(currentIndex > 0){
+
+    currentIndex--;
+
+    loadLetter();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+
+});
+
+
+/* NEXT */
+
+nextBtn.addEventListener("click", () => {
+
+  if(currentIndex < letters.length - 1){
+
+    currentIndex++;
+
+    loadLetter();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }else{
+
+    showResult();
+
+  }
+
+});
+
+
+/* RESULT */
+
+function showResult(){
+
+  document.getElementById("game").style.display =
+    "none";
+
+  document.getElementById("result").style.display =
+    "block";
+
+  document.getElementById("finalScore").textContent =
+    `Score: ${score} / ${letters.length}`;
+
+}
+
+
+/* RESTART */
+
+function restartGame(){
+
+  currentIndex = 0;
+
+  score = 0;
+
+  document.getElementById("result").style.display =
+    "none";
+
+  document.getElementById("game").style.display =
+    "block";
+
+  loadLetter();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* START */
+
+loadLetter();
+
+</script>
+
+</body>
+</html>
