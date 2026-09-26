@@ -1,1 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital & Small Letter Matching | KDCreativeLab</title>
 
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f8f6fc;
+  color:#303044;
+  line-height:1.6;
+}
+
+header{
+  background:white;
+  padding:18px 20px;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  color:#66578a;
+}
+
+.logo span{
+  color:#e28b9c;
+}
+
+.back{
+  text-decoration:none;
+  color:#66578a;
+  font-weight:600;
+}
+
+.hero{
+  text-align:center;
+  padding:45px 20px 30px;
+  background:
+    radial-gradient(circle at 10% 20%, #eee7ff 0, transparent 28%),
+    radial-gradient(circle at 90% 20%, #ffe8ed 0, transparent 28%),
+    #fff;
+}
+
+.badge{
+  display:inline-block;
+  background:#eee8fa;
+  color:#66578a;
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  font-size:38px;
+  color:#403957;
+  margin-bottom:10px;
+}
+
+.hero p{
+  max-width:650px;
+  margin:auto;
+  color:#6d6a78;
+}
+
+.container{
+  max-width:950px;
+  margin:30px auto;
+  padding:0 18px;
+}
+
+.game-card{
+  background:white;
+  border-radius:24px;
+  padding:28px;
+  box-shadow:0 8px 30px rgba(76,61,110,.10);
+  text-align:center;
+}
+
+.progress-area{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+  gap:15px;
+}
+
+.progress-text{
+  font-weight:bold;
+  color:#66578a;
+}
+
+.score{
+  background:#fff0f3;
+  color:#c65f76;
+  padding:8px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.progress-bar{
+  width:100%;
+  height:10px;
+  background:#eeeaf4;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:30px;
+}
+
+.progress-fill{
+  height:100%;
+  width:4%;
+  background:#9b8ac2;
+  border-radius:20px;
+  transition:.3s;
+}
+
+.question-title{
+  font-size:22px;
+  margin-bottom:8px;
+  color:#403957;
+}
+
+.question-subtitle{
+  color:#777383;
+  margin-bottom:25px;
+}
+
+.capital-box{
+  width:150px;
+  height:150px;
+  margin:0 auto 28px;
+  border-radius:25px;
+  background:#f0ebff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:90px;
+  font-weight:bold;
+  color:#66578a;
+  box-shadow:inset 0 0 0 3px #e3dcf5;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  max-width:650px;
+  margin:0 auto;
+}
+
+.option{
+  border:2px solid #e8e2f1;
+  background:#fff;
+  border-radius:18px;
+  min-height:85px;
+  font-size:42px;
+  font-weight:bold;
+  color:#4d4960;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.option:hover{
+  transform:translateY(-3px);
+  border-color:#b7a7d8;
+  background:#faf8ff;
+}
+
+.option.correct{
+  background:#e8f8ee;
+  border-color:#65b986;
+  color:#26754a;
+}
+
+.option.wrong{
+  background:#fff0f2;
+  border-color:#e58b9a;
+  color:#b33d54;
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+.feedback{
+  min-height:32px;
+  margin-top:22px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.feedback.correct-text{
+  color:#26754a;
+}
+
+.feedback.wrong-text{
+  color:#b33d54;
+}
+
+.next-btn{
+  display:none;
+  margin:20px auto 0;
+  border:none;
+  background:#66578a;
+  color:white;
+  padding:13px 25px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.next-btn:hover{
+  background:#564876;
+}
+
+.info{
+  margin-top:25px;
+  padding:18px;
+  border-radius:18px;
+  background:#faf7ff;
+  color:#666273;
+  font-size:15px;
+}
+
+.result{
+  display:none;
+  text-align:center;
+}
+
+.result-icon{
+  font-size:65px;
+  margin-bottom:10px;
+}
+
+.result h2{
+  font-size:30px;
+  color:#403957;
+  margin-bottom:10px;
+}
+
+.final-score{
+  font-size:24px;
+  color:#66578a;
+  font-weight:bold;
+  margin:15px 0 25px;
+}
+
+.restart-btn,
+.home-btn{
+  border:none;
+  padding:13px 22px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:5px;
+}
+
+.restart-btn{
+  background:#66578a;
+  color:white;
+}
+
+.home-btn{
+  background:#f0ebff;
+  color:#66578a;
+  text-decoration:none;
+  display:inline-block;
+}
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  color:#888394;
+  font-size:14px;
+}
+
+@media(max-width:650px){
+  .hero h1{
+    font-size:30px;
+  }
+
+  .game-card{
+    padding:20px 14px;
+  }
+
+  .capital-box{
+    width:125px;
+    height:125px;
+    font-size:75px;
+  }
+
+  .options{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .option{
+    min-height:80px;
+  }
+
+  .progress-area{
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">KD<span>Creative</span>Lab</div>
+    <a class="back" href="beginner.html">← Beginner</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="badge">🔤 Letter Practice</div>
+  <h1>Capital & Small Letters</h1>
+  <p>
+    Match each capital letter with its correct small letter.
+    Learn A–Z through a simple and fun activity.
+  </p>
+</section>
+
+<div class="container">
+
+  <div class="game-card">
+
+    <div id="game">
+
+      <div class="progress-area">
+        <div class="progress-text" id="progressText">
+          Letter 1 of 26
+        </div>
+
+        <div class="score" id="scoreText">
+          ⭐ Score: 0
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <h2 class="question-title">
+        Find the matching small letter
+      </h2>
+
+      <p class="question-subtitle">
+        Which small letter matches this capital letter?
+      </p>
+
+      <div class="capital-box" id="capitalLetter">
+        A
+      </div>
+
+      <div class="options" id="options"></div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <button class="next-btn" id="nextBtn">
+        Next Letter →
+      </button>
+
+      <div class="info">
+        💡 Remember: A and a are the same letter.
+        Capital letters are BIG and small letters are little.
+      </div>
+
+    </div>
+
+    <div class="result" id="result">
+
+      <div class="result-icon">🎉</div>
+
+      <h2>Well Done!</h2>
+
+      <p>You completed all 26 letters.</p>
+
+      <div class="final-score" id="finalScore">
+        Your Score: 26 / 26
+      </div>
+
+      <button class="restart-btn" onclick="restartGame()">
+        🔄 Play Again
+      </button>
+
+      <a class="home-btn" href="beginner.html">
+        ← Back to Beginner
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 KDCreativeLab · Learn English with confidence 🌱
+</footer>
+
+<script>
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+
+const capitalLetter = document.getElementById("capitalLetter");
+const options = document.getElementById("options");
+const feedback = document.getElementById("feedback");
+const nextBtn = document.getElementById("nextBtn");
+const scoreText = document.getElementById("scoreText");
+const progressText = document.getElementById("progressText");
+const progressFill = document.getElementById("progressFill");
+
+function shuffle(array){
+  return array.sort(() => Math.random() - 0.5);
+}
+
+function createOptions(correctLetter){
+
+  let smallCorrect = correctLetter.toLowerCase();
+
+  let wrongLetters = letters
+    .filter(letter => letter !== correctLetter)
+    .map(letter => letter.toLowerCase());
+
+  shuffle(wrongLetters);
+
+  let choices = [
+    smallCorrect,
+    wrongLetters[0],
+    wrongLetters[1],
+    wrongLetters[2]
+  ];
+
+  return shuffle(choices);
+}
+
+function loadQuestion(){
+
+  answered = false;
+
+  const currentLetter = letters[currentIndex];
+
+  capitalLetter.textContent = currentLetter;
+
+  progressText.textContent =
+    `Letter ${currentIndex + 1} of ${letters.length}`;
+
+  progressFill.style.width =
+    `${((currentIndex + 1) / letters.length) * 100}%`;
+
+  feedback.textContent = "";
+  feedback.className = "feedback";
+
+  nextBtn.style.display = "none";
+
+  options.innerHTML = "";
+
+  const choices = createOptions(currentLetter);
+
+  choices.forEach(choice => {
+
+    const button = document.createElement("button");
+
+    button.className = "option";
+    button.textContent = choice;
+
+    button.addEventListener("click", () => {
+
+      checkAnswer(button, choice, currentLetter);
+
+    });
+
+    options.appendChild(button);
+
+  });
+
+  scoreText.textContent = `⭐ Score: ${score}`;
+}
+
+function checkAnswer(button, selected, correct){
+
+  if(answered) return;
+
+  answered = true;
+
+  const allButtons =
+    document.querySelectorAll(".option");
+
+  allButtons.forEach(btn => {
+    btn.disabled = true;
+  });
+
+  if(selected === correct.toLowerCase()){
+
+    button.classList.add("correct");
+
+    feedback.textContent =
+      `✓ Correct! ${correct} matches ${correct.toLowerCase()}.`;
+
+    feedback.classList.add("correct-text");
+
+    score++;
+
+    scoreText.textContent =
+      `⭐ Score: ${score}`;
+
+  }else{
+
+    button.classList.add("wrong");
+
+    feedback.textContent =
+      `✗ Not quite. The correct answer is ${correct.toLowerCase()}.`;
+
+    feedback.classList.add("wrong-text");
+
+    allButtons.forEach(btn => {
+
+      if(btn.textContent === correct.toLowerCase()){
+        btn.classList.add("correct");
+      }
+
+    });
+
+  }
+
+  nextBtn.style.display = "block";
+}
+
+nextBtn.addEventListener("click", () => {
+
+  currentIndex++;
+
+  if(currentIndex >= letters.length){
+
+    showResult();
+
+  }else{
+
+    loadQuestion();
+
+  }
+
+});
+
+function showResult(){
+
+  document.getElementById("game").style.display = "none";
+
+  document.getElementById("result").style.display = "block";
+
+  document.getElementById("finalScore").textContent =
+    `Your Score: ${score} / ${letters.length}`;
+
+}
+
+function restartGame(){
+
+  currentIndex = 0;
+  score = 0;
+
+  document.getElementById("result").style.display = "none";
+  document.getElementById("game").style.display = "block";
+
+  loadQuestion();
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
