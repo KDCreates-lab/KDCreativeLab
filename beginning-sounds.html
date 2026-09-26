@@ -1,1 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Beginning Sounds | KDCreativeLab</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f8f7fc;
+  color:#343143;
+  line-height:1.6;
+}
+
+header{
+  background:rgba(255,255,255,.97);
+  padding:17px 20px;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  color:#66578a;
+}
+
+.logo span{
+  color:#df8b9b;
+}
+
+.back{
+  text-decoration:none;
+  color:#66578a;
+  font-weight:600;
+}
+
+.hero{
+  text-align:center;
+  padding:45px 20px 35px;
+  background:
+    radial-gradient(circle at 10% 20%,#eee7ff 0,transparent 28%),
+    radial-gradient(circle at 90% 20%,#ffe8ed 0,transparent 28%),
+    #fff;
+}
+
+.badge{
+  display:inline-block;
+  background:#eee8fa;
+  color:#66578a;
+  padding:7px 15px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  font-size:38px;
+  color:#403957;
+  margin-bottom:10px;
+}
+
+.hero p{
+  max-width:680px;
+  margin:auto;
+  color:#6e6a79;
+}
+
+.container{
+  max-width:900px;
+  margin:30px auto;
+  padding:0 18px;
+}
+
+.game-card{
+  background:white;
+  border-radius:25px;
+  padding:28px;
+  box-shadow:0 8px 30px rgba(76,61,110,.10);
+}
+
+/* PROGRESS */
+
+.progress-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:12px;
+}
+
+.progress-text{
+  font-weight:bold;
+  color:#66578a;
+}
+
+.score{
+  background:#fff0f3;
+  color:#c65f76;
+  padding:7px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.progress-bar{
+  height:9px;
+  background:#eeeaf4;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:30px;
+}
+
+.progress-fill{
+  height:100%;
+  width:0;
+  background:#9b8ac2;
+  border-radius:20px;
+  transition:.3s;
+}
+
+/* QUESTION */
+
+.question{
+  text-align:center;
+}
+
+.question h2{
+  color:#403957;
+  font-size:23px;
+  margin-bottom:7px;
+}
+
+.question p{
+  color:#777383;
+  margin-bottom:25px;
+}
+
+/* PICTURE */
+
+.picture-box{
+  width:190px;
+  height:190px;
+  margin:0 auto 25px;
+  border-radius:30px;
+  background:#faf7ff;
+  border:3px solid #eee7f7;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.picture{
+  font-size:90px;
+  line-height:1;
+}
+
+.word{
+  margin-top:15px;
+  font-size:20px;
+  font-weight:bold;
+  color:#4d4960;
+}
+
+/* SOUND OPTIONS */
+
+.sound-title{
+  text-align:center;
+  font-size:19px;
+  color:#403957;
+  margin-bottom:17px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  max-width:650px;
+  margin:auto;
+}
+
+.option{
+  min-height:80px;
+  border:2px solid #e6e0ef;
+  background:white;
+  border-radius:18px;
+  cursor:pointer;
+  font-size:28px;
+  font-weight:bold;
+  color:#4d4960;
+  transition:.2s;
+}
+
+.option:hover{
+  transform:translateY(-3px);
+  border-color:#b7a8d5;
+  background:#faf8ff;
+}
+
+.option.correct{
+  background:#e8f8ee;
+  border-color:#65b987;
+  color:#26754a;
+}
+
+.option.wrong{
+  background:#fff0f2;
+  border-color:#e48b9a;
+  color:#b23d54;
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+/* FEEDBACK */
+
+.feedback{
+  min-height:32px;
+  text-align:center;
+  margin-top:22px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.correct-text{
+  color:#26754a;
+}
+
+.wrong-text{
+  color:#b23d54;
+}
+
+/* BUTTONS */
+
+.navigation{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:30px;
+}
+
+.nav-btn{
+  border:none;
+  padding:12px 21px;
+  border-radius:30px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.previous{
+  background:#f0ebff;
+  color:#66578a;
+}
+
+.next{
+  background:#66578a;
+  color:white;
+}
+
+.nav-btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+/* RESULT */
+
+.result{
+  display:none;
+  text-align:center;
+  padding:25px 5px;
+}
+
+.result-icon{
+  font-size:70px;
+}
+
+.result h2{
+  font-size:30px;
+  color:#403957;
+  margin:10px 0;
+}
+
+.result p{
+  color:#777383;
+}
+
+.final-score{
+  font-size:24px;
+  color:#66578a;
+  font-weight:bold;
+  margin:18px 0 25px;
+}
+
+.restart{
+  border:none;
+  background:#66578a;
+  color:white;
+  padding:13px 25px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  color:#898493;
+  font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .game-card{
+    padding:20px 14px;
+  }
+
+  .picture-box{
+    width:160px;
+    height:160px;
+  }
+
+  .picture{
+    font-size:72px;
+  }
+
+  .options{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .option{
+    min-height:75px;
+  }
+
+  .navigation{
+    flex-direction:column;
+  }
+
+  .nav-btn{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      KD<span>Creative</span>Lab
+    </div>
+
+    <a href="beginner.html" class="back">
+      ← Beginner
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="badge">
+    🔤 Step 2 · Beginning Sounds
+  </div>
+
+  <h1>Beginning Sounds</h1>
+
+  <p>
+    Look at the picture and choose the sound
+    you hear at the beginning of the word.
+  </p>
+
+</section>
+
+
+<div class="container">
+
+  <div class="game-card">
+
+    <div id="game">
+
+      <div class="progress-row">
+
+        <div class="progress-text" id="progressText">
+          Question 1 of 26
+        </div>
+
+        <div class="score" id="scoreText">
+          ⭐ Score: 0
+        </div>
+
+      </div>
+
+
+      <div class="progress-bar">
+
+        <div
+          class="progress-fill"
+          id="progressFill">
+        </div>
+
+      </div>
+
+
+      <div class="question">
+
+        <h2>
+          👀 Look at the picture
+        </h2>
+
+        <p>
+          Which sound does the word begin with?
+        </p>
+
+
+        <div class="picture-box">
+
+          <div
+            class="picture"
+            id="picture">
+            🍎
+          </div>
+
+          <div
+            class="word"
+            id="word">
+            Apple
+          </div>
+
+        </div>
+
+
+        <div class="sound-title">
+          Choose the beginning sound:
+        </div>
+
+
+        <div
+          class="options"
+          id="options">
+        </div>
+
+
+        <div
+          class="feedback"
+          id="feedback">
+        </div>
+
+      </div>
+
+
+      <div class="navigation">
+
+        <button
+          class="nav-btn previous"
+          id="previousBtn">
+          ← Previous
+        </button>
+
+        <button
+          class="nav-btn next"
+          id="nextBtn">
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="result"
+      id="result">
+
+      <div class="result-icon">
+        🎉
+      </div>
+
+      <h2>
+        Excellent Work!
+      </h2>
+
+      <p>
+        You completed the Beginning Sounds practice.
+      </p>
+
+      <div
+        class="final-score"
+        id="finalScore">
+        Score: 0 / 26
+      </div>
+
+      <button
+        class="restart"
+        onclick="restartGame()">
+        🔄 Practice Again
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  © 2026 KDCreativeLab · Learn English with confidence 🌱
+</footer>
+
+
+<script>
+
+/*
+  Beginning Sound Data
+
+  Each question contains:
+  picture
+  word
+  correct beginning sound
+  three distractor sounds
+*/
+
+const questions = [
+
+  {
+    picture:"🍎",
+    word:"Apple",
+    answer:"/ă/",
+    options:["/ă/","/b/","/k/","/d/"]
+  },
+
+  {
+    picture:"⚽",
+    word:"Ball",
+    answer:"/b/",
+    options:["/b/","/m/","/s/","/t/"]
+  },
+
+  {
+    picture:"🐱",
+    word:"Cat",
+    answer:"/k/",
+    options:["/k/","/f/","/p/","/d/"]
+  },
+
+  {
+    picture:"🐶",
+    word:"Dog",
+    answer:"/d/",
+    options:["/d/","/g/","/h/","/m/"]
+  },
+
+  {
+    picture:"🥚",
+    word:"Egg",
+    answer:"/ĕ/",
+    options:["/ĕ/","/ă/","/ĭ/","/ŏ/"]
+  },
+
+  {
+    picture:"🐟",
+    word:"Fish",
+    answer:"/f/",
+    options:["/f/","/s/","/p/","/v/"]
+  },
+
+  {
+    picture:"🐐",
+    word:"Goat",
+    answer:"/g/",
+    options:["/g/","/k/","/d/","/b/"]
+  },
+
+  {
+    picture:"🎩",
+    word:"Hat",
+    answer:"/h/",
+    options:["/h/","/p/","/t/","/m/"]
+  },
+
+  {
+    picture:"🦎",
+    word:"Insect",
+    answer:"/ĭ/",
+    options:["/ĭ/","/ĕ/","/ă/","/ŏ/"]
+  },
+
+  {
+    picture:"🫙",
+    word:"Jar",
+    answer:"/j/",
+    options:["/j/","/g/","/k/","/r/"]
+  },
+
+  {
+    picture:"🪁",
+    word:"Kite",
+    answer:"/k/",
+    options:["/k/","/t/","/g/","/p/"]
+  },
+
+  {
+    picture:"🦁",
+    word:"Lion",
+    answer:"/l/",
+    options:["/l/","/r/","/n/","/m/"]
+  },
+
+  {
+    picture:"🐒",
+    word:"Monkey",
+    answer:"/m/",
+    options:["/m/","/n/","/b/","/w/"]
+  },
+
+  {
+    picture:"👃",
+    word:"Nose",
+    answer:"/n/",
+    options:["/n/","/m/","/l/","/r/"]
+  },
+
+  {
+    picture:"🍊",
+    word:"Orange",
+    answer:"/ŏ/",
+    options:["/ŏ/","/ă/","/ĕ/","/ŭ/"]
+  },
+
+  {
+    picture:"🐷",
+    word:"Pig",
+    answer:"/p/",
+    options:["/p/","/b/","/t/","/f/"]
+  },
+
+  {
+    picture:"👑",
+    word:"Queen",
+    answer:"/kw/",
+    options:["/kw/","/k/","/w/","/q/"]
+  },
+
+  {
+    picture:"🐰",
+    word:"Rabbit",
+    answer:"/r/",
+    options:["/r/","/l/","/w/","/n/"]
+  },
+
+  {
+    picture:"☀️",
+    word:"Sun",
+    answer:"/s/",
+    options:["/s/","/z/","/f/","/sh/"]
+  },
+
+  {
+    picture:"🐯",
+    word:"Tiger",
+    answer:"/t/",
+    options:["/t/","/d/","/p/","/k/"]
+  },
+
+  {
+    picture:"☂️",
+    word:"Umbrella",
+    answer:"/ŭ/",
+    options:["/ŭ/","/ŏ/","/ă/","/oo/"]
+  },
+
+  {
+    picture:"🚐",
+    word:"Van",
+    answer:"/v/",
+    options:["/v/","/f/","/w/","/b/"]
+  },
+
+  {
+    picture:"🐳",
+    word:"Whale",
+    answer:"/w/",
+    options:["/w/","/v/","/h/","/y/"]
+  },
+
+  {
+    picture:"🦊",
+    word:"X-ray",
+    answer:"/x/",
+    options:["/x/","/z/","/k/","/s/"]
+  },
+
+  {
+    picture:"🪀",
+    word:"Yo-yo",
+    answer:"/y/",
+    options:["/y/","/j/","/w/","/l/"]
+  },
+
+  {
+    picture:"🦓",
+    word:"Zebra",
+    answer:"/z/",
+    options:["/z/","/s/","/j/","/v/"]
+  }
+
+];
+
+
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+
+
+const picture =
+  document.getElementById("picture");
+
+const word =
+  document.getElementById("word");
+
+const options =
+  document.getElementById("options");
+
+const feedback =
+  document.getElementById("feedback");
+
+const progressText =
+  document.getElementById("progressText");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const scoreText =
+  document.getElementById("scoreText");
+
+const previousBtn =
+  document.getElementById("previousBtn");
+
+const nextBtn =
+  document.getElementById("nextBtn");
+
+
+/* LOAD QUESTION */
+
+function loadQuestion(){
+
+  answered = false;
+
+  const item =
+    questions[currentIndex];
+
+
+  picture.textContent =
+    item.picture;
+
+  word.textContent =
+    item.word;
+
+
+  progressText.textContent =
+    `Question ${currentIndex + 1} of ${questions.length}`;
+
+
+  progressFill.style.width =
+    `${((currentIndex + 1) / questions.length) * 100}%`;
+
+
+  scoreText.textContent =
+    `⭐ Score: ${score}`;
+
+
+  feedback.textContent = "";
+
+  feedback.className = "feedback";
+
+
+  previousBtn.disabled =
+    currentIndex === 0;
+
+
+  nextBtn.textContent =
+    currentIndex === questions.length - 1
+      ? "Finish ✓"
+      : "Next →";
+
+
+  createOptions(item);
+
+}
+
+
+/* CREATE OPTIONS */
+
+function createOptions(item){
+
+  options.innerHTML = "";
+
+  let choices =
+    [...item.options];
+
+  choices.sort(() =>
+    Math.random() - 0.5
+  );
+
+
+  choices.forEach(choice => {
+
+    const button =
+      document.createElement("button");
+
+    button.className =
+      "option";
+
+    button.textContent =
+      choice;
+
+
+    button.addEventListener(
+      "click",
+      () => checkAnswer(button,choice,item)
+    );
+
+
+    options.appendChild(button);
+
+  });
+
+}
+
+
+/* CHECK ANSWER */
+
+function checkAnswer(button,selected,item){
+
+  if(answered) return;
+
+  answered = true;
+
+
+  const allButtons =
+    document.querySelectorAll(".option");
+
+
+  allButtons.forEach(btn => {
+    btn.disabled = true;
+  });
+
+
+  if(selected === item.answer){
+
+    button.classList.add("correct");
+
+    feedback.textContent =
+      `✓ Correct! ${item.word} begins with ${item.answer}`;
+
+    feedback.classList.add("correct-text");
+
+    score++;
+
+    scoreText.textContent =
+      `⭐ Score: ${score}`;
+
+  }else{
+
+    button.classList.add("wrong");
+
+    feedback.textContent =
+      `✗ The correct beginning sound is ${item.answer}`;
+
+    feedback.classList.add("wrong-text");
+
+
+    allButtons.forEach(btn => {
+
+      if(btn.textContent === item.answer){
+
+        btn.classList.add("correct");
+
+      }
+
+    });
+
+  }
+
+}
+
+
+/* PREVIOUS */
+
+previousBtn.addEventListener(
+  "click",
+  () => {
+
+    if(currentIndex > 0){
+
+      currentIndex--;
+
+      loadQuestion();
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    }
+
+  }
+);
+
+
+/* NEXT */
+
+nextBtn.addEventListener(
+  "click",
+  () => {
+
+    if(currentIndex < questions.length - 1){
+
+      currentIndex++;
+
+      loadQuestion();
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    }else{
+
+      showResult();
+
+    }
+
+  }
+);
+
+
+/* RESULT */
+
+function showResult(){
+
+  document.getElementById("game").style.display =
+    "none";
+
+  document.getElementById("result").style.display =
+    "block";
+
+  document.getElementById("finalScore").textContent =
+    `Score: ${score} / ${questions.length}`;
+
+}
+
+
+/* RESTART */
+
+function restartGame(){
+
+  currentIndex = 0;
+
+  score = 0;
+
+  document.getElementById("result").style.display =
+    "none";
+
+  document.getElementById("game").style.display =
+    "block";
+
+  loadQuestion();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* START */
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
