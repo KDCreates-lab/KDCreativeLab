@@ -4,462 +4,527 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Capital Letters | KDCreativeLab</title>
+<title>Capital Letters | KD CreativeLab</title>
 
 <style>
 *{
   box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+  margin:0;
+  padding:0;
 }
 
 body{
-  margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:#fffdf9;
-  color:#263238;
-}
-
-/* ================= HEADER ================= */
-
-.top{
-  background:linear-gradient(135deg,#fff4e8,#f4f0ff,#eef9f7);
-  padding:28px 16px 24px;
-  text-align:center;
-  border-bottom:1px solid #eee6dc;
-}
-
-.top h1{
-  margin:0;
-  font-size:36px;
-  color:#51456f;
-}
-
-.top p{
-  margin:8px auto 0;
-  max-width:650px;
-  color:#667078;
-  font-size:15px;
+  background:#f7f9fc;
+  color:#182033;
   line-height:1.6;
 }
 
-.back{
-  display:inline-block;
-  margin-top:18px;
-  text-decoration:none;
-  color:#51456f;
-  font-weight:bold;
-  background:white;
-  padding:10px 18px;
-  border-radius:30px;
-  box-shadow:0 5px 18px rgba(70,60,80,.08);
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #e7eaf0;
 }
 
-/* ================= LETTER GRID ================= */
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  text-decoration:none;
+  color:#182033;
+}
+
+.logo span{
+  color:#7c5cff;
+}
+
+.back-btn{
+  text-decoration:none;
+  background:#182033;
+  color:white;
+  padding:9px 15px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.hero{
+  padding:55px 20px 35px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%,#ffe7f2,transparent 35%),
+    radial-gradient(circle at 80% 20%,#e4f0ff,transparent 35%),
+    linear-gradient(135deg,#fff,#f4f7ff);
+}
+
+.badge{
+  display:inline-block;
+  background:#eee9ff;
+  color:#6545d8;
+  padding:7px 14px;
+  border-radius:50px;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(32px,6vw,58px);
+  line-height:1.1;
+  margin-bottom:12px;
+}
+
+.hero p{
+  max-width:720px;
+  margin:auto;
+  color:#667085;
+}
 
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
-  padding:25px 16px 60px;
+  padding:30px 20px 70px;
 }
 
 .section-title{
   text-align:center;
-  margin:10px 0 20px;
+  margin-bottom:20px;
 }
 
 .section-title h2{
-  margin:0;
-  color:#4d4561;
+  font-size:28px;
 }
 
 .section-title p{
-  color:#747b82;
+  color:#667085;
 }
 
-.letters{
+.letter-nav{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  grid-template-columns:repeat(13,1fr);
+  gap:8px;
+  margin:25px auto 35px;
+  max-width:900px;
 }
 
-.letter-card{
-  border:1px solid #eee7dd;
-  border-radius:22px;
+.letter-nav button{
+  border:1px solid #dfe4ee;
   background:white;
-  padding:18px 12px;
-  text-align:center;
-  cursor:pointer;
-  transition:.2s ease;
-  box-shadow:0 7px 20px rgba(67,56,74,.07);
-}
-
-.letter-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 28px rgba(67,56,74,.12);
-}
-
-.letter-card.active{
-  outline:3px solid #d8cbed;
-}
-
-.big-letter{
-  font-size:55px;
-  font-weight:800;
-  color:#66578a;
-  line-height:1;
-}
-
-.pic{
-  font-size:45px;
-  margin:9px 0;
-}
-
-.word{
+  padding:11px 5px;
+  border-radius:10px;
   font-size:17px;
-  font-weight:bold;
-  color:#41484e;
+  font-weight:800;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.tap{
-  margin-top:9px;
-  display:inline-block;
-  font-size:12px;
-  background:#f5f1fb;
-  color:#66578a;
-  padding:6px 12px;
-  border-radius:20px;
+.letter-nav button:hover{
+  transform:translateY(-2px);
+  border-color:#7c5cff;
 }
 
-/* ================= LESSON ================= */
-
-#lesson{
-  display:none;
-  margin-top:35px;
+.letter-nav button.active{
+  background:#7c5cff;
+  color:white;
+  border-color:#7c5cff;
 }
 
-.lesson-box{
-  background:white;
-  border:1px solid #eee7dd;
-  border-radius:28px;
-  box-shadow:0 12px 35px rgba(65,55,70,.09);
+.progress-wrap{
+  max-width:900px;
+  margin:0 auto 30px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  color:#667085;
+  margin-bottom:7px;
+}
+
+.progress{
+  height:9px;
+  background:#e7eaf0;
+  border-radius:50px;
   overflow:hidden;
 }
 
-.lesson-head{
-  background:linear-gradient(135deg,#f5efff,#eef9f7);
-  padding:28px 20px;
+.progress-bar{
+  height:100%;
+  width:3.84%;
+  background:#7c5cff;
+  transition:.3s;
+}
+
+.lesson{
+  background:white;
+  border:1px solid #e7eaf0;
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 10px 35px rgba(25,35,60,.06);
+}
+
+.letter-head{
   text-align:center;
+  margin-bottom:30px;
 }
 
-.lesson-letter{
-  font-size:100px;
-  line-height:1;
+.big-letter{
+  width:145px;
+  height:145px;
+  margin:0 auto 15px;
+  border-radius:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#7c5cff,#9c85ff);
+  color:white;
+  font-size:95px;
   font-weight:900;
-  color:#62517f;
+  box-shadow:0 18px 35px rgba(124,92,255,.25);
 }
 
-.lesson-word{
-  font-size:25px;
-  font-weight:bold;
+.sound{
+  display:inline-block;
+  background:#eef8ff;
+  color:#1769aa;
+  border-radius:50px;
+  padding:7px 16px;
+  font-weight:700;
   margin-top:8px;
 }
 
-.lesson-sub{
-  color:#69737a;
-  margin-top:6px;
+.lesson-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
 }
 
-.listen-main{
-  margin-top:18px;
-  border:0;
-  background:#66578a;
-  color:white;
-  padding:13px 22px;
-  border-radius:30px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 6px 16px rgba(102,87,138,.2);
-}
-
-.lesson-content{
-  padding:22px;
-}
-
-.section{
-  border:1px solid #eee8e0;
+.card{
+  border:1px solid #e8ebf2;
   border-radius:20px;
   padding:20px;
-  margin-bottom:18px;
-  background:#fff;
+  background:#fbfcff;
 }
 
-.section h3{
-  margin-top:0;
-  color:#55496d;
+.card h3{
+  margin-bottom:12px;
+  font-size:20px;
 }
 
-.info{
-  color:#687078;
-  line-height:1.65;
-}
-
-/* ================= PICTURES ================= */
-
-.picture-grid{
+.words{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:12px;
 }
 
-.picture-card{
-  border:1px solid #eee7df;
-  border-radius:17px;
-  background:#fffaf4;
+.word-card{
+  background:white;
+  border:1px solid #e4e8ef;
+  border-radius:16px;
   padding:14px 8px;
   text-align:center;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.picture-card .emoji{
-  font-size:38px;
+.word-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.07);
 }
 
-.picture-card b{
+.word-emoji{
+  font-size:40px;
   display:block;
-  margin-top:6px;
+  margin-bottom:5px;
 }
 
-/* ================= TRACE ================= */
-
-.trace-wrap{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+.word-name{
+  font-weight:800;
 }
 
-.trace-card{
-  border:1px solid #eee7df;
-  border-radius:18px;
-  padding:14px;
-  background:#fcfbff;
+.word-btn{
+  margin-top:8px;
+  border:0;
+  background:#eee9ff;
+  color:#6046cf;
+  padding:5px 9px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
 }
 
-.trace-title{
+.audio-box{
+  background:linear-gradient(135deg,#fff4df,#fff9ef);
+  border:1px solid #f5dfb5;
+}
+
+.audio-box p{
+  color:#6d5a36;
+  font-size:14px;
+  margin-bottom:13px;
+}
+
+.audio-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.audio-btn,
+.resource-btn{
+  display:inline-block;
+  text-decoration:none;
+  border:0;
+  cursor:pointer;
+  padding:11px 16px;
+  border-radius:11px;
+  font-weight:800;
+  font-size:14px;
+}
+
+.audio-btn{
+  background:#f2a900;
+  color:white;
+}
+
+.resource-btn{
+  background:#182033;
+  color:white;
+}
+
+.audio-note{
+  margin-top:12px;
+  font-size:12px;
+  color:#7b6a4b;
+}
+
+.story{
+  background:#f4f1ff;
+}
+
+.story p{
+  color:#40385c;
+}
+
+.trace-area{
   text-align:center;
-  font-weight:bold;
-  color:#55496d;
-  margin-bottom:10px;
 }
 
-.trace-canvas{
-  display:block;
+.trace-board{
+  position:relative;
   width:100%;
-  height:210px;
+  max-width:420px;
+  height:260px;
+  margin:15px auto;
   background:white;
-  border:2px dashed #d9d1e7;
-  border-radius:16px;
+  border:2px dashed #bfc5d4;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.guide-letter{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:205px;
+  font-weight:900;
+  color:#dfe3ec;
+  user-select:none;
+  pointer-events:none;
+}
+
+#traceCanvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
   touch-action:none;
   cursor:crosshair;
 }
 
-.trace-buttons{
+.trace-controls{
   display:flex;
   justify-content:center;
-  gap:8px;
-  margin-top:10px;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 .small-btn{
   border:0;
-  border-radius:20px;
-  padding:8px 14px;
-  background:#eee8f7;
-  color:#54486c;
+  background:#182033;
+  color:white;
+  padding:9px 14px;
+  border-radius:10px;
   cursor:pointer;
-  font-weight:bold;
+  font-weight:700;
 }
 
-/* ================= RHYME ================= */
-
-.rhyme{
-  background:#fff9f1;
-  border-radius:16px;
-  padding:16px;
-  line-height:1.7;
-  color:#555;
-}
-
-.action-btn{
-  border:0;
-  background:#f0eafa;
-  color:#584b73;
-  padding:10px 17px;
-  border-radius:25px;
-  font-weight:bold;
-  cursor:pointer;
-  margin-top:10px;
-}
-
-/* ================= STORY ================= */
-
-.story{
-  background:#f5faf8;
-  border-radius:16px;
-  padding:17px;
-  line-height:1.7;
-  color:#50595c;
-}
-
-/* ================= PRACTICE ================= */
-
-.question{
-  background:#faf8ff;
-  border-radius:17px;
-  padding:17px;
-  margin-top:14px;
-}
-
-.question-title{
-  font-weight:bold;
-  margin-bottom:12px;
-}
-
-.options{
+.practice-options{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
 
 .option{
-  border:2px solid #e5dff0;
+  border:1px solid #dfe4ee;
   background:white;
-  border-radius:15px;
-  padding:15px 10px;
+  border-radius:12px;
+  padding:12px;
   cursor:pointer;
-  font-size:17px;
-  font-weight:bold;
-  text-align:center;
-  transition:.15s;
-  user-select:none;
+  font-weight:800;
+  transition:.2s;
 }
 
 .option:hover{
-  background:#f8f4ff;
-}
-
-.option.correct{
-  background:#eaf8ef;
-  border-color:#91c7a1;
-}
-
-.option.wrong{
-  background:#fff1f0;
-  border-color:#e0aaa6;
+  background:#f3f0ff;
 }
 
 .feedback{
+  margin-top:12px;
   min-height:25px;
-  margin-top:12px;
-  font-weight:bold;
+  font-weight:800;
+  text-align:center;
 }
 
-.answer-box{
-  display:none;
-  margin-top:12px;
-  padding:12px;
-  border-radius:12px;
-  background:#edf8f2;
-  color:#396248;
-  font-weight:bold;
+.blend{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:12px 0;
 }
 
-/* ================= NAVIGATION ================= */
+.sound-box{
+  min-width:55px;
+  padding:10px 13px;
+  border-radius:10px;
+  background:#eaf5ff;
+  color:#1769aa;
+  font-weight:900;
+  text-align:center;
+}
 
-.lesson-nav{
+.arrow{
+  font-size:22px;
+  color:#777;
+}
+
+.result-message{
+  text-align:center;
+  padding:15px;
+  background:#eefbf2;
+  border-radius:14px;
+  color:#21683b;
+  font-weight:700;
+}
+
+.navigation{
   display:flex;
   justify-content:space-between;
-  gap:10px;
-  margin-top:20px;
+  gap:15px;
+  margin-top:25px;
 }
 
 .nav-btn{
+  flex:1;
   border:0;
-  border-radius:25px;
-  padding:12px 20px;
+  padding:13px;
+  border-radius:12px;
+  background:#182033;
+  color:white;
   cursor:pointer;
-  font-weight:bold;
-  background:#eee8f7;
-  color:#55496d;
+  font-weight:800;
 }
 
-.nav-btn.next{
-  background:#66578a;
+.nav-btn:disabled{
+  opacity:.35;
+  cursor:not-allowed;
+}
+
+footer{
+  background:#182033;
+  color:#cbd1df;
+  text-align:center;
+  padding:30px 20px;
+}
+
+footer strong{
   color:white;
 }
 
-/* ================= HIDDEN AUDIO ================= */
-
-.audio-player{
-  position:absolute;
-  width:1px;
-  height:1px;
-  left:-10000px;
-  top:-10000px;
-  opacity:0;
-  pointer-events:none;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  text-align:center;
-  color:#7b8085;
-  font-size:13px;
-  padding:30px 15px;
-}
-
-/* ================= MOBILE ================= */
-
 @media(max-width:800px){
-  .letters{
-    grid-template-columns:repeat(3,1fr);
+  .letter-nav{
+    grid-template-columns:repeat(7,1fr);
   }
 
-  .picture-grid{
-    grid-template-columns:repeat(3,1fr);
+  .lesson-grid{
+    grid-template-columns:1fr;
   }
 }
 
-@media(max-width:600px){
-  .top h1{
-    font-size:29px;
+@media(max-width:520px){
+  .nav{
+    padding:12px 14px;
   }
 
-  .letters{
+  .logo{
+    font-size:20px;
+  }
+
+  .back-btn{
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .hero{
+    padding:40px 16px 30px;
+  }
+
+  .container{
+    padding:22px 12px 50px;
+  }
+
+  .lesson{
+    padding:15px;
+    border-radius:18px;
+  }
+
+  .big-letter{
+    width:120px;
+    height:120px;
+    font-size:78px;
+  }
+
+  .words{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .trace-wrap{
+  .practice-options{
     grid-template-columns:1fr;
   }
 
-  .picture-grid{
-    grid-template-columns:repeat(2,1fr);
+  .trace-board{
+    height:220px;
   }
 
-  .options{
-    grid-template-columns:1fr;
-  }
-
-  .lesson-letter{
-    font-size:80px;
-  }
-
-  .lesson-content{
-    padding:14px;
+  .guide-letter{
+    font-size:170px;
   }
 }
 </style>
@@ -467,1168 +532,1146 @@ footer{
 
 <body>
 
-<header class="top">
-  <h1>🔤 Capital Letters</h1>
-  <p>
-    Learn each letter through pictures, sound, tracing, rhyme,
-    story and interactive practice.
-  </p>
-
-  <a class="back" href="beginner.html">← Back to Beginner</a>
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">KD<span>CreativeLab</span></a>
+    <a href="beginner.html" class="back-btn">← Beginner</a>
+  </nav>
 </header>
+
+<section class="hero">
+  <span class="badge">🔤 Capital Letters</span>
+  <h1>Learn Capital Letters</h1>
+  <p>
+    See the letter, hear the sound, learn new words,
+    trace the letter and practise.
+  </p>
+</section>
 
 <main class="container">
 
   <div class="section-title">
-    <h2>Choose a Letter</h2>
-    <p>Tap any letter to start its complete lesson.</p>
+    <h2>A–Z Letter Journey</h2>
+    <p>Tap any letter to start learning.</p>
   </div>
 
-  <div class="letters" id="letterGrid"></div>
+  <div class="letter-nav" id="letterNav"></div>
 
-  <section id="lesson">
-    <div class="lesson-box">
+  <div class="progress-wrap">
+    <div class="progress-top">
+      <span id="progressText">Letter 1 of 26</span>
+      <span id="progressPercent">4%</span>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
 
-      <div class="lesson-head">
-        <div class="lesson-letter" id="lessonLetter">A</div>
-        <div class="lesson-word" id="lessonWord">Apple</div>
-        <div class="lesson-sub" id="lessonSound">
-          Sound: /a/
+  <section class="lesson">
+
+    <div class="letter-head">
+      <div class="big-letter" id="bigLetter">A</div>
+      <h2 id="letterTitle">Letter A</h2>
+      <div class="sound" id="soundText">Sound: /æ/</div>
+    </div>
+
+    <div class="lesson-grid">
+
+      <!-- WORDS -->
+      <div class="card">
+        <h3>🖼️ Six Picture Words</h3>
+        <p style="color:#667085;font-size:14px;margin-bottom:14px;">
+          Tap a word to hear the complete English word.
+        </p>
+
+        <div class="words" id="wordList"></div>
+      </div>
+
+      <!-- JOLLY AUDIO -->
+      <div class="card audio-box">
+        <h3>🎵 Jolly Phonics Song</h3>
+
+        <p id="audioDescription">
+          Listen to the Jolly Phonics song for this sound.
+        </p>
+
+        <div class="audio-actions">
+
+          <a
+            id="jollyAudioLink"
+            class="audio-btn"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            ▶ Listen to Jolly Song
+          </a>
+
+          <a
+            class="resource-btn"
+            href="https://jollylearning.com/en-us/our-programmes/jolly-phonics/jolly-songs"
+            target="_blank"
+            rel="noopener"
+          >
+            🎵 Official Jolly Songs
+          </a>
+
         </div>
 
-        <button class="listen-main" id="songButton">
-          🔊 Listen to Phonics Song
+        <div class="audio-note" id="audioNote">
+          Official Jolly Learning audio resource.
+        </div>
+      </div>
+
+      <!-- STORY -->
+      <div class="card story">
+        <h3>📖 Letter Story</h3>
+        <p id="storyText"></p>
+
+        <button class="small-btn" onclick="readStory()">
+          🔊 Hear Story
         </button>
       </div>
 
-      <div class="lesson-content">
+      <!-- BLENDING -->
+      <div class="card">
+        <h3>🔤 Blend & Read</h3>
+        <p style="color:#667085;font-size:14px;">
+          Put sounds together to read a word.
+        </p>
 
-        <!-- PICTURES -->
-        <div class="section">
-          <h3>🖼️ Look and Learn</h3>
-          <p class="info">
-            Look at the pictures and say the beginning sound.
-          </p>
+        <div class="blend" id="blendArea"></div>
 
-          <div class="picture-grid" id="pictureGrid"></div>
+        <div style="text-align:center;">
+          <strong id="blendWord"></strong>
         </div>
-
-        <!-- SOUND -->
-        <div class="section">
-          <h3>🔊 Letter Sound</h3>
-          <p class="info" id="soundText"></p>
-
-          <button class="action-btn" id="soundSpeak">
-            🔊 Listen to the Sound
-          </button>
-        </div>
-
-        <!-- TRACING -->
-        <div class="section">
-          <h3>✏️ Trace the Letter</h3>
-
-          <p class="info">
-            Use your finger or stylus to trace the letter.
-            You can clear the board and try again.
-          </p>
-
-          <div class="trace-wrap">
-
-            <div class="trace-card">
-              <div class="trace-title">
-                Capital Letter
-              </div>
-
-              <canvas
-                id="capitalCanvas"
-                class="trace-canvas">
-              </canvas>
-
-              <div class="trace-buttons">
-                <button class="small-btn" onclick="clearCanvas('capitalCanvas')">
-                  Clear
-                </button>
-              </div>
-            </div>
-
-            <div class="trace-card">
-              <div class="trace-title">
-                Small Letter
-              </div>
-
-              <canvas
-                id="smallCanvas"
-                class="trace-canvas">
-              </canvas>
-
-              <div class="trace-buttons">
-                <button class="small-btn" onclick="clearCanvas('smallCanvas')">
-                  Clear
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- RHYME -->
-        <div class="section">
-          <h3>🎵 Letter Rhyme</h3>
-
-          <div class="rhyme" id="rhymeText"></div>
-
-          <button class="action-btn" id="rhymeButton">
-            🔊 Listen to Rhyme
-          </button>
-        </div>
-
-        <!-- STORY -->
-        <div class="section">
-          <h3>📖 Little Story</h3>
-
-          <div class="story" id="storyText"></div>
-
-          <button class="action-btn" id="storyButton">
-            🔊 Listen to Story
-          </button>
-        </div>
-
-        <!-- PRACTICE -->
-        <div class="section">
-          <h3>🎯 Let's Practice</h3>
-
-          <div class="question">
-
-            <div class="question-title" id="questionText">
-              Which word begins with A?
-            </div>
-
-            <div class="options" id="options"></div>
-
-            <div class="feedback" id="feedback"></div>
-
-            <button class="action-btn" id="showAnswerButton">
-              Show Answer
-            </button>
-
-            <div class="answer-box" id="answerBox"></div>
-
-          </div>
-
-        </div>
-
-        <!-- RECOGNITION -->
-        <div class="section">
-
-          <h3>🔎 Find the Letter</h3>
-
-          <div class="question">
-
-            <div class="question-title">
-              Find the letter
-              <span id="findTarget">A</span>
-              in the word.
-            </div>
-
-            <div class="options" id="findOptions"></div>
-
-            <div class="feedback" id="findFeedback"></div>
-
-          </div>
-
-        </div>
-
-        <!-- NAVIGATION -->
-        <div class="lesson-nav">
-
-          <button class="nav-btn" id="previousButton">
-            ← Previous
-          </button>
-
-          <button class="nav-btn next" id="nextButton">
-            Next →
-          </button>
-
-        </div>
-
       </div>
+
+      <!-- TRACING -->
+      <div class="card trace-area">
+        <h3>✏️ Trace the Letter</h3>
+
+        <p style="color:#667085;font-size:14px;">
+          Follow the light letter guide.
+        </p>
+
+        <div class="trace-board">
+          <div class="guide-letter" id="guideLetter">A</div>
+          <canvas id="traceCanvas"></canvas>
+        </div>
+
+        <div class="trace-controls">
+          <button class="small-btn" onclick="clearTrace()">
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- BEGINNING SOUND -->
+      <div class="card">
+        <h3>👂 Beginning Sound</h3>
+
+        <p id="questionText">
+          Which word begins with this sound?
+        </p>
+
+        <div class="practice-options" id="practiceOptions"></div>
+
+        <div class="feedback" id="feedback"></div>
+      </div>
+
+      <!-- FIND LETTER -->
+      <div class="card">
+        <h3>🎯 Find the Letter</h3>
+
+        <p style="color:#667085;font-size:14px;">
+          Tap the correct capital letter.
+        </p>
+
+        <div class="practice-options" id="findOptions"></div>
+
+        <div class="feedback" id="findFeedback"></div>
+      </div>
+
     </div>
+
+    <div class="navigation">
+      <button class="nav-btn" id="prevBtn" onclick="previousLetter()">
+        ← Previous
+      </button>
+
+      <button class="nav-btn" id="nextBtn" onclick="nextLetter()">
+        Next →
+      </button>
+    </div>
+
   </section>
 
 </main>
 
 <footer>
-  © KDCreativeLab • Learn • Practice • Grow 🌱
+  <strong>KD CreativeLab</strong>
+  <br>
+  Learn English. Grow with Confidence.
 </footer>
-
-<!-- Hidden YouTube player used only for audio playback -->
-<div class="audio-player">
-  <div id="youtubePlayer"></div>
-</div>
 
 <script>
 
 /* =========================================================
    LETTER DATA
-========================================================= */
+   ========================================================= */
 
-const letters = [
+const letters = {
 
-{
-letter:"A",
-small:"a",
-word:"Apple",
-pic:"🍎",
-sound:"/a/",
-pictures:[
-["🍎","Apple"],
-["🐜","Ant"],
-["🐊","Alligator"],
-["🦍","Ape"],
-["🥑","Avocado"]
-],
-rhyme:
-"Apple, ant and alligator,\nA is here — a happy letter!\nA says /a/, come say it too,\nA is fun for me and you!",
-story:
-"Ana saw a red apple on the table. She picked up the apple and smiled. Then she saw a little ant near the apple. Ana gently moved the ant to a safe place. Ana said, “A is for apple and ant!”",
-correct:"Apple",
-wrong:["Cat","Dog"]
+A:{
+  sound:"/æ/",
+  words:[
+    ["Apple","🍎"],
+    ["Ant","🐜"],
+    ["Alligator","🐊"],
+    ["Arrow","🏹"],
+    ["Aeroplane","✈️"],
+    ["Astronaut","👩‍🚀"]
+  ],
+  story:
+  "Ava saw an ant near an apple. She picked up an arrow-shaped leaf and smiled at the little ant.",
+  blend:["a","t"],
+  blendWord:"at",
+  practice:["Apple","Ball","Ant"],
+  correct:"Apple"
 },
 
-{
-letter:"B",
-small:"b",
-word:"Ball",
-pic:"⚽",
-sound:"/b/",
-pictures:[
-["⚽","Ball"],
-["🐻","Bear"],
-["🦋","Butterfly"],
-["🍌","Banana"],
-["🚌","Bus"]
-],
-rhyme:
-"B is for ball, bounce it high,\nB is for bird that flies in the sky.\nB says /b/, now say it with me,\nB is a bright letter to see!",
-story:
-"Ben had a blue ball. He bounced the ball in the garden. A little bird sat on a branch and watched him play. Ben smiled and said, “B is for ball and bird!”",
-correct:"Ball",
-wrong:["Apple","Dog"]
+B:{
+  sound:"/b/",
+  words:[
+    ["Ball","⚽"],
+    ["Banana","🍌"],
+    ["Bus","🚌"],
+    ["Bear","🐻"],
+    ["Butterfly","🦋"],
+    ["Balloon","🎈"]
+  ],
+  story:
+  "Ben had a blue ball. He bounced it beside a big tree and laughed.",
+  blend:["b","a","t"],
+  blendWord:"bat",
+  practice:["Ball","Cat","Dog"],
+  correct:"Ball"
 },
 
-{
-letter:"C",
-small:"c",
-word:"Cat",
-pic:"🐱",
-sound:"/k/",
-pictures:[
-["🐱","Cat"],
-["🚗","Car"],
-["🐄","Cow"],
-["🎂","Cake"],
-["🕯️","Candle"]
-],
-rhyme:
-"C is for cat, C is for car,\nC is for cake that we like to share.\nC says /k/, come say it too,\nC is a clever letter for you!",
-story:
-"Charlie saw a little cat near a car. The cat sat quietly beside the car. Charlie gave the cat some water. He smiled and said, “C is for cat!”",
-correct:"Cat",
-wrong:["Ball","Dog"]
+C:{
+  sound:"/k/",
+  words:[
+    ["Cat","🐱"],
+    ["Cake","🎂"],
+    ["Car","🚗"],
+    ["Cow","🐄"],
+    ["Cup","🥤"],
+    ["Camel","🐪"]
+  ],
+  story:
+  "Cathy saw a cat sitting beside a cup. The cat looked at her and meowed.",
+  blend:["c","a","t"],
+  blendWord:"cat",
+  practice:["Cat","Fish","Sun"],
+  correct:"Cat"
 },
 
-{
-letter:"D",
-small:"d",
-word:"Dog",
-pic:"🐶",
-sound:"/d/",
-pictures:[
-["🐶","Dog"],
-["🦆","Duck"],
-["🐬","Dolphin"],
-["🥁","Drum"],
-["🍩","Donut"]
-],
-rhyme:
-"D is for dog, D is for duck,\nD is for drum — tap it, good luck!\nD says /d/, loud and clear,\nD is a letter we love to hear!",
-story:
-"Dan had a little dog. One day the dog found a drum in the room. Dan tapped the drum and the dog wagged its tail. Dan laughed and said, “D is for dog and drum!”",
-correct:"Dog",
-wrong:["Cat","Apple"]
+D:{
+  sound:"/d/",
+  words:[
+    ["Dog","🐶"],
+    ["Drum","🥁"],
+    ["Duck","🦆"],
+    ["Door","🚪"],
+    ["Deer","🦌"],
+    ["Dinosaur","🦖"]
+  ],
+  story:
+  "Dino the dog heard a drum. He ran to the door to see what was happening.",
+  blend:["d","o","g"],
+  blendWord:"dog",
+  practice:["Dog","Apple","Fish"],
+  correct:"Dog"
 },
 
-{
-letter:"E",
-small:"e",
-word:"Egg",
-pic:"🥚",
-sound:"/e/",
-pictures:[
-["🥚","Egg"],
-["🐘","Elephant"],
-["🦅","Eagle"],
-["🚪","Entrance"],
-["🌎","Earth"]
-],
-rhyme:
-"E is for egg, E is for elephant,\nE is for eagle flying elegant.\nE says /e/, say it with me,\nE is easy as can be!",
-story:
-"Emma found an egg in a small basket. She looked carefully and saw a picture of an elephant beside it. Emma smiled and said, “E is for egg and elephant!”",
-correct:"Egg",
-wrong:["Dog","Ball"]
+E:{
+  sound:"/e/",
+  words:[
+    ["Egg","🥚"],
+    ["Elephant","🐘"],
+    ["Elf","🧝"],
+    ["Elbow","💪"],
+    ["Engine","🚂"],
+    ["Exit","🚪"]
+  ],
+  story:
+  "Emma found an egg near the elephant picture. She carefully put it in a basket.",
+  blend:["e","g","g"],
+  blendWord:"egg",
+  practice:["Egg","Sun","Dog"],
+  correct:"Egg"
 },
 
-{
-letter:"F",
-small:"f",
-word:"Fish",
-pic:"🐟",
-sound:"/f/",
-pictures:[
-["🐟","Fish"],
-["🦊","Fox"],
-["🐸","Frog"],
-["🌸","Flower"],
-["🪭","Fan"]
-],
-rhyme:
-"F is for fish, F is for frog,\nF is for fox near the log.\nF says /f/, now say it too,\nF is a friendly sound for you!",
-story:
-"Farah saw a fish in a pond. A frog jumped near the fish. Farah watched quietly and then saw a fox walking near the trees. She said, “F is for fish, frog and fox!”",
-correct:"Fish",
-wrong:["Cat","Dog"]
+F:{
+  sound:"/f/",
+  words:[
+    ["Fish","🐟"],
+    ["Fox","🦊"],
+    ["Flower","🌸"],
+    ["Frog","🐸"],
+    ["Fire","🔥"],
+    ["Feather","🪶"]
+  ],
+  story:
+  "Fred saw a frog near a flower. A soft feather floated down beside him.",
+  blend:["f","i","t"],
+  blendWord:"fit",
+  practice:["Fish","Cat","Ball"],
+  correct:"Fish"
 },
 
-{
-letter:"G",
-small:"g",
-word:"Goat",
-pic:"🐐",
-sound:"/g/",
-pictures:[
-["🐐","Goat"],
-["🦒","Giraffe"],
-["🍇","Grapes"],
-["🎁","Gift"],
-["🌳","Garden"]
-],
-rhyme:
-"G is for goat, G is for grape,\nG is for garden — a lovely place.\nG says /g/, now say it too,\nG is a great letter for you!",
-story:
-"Gina went into the garden. She saw a goat near the gate. Some grapes were growing nearby. Gina smiled and said, “G is for goat, garden and grapes!”",
-correct:"Goat",
-wrong:["Fish","Ball"]
+G:{
+  sound:"/g/",
+  words:[
+    ["Goat","🐐"],
+    ["Gift","🎁"],
+    ["Grass","🌱"],
+    ["Gum","🫧"],
+    ["Garden","🌳"],
+    ["Gorilla","🦍"]
+  ],
+  story:
+  "Gina walked into the garden. She saw a goat eating fresh green grass.",
+  blend:["g","o","t"],
+  blendWord:"got",
+  practice:["Goat","Apple","Sun"],
+  correct:"Goat"
 },
 
-{
-letter:"H",
-small:"h",
-word:"Hen",
-pic:"🐔",
-sound:"/h/",
-pictures:[
-["🐔","Hen"],
-["🏠","House"],
-["🎩","Hat"],
-["🐴","Horse"],
-["✋","Hand"]
-],
-rhyme:
-"H is for hen, H is for hat,\nH is for horse and H is for hand.\nH says /h/, come say it too,\nH is a happy sound for you!",
-story:
-"Harry wore a hat and walked near his house. He saw a hen beside the gate. A horse was standing nearby. Harry waved his hand and said, “H is for hen!”",
-correct:"Hen",
-wrong:["Goat","Fish"]
+H:{
+  sound:"/h/",
+  words:[
+    ["Hat","🎩"],
+    ["Horse","🐴"],
+    ["House","🏠"],
+    ["Hamster","🐹"],
+    ["Hand","✋"],
+    ["Heart","❤️"]
+  ],
+  story:
+  "Harry wore his hat and walked home. His little hamster was waiting at the house.",
+  blend:["h","e","n"],
+  blendWord:"hen",
+  practice:["Hat","Dog","Fish"],
+  correct:"Hat"
 },
 
-{
-letter:"I",
-small:"i",
-word:"Insect",
-pic:"🐞",
-sound:"/i/",
-pictures:[
-["🐞","Insect"],
-["🍦","Ice cream"],
-["🧊","Ice"],
-["🏝️","Island"],
-["🖋️","Ink"]
-],
-rhyme:
-"I is for insect, I is for ice,\nI is for ink — that sounds nice!\nI says /i/, come say it too,\nI is an interesting letter for you!",
-story:
-"Isha saw a tiny insect near a glass of ice. She looked closely but did not touch it. Then she drew the insect with her ink pen. Isha said, “I is for insect!”",
-correct:"Insect",
-wrong:["Hen","Dog"]
+I:{
+  sound:"/ɪ/",
+  words:[
+    ["Ink","🖋️"],
+    ["Insect","🐞"],
+    ["Igloo","🧊"],
+    ["Iguana","🦎"],
+    ["Inch","📏"],
+    ["Inside","🏠"]
+  ],
+  story:
+  "Ivy saw an insect near the igloo. She went inside and drew it with blue ink.",
+  blend:["i","n"],
+  blendWord:"in",
+  practice:["Insect","Ball","Cat"],
+  correct:"Insect"
 },
 
-{
-letter:"J",
-small:"j",
-word:"Jam",
-pic:"🍓",
-sound:"/j/",
-pictures:[
-["🍓","Jam"],
-["🫙","Jar"],
-["🧃","Juice"],
-["🃏","Joker"],
-["🧥","Jacket"]
-],
-rhyme:
-"J is for jam, J is for jar,\nJ is for juice we drink with care.\nJ says /j/, say it with me,\nJ is a joyful letter to see!",
-story:
-"Jaya opened a jar of jam. She spread the jam on her toast and drank some juice. She put on her jacket before going outside. Jaya said, “J is for jam!”",
-correct:"Jam",
-wrong:["Egg","Cat"]
+J:{
+  sound:"/dʒ/",
+  words:[
+    ["Jelly","🍮"],
+    ["Jar","🫙"],
+    ["Juice","🧃"],
+    ["Jaguar","🐆"],
+    ["Jacket","🧥"],
+    ["Jungle","🌴"]
+  ],
+  story:
+  "Jack put jelly in a jar. Then he wore his jacket and went to the jungle.",
+  blend:["j","a","m"],
+  blendWord:"jam",
+  practice:["Jelly","Fish","Sun"],
+  correct:"Jelly"
 },
 
-{
-letter:"K",
-small:"k",
-word:"Kite",
-pic:"🪁",
-sound:"/k/",
-pictures:[
-["🪁","Kite"],
-["🐨","Koala"],
-["🔑","Key"],
-["🥝","Kiwi"],
-["👑","King"]
-],
-rhyme:
-"K is for kite flying high,\nK is for key and king nearby.\nK says /k/, come say it too,\nK is a kind letter for you!",
-story:
-"Karan flew a kite in the park. He found a small key near a tree. He picked it up and gave it to his mother. Karan said, “K is for kite and key!”",
-correct:"Kite",
-wrong:["Jam","Fish"]
+K:{
+  sound:"/k/",
+  words:[
+    ["Kite","🪁"],
+    ["Key","🔑"],
+    ["King","👑"],
+    ["Koala","🐨"],
+    ["Kiwi","🥝"],
+    ["Kangaroo","🦘"]
+  ],
+  story:
+  "Kiran flew a kite while a koala watched from a tree.",
+  blend:["k","i","t"],
+  blendWord:"kit",
+  practice:["Kite","Dog","Apple"],
+  correct:"Kite"
 },
 
-{
-letter:"L",
-small:"l",
-word:"Lion",
-pic:"🦁",
-sound:"/l/",
-pictures:[
-["🦁","Lion"],
-["🍋","Lemon"],
-["🦎","Lizard"],
-["💡","Lamp"],
-["🍃","Leaf"]
-],
-rhyme:
-"L is for lion, L is for leaf,\nL is for lemon — sweet and fresh!\nL says /l/, say it with me,\nL is a lovely letter to see!",
-story:
-"Lina saw a lion in a picture book. She turned the page and found a lemon and a green leaf. Lina pointed to each picture and said, “L is for lion!”",
-correct:"Lion",
-wrong:["Kite","Dog"]
+L:{
+  sound:"/l/",
+  words:[
+    ["Lion","🦁"],
+    ["Lemon","🍋"],
+    ["Leaf","🍃"],
+    ["Lamp","💡"],
+    ["Lizard","🦎"],
+    ["Log","🪵"]
+  ],
+  story:
+  "Leo saw a lion near a large tree. A yellow leaf fell beside him.",
+  blend:["l","e","g"],
+  blendWord:"leg",
+  practice:["Lion","Ball","Fish"],
+  correct:"Lion"
 },
 
-{
-letter:"M",
-small:"m",
-word:"Moon",
-pic:"🌙",
-sound:"/m/",
-pictures:[
-["🌙","Moon"],
-["🐒","Monkey"],
-["🥭","Mango"],
-["🐭","Mouse"],
-["👩","Mother"]
-],
-rhyme:
-"M is for moon shining bright,\nM is for monkey out of sight.\nM says /m/, come say it too,\nM is a magical letter for you!",
-story:
-"Meena looked at the moon at night. She saw a monkey in her storybook and ate a sweet mango. Meena smiled and said, “M is for moon, monkey and mango!”",
-correct:"Moon",
-wrong:["Lion","Fish"]
+M:{
+  sound:"/m/",
+  words:[
+    ["Mango","🥭"],
+    ["Monkey","🐒"],
+    ["Moon","🌙"],
+    ["Mouse","🐭"],
+    ["Milk","🥛"],
+    ["Map","🗺️"]
+  ],
+  story:
+  "Mia ate a mango while looking at the moon. A tiny mouse ran past her.",
+  blend:["m","a","p"],
+  blendWord:"map",
+  practice:["Mango","Cat","Dog"],
+  correct:"Mango"
 },
 
-{
-letter:"N",
-small:"n",
-word:"Nest",
-pic:"🪺",
-sound:"/n/",
-pictures:[
-["🪺","Nest"],
-["👃","Nose"],
-["🌙","Night"],
-["📰","Newspaper"],
-["🥜","Nut"]
-],
-rhyme:
-"N is for nest in the tree,\nN is for nose on you and me.\nN says /n/, now say it too,\nN is a nice letter for you!",
-story:
-"Nina saw a nest in a tree. She could see tiny birds inside it. Nina touched her nose and smiled. She said, “N is for nest and nose!”",
-correct:"Nest",
-wrong:["Moon","Cat"]
+N:{
+  sound:"/n/",
+  words:[
+    ["Nest","🪺"],
+    ["Nose","👃"],
+    ["Night","🌙"],
+    ["Nurse","👩‍⚕️"],
+    ["Newspaper","📰"],
+    ["Nut","🥜"]
+  ],
+  story:
+  "Nina found a nest in a tree. She looked at it quietly and saw a little bird.",
+  blend:["n","a","p"],
+  blendWord:"nap",
+  practice:["Nest","Ball","Fish"],
+  correct:"Nest"
 },
 
-{
-letter:"O",
-small:"o",
-word:"Orange",
-pic:"🍊",
-sound:"/o/",
-pictures:[
-["🍊","Orange"],
-["🐙","Octopus"],
-["🦉","Owl"],
-["🐂","Ox"],
-["🧅","Onion"]
-],
-rhyme:
-"O is for orange, round and bright,\nO is for owl in the night.\nO says /o/, come say it too,\nO is a lovely letter for you!",
-story:
-"Om saw an orange on the table. He looked at a picture of an owl and an octopus. Om pointed to the orange and said, “O is for orange!”",
-correct:"Orange",
-wrong:["Nest","Ball"]
+O:{
+  sound:"/ɒ/",
+  words:[
+    ["Orange","🍊"],
+    ["Octopus","🐙"],
+    ["Ox","🐂"],
+    ["Otter","🦦"],
+    ["Ostrich","🦤"],
+    ["Opera","🎭"]
+  ],
+  story:
+  "Oliver ate an orange while watching an otter swim in the water.",
+  blend:["o","n"],
+  blendWord:"on",
+  practice:["Orange","Dog","Fish"],
+  correct:"Orange"
 },
 
-{
-letter:"P",
-small:"p",
-word:"Parrot",
-pic:"🦜",
-sound:"/p/",
-pictures:[
-["🦜","Parrot"],
-["🐷","Pig"],
-["🍕","Pizza"],
-["✏️","Pencil"],
-["🍐","Pear"]
-],
-rhyme:
-"P is for parrot, P is for pig,\nP is for pencil — small or big.\nP says /p/, come say it too,\nP is a playful sound for you!",
-story:
-"Priya had a green parrot. She drew the parrot with her pencil. Then she ate a slice of pizza. Priya said, “P is for parrot, pencil and pizza!”",
-correct:"Parrot",
-wrong:["Orange","Dog"]
+P:{
+  sound:"/p/",
+  words:[
+    ["Pig","🐷"],
+    ["Pizza","🍕"],
+    ["Pencil","✏️"],
+    ["Penguin","🐧"],
+    ["Plant","🪴"],
+    ["Pancake","🥞"]
+  ],
+  story:
+  "Pia drew a penguin with a pencil. Then she ate a warm pancake.",
+  blend:["p","i","n"],
+  blendWord:"pin",
+  practice:["Pig","Cat","Sun"],
+  correct:"Pig"
 },
 
-{
-letter:"Q",
-small:"q",
-word:"Queen",
-pic:"👑",
-sound:"/kw/",
-pictures:[
-["👑","Queen"],
-["❓","Question"],
-["🕯️","Quilt"],
-["🪶","Quill"],
-["🐦","Quail"]
-],
-rhyme:
-"Q is for queen in a crown,\nQ is for question written down.\nQ says /kw/, say it with me,\nQ is a quiet letter to see!",
-story:
-"The queen sat on her chair. She had a colourful quilt beside her. A little quail came near the window. The queen smiled and asked a question.",
-correct:"Queen",
-wrong:["Parrot","Lion"]
+Q:{
+  sound:"/kw/",
+  words:[
+    ["Queen","👸"],
+    ["Question","❓"],
+    ["Quack","🦆"],
+    ["Quill","🪶"],
+    ["Quilt","🛏️"],
+    ["Quick","⚡"]
+  ],
+  story:
+  "The queen asked a question. A duck nearby gave a loud quack.",
+  blend:["qu","i","t"],
+  blendWord:"quit",
+  practice:["Queen","Apple","Dog"],
+  correct:"Queen"
 },
 
-{
-letter:"R",
-small:"r",
-word:"Rabbit",
-pic:"🐰",
-sound:"/r/",
-pictures:[
-["🐰","Rabbit"],
-["🌈","Rainbow"],
-["🚀","Rocket"],
-["🌹","Rose"],
-["🤖","Robot"]
-],
-rhyme:
-"R is for rabbit, R is for rose,\nR is for rocket that zooms as it goes.\nR says /r/, come say it too,\nR is a ready sound for you!",
-story:
-"Riya saw a rabbit near a rose. She looked at a toy rocket and a small robot. Riya laughed and said, “R is for rabbit!”",
-correct:"Rabbit",
-wrong:["Queen","Fish"]
+R:{
+  sound:"/r/",
+  words:[
+    ["Rabbit","🐰"],
+    ["Rainbow","🌈"],
+    ["Rocket","🚀"],
+    ["Rose","🌹"],
+    ["Road","🛣️"],
+    ["Ring","💍"]
+  ],
+  story:
+  "Riya saw a rainbow after the rain. A rabbit hopped across the road.",
+  blend:["r","e","d"],
+  blendWord:"red",
+  practice:["Rabbit","Fish","Ball"],
+  correct:"Rabbit"
 },
 
-{
-letter:"S",
-small:"s",
-word:"Sun",
-pic:"☀️",
-sound:"/s/",
-pictures:[
-["☀️","Sun"],
-["🐍","Snake"],
-["⭐","Star"],
-["🥪","Sandwich"],
-["🧦","Sock"]
-],
-rhyme:
-"S is for sun shining bright,\nS is for star in the night.\nS says /s/, come say it too,\nS is a super sound for you!",
-story:
-"Sam went outside in the sun. He saw a snake near a tree and a bright star picture in his book. Sam said, “S is for sun and snake!”",
-correct:"Sun",
-wrong:["Rabbit","Dog"]
+S:{
+  sound:"/s/",
+  words:[
+    ["Snake","🐍"],
+    ["Sun","☀️"],
+    ["Star","⭐"],
+    ["Spoon","🥄"],
+    ["Sheep","🐑"],
+    ["Sock","🧦"]
+  ],
+  story:
+  "Sam saw the sun shining above a star-shaped cloud. A sheep stood nearby.",
+  blend:["s","a","t"],
+  blendWord:"sat",
+  practice:["Snake","Dog","Apple"],
+  correct:"Snake"
 },
 
-{
-letter:"T",
-small:"t",
-word:"Tiger",
-pic:"🐯",
-sound:"/t/",
-pictures:[
-["🐯","Tiger"],
-["🌳","Tree"],
-["🍅","Tomato"],
-["🚂","Train"],
-["🦷","Tooth"]
-],
-rhyme:
-"T is for tiger, T is for tree,\nT is for train — come ride with me!\nT says /t/, now say it too,\nT is a terrific letter for you!",
-story:
-"Tara saw a tiger in a book. She drew a tall tree beside it. Then she played with her toy train. Tara said, “T is for tiger and train!”",
-correct:"Tiger",
-wrong:["Sun","Cat"]
+T:{
+  sound:"/t/",
+  words:[
+    ["Tiger","🐯"],
+    ["Tree","🌳"],
+    ["Turtle","🐢"],
+    ["Tennis","🎾"],
+    ["Teddy","🧸"],
+    ["Train","🚆"]
+  ],
+  story:
+  "Tom watched a train pass a tall tree. His teddy bear sat beside him.",
+  blend:["t","a","p"],
+  blendWord:"tap",
+  practice:["Tiger","Fish","Ball"],
+  correct:"Tiger"
 },
 
-{
-letter:"U",
-small:"u",
-word:"Umbrella",
-pic:"☂️",
-sound:"/u/",
-pictures:[
-["☂️","Umbrella"],
-["🦄","Unicorn"],
-["🩲","Underwear"],
-["⬆️","Up"],
-["🌂","Umbrella"]
-],
-rhyme:
-"U is for umbrella in the rain,\nU is for up again and again.\nU says /u/, come say it too,\nU is a useful letter for you!",
-story:
-"Uma carried an umbrella because it was raining. She looked up at the cloudy sky. Her toy unicorn was safe inside the house. Uma said, “U is for umbrella!”",
-correct:"Umbrella",
-wrong:["Tiger","Dog"]
+U:{
+  sound:"/ʌ/",
+  words:[
+    ["Umbrella","☂️"],
+    ["Uncle","👨"],
+    ["Up","⬆️"],
+    ["Under","⬇️"],
+    ["Ugly","🙂"],
+    ["Us","👨‍👩‍👧‍👦"]
+  ],
+  story:
+  "Uma held an umbrella and looked under a tree. She smiled and walked up the path.",
+  blend:["u","p"],
+  blendWord:"up",
+  practice:["Umbrella","Cat","Dog"],
+  correct:"Umbrella"
 },
 
-{
-letter:"V",
-small:"v",
-word:"Van",
-pic:"🚐",
-sound:"/v/",
-pictures:[
-["🚐","Van"],
-["🎻","Violin"],
-["🌋","Volcano"],
-["🦺","Vest"],
-["🥦","Vegetable"]
-],
-rhyme:
-"V is for van, V is for vest,\nV is for violin sounding its best.\nV says /v/, come say it too,\nV is a very nice letter for you!",
-story:
-"Vina saw a van on the road. At home she played a little violin. She wore her bright vest before going outside. Vina said, “V is for van!”",
-correct:"Van",
-wrong:["Umbrella","Cat"]
+V:{
+  sound:"/v/",
+  words:[
+    ["Van","🚐"],
+    ["Vulture","🦅"],
+    ["Volcano","🌋"],
+    ["Violin","🎻"],
+    ["Vegetable","🥕"],
+    ["Volleyball","🏐"]
+  ],
+  story:
+  "Vikram saw a van near the volcano. Later, he played volleyball.",
+  blend:["v","a","n"],
+  blendWord:"van",
+  practice:["Van","Apple","Fish"],
+  correct:"Van"
 },
 
-{
-letter:"W",
-small:"w",
-word:"Water",
-pic:"💧",
-sound:"/w/",
-pictures:[
-["💧","Water"],
-["🐋","Whale"],
-["🍉","Watermelon"],
-["⌚","Watch"],
-["🌳","Wood"]
-],
-rhyme:
-"W is for water, W is for whale,\nW is for wind that makes leaves sail.\nW says /w/, come say it too,\nW is a wonderful sound for you!",
-story:
-"Will drank some water on a hot day. He saw a whale in a book and a watermelon on the table. Will said, “W is for water and whale!”",
-correct:"Water",
-wrong:["Van","Dog"]
+W:{
+  sound:"/w/",
+  words:[
+    ["Wind","💨"],
+    ["Whale","🐋"],
+    ["Watermelon","🍉"],
+    ["Watch","⌚"],
+    ["Wolf","🐺"],
+    ["Water","💧"]
+  ],
+  story:
+  "Wendy watched a whale in the water. The wind moved the leaves around her.",
+  blend:["w","e","t"],
+  blendWord:"wet",
+  practice:["Whale","Dog","Cat"],
+  correct:"Whale"
 },
 
-{
-letter:"X",
-small:"x",
-word:"X-ray",
-pic:"🩻",
-sound:"/ks/",
-pictures:[
-["🩻","X-ray"],
-["📦","Box"],
-["🦊","Fox"],
-["🧰","Fix"],
-["🔟","Six"]
-],
-rhyme:
-"X is in fox and box we see,\nX is in six — count with me.\nX says /ks/, say it too,\nX is an exciting letter for you!",
-story:
-"Xavier had an X-ray picture. He looked at a box and found a toy fox inside it. He counted six blocks and smiled.",
-correct:"X-ray",
-wrong:["Water","Cat"]
+X:{
+  sound:"/ks/",
+  words:[
+    ["Fox","🦊"],
+    ["Box","📦"],
+    ["Wax","🕯️"],
+    ["Six","6️⃣"],
+    ["Ox","🐂"],
+    ["Axe","🪓"]
+  ],
+  story:
+  "Max found a box with six little toys. He put them away carefully.",
+  blend:["s","i","x"],
+  blendWord:"six",
+  practice:["Fox","Ball","Sun"],
+  correct:"Fox"
 },
 
-{
-letter:"Y",
-small:"y",
-word:"Yo-yo",
-pic:"🪀",
-sound:"/y/",
-pictures:[
-["🪀","Yo-yo"],
-["🧶","Yarn"],
-["🥛","Yogurt"],
-["🛳️","Yacht"],
-["🌱","Yard"]
-],
-rhyme:
-"Y is for yo-yo going down,\nY is for yarn in a ball around.\nY says /y/, come say it too,\nY is a young and joyful sound for you!",
-story:
-"Yash played with his yo-yo. His mother gave him some yogurt. Later he saw a ball of yarn in the room. Yash said, “Y is for yo-yo!”",
-correct:"Yo-yo",
-wrong:["X-ray","Dog"]
+Y:{
+  sound:"/j/",
+  words:[
+    ["Yo-yo","🪀"],
+    ["Yak","🐂"],
+    ["Yarn","🧶"],
+    ["Yacht","🛥️"],
+    ["Yellow","💛"],
+    ["Yawn","🥱"]
+  ],
+  story:
+  "Yash played with a yellow yo-yo while his friend watched from a yacht picture.",
+  blend:["y","e","s"],
+  blendWord:"yes",
+  practice:["Yo-yo","Dog","Fish"],
+  correct:"Yo-yo"
 },
 
-{
-letter:"Z",
-small:"z",
-word:"Zebra",
-pic:"🦓",
-sound:"/z/",
-pictures:[
-["🦓","Zebra"],
-["🦁","Zoo"],
-["⚡","Zap"],
-["🥒","Zucchini"],
-["🧟","Zombie"]
-],
-rhyme:
-"Z is for zebra, black and white,\nZ is for zoo — what a sight!\nZ says /z/, come say it too,\nZ is the last letter for you!",
-story:
-"Zara visited the zoo. She saw a zebra walking near the trees. Zara looked at the zebra's stripes and smiled. She said, “Z is for zebra!”",
-correct:"Zebra",
-wrong:["Yo-yo","Cat"]
+Z:{
+  sound:"/z/",
+  words:[
+    ["Zebra","🦓"],
+    ["Zoo","🦁"],
+    ["Zero","0️⃣"],
+    ["Zip","🤐"],
+    ["Zipper","🤐"],
+    ["Zigzag","〰️"]
+  ],
+  story:
+  "Zara saw a zebra at the zoo. She drew a zigzag line in her notebook.",
+  blend:["z","i","p"],
+  blendWord:"zip",
+  practice:["Zebra","Cat","Ball"],
+  correct:"Zebra"
 }
 
-];
+};
 
 
 /* =========================================================
-   LETTER GRID
-========================================================= */
+   JOLLY SONG LINKS
+   =========================================================
 
-const letterGrid = document.getElementById("letterGrid");
+   IMPORTANT:
+   Only A uses the exact link supplied by Kajal.
+   The official Jolly Songs page is used for the others
+   until individual verified links are available.
+*/
 
-letters.forEach((item,index)=>{
+const officialJollySongs =
+"https://jollylearning.com/en-us/our-programmes/jolly-phonics/jolly-songs";
 
-  const card = document.createElement("div");
-
-  card.className = "letter-card";
-
-  card.innerHTML = `
-    <div class="big-letter">${item.letter}</div>
-    <div class="pic">${item.pic}</div>
-    <div class="word">${item.word}</div>
-    <div class="tap">Tap to Learn</div>
-  `;
-
-  card.addEventListener("click",()=>{
-    openLesson(index);
-  });
-
-  letterGrid.appendChild(card);
-
-});
+const jollyLinks = {
+  A:"https://youtu.be/ZDDAh7ut0mw"
+};
 
 
 /* =========================================================
-   CURRENT LETTER
-========================================================= */
+   STATE
+   ========================================================= */
 
+const alphabet = Object.keys(letters);
 let currentIndex = 0;
 
 
 /* =========================================================
-   OPEN LESSON
-========================================================= */
+   LETTER NAVIGATION
+   ========================================================= */
 
-function openLesson(index){
+const letterNav = document.getElementById("letterNav");
 
-  currentIndex = index;
+alphabet.forEach((letter,index)=>{
 
-  const item = letters[index];
+  const btn = document.createElement("button");
 
-  document.getElementById("lesson").style.display = "block";
+  btn.textContent = letter;
 
-  document.getElementById("lessonLetter").textContent = item.letter;
+  btn.onclick = ()=>{
+    currentIndex = index;
+    renderLetter();
+  };
 
-  document.getElementById("lessonWord").textContent =
-    item.word;
+  letterNav.appendChild(btn);
 
-  document.getElementById("lessonSound").textContent =
-    "Sound: " + item.sound;
+});
+
+
+/* =========================================================
+   RENDER LETTER
+   ========================================================= */
+
+function renderLetter(){
+
+  const letter = alphabet[currentIndex];
+  const data = letters[letter];
+
+  document.getElementById("bigLetter").textContent = letter;
+  document.getElementById("guideLetter").textContent = letter;
+
+  document.getElementById("letterTitle").textContent =
+    "Letter " + letter;
 
   document.getElementById("soundText").textContent =
-    "This is " + item.letter +
-    ". Its main sound in this lesson is " +
-    item.sound +
-    ". Say the sound slowly and clearly.";
-
-  document.getElementById("rhymeText").textContent =
-    item.rhyme;
+    "Sound: " + data.sound;
 
   document.getElementById("storyText").textContent =
-    item.story;
+    data.story;
 
-  /* pictures */
+  document.getElementById("blendWord").textContent =
+    data.blendWord;
 
-  const pictureGrid =
-    document.getElementById("pictureGrid");
+  /* WORDS */
 
-  pictureGrid.innerHTML = "";
+  const wordList = document.getElementById("wordList");
+  wordList.innerHTML = "";
 
-  item.pictures.forEach(p=>{
+  data.words.forEach(item=>{
 
-    const box = document.createElement("div");
+    const word = item[0];
+    const emoji = item[1];
 
-    box.className = "picture-card";
+    const card = document.createElement("div");
 
-    box.innerHTML = `
-      <div class="emoji">${p[0]}</div>
-      <b>${p[1]}</b>
+    card.className = "word-card";
+
+    card.innerHTML = `
+      <span class="word-emoji">${emoji}</span>
+      <div class="word-name">${word}</div>
+      <button class="word-btn">🔊 Hear</button>
     `;
 
-    pictureGrid.appendChild(box);
+    card.onclick = ()=>{
+      speakWord(word);
+    };
 
-  });
-
-  /* practice */
-
-  const options =
-    document.getElementById("options");
-
-  options.innerHTML = "";
-
-  const practiceWords =
-    [item.correct,...item.wrong];
-
-  shuffle(practiceWords);
-
-  practiceWords.forEach(word=>{
-
-    const button = document.createElement("button");
-
-    button.className = "option";
-
-    button.textContent = word;
-
-    button.addEventListener("click",()=>{
-
-      const all =
-        options.querySelectorAll(".option");
-
-      all.forEach(x=>{
-        x.classList.remove("correct","wrong");
-      });
-
-      const feedback =
-        document.getElementById("feedback");
-
-      if(word === item.correct){
-
-        button.classList.add("correct");
-
-        feedback.textContent =
-          "✓ Correct! " +
-          word +
-          " begins with " +
-          item.letter + ".";
-
-        feedback.style.color="#39704d";
-
-      }else{
-
-        button.classList.add("wrong");
-
-        feedback.textContent =
-          "Try again. Listen to the beginning sound.";
-
-        feedback.style.color="#a0524d";
-
-      }
-
-    });
-
-    options.appendChild(button);
+    wordList.appendChild(card);
 
   });
 
 
-  /* answer */
+  /* JOLLY AUDIO */
 
-  document.getElementById("answerBox").style.display =
-    "none";
+  const audioLink =
+    document.getElementById("jollyAudioLink");
 
-  document.getElementById("answerBox").textContent =
-    "Answer: " + item.correct;
+  const audioNote =
+    document.getElementById("audioNote");
 
-  document.getElementById("feedback").textContent = "";
+  const audioDescription =
+    document.getElementById("audioDescription");
 
-  /* find letter */
+  if(jollyLinks[letter]){
 
-  document.getElementById("findTarget").textContent =
-    item.letter;
+    audioLink.href = jollyLinks[letter];
+    audioLink.textContent =
+      "▶ Play A Jolly Song";
 
-  const findOptions =
-    document.getElementById("findOptions");
+    audioDescription.textContent =
+      "This is the A Jolly Phonics song link you provided.";
 
-  findOptions.innerHTML = "";
-
-  const findWords = [
-    item.letter + "pple",
-    item.word,
-    item.wrong[0]
-  ];
-
-  shuffle(findWords);
-
-  findWords.forEach(word=>{
-
-    const button = document.createElement("button");
-
-    button.className="option";
-
-    button.textContent=word;
-
-    button.addEventListener("click",()=>{
-
-      const correct =
-        word.toUpperCase().includes(item.letter);
-
-      const feedback =
-        document.getElementById("findFeedback");
-
-      if(correct){
-
-        button.classList.remove("wrong");
-        button.classList.add("correct");
-
-        feedback.textContent =
-          "✓ Well done! You found " +
-          item.letter + ".";
-
-        feedback.style.color="#39704d";
-
-      }else{
-
-        button.classList.add("wrong");
-
-        feedback.textContent =
-          "Try again. Look carefully at the first letter.";
-
-        feedback.style.color="#a0524d";
-
-      }
-
-    });
-
-    findOptions.appendChild(button);
-
-  });
-
-
-  /* canvas */
-
-  setupTracing(
-    "capitalCanvas",
-    item.letter
-  );
-
-  setupTracing(
-    "smallCanvas",
-    item.small
-  );
-
-
-  /* scroll */
-
-  setTimeout(()=>{
-    document.getElementById("lesson")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
-  },100);
-
-}
-
-
-/* =========================================================
-   SHUFFLE
-========================================================= */
-
-function shuffle(array){
-
-  for(let i=array.length-1;i>0;i--){
-
-    const j =
-      Math.floor(Math.random()*(i+1));
-
-    [array[i],array[j]] =
-      [array[j],array[i]];
-
-  }
-
-  return array;
-}
-
-
-/* =========================================================
-   TEXT TO SPEECH
-   ONLY FOR RHYME / STORY / NORMAL TEXT
-   NOT USED FOR JOLLY PHONICS SOUND
-========================================================= */
-
-function speak(text){
-
-  if(!("speechSynthesis" in window)){
-    alert("Audio is not supported on this browser.");
-    return;
-  }
-
-  speechSynthesis.cancel();
-
-  const speech =
-    new SpeechSynthesisUtterance(text);
-
-  speech.lang="en-IN";
-  speech.rate=0.82;
-  speech.pitch=1;
-
-  speechSynthesis.speak(speech);
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-document.getElementById("soundSpeak")
-.addEventListener("click",()=>{
-
-  const item=letters[currentIndex];
-
-  speak(
-    item.letter +
-    ". " +
-    item.sound +
-    ". " +
-    item.word
-  );
-
-});
-
-
-document.getElementById("rhymeButton")
-.addEventListener("click",()=>{
-
-  speak(
-    letters[currentIndex].rhyme
-  );
-
-});
-
-
-document.getElementById("storyButton")
-.addEventListener("click",()=>{
-
-  speak(
-    letters[currentIndex].story
-  );
-
-});
-
-
-/* =========================================================
-   SHOW ANSWER
-========================================================= */
-
-document.getElementById("showAnswerButton")
-.addEventListener("click",()=>{
-
-  const box =
-    document.getElementById("answerBox");
-
-  if(box.style.display==="block"){
-
-    box.style.display="none";
-
-    document.getElementById(
-      "showAnswerButton"
-    ).textContent="Show Answer";
+    audioNote.textContent =
+      "Your supplied A-song link is connected here.";
 
   }else{
 
-    box.style.display="block";
+    audioLink.href = officialJollySongs;
+    audioLink.textContent =
+      "▶ Listen to " + letter + " Jolly Song";
 
-    document.getElementById(
-      "showAnswerButton"
-    ).textContent="Hide Answer";
+    audioDescription.textContent =
+      "Open the official Jolly Songs resource to listen to the song for this sound.";
+
+    audioNote.textContent =
+      "Official Jolly Learning resource. Individual verified links will be connected here.";
 
   }
 
-});
+
+  /* BLENDING */
+
+  const blendArea =
+    document.getElementById("blendArea");
+
+  blendArea.innerHTML = "";
+
+  data.blend.forEach((sound,index)=>{
+
+    const box = document.createElement("div");
+
+    box.className = "sound-box";
+    box.textContent = sound;
+
+    blendArea.appendChild(box);
+
+    if(index < data.blend.length-1){
+
+      const arrow = document.createElement("span");
+
+      arrow.className = "arrow";
+      arrow.textContent = "+";
+
+      blendArea.appendChild(arrow);
+
+    }
+
+  });
+
+
+  /* PRACTICE */
+
+  createPractice(data);
+
+  createFindLetter(letter);
+
+  updateProgress();
+
+  updateNavigation();
+
+  updateLetterButtons();
+
+  prepareCanvas();
+
+}
+
+
+/* =========================================================
+   WORD SPEECH
+   ========================================================= */
+
+function speakWord(word){
+
+  if(!("speechSynthesis" in window)){
+    alert("Your browser does not support word audio.");
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+
+  const utterance =
+    new SpeechSynthesisUtterance(word);
+
+  utterance.lang = "en-GB";
+  utterance.rate = 0.82;
+  utterance.pitch = 1;
+
+  const voices =
+    window.speechSynthesis.getVoices();
+
+  const british =
+    voices.find(v =>
+      v.lang &&
+      v.lang.toLowerCase().startsWith("en-gb")
+    );
+
+  if(british){
+    utterance.voice = british;
+  }
+
+  window.speechSynthesis.speak(utterance);
+
+}
+
+
+/* =========================================================
+   STORY AUDIO
+   ========================================================= */
+
+function readStory(){
+
+  if(!("speechSynthesis" in window)){
+    return;
+  }
+
+  const text =
+    document.getElementById("storyText").textContent;
+
+  window.speechSynthesis.cancel();
+
+  const utterance =
+    new SpeechSynthesisUtterance(text);
+
+  utterance.lang = "en-GB";
+  utterance.rate = 0.82;
+
+  window.speechSynthesis.speak(utterance);
+
+}
+
+
+/* =========================================================
+   BEGINNING SOUND PRACTICE
+   ========================================================= */
+
+function createPractice(data){
+
+  const box =
+    document.getElementById("practiceOptions");
+
+  const feedback =
+    document.getElementById("feedback");
+
+  box.innerHTML = "";
+  feedback.textContent = "";
+
+  data.practice.forEach(word=>{
+
+    const btn =
+      document.createElement("button");
+
+    btn.className = "option";
+    btn.textContent = word;
+
+    btn.onclick = ()=>{
+
+      if(word === data.correct){
+
+        feedback.textContent =
+          "✅ Correct! Great job!";
+
+        feedback.style.color =
+          "#21834a";
+
+      }else{
+
+        feedback.textContent =
+          "❌ Try again.";
+
+        feedback.style.color =
+          "#d64545";
+
+      }
+
+    };
+
+    box.appendChild(btn);
+
+  });
+
+}
+
+
+/* =========================================================
+   FIND LETTER
+   ========================================================= */
+
+function createFindLetter(correctLetter){
+
+  const box =
+    document.getElementById("findOptions");
+
+  const feedback =
+    document.getElementById("findFeedback");
+
+  box.innerHTML = "";
+  feedback.textContent = "";
+
+  let options = [correctLetter];
+
+  while(options.length < 3){
+
+    const random =
+      alphabet[Math.floor(Math.random()*alphabet.length)];
+
+    if(!options.includes(random)){
+      options.push(random);
+    }
+
+  }
+
+  options.sort(()=>Math.random()-.5);
+
+  options.forEach(letter=>{
+
+    const btn =
+      document.createElement("button");
+
+    btn.className = "option";
+    btn.textContent = letter;
+
+    btn.onclick = ()=>{
+
+      if(letter === correctLetter){
+
+        feedback.textContent =
+          "🎉 Correct! You found " + correctLetter + "!";
+
+        feedback.style.color =
+          "#21834a";
+
+      }else{
+
+        feedback.textContent =
+          "❌ Not this one. Try again.";
+
+        feedback.style.color =
+          "#d64545";
+
+      }
+
+    };
+
+    box.appendChild(btn);
+
+  });
+
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+function updateProgress(){
+
+  const number = currentIndex + 1;
+
+  const percent =
+    Math.round((number / alphabet.length)*100);
+
+  document.getElementById("progressText").textContent =
+    "Letter " + number + " of 26";
+
+  document.getElementById("progressPercent").textContent =
+    percent + "%";
+
+  document.getElementById("progressBar").style.width =
+    percent + "%";
+
+}
+
+
+/* =========================================================
+   LETTER BUTTON ACTIVE STATE
+   ========================================================= */
+
+function updateLetterButtons(){
+
+  const buttons =
+    letterNav.querySelectorAll("button");
+
+  buttons.forEach((button,index)=>{
+
+    button.classList.toggle(
+      "active",
+      index === currentIndex
+    );
+
+  });
+
+}
 
 
 /* =========================================================
    PREVIOUS / NEXT
-========================================================= */
+   ========================================================= */
 
-document.getElementById("previousButton")
-.addEventListener("click",()=>{
+function updateNavigation(){
 
-  if(currentIndex>0){
+  document.getElementById("prevBtn").disabled =
+    currentIndex === 0;
 
-    openLesson(currentIndex-1);
+  document.getElementById("nextBtn").disabled =
+    currentIndex === alphabet.length-1;
+
+}
+
+
+function previousLetter(){
+
+  if(currentIndex > 0){
+
+    currentIndex--;
+
+    renderLetter();
+
+    window.scrollTo({
+      top:300,
+      behavior:"smooth"
+    });
 
   }
 
-});
+}
 
 
-document.getElementById("nextButton")
-.addEventListener("click",()=>{
+function nextLetter(){
 
-  if(currentIndex<letters.length-1){
+  if(currentIndex < alphabet.length-1){
 
-    openLesson(currentIndex+1);
+    currentIndex++;
+
+    renderLetter();
+
+    window.scrollTo({
+      top:300,
+      behavior:"smooth"
+    });
 
   }
 
-});
+}
 
 
 /* =========================================================
-   TRACING ENGINE
-========================================================= */
+   TRACING CANVAS
+   ========================================================= */
 
-const canvasStates = {};
+const canvas =
+  document.getElementById("traceCanvas");
+
+const ctx =
+  canvas.getContext("2d");
+
+let drawing = false;
 
 
-function setupTracing(id,letter){
-
-  const canvas =
-    document.getElementById(id);
+function prepareCanvas(){
 
   const rect =
     canvas.getBoundingClientRect();
@@ -1637,448 +1680,98 @@ function setupTracing(id,letter){
     window.devicePixelRatio || 1;
 
   canvas.width =
-    rect.width*dpr;
+    rect.width * dpr;
 
   canvas.height =
-    rect.height*dpr;
-
-  const ctx =
-    canvas.getContext("2d");
+    rect.height * dpr;
 
   ctx.setTransform(
     dpr,0,0,dpr,0,0
   );
 
-  canvasStates[id]={
-    canvas,
-    ctx,
-    letter,
-    drawing:false
-  };
-
-  drawGuide(id);
-
-  /* remove old listeners safely by cloning */
-
-  const newCanvas =
-    canvas.cloneNode(true);
-
-  canvas.parentNode.replaceChild(
-    newCanvas,
-    canvas
-  );
-
-  newCanvas.width =
-    rect.width*dpr;
-
-  newCanvas.height =
-    rect.height*dpr;
-
-  const newCtx =
-    newCanvas.getContext("2d");
-
-  newCtx.setTransform(
-    dpr,0,0,dpr,0,0
-  );
-
-  canvasStates[id]={
-    canvas:newCanvas,
-    ctx:newCtx,
-    letter,
-    drawing:false
-  };
-
-  drawGuide(id);
-
-  newCanvas.addEventListener(
-    "pointerdown",
-    startDrawing
-  );
-
-  newCanvas.addEventListener(
-    "pointermove",
-    draw
-  );
-
-  newCanvas.addEventListener(
-    "pointerup",
-    stopDrawing
-  );
-
-  newCanvas.addEventListener(
-    "pointercancel",
-    stopDrawing
-  );
-
-  newCanvas.addEventListener(
-    "pointerleave",
-    stopDrawing
-  );
+  ctx.lineWidth = 5;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.strokeStyle = "#7c5cff";
 
 }
 
 
-function getPoint(canvas,event){
+function getPosition(e){
 
   const rect =
     canvas.getBoundingClientRect();
 
   return {
-    x:event.clientX-rect.left,
-    y:event.clientY-rect.top
+    x:e.clientX - rect.left,
+    y:e.clientY - rect.top
   };
 
 }
 
 
-function startDrawing(event){
+canvas.addEventListener("pointerdown",(e)=>{
 
-  event.preventDefault();
+  drawing = true;
 
-  const canvas =
-    event.currentTarget;
+  const p = getPosition(e);
 
-  const id=canvas.id;
+  ctx.beginPath();
 
-  const state =
-    canvasStates[id];
-
-  state.drawing=true;
-
-  canvas.setPointerCapture(
-    event.pointerId
-  );
-
-  const point =
-    getPoint(canvas,event);
-
-  state.ctx.beginPath();
-
-  state.ctx.moveTo(
-    point.x,
-    point.y
-  );
-
-}
-
-
-function draw(event){
-
-  event.preventDefault();
-
-  const canvas =
-    event.currentTarget;
-
-  const state =
-    canvasStates[canvas.id];
-
-  if(!state || !state.drawing){
-    return;
-  }
-
-  const point =
-    getPoint(canvas,event);
-
-  state.ctx.lineWidth=6;
-  state.ctx.lineCap="round";
-  state.ctx.lineJoin="round";
-  state.ctx.strokeStyle="#66578a";
-
-  state.ctx.lineTo(
-    point.x,
-    point.y
-  );
-
-  state.ctx.stroke();
-
-}
-
-
-function stopDrawing(event){
-
-  const canvas =
-    event.currentTarget;
-
-  const state =
-    canvasStates[canvas.id];
-
-  if(state){
-    state.drawing=false;
-  }
-
-}
-
-
-/* =========================================================
-   DRAW TRACE GUIDE
-========================================================= */
-
-function drawGuide(id){
-
-  const state =
-    canvasStates[id];
-
-  if(!state){
-    return;
-  }
-
-  const canvas =
-    state.canvas;
-
-  const ctx =
-    state.ctx;
-
-  const w =
-    canvas.getBoundingClientRect().width;
-
-  const h =
-    canvas.getBoundingClientRect().height;
-
-  ctx.clearRect(
-    0,
-    0,
-    w,
-    h
-  );
-
-  ctx.save();
-
-  ctx.font =
-    "bold " +
-    Math.min(w*0.55,150) +
-    "px Arial";
-
-  ctx.textAlign="center";
-  ctx.textBaseline="middle";
-
-  ctx.fillStyle="#eeeaf5";
-
-  ctx.fillText(
-    state.letter,
-    w/2,
-    h/2
-  );
-
-  ctx.restore();
-
-  ctx.save();
-
-  ctx.font="13px Arial";
-  ctx.fillStyle="#aaa2b5";
-  ctx.textAlign="center";
-
-  ctx.fillText(
-    "Trace over the letter",
-    w/2,
-    h-15
-  );
-
-  ctx.restore();
-
-}
-
-
-/* =========================================================
-   CLEAR CANVAS
-========================================================= */
-
-function clearCanvas(id){
-
-  const state =
-    canvasStates[id];
-
-  if(!state){
-    return;
-  }
-
-  drawGuide(id);
-
-}
-
-
-/* =========================================================
-   RESIZE
-========================================================= */
-
-window.addEventListener(
-  "resize",
-  ()=>{
-
-    if(document.getElementById("lesson")
-      .style.display==="block"){
-
-      const item =
-        letters[currentIndex];
-
-      setupTracing(
-        "capitalCanvas",
-        item.letter
-      );
-
-      setupTracing(
-        "smallCanvas",
-        item.small
-      );
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   JOLLY PHONICS AUDIO
-=========================================================
-
-   The player is intentionally hidden from the page.
-   The button is the only visible control.
-
-   Replace the values below only with the individual
-   song/video IDs you have permission to embed.
-
-========================================================= */
-
-const songIds = {
-
-  A:"",
-  B:"",
-  C:"",
-  D:"",
-  E:"",
-  F:"",
-  G:"",
-  H:"",
-  I:"",
-  J:"",
-  K:"",
-  L:"",
-  M:"",
-  N:"",
-  O:"",
-  P:"",
-  Q:"",
-  R:"",
-  S:"",
-  T:"",
-  U:"",
-  V:"",
-  W:"",
-  X:"",
-  Y:"",
-  Z:""
-
-};
-
-
-/*
-  Because exact individual official song IDs should not
-  be guessed, the audio button will show a clear message
-  until the corresponding licensed/verified individual
-  audio source is added.
-*/
-
-document.getElementById("songButton")
-.addEventListener("click",()=>{
-
-  const item =
-    letters[currentIndex];
-
-  const id =
-    songIds[item.letter];
-
-  if(!id){
-
-    alert(
-      "The individual phonics song for " +
-      item.letter +
-      " has not been connected yet."
-    );
-
-    return;
-  }
-
-  loadYouTubeAudio(id);
+  ctx.moveTo(p.x,p.y);
 
 });
 
 
-let ytPlayer=null;
+canvas.addEventListener("pointermove",(e)=>{
+
+  if(!drawing) return;
+
+  const p = getPosition(e);
+
+  ctx.lineTo(p.x,p.y);
+
+  ctx.stroke();
+
+});
 
 
-function loadYouTubeAudio(videoId){
+canvas.addEventListener("pointerup",()=>{
 
-  if(!window.YT){
+  drawing = false;
 
-    const script =
-      document.createElement("script");
+});
 
-    script.src =
-      "https://www.youtube.com/iframe_api";
 
-    document.head.appendChild(script);
+canvas.addEventListener("pointerleave",()=>{
 
-    window.pendingVideo=videoId;
+  drawing = false;
 
-    return;
+});
 
-  }
 
-  if(ytPlayer){
+function clearTrace(){
 
-    ytPlayer.loadVideoById(videoId);
-    ytPlayer.playVideo();
-    return;
+  const rect =
+    canvas.getBoundingClientRect();
 
-  }
-
-  ytPlayer =
-    new YT.Player(
-      "youtubePlayer",
-      {
-        height:"1",
-        width:"1",
-        videoId:videoId,
-
-        playerVars:{
-          autoplay:1,
-          controls:0,
-          modestbranding:1,
-          rel:0,
-          playsinline:1
-        },
-
-        events:{
-          onReady:function(event){
-            event.target.playVideo();
-          }
-        }
-
-      }
-    );
+  ctx.clearRect(
+    0,
+    0,
+    rect.width,
+    rect.height
+  );
 
 }
 
 
-window.onYouTubeIframeAPIReady=function(){
-
-  if(window.pendingVideo){
-
-    loadYouTubeAudio(
-      window.pendingVideo
-    );
-
-    window.pendingVideo=null;
-
-  }
-
-};
-
-
 /* =========================================================
-   OPEN A BY DEFAULT
-========================================================= */
+   START
+   ========================================================= */
 
-openLesson(0);
+window.addEventListener("resize",prepareCanvas);
+
+renderLetter();
 
 </script>
 
