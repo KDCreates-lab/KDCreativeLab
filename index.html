@@ -4,23 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kids Creativity Lab | Learn • Create • Grow</title>
+  <title>Beginning Level | Kids Creativity Lab</title>
 
-  <meta name="description"
-        content="Kids Creativity Lab is a child-friendly learning platform for English, phonics, reading, creativity and foundational learning.">
+  <meta
+    name="description"
+    content="Beginning Level of Kids Creativity Lab - letters, phonics, words and early reading."
+  >
 
   <style>
-    /* ==============================
+    /* =========================================
        RESET
-    ============================== */
+    ========================================= */
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
     }
 
     body{
@@ -40,74 +39,25 @@
       color:inherit;
     }
 
-    button{
-      font-family:inherit;
-    }
-
-    /* ==============================
-       TOP DECORATION
-    ============================== */
-    .top-cloud{
-      position:absolute;
-      width:150px;
-      height:55px;
-      background:#e8f7ff;
-      border-radius:50px;
-      opacity:.85;
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .top-cloud::before,
-    .top-cloud::after{
-      content:"";
-      position:absolute;
-      background:#e8f7ff;
-      border-radius:50%;
-    }
-
-    .top-cloud::before{
-      width:65px;
-      height:65px;
-      left:25px;
-      bottom:15px;
-    }
-
-    .top-cloud::after{
-      width:80px;
-      height:80px;
-      right:20px;
-      bottom:10px;
-    }
-
-    .cloud-one{
-      top:105px;
-      left:-45px;
-    }
-
-    .cloud-two{
-      top:155px;
-      right:-50px;
-      transform:scale(.8);
-    }
-
-    /* ==============================
+    /* =========================================
        HEADER
-    ============================== */
+    ========================================= */
+
     header{
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid #eee8fa;
-      box-shadow:0 5px 20px rgba(77,55,120,.07);
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid #eee7f7;
+      box-shadow:0 5px 18px rgba(70,50,105,.07);
     }
 
     .nav{
       width:min(1180px,94%);
-      margin:auto;
       min-height:76px;
+      margin:auto;
+
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -117,811 +67,600 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
-      min-width:0;
+      gap:11px;
     }
 
     .brand-icon{
-      width:52px;
-      height:52px;
-      flex-shrink:0;
-      border-radius:17px;
-      background:linear-gradient(145deg,#a276ff,#7654d8);
+      width:51px;
+      height:51px;
+
       display:grid;
       place-items:center;
-      font-size:29px;
-      box-shadow:0 8px 18px rgba(116,80,210,.22);
-    }
 
-    .brand-text{
-      min-width:0;
+      border-radius:17px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #a47cff,
+          #7652d4
+        );
+
+      font-size:27px;
+
+      box-shadow:
+        0 8px 18px rgba(106,75,190,.22);
     }
 
     .brand-title{
-      font-size:22px;
-      font-weight:900;
       color:#50358e;
+      font-size:21px;
+      font-weight:950;
       line-height:1.1;
     }
 
     .brand-subtitle{
-      font-size:11px;
-      color:#8c83a5;
-      font-weight:700;
+      color:#938aa8;
+      font-size:10px;
+      font-weight:800;
       letter-spacing:1px;
       margin-top:3px;
     }
 
-    .nav-links{
-      display:flex;
+    .home-link{
+      display:inline-flex;
       align-items:center;
       gap:7px;
-    }
 
-    .nav-links a{
-      padding:10px 14px;
+      padding:10px 15px;
+
       border-radius:14px;
-      font-size:14px;
-      font-weight:800;
-      color:#5c5672;
-      transition:.2s ease;
-    }
 
-    .nav-links a:hover{
       background:#f1ebff;
-      color:#6742b7;
-    }
+      color:#5e4199;
 
-    .nav-start{
-      background:#6844ba !important;
-      color:#fff !important;
-      box-shadow:0 6px 14px rgba(104,68,186,.2);
-    }
-
-    .mobile-menu{
-      display:none;
-      width:48px;
-      height:48px;
-      border:0;
-      border-radius:15px;
-      background:#f0eaff;
-      font-size:24px;
-      color:#47376d;
-      cursor:pointer;
-    }
-
-    /* ==============================
-       HERO
-    ============================== */
-    .hero{
-      position:relative;
-      min-height:590px;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      padding:75px 0 80px;
-      background:
-        radial-gradient(circle at 15% 20%,#fff2d9 0,transparent 24%),
-        radial-gradient(circle at 85% 25%,#e8ddff 0,transparent 27%),
-        linear-gradient(135deg,#fffdf9,#f6f1ff);
-    }
-
-    .hero-inner{
-      width:min(1180px,92%);
-      margin:auto;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:50px;
-      align-items:center;
-      position:relative;
-      z-index:2;
-    }
-
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:#fff;
-      color:#6d4bb0;
-      border:1px solid #e7dcfa;
-      border-radius:30px;
-      padding:8px 15px;
-      font-size:13px;
+      font-size:14px;
       font-weight:900;
-      box-shadow:0 6px 18px rgba(81,58,120,.07);
-      margin-bottom:20px;
-    }
 
-    .hero h1{
-      font-size:clamp(42px,6vw,72px);
-      line-height:1.02;
-      color:#4d3488;
-      font-weight:950;
-      letter-spacing:-2px;
-      margin-bottom:20px;
-    }
-
-    .hero h1 span{
-      color:#f28b55;
-    }
-
-    .hero-text{
-      max-width:650px;
-      font-size:18px;
-      color:#67617a;
-      margin-bottom:30px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:13px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      min-height:50px;
-      padding:13px 21px;
-      border-radius:17px;
-      font-size:15px;
-      font-weight:900;
       transition:.2s ease;
-      cursor:pointer;
     }
 
-    .btn-primary{
-      background:#6944bc;
-      color:#fff;
-      box-shadow:0 10px 20px rgba(105,68,188,.22);
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-3px);
-      box-shadow:0 14px 25px rgba(105,68,188,.27);
-    }
-
-    .btn-secondary{
-      background:#fff;
-      color:#5c438f;
-      border:2px solid #e7ddf8;
-    }
-
-    .btn-secondary:hover{
-      background:#f7f1ff;
+    .home-link:hover{
+      background:#e8ddff;
       transform:translateY(-2px);
     }
 
-    /* ==============================
-       HERO ILLUSTRATION
-    ============================== */
-    .hero-art{
+    /* =========================================
+       PAGE HERO
+    ========================================= */
+
+    .page-hero{
       position:relative;
-      min-height:400px;
-      display:grid;
-      place-items:center;
+      overflow:hidden;
+
+      padding:65px 0 70px;
+
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          #fff0d5 0,
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 90% 20%,
+          #e9e0ff 0,
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #fffdf9,
+          #f6f1ff
+        );
     }
 
-    .art-card{
-      width:min(420px,100%);
-      min-height:355px;
+    .hero-inner{
+      width:min(1050px,92%);
+      margin:auto;
+
+      text-align:center;
       position:relative;
-      background:#fff;
-      border:3px solid #eee7fb;
-      border-radius:42px;
-      box-shadow:0 22px 55px rgba(75,53,120,.13);
-      overflow:hidden;
-      padding:30px;
+      z-index:2;
     }
 
-    .art-sun{
-      position:absolute;
-      top:25px;
-      right:30px;
-      width:65px;
-      height:65px;
-      border-radius:50%;
-      background:#ffd45d;
-      box-shadow:0 0 0 12px rgba(255,212,93,.15);
-    }
-
-    .art-cloud{
-      position:absolute;
-      width:95px;
-      height:32px;
-      border-radius:40px;
-      background:#dff5ff;
-    }
-
-    .art-cloud::before,
-    .art-cloud::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      background:#dff5ff;
-    }
-
-    .art-cloud::before{
-      width:42px;
-      height:42px;
-      left:18px;
-      bottom:10px;
-    }
-
-    .art-cloud::after{
-      width:48px;
-      height:48px;
-      right:13px;
-      bottom:7px;
-    }
-
-    .cloud-a{
-      top:68px;
-      left:25px;
-    }
-
-    .cloud-b{
-      top:125px;
-      right:15px;
-      transform:scale(.7);
-    }
-
-    .book{
-      position:absolute;
-      left:50%;
-      bottom:48px;
-      transform:translateX(-50%) rotate(-2deg);
-      width:275px;
-      height:135px;
-      background:#fff;
-      border-radius:14px 20px 20px 14px;
-      box-shadow:0 14px 20px rgba(66,52,97,.15);
-      display:flex;
-      overflow:hidden;
-      border:4px solid #f1e8dc;
-    }
-
-    .book-page{
-      width:50%;
-      padding:20px 15px;
-      display:flex;
-      flex-direction:column;
+    .level-badge{
+      display:inline-flex;
       align-items:center;
-      justify-content:center;
-    }
+      gap:7px;
 
-    .book-page:first-child{
-      border-right:2px dashed #d7c9b5;
-      background:#fffdf7;
-    }
+      padding:8px 16px;
 
-    .book-page:last-child{
-      background:#fffaf0;
-    }
+      border-radius:30px;
 
-    .book-letter{
-      font-size:54px;
+      background:#fff;
+      border:1px solid #e8def8;
+
+      color:#7452b3;
+
+      font-size:13px;
       font-weight:950;
-      color:#6a45ba;
-      line-height:1;
+
+      box-shadow:
+        0 6px 17px rgba(80,55,115,.07);
+
+      margin-bottom:18px;
     }
 
-    .book-word{
+    .page-hero h1{
+      color:#4d3488;
+
+      font-size:
+        clamp(38px,6vw,60px);
+
+      line-height:1.08;
+
+      font-weight:950;
+
+      letter-spacing:-1.5px;
+
+      margin-bottom:15px;
+    }
+
+    .page-hero h1 span{
+      color:#ef8854;
+    }
+
+    .hero-description{
+      max-width:700px;
+      margin:0 auto;
+
+      color:#706980;
+
+      font-size:17px;
+    }
+
+    /* =========================================
+       LEARNING PATH
+    ========================================= */
+
+    .path-section{
+      width:min(1100px,92%);
+      margin:auto;
+
+      padding:55px 0 25px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .section-title .small-title{
+      color:#df7d50;
+      font-size:12px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+    }
+
+    .section-title h2{
+      color:#4d3a7d;
+      font-size:32px;
+      margin-top:4px;
+    }
+
+    .section-title p{
+      color:#7b748b;
       font-size:14px;
-      font-weight:900;
-      color:#655c75;
       margin-top:5px;
     }
 
-    .mascot{
-      position:absolute;
-      bottom:160px;
-      font-size:75px;
-      filter:drop-shadow(0 8px 8px rgba(60,45,80,.1));
-    }
+    /* =========================================
+       MODULE CARDS
+    ========================================= */
 
-    .mascot-left{
-      left:38px;
-    }
-
-    .mascot-right{
-      right:35px;
-      font-size:70px;
-    }
-
-    .art-sign{
-      position:absolute;
-      top:25px;
-      left:50%;
-      transform:translateX(-50%);
-      background:#fff;
-      padding:7px 17px;
-      border-radius:30px;
-      font-weight:950;
-      color:#e8794b;
-      font-size:13px;
-      box-shadow:0 6px 15px rgba(74,56,90,.1);
-    }
-
-    /* ==============================
-       SECTION COMMON
-    ============================== */
-    .section{
-      width:min(1180px,92%);
-      margin:auto;
-      padding:75px 0;
-    }
-
-    .section-heading{
-      text-align:center;
-      max-width:750px;
-      margin:0 auto 42px;
-    }
-
-    .section-kicker{
-      display:inline-block;
-      color:#e27c50;
-      font-size:13px;
-      font-weight:950;
-      text-transform:uppercase;
-      letter-spacing:1.5px;
-      margin-bottom:8px;
-    }
-
-    .section-heading h2{
-      color:#49357d;
-      font-size:clamp(30px,4vw,45px);
-      line-height:1.15;
-      margin-bottom:10px;
-    }
-
-    .section-heading p{
-      color:#777087;
-      font-size:16px;
-    }
-
-    /* ==============================
-       AUDIENCE
-    ============================== */
-    .audience-section{
-      background:#fff;
-    }
-
-    .audience-grid{
+    .modules{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
+      grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+      gap:22px;
     }
 
-    .audience-card{
-      background:#fff;
-      border:2px solid #eee8f8;
-      border-radius:25px;
-      padding:28px 24px;
-      box-shadow:0 9px 25px rgba(70,52,105,.06);
-      transition:.25s ease;
-    }
-
-    .audience-card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 15px 32px rgba(70,52,105,.1);
-    }
-
-    .audience-icon{
-      width:62px;
-      height:62px;
-      border-radius:20px;
-      display:grid;
-      place-items:center;
-      font-size:32px;
-      margin-bottom:17px;
-    }
-
-    .children .audience-icon{
-      background:#fff0d5;
-    }
-
-    .parents .audience-icon{
-      background:#e7f8ee;
-    }
-
-    .teachers .audience-icon{
-      background:#eae4ff;
-    }
-
-    .audience-card h3{
-      font-size:22px;
-      color:#4f3b7e;
-      margin-bottom:8px;
-    }
-
-    .audience-card p{
-      color:#777087;
-      font-size:14px;
-      margin-bottom:14px;
-    }
-
-    .mini-list{
-      list-style:none;
-      display:grid;
-      gap:7px;
-    }
-
-    .mini-list li{
-      color:#5e586f;
-      font-size:13px;
-      font-weight:700;
-    }
-
-    .mini-list li::before{
-      content:"✓";
-      color:#66aa79;
-      margin-right:7px;
-      font-weight:950;
-    }
-
-    /* ==============================
-       LEVELS
-    ============================== */
-    .levels-section{
-      background:
-        linear-gradient(180deg,#f8f4ff 0%,#fff 100%);
-    }
-
-    .levels-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-
-    .level-card{
+    .module-card{
       position:relative;
-      min-height:320px;
+
+      min-height:280px;
+
       background:#fff;
+
       border:2px solid #ece5f8;
+
       border-radius:27px;
-      padding:25px 21px;
+
+      padding:27px;
+
       display:flex;
       flex-direction:column;
-      box-shadow:0 10px 26px rgba(70,52,105,.06);
-      transition:.25s ease;
+
+      box-shadow:
+        0 10px 28px rgba(70,52,105,.07);
+
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+
       overflow:hidden;
     }
 
-    .level-card::after{
+    .module-card::after{
       content:"";
+
       position:absolute;
-      width:110px;
-      height:110px;
+
+      width:130px;
+      height:130px;
+
       border-radius:50%;
-      right:-40px;
-      bottom:-40px;
+
+      right:-55px;
+      bottom:-55px;
+
       background:#f5efff;
+
       pointer-events:none;
     }
 
-    .level-card.active{
-      border:3px solid #7a56d3;
-      box-shadow:0 14px 34px rgba(105,72,180,.14);
+    .module-card:hover{
+      transform:translateY(-6px);
+
+      box-shadow:
+        0 17px 35px rgba(70,52,105,.11);
     }
 
-    .level-card.active:hover{
-      transform:translateY(-7px);
+    /* =========================================
+       CARD COLOUR TOPS
+    ========================================= */
+
+    .capital-card{
+      border-color:#dfd1ff;
     }
 
-    .level-number{
-      font-size:12px;
+    .small-card{
+      border-color:#d7eee0;
+    }
+
+    .phonics-card{
+      border-color:#ffe2c8;
+    }
+
+    .words-card{
+      border-color:#d9e9ff;
+    }
+
+    .sentence-card{
+      border-color:#f2d8e7;
+    }
+
+    .module-number{
+      color:#aaa1ba;
+      font-size:11px;
       font-weight:950;
-      color:#a096b6;
       letter-spacing:1px;
-      text-transform:uppercase;
-      margin-bottom:10px;
+      margin-bottom:8px;
     }
 
-    .level-icon{
-      font-size:39px;
-      margin-bottom:10px;
+    .module-icon{
+      width:65px;
+      height:65px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:21px;
+
+      font-size:33px;
+
+      margin-bottom:15px;
     }
 
-    .level-card h3{
-      color:#4d3b7b;
-      font-size:21px;
+    .capital-card .module-icon{
+      background:#eee6ff;
+    }
+
+    .small-card .module-icon{
+      background:#e5f7eb;
+    }
+
+    .phonics-card .module-icon{
+      background:#fff0df;
+    }
+
+    .words-card .module-icon{
+      background:#e7f2ff;
+    }
+
+    .sentence-card .module-icon{
+      background:#fbe9f2;
+    }
+
+    .module-card h3{
+      color:#4e3c78;
+      font-size:22px;
       margin-bottom:7px;
     }
 
-    .level-description{
-      color:#797288;
-      font-size:13px;
-      margin-bottom:16px;
+    .module-card p{
+      color:#777086;
+      font-size:14px;
+      margin-bottom:15px;
     }
 
-    .level-topics{
+    .module-topics{
       list-style:none;
+
       display:grid;
       gap:6px;
+
       margin-bottom:20px;
-      flex:1;
     }
 
-    .level-topics li{
-      color:#5d566d;
+    .module-topics li{
+      color:#5f596d;
       font-size:12px;
       font-weight:700;
     }
 
-    .level-topics li::before{
-      content:"•";
-      color:#8c68d2;
-      font-size:18px;
-      margin-right:7px;
-      vertical-align:-2px;
-    }
+    .module-topics li::before{
+      content:"✓";
 
-    .level-button{
-      position:relative;
-      z-index:2;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:100%;
-      min-height:45px;
-      border-radius:14px;
-      font-size:13px;
+      color:#70a77d;
+
+      margin-right:7px;
+
       font-weight:950;
     }
 
-    .level-button.open{
+    /* =========================================
+       OPEN BUTTON
+    ========================================= */
+
+    .module-button{
+      margin-top:auto;
+
+      position:relative;
+      z-index:5;
+
+      width:100%;
+
+      min-height:47px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:15px;
+
+      font-size:13px;
+      font-weight:950;
+
+      transition:.2s ease;
+    }
+
+    .module-button:hover{
+      transform:translateY(-2px);
+    }
+
+    .open-purple{
       background:#6944bc;
       color:#fff;
-      box-shadow:0 7px 15px rgba(105,68,188,.18);
+
+      box-shadow:
+        0 7px 15px rgba(105,68,188,.2);
     }
 
-    .level-button.disabled{
-      background:#f1eef6;
-      color:#9b95a9;
-      cursor:default;
+    .open-green{
+      background:#4d9b6d;
+      color:#fff;
+
+      box-shadow:
+        0 7px 15px rgba(77,155,109,.18);
     }
 
-    /* ==============================
-       ROADMAP
-    ============================== */
-    .roadmap-section{
+    .open-orange{
+      background:#e88a4d;
+      color:#fff;
+
+      box-shadow:
+        0 7px 15px rgba(232,138,77,.18);
+    }
+
+    .open-blue{
+      background:#5286c9;
+      color:#fff;
+
+      box-shadow:
+        0 7px 15px rgba(82,134,201,.18);
+    }
+
+    .open-pink{
+      background:#c65c8c;
+      color:#fff;
+
+      box-shadow:
+        0 7px 15px rgba(198,92,140,.18);
+    }
+
+    /* =========================================
+       PROGRESS
+    ========================================= */
+
+    .progress-section{
+      width:min(1000px,92%);
+      margin:25px auto 70px;
+
       background:#fff;
+
+      border:2px solid #eee7f7;
+
+      border-radius:25px;
+
+      padding:27px;
+
+      box-shadow:
+        0 9px 25px rgba(70,52,105,.06);
     }
 
-    .roadmap{
-      max-width:920px;
-      margin:auto;
-      display:grid;
-      gap:15px;
-    }
-
-    .roadmap-row{
-      display:grid;
-      grid-template-columns:145px 1fr;
-      gap:18px;
-      align-items:stretch;
-    }
-
-    .roadmap-label{
-      border-radius:18px;
-      background:#f0e9ff;
-      color:#6244a2;
+    .progress-heading{
       display:flex;
       align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:15px;
-      font-weight:950;
-      font-size:14px;
+      justify-content:space-between;
+      gap:15px;
+
+      margin-bottom:13px;
     }
 
-    .roadmap-content{
-      border:2px solid #eee8f7;
-      border-radius:18px;
-      padding:16px 20px;
-      background:#fff;
+    .progress-heading h3{
+      color:#4e3d77;
+      font-size:18px;
     }
 
-    .roadmap-content strong{
-      color:#4e4070;
-      display:block;
-      margin-bottom:5px;
+    .progress-heading span{
+      color:#8d859d;
+      font-size:12px;
+      font-weight:800;
     }
 
-    .roadmap-content span{
-      color:#777087;
-      font-size:13px;
-    }
+    .progress-bar{
+      height:13px;
 
-    /* ==============================
-       CTA
-    ============================== */
-    .cta-section{
-      width:min(1080px,92%);
-      margin:20px auto 75px;
-      padding:45px 35px;
-      border-radius:35px;
-      background:
-        radial-gradient(circle at 85% 20%,rgba(255,255,255,.25),transparent 20%),
-        linear-gradient(135deg,#6843b8,#8d6bd4);
-      color:#fff;
-      text-align:center;
-      box-shadow:0 20px 45px rgba(90,61,150,.18);
-      position:relative;
+      border-radius:30px;
+
+      background:#eeeaf4;
+
       overflow:hidden;
     }
 
-    .cta-section::before,
-    .cta-section::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      background:rgba(255,255,255,.09);
-      pointer-events:none;
+    .progress-fill{
+      width:8%;
+
+      height:100%;
+
+      border-radius:30px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #7854cc,
+          #a47ae8
+        );
     }
 
-    .cta-section::before{
-      width:180px;
-      height:180px;
-      left:-60px;
-      bottom:-90px;
+    .progress-note{
+      color:#81798f;
+      font-size:12px;
+      margin-top:9px;
     }
 
-    .cta-section::after{
-      width:130px;
-      height:130px;
-      right:-35px;
-      top:-50px;
+    /* =========================================
+       BOTTOM NAVIGATION
+    ========================================= */
+
+    .bottom-navigation{
+      width:min(1000px,92%);
+      margin:0 auto 65px;
+
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
     }
 
-    .cta-section h2{
-      position:relative;
-      z-index:2;
-      font-size:34px;
-      margin-bottom:8px;
+    .bottom-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      min-height:46px;
+
+      padding:10px 18px;
+
+      border-radius:15px;
+
+      font-size:13px;
+      font-weight:900;
     }
 
-    .cta-section p{
-      position:relative;
-      z-index:2;
-      color:#eee8ff;
-      margin-bottom:23px;
+    .back-link{
+      background:#f0ebf8;
+      color:#655b77;
     }
 
-    .cta-section .btn{
-      position:relative;
-      z-index:2;
-      background:#fff;
-      color:#5c3d9e;
+    .home-bottom{
+      background:#eae2ff;
+      color:#5d3e9c;
     }
 
-    /* ==============================
+    /* =========================================
        FOOTER
-    ============================== */
+    ========================================= */
+
     footer{
       background:#302647;
       color:#fff;
-      padding:40px 0 25px;
+
+      padding:38px 0 23px;
     }
 
     .footer-inner{
-      width:min(1180px,92%);
+      width:min(1050px,92%);
       margin:auto;
-      display:grid;
-      grid-template-columns:1.4fr 1fr 1fr;
-      gap:35px;
+
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:flex-start;
     }
 
     .footer-brand{
-      font-size:21px;
+      font-size:20px;
       font-weight:950;
-      margin-bottom:8px;
+      margin-bottom:6px;
     }
 
     .footer-text{
+      max-width:430px;
+
       color:#bdb5cf;
-      font-size:13px;
-      max-width:360px;
+
+      font-size:12px;
     }
 
-    .footer-title{
-      font-weight:900;
-      margin-bottom:10px;
-      color:#fff;
-    }
-
-    .footer-links{
-      list-style:none;
-      display:grid;
-      gap:6px;
-    }
-
-    .footer-links a{
-      color:#c9c1d8;
-      font-size:13px;
-    }
-
-    .footer-links a:hover{
-      color:#fff;
+    .footer-right{
+      color:#bdb5cf;
+      font-size:12px;
+      text-align:right;
     }
 
     .copyright{
-      width:min(1180px,92%);
-      margin:30px auto 0;
-      padding-top:18px;
+      width:min(1050px,92%);
+      margin:24px auto 0;
+
+      padding-top:16px;
+
       border-top:1px solid rgba(255,255,255,.1);
+
       color:#9991aa;
-      font-size:12px;
+
       text-align:center;
+
+      font-size:11px;
     }
 
-    /* ==============================
-       MOBILE MENU
-    ============================== */
-    @media(max-width:850px){
+    /* =========================================
+       MOBILE
+    ========================================= */
 
-      .nav-links{
-        display:none;
-        position:absolute;
-        top:76px;
-        left:3%;
-        right:3%;
-        background:#fff;
-        border:1px solid #eee7f7;
-        border-radius:20px;
-        padding:10px;
-        box-shadow:0 15px 30px rgba(50,35,80,.12);
-        flex-direction:column;
-      }
-
-      .nav-links.show{
-        display:flex;
-      }
-
-      .nav-links a{
-        width:100%;
-        text-align:center;
-      }
-
-      .mobile-menu{
-        display:block;
-      }
-
-      .hero-inner{
-        grid-template-columns:1fr;
-        text-align:center;
-      }
-
-      .hero-text{
-        margin-left:auto;
-        margin-right:auto;
-      }
-
-      .hero-buttons{
-        justify-content:center;
-      }
-
-      .hero-art{
-        min-height:350px;
-      }
-
-      .levels-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .audience-grid{
-        grid-template-columns:1fr;
-      }
-
-      .footer-inner{
-        grid-template-columns:1fr 1fr;
-      }
-    }
-
-    @media(max-width:560px){
+    @media(max-width:700px){
 
       .nav{
         min-height:68px;
@@ -930,7 +669,7 @@
       .brand-icon{
         width:45px;
         height:45px;
-        font-size:25px;
+        font-size:24px;
         border-radius:14px;
       }
 
@@ -942,528 +681,400 @@
         display:none;
       }
 
-      .hero{
-        min-height:auto;
-        padding:55px 0 55px;
+      .home-link{
+        padding:9px 11px;
+        font-size:12px;
       }
 
-      .hero h1{
-        font-size:43px;
-        letter-spacing:-1.3px;
+      .page-hero{
+        padding:48px 0 52px;
       }
 
-      .hero-text{
-        font-size:16px;
+      .page-hero h1{
+        font-size:42px;
       }
 
-      .art-card{
-        min-height:315px;
-        padding:20px;
-        border-radius:30px;
+      .hero-description{
+        font-size:15px;
       }
 
-      .book{
-        width:235px;
-        height:115px;
-        bottom:35px;
-      }
-
-      .book-letter{
-        font-size:44px;
-      }
-
-      .book-word{
-        font-size:11px;
-      }
-
-      .mascot{
-        font-size:58px;
-        bottom:135px;
-      }
-
-      .mascot-right{
-        font-size:55px;
-      }
-
-      .levels-grid{
+      .modules{
         grid-template-columns:1fr;
+        gap:17px;
       }
 
-      .level-card{
-        min-height:285px;
+      .module-card{
+        min-height:260px;
+        padding:23px;
       }
 
-      .roadmap-row{
-        grid-template-columns:1fr;
-        gap:8px;
+      .progress-section{
+        padding:22px;
       }
 
-      .roadmap-label{
-        justify-content:flex-start;
+      .progress-heading{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:3px;
       }
 
-      .cta-section{
-        padding:35px 20px;
+      .bottom-navigation{
+        flex-direction:column;
       }
 
-      .cta-section h2{
-        font-size:28px;
+      .bottom-link{
+        width:100%;
       }
 
       .footer-inner{
-        grid-template-columns:1fr;
+        flex-direction:column;
+      }
+
+      .footer-right{
+        text-align:left;
       }
     }
 
-    /* ==============================
-       ACCESSIBILITY
-    ============================== */
-    a:focus-visible,
-    button:focus-visible{
-      outline:3px solid #f3b45d;
-      outline-offset:3px;
+    @media(max-width:380px){
+
+      .home-link{
+        font-size:0;
+      }
+
+      .home-link:first-letter{
+        font-size:20px;
+      }
+
+      .page-hero h1{
+        font-size:37px;
+      }
     }
 
-    /* Decorative items never block clicks */
-    .top-cloud,
-    .art-sun,
-    .art-cloud,
-    .mascot,
-    .art-sign,
-    .cta-section::before,
-    .cta-section::after{
-      pointer-events:none;
+    /* =========================================
+       FOCUS
+    ========================================= */
+
+    a:focus-visible{
+      outline:3px solid #f1b35d;
+      outline-offset:3px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Decorative clouds -->
-  <div class="top-cloud cloud-one"></div>
-  <div class="top-cloud cloud-two"></div>
 
-
-  <!-- ==============================
+  <!-- =========================================
        HEADER
-  ============================== -->
+  ========================================= -->
+
   <header>
+
     <div class="nav">
 
-      <a href="index.html" class="brand" aria-label="Kids Creativity Lab Home">
-        <div class="brand-icon">📚</div>
+      <a href="index.html" class="brand">
 
-        <div class="brand-text">
-          <div class="brand-title">Kids Creativity Lab</div>
-          <div class="brand-subtitle">LEARN • CREATE • GROW</div>
+        <div class="brand-icon">
+          📚
         </div>
+
+        <div>
+          <div class="brand-title">
+            Kids Creativity Lab
+          </div>
+
+          <div class="brand-subtitle">
+            LEARN • CREATE • GROW
+          </div>
+        </div>
+
       </a>
 
-      <button
-        type="button"
-        class="mobile-menu"
-        id="mobileMenu"
-        aria-label="Open menu">
-        ☰
-      </button>
 
-      <nav class="nav-links" id="navLinks">
-
-        <a href="index.html">
-          🏠 Home
-        </a>
-
-        <!-- This goes to a REAL separate page -->
-        <a href="beginner.html" class="nav-start">
-          🚀 Start Learning
-        </a>
-
-        <!-- These are roadmap items for now -->
-        <a href="#audience">
-          👨‍👩‍👧 Families
-        </a>
-
-        <a href="#levels">
-          🎓 Levels
-        </a>
-
-      </nav>
+      <a href="index.html" class="home-link">
+        🏠 Home
+      </a>
 
     </div>
+
   </header>
 
 
-  <!-- ==============================
-       HERO
-  ============================== -->
+  <!-- =========================================
+       PAGE HERO
+  ========================================= -->
+
   <main>
 
-    <section class="hero">
+    <section class="page-hero">
 
       <div class="hero-inner">
 
-        <div class="hero-content">
-
-          <div class="hero-badge">
-            🌟 A joyful place to learn
-          </div>
-
-          <h1>
-            Learn.<br>
-            <span>Create.</span><br>
-            Grow!
-          </h1>
-
-          <p class="hero-text">
-            Welcome to <strong>Kids Creativity Lab</strong> — a child-friendly
-            learning space designed to build strong foundations in English,
-            phonics, reading, vocabulary and creative learning.
-          </p>
-
-          <div class="hero-buttons">
-
-            <!-- IMPORTANT:
-                 This opens a NEW PAGE, not a scroll section -->
-            <a href="beginner.html" class="btn btn-primary">
-              🚀 Start Learning
-            </a>
-
-            <!-- This opens the actual levels section on the home page -->
-            <a href="#levels" class="btn btn-secondary">
-              🧩 Explore Levels
-            </a>
-
-          </div>
-
+        <div class="level-badge">
+          🌱 LEVEL 01 • BEGINNING
         </div>
 
+        <h1>
+          Beginning <span>Level</span>
+        </h1>
 
-        <!-- Cute visual area -->
-        <div class="hero-art">
-
-          <div class="art-card">
-
-            <div class="art-sun"></div>
-
-            <div class="art-cloud cloud-a"></div>
-            <div class="art-cloud cloud-b"></div>
-
-            <div class="art-sign">
-              ✏️ Learn • Create • Grow
-            </div>
-
-            <div class="mascot mascot-left">
-              🦉
-            </div>
-
-            <div class="mascot mascot-right">
-              🦊
-            </div>
-
-            <div class="book">
-
-              <div class="book-page">
-                <div class="book-letter">A</div>
-                <div class="book-word">Apple 🍎</div>
-              </div>
-
-              <div class="book-page">
-                <div class="book-letter">B</div>
-                <div class="book-word">Ball ⚽</div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
+        <p class="hero-description">
+          Start from the very beginning and build strong foundations
+          in letters, sounds, phonics, words and early reading.
+        </p>
 
       </div>
 
     </section>
 
 
-    <!-- ==============================
-         TARGET AUDIENCE
-    ============================== -->
-    <section class="section audience-section" id="audience">
+    <!-- =========================================
+         LEARNING PATH
+    ========================================= -->
 
-      <div class="section-heading">
+    <section class="path-section">
 
-        <div class="section-kicker">
-          Made for the whole learning journey
+      <div class="section-title">
+
+        <div class="small-title">
+          Your learning journey
         </div>
 
         <h2>
-          Who is Kids Creativity Lab for?
+          Choose What You Want to Learn
         </h2>
 
         <p>
-          One learning space with resources planned for children,
-          parents and teachers.
+          Each module opens on its own dedicated learning page.
         </p>
 
       </div>
 
 
-      <div class="audience-grid">
+      <div class="modules">
 
-        <!-- CHILDREN -->
-        <div class="audience-card children">
 
-          <div class="audience-icon">
-            🧒
+        <!-- =====================================
+             01 CAPITAL LETTERS
+        ====================================== -->
+
+        <article class="module-card capital-card">
+
+          <div class="module-number">
+            MODULE 01
           </div>
 
-          <h3>Children</h3>
-
-          <p>
-            Learn through colourful activities, sounds, pictures,
-            stories and practice.
-          </p>
-
-          <ul class="mini-list">
-            <li>Alphabet & phonics</li>
-            <li>Word building</li>
-            <li>Reading practice</li>
-            <li>Creative activities</li>
-          </ul>
-
-        </div>
-
-
-        <!-- PARENTS -->
-        <div class="audience-card parents">
-
-          <div class="audience-icon">
-            👨‍👩‍👧
-          </div>
-
-          <h3>Parents</h3>
-
-          <p>
-            Understand what your child is learning and support
-            learning at home.
-          </p>
-
-          <ul class="mini-list">
-            <li>Learning roadmap</li>
-            <li>Home practice ideas</li>
-            <li>Simple activities</li>
-            <li>Progress support</li>
-          </ul>
-
-        </div>
-
-
-        <!-- TEACHERS -->
-        <div class="audience-card teachers">
-
-          <div class="audience-icon">
-            👩‍🏫
-          </div>
-
-          <h3>Teachers</h3>
-
-          <p>
-            A structured roadmap for planning foundational English
-            and classroom learning.
-          </p>
-
-          <ul class="mini-list">
-            <li>Phonics sequence</li>
-            <li>Vocabulary building</li>
-            <li>Reading activities</li>
-            <li>Practice ideas</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==============================
-         LEVELS
-    ============================== -->
-    <section class="section levels-section" id="levels">
-
-      <div class="section-heading">
-
-        <div class="section-kicker">
-          A systematic learning path
-        </div>
-
-        <h2>
-          Choose Your Learning Level
-        </h2>
-
-        <p>
-          Learning moves step-by-step from foundational skills
-          towards confident reading, language and creative learning.
-        </p>
-
-      </div>
-
-
-      <div class="levels-grid">
-
-
-        <!-- ==========================
-             BEGINNING — ACTIVE
-        ========================== -->
-        <article class="level-card active">
-
-          <div class="level-number">
-            LEVEL 01
-          </div>
-
-          <div class="level-icon">
-            🌱
+          <div class="module-icon">
+            🔤
           </div>
 
           <h3>
-            Beginning Level
+            Capital Letters
           </h3>
 
-          <p class="level-description">
-            Build the first strong foundation in English.
+          <p>
+            Meet A–Z through colourful letter cards,
+            pictures and sounds.
           </p>
 
-          <ul class="level-topics">
+          <ul class="module-topics">
 
-            <li>Capital Letters</li>
-            <li>Small Letters</li>
-            <li>Jolly Phonics</li>
-            <li>Sound & Picture Words</li>
-            <li>Word Building</li>
-            <li>Early Sentence Reading</li>
+            <li>Learn A–Z</li>
+            <li>Letter recognition</li>
+            <li>Letter sounds</li>
+            <li>Picture-word association</li>
 
           </ul>
 
-          <!-- REAL PAGE LINK -->
+          <!-- THIS OPENS A NEW PAGE -->
           <a
-            href="beginner.html"
-            class="level-button open">
-            Open Beginning Level →
+            href="capital-letters.html"
+            class="module-button open-purple">
+
+            Open Capital Letters →
+            
           </a>
 
         </article>
 
 
-        <!-- ==========================
-             ELEMENTARY
-        ========================== -->
-        <article class="level-card">
+        <!-- =====================================
+             02 SMALL LETTERS
+        ====================================== -->
 
-          <div class="level-number">
-            LEVEL 02
+        <article class="module-card small-card">
+
+          <div class="module-number">
+            MODULE 02
           </div>
 
-          <div class="level-icon">
-            🌿
+          <div class="module-icon">
+            🔡
           </div>
 
           <h3>
-            Elementary Level
+            Small Letters
           </h3>
 
-          <p class="level-description">
-            Develop vocabulary, grammar and reading confidence.
+          <p>
+            Learn lowercase letters and connect them
+            with their capital-letter partners.
           </p>
 
-          <ul class="level-topics">
+          <ul class="module-topics">
 
-            <li>Word Families</li>
-            <li>Blending & Segmenting</li>
-            <li>Vocabulary</li>
-            <li>Basic Grammar</li>
-            <li>Reading Practice</li>
-            <li>Short Writing</li>
+            <li>Learn a–z</li>
+            <li>Capital & small pairs</li>
+            <li>Letter recognition</li>
+            <li>Writing practice</li>
 
           </ul>
 
-          <div class="level-button disabled">
+          <!-- THIS OPENS A NEW PAGE -->
+          <a
+            href="small-letters.html"
+            class="module-button open-green">
+
+            Open Small Letters →
+
+          </a>
+
+        </article>
+
+
+        <!-- =====================================
+             03 JOLLY PHONICS GROUP 1
+        ====================================== -->
+
+        <article class="module-card phonics-card">
+
+          <div class="module-number">
+            MODULE 03
+          </div>
+
+          <div class="module-icon">
+            🎵
+          </div>
+
+          <h3>
+            Jolly Phonics • Group 1
+          </h3>
+
+          <p>
+            Begin systematic phonics with the first
+            group of sounds.
+          </p>
+
+          <ul class="module-topics">
+
+            <li>s • a • t • i • p • n</li>
+            <li>Sound recognition</li>
+            <li>Actions & sound practice</li>
+            <li>Early blending</li>
+
+          </ul>
+
+          <!-- THIS OPENS A NEW PAGE -->
+          <a
+            href="jolly-phonics-group-1.html"
+            class="module-button open-orange">
+
+            Open Group 1 →
+
+          </a>
+
+        </article>
+
+
+        <!-- =====================================
+             04 WORD BUILDER
+        ====================================== -->
+
+        <article class="module-card words-card">
+
+          <div class="module-number">
+            MODULE 04
+          </div>
+
+          <div class="module-icon">
+            🧩
+          </div>
+
+          <h3>
+            Word Builder
+          </h3>
+
+          <p>
+            Put sounds together and begin creating
+            simple phonics words.
+          </p>
+
+          <ul class="module-topics">
+
+            <li>Sound blending</li>
+            <li>CVC words</li>
+            <li>Picture-word matching</li>
+            <li>Build & read words</li>
+
+          </ul>
+
+          <!-- PAGE WILL BE CREATED LATER -->
+          <div class="module-button"
+               style="
+                 background:#eef1f7;
+                 color:#9690a2;
+                 cursor:default;
+               ">
+
             Coming Soon
+
           </div>
 
         </article>
 
 
-        <!-- ==========================
-             MIDDLE
-        ========================== -->
-        <article class="level-card">
+        <!-- =====================================
+             05 SENTENCE BUILDER
+        ====================================== -->
 
-          <div class="level-number">
-            LEVEL 03
+        <article class="module-card sentence-card">
+
+          <div class="module-number">
+            MODULE 05
           </div>
 
-          <div class="level-icon">
-            🌳
-          </div>
-
-          <h3>
-            Middle Level
-          </h3>
-
-          <p class="level-description">
-            Build stronger language, comprehension and expression.
-          </p>
-
-          <ul class="level-topics">
-
-            <li>Reading Comprehension</li>
-            <li>Grammar in Use</li>
-            <li>Paragraph Writing</li>
-            <li>Vocabulary Expansion</li>
-            <li>Speaking Practice</li>
-            <li>Creative Writing</li>
-
-          </ul>
-
-          <div class="level-button disabled">
-            Coming Soon
-          </div>
-
-        </article>
-
-
-        <!-- ==========================
-             ADVANCED
-        ========================== -->
-        <article class="level-card">
-
-          <div class="level-number">
-            LEVEL 04
-          </div>
-
-          <div class="level-icon">
-            🚀
+          <div class="module-icon">
+            📖
           </div>
 
           <h3>
-            Advanced Level
+            Sentence Builder
           </h3>
 
-          <p class="level-description">
-            Move towards confident communication and independent learning.
+          <p>
+            Move from individual words to simple,
+            meaningful sentences.
           </p>
 
-          <ul class="level-topics">
+          <ul class="module-topics">
 
-            <li>Advanced Reading</li>
-            <li>Advanced Grammar</li>
-            <li>Writing Skills</li>
-            <li>Communication</li>
-            <li>Critical Thinking</li>
-            <li>Creative Projects</li>
+            <li>Read simple sentences</li>
+            <li>Arrange words</li>
+            <li>Picture sentences</li>
+            <li>Early comprehension</li>
 
           </ul>
 
-          <div class="level-button disabled">
+          <!-- PAGE WILL BE CREATED LATER -->
+          <div class="module-button"
+               style="
+                 background:#eef1f7;
+                 color:#9690a2;
+                 cursor:default;
+               ">
+
             Coming Soon
+
           </div>
 
         </article>
@@ -1473,140 +1084,70 @@
     </section>
 
 
-    <!-- ==============================
-         LEARNING ROADMAP
-    ============================== -->
-    <section class="section roadmap-section">
+    <!-- =========================================
+         PROGRESS
+    ========================================= -->
 
-      <div class="section-heading">
+    <section class="progress-section">
 
-        <div class="section-kicker">
-          Our roadmap
-        </div>
+      <div class="progress-heading">
 
-        <h2>
-          From Letters to Confident Learning
-        </h2>
+        <h3>
+          🌟 Beginning Level Progress
+        </h3>
 
-        <p>
-          Each stage will have its own dedicated pages and activities.
-        </p>
+        <span>
+          Foundation stage
+        </span>
 
       </div>
 
+      <div class="progress-bar">
 
-      <div class="roadmap">
-
-        <div class="roadmap-row">
-
-          <div class="roadmap-label">
-            🌱 Beginning
-          </div>
-
-          <div class="roadmap-content">
-            <strong>
-              Letters → Sounds → Words → Sentences
-            </strong>
-
-            <span>
-              Capital Letters, Small Letters, Jolly Phonics,
-              picture words, word building and early reading.
-            </span>
-          </div>
-
-        </div>
-
-
-        <div class="roadmap-row">
-
-          <div class="roadmap-label">
-            🌿 Elementary
-          </div>
-
-          <div class="roadmap-content">
-            <strong>
-              Words → Reading → Grammar → Writing
-            </strong>
-
-            <span>
-              Vocabulary, word families, blending, basic grammar,
-              reading and short writing.
-            </span>
-          </div>
-
-        </div>
-
-
-        <div class="roadmap-row">
-
-          <div class="roadmap-label">
-            🌳 Middle
-          </div>
-
-          <div class="roadmap-content">
-            <strong>
-              Understanding → Expression
-            </strong>
-
-            <span>
-              Comprehension, grammar in context, speaking,
-              vocabulary and creative writing.
-            </span>
-          </div>
-
-        </div>
-
-
-        <div class="roadmap-row">
-
-          <div class="roadmap-label">
-            🚀 Advanced
-          </div>
-
-          <div class="roadmap-content">
-            <strong>
-              Independent & Confident Learning
-            </strong>
-
-            <span>
-              Advanced reading, writing, communication,
-              critical thinking and creative projects.
-            </span>
-          </div>
-
-        </div>
+        <div class="progress-fill"></div>
 
       </div>
 
-    </section>
-
-
-    <!-- ==============================
-         START LEARNING CTA
-    ============================== -->
-    <section class="cta-section">
-
-      <h2>
-        Ready to Start Learning? 🌟
-      </h2>
-
-      <p>
-        Begin with the foundation and move step-by-step.
+      <p class="progress-note">
+        Start with Capital Letters and move through the
+        learning path step-by-step.
       </p>
 
-      <!-- REAL PAGE — NO SCROLL -->
-      <a href="beginner.html" class="btn">
-        🚀 Open Beginning Level
+    </section>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
+
+    <div class="bottom-navigation">
+
+      <a
+        href="index.html"
+        class="bottom-link back-link">
+
+        ← Back to Home
+
       </a>
 
-    </section>
+
+      <a
+        href="capital-letters.html"
+        class="bottom-link home-bottom">
+
+        🔤 Start with Capital Letters →
+
+      </a>
+
+    </div>
 
   </main>
 
 
-  <!-- ==============================
+  <!-- =========================================
        FOOTER
-  ============================== -->
+  ========================================= -->
+
   <footer>
 
     <div class="footer-inner">
@@ -1618,71 +1159,22 @@
         </div>
 
         <p class="footer-text">
-          A colourful learning space designed to help children
-          learn, create and grow with confidence.
+          Learn • Create • Grow — building strong foundations
+          through joyful and systematic learning.
         </p>
 
       </div>
 
 
-      <div>
+      <div class="footer-right">
 
-        <div class="footer-title">
-          Learning
+        <div>
+          🌱 Beginning Level
         </div>
 
-        <ul class="footer-links">
-
-          <li>
-            <a href="beginner.html">
-              Beginning Level
-            </a>
-          </li>
-
-          <li>
-            <a href="capital-letters.html">
-              Capital Letters
-            </a>
-          </li>
-
-          <li>
-            <a href="small-letters.html">
-              Small Letters
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div>
-
-        <div class="footer-title">
-          Platform
+        <div>
+          Letters • Sounds • Words • Reading
         </div>
-
-        <ul class="footer-links">
-
-          <li>
-            <a href="index.html">
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="#audience">
-              Children • Parents • Teachers
-            </a>
-          </li>
-
-          <li>
-            <a href="#levels">
-              Learning Levels
-            </a>
-          </li>
-
-        </ul>
 
       </div>
 
@@ -1694,35 +1186,6 @@
     </div>
 
   </footer>
-
-
-  <!-- ==============================
-       MOBILE MENU SCRIPT
-  ============================== -->
-  <script>
-
-    const mobileMenu = document.getElementById("mobileMenu");
-    const navLinks = document.getElementById("navLinks");
-
-    mobileMenu.addEventListener("click", function(){
-
-      navLinks.classList.toggle("show");
-
-    });
-
-
-    /* Close mobile menu after clicking a link */
-    document.querySelectorAll(".nav-links a").forEach(function(link){
-
-      link.addEventListener("click", function(){
-
-        navLinks.classList.remove("show");
-
-      });
-
-    });
-
-  </script>
 
 </body>
   </html>
