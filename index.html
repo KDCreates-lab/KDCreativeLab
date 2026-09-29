@@ -3,16 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7357d9">
 
-<title>KD Initiative | Learn • Grow • Succeed</title>
+<title>Kids Creativity Lab | Learn • Create • Grow</title>
 
 <style>
-/* =========================================================
-   KD INITIATIVE - COMPLETE SINGLE PAGE
-   ========================================================= */
+
+:root{
+  --purple:#7357d9;
+  --purple-dark:#4e389f;
+  --lavender:#f0eaff;
+  --pink:#ff76ad;
+  --pink-light:#fff0f7;
+  --yellow:#ffd85a;
+  --yellow-light:#fff8d8;
+  --blue:#55b9f5;
+  --blue-light:#eaf8ff;
+  --green:#67c587;
+  --green-light:#eaffef;
+  --orange:#ff995c;
+  --orange-light:#fff0e6;
+  --ink:#30294a;
+  --muted:#716b84;
+  --white:#fff;
+  --shadow:0 12px 30px rgba(65,45,110,.12);
+  --shadow-big:0 20px 50px rgba(65,45,110,.18);
+}
 
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
@@ -20,2074 +41,3682 @@ html{
 }
 
 body{
-  margin:0;
-  font-family:"Segoe UI",Arial,sans-serif;
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  color:var(--ink);
   background:
-    radial-gradient(circle at 10% 10%,#f7eaff 0,transparent 24%),
-    radial-gradient(circle at 90% 20%,#fff0f6 0,transparent 25%),
-    #fffdfd;
-  color:#393347;
+    radial-gradient(circle at 10% 10%,rgba(255,216,90,.18),transparent 22%),
+    radial-gradient(circle at 90% 20%,rgba(255,118,173,.14),transparent 25%),
+    linear-gradient(180deg,#fffaff,#f7f5ff);
+  min-height:100vh;
 }
 
-/* ---------------- HEADER ---------------- */
+button{
+  font-family:inherit;
+  -webkit-tap-highlight-color:transparent;
+}
 
-.site-header{
+button:focus{
+  outline:3px solid rgba(115,87,217,.22);
+  outline-offset:2px;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
   position:sticky;
   top:0;
   z-index:1000;
-  width:100%;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(115,87,217,.1);
+}
+
+.nav{
   min-height:76px;
-  padding:9px 18px;
   display:flex;
   align-items:center;
-  gap:12px;
-  background:rgba(255,255,255,.96);
-  border-bottom:1px solid #eee4f5;
-  box-shadow:0 4px 20px rgba(80,55,100,.08);
-  backdrop-filter:blur(10px);
+  justify-content:space-between;
+  gap:20px;
 }
 
-.logo-link{
-  width:56px;
-  height:56px;
-  flex-shrink:0;
+.brand{
   display:flex;
   align-items:center;
-  justify-content:center;
-  text-decoration:none;
+  gap:10px;
+  font-size:19px;
+  font-weight:1000;
+  color:var(--purple-dark);
 }
 
-.logo-svg{
-  width:56px;
-  height:56px;
+.brand-mark{
+  width:48px;
+  height:48px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#8064ed,#b59cff);
+  color:white;
+  font-size:25px;
+  box-shadow:0 8px 18px rgba(115,87,217,.25);
 }
 
-.brand-text{
-  flex:1;
+.nav-links{
+  display:flex;
+  gap:7px;
 }
 
-.brand-text h1{
-  margin:0;
-  font-size:21px;
-  line-height:1.1;
+.nav-links button{
+  border:0;
+  background:transparent;
+  padding:11px 15px;
+  border-radius:14px;
+  color:var(--ink);
   font-weight:800;
-  background:linear-gradient(90deg,#65459a,#e85b8c);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  cursor:pointer;
 }
 
-.brand-text p{
-  margin:3px 0 0;
-  color:#84778e;
-  font-size:11px;
-  letter-spacing:.5px;
-}
-
-nav{
-  display:flex;
-  gap:6px;
-  align-items:center;
-}
-
-nav a{
-  color:#665577;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:650;
-  padding:9px 13px;
-  border-radius:20px;
-}
-
-nav a:hover{
-  background:#f3eafb;
-  color:#67459b;
+.nav-links button:hover{
+  background:var(--lavender);
+  color:var(--purple-dark);
 }
 
 .menu-btn{
   display:none;
-  width:42px;
-  height:42px;
   border:0;
+  background:var(--lavender);
+  width:45px;
+  height:45px;
   border-radius:14px;
-  background:#f3eafb;
-  color:#67459b;
-  font-size:20px;
-  cursor:pointer;
+  font-size:22px;
 }
 
-/* ---------------- HERO ---------------- */
+/* ================= HERO ================= */
 
 .hero{
-  max-width:1100px;
-  margin:auto;
-  padding:55px 20px 30px;
-  text-align:center;
+  padding:60px 0 40px;
+  overflow:hidden;
 }
 
-.hero-badge{
-  display:inline-block;
-  padding:8px 16px;
-  border-radius:30px;
-  background:#f4eafb;
-  color:#704d9f;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:14px;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center;
 }
 
-.hero h2{
-  margin:0;
-  font-size:clamp(34px,7vw,62px);
-  line-height:1.05;
-  background:linear-gradient(90deg,#65459a,#dc5c91);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+.hero-copy h1{
+  font-size:clamp(45px,7vw,78px);
+  line-height:.95;
+  letter-spacing:-3px;
+  margin-bottom:22px;
 }
 
-.hero p{
-  max-width:680px;
-  margin:18px auto;
-  color:#776c82;
-  font-size:16px;
+.hero-copy h1 span{
+  color:var(--purple);
+}
+
+.hero-copy h1 em{
+  color:var(--pink);
+  font-style:normal;
+}
+
+.hero-copy p{
+  color:var(--muted);
+  max-width:650px;
   line-height:1.7;
+  font-size:18px;
 }
 
-.start-btn{
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.primary-btn,
+.secondary-btn{
   border:0;
-  padding:14px 25px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#7451a8,#df6698);
-  color:white;
-  font-size:15px;
-  font-weight:750;
+  padding:15px 22px;
+  border-radius:17px;
+  font-weight:1000;
   cursor:pointer;
-  box-shadow:0 9px 22px rgba(115,78,160,.22);
+  transition:.2s;
 }
 
-.start-btn:active{
-  transform:scale(.97);
+.primary-btn{
+  background:var(--purple);
+  color:white;
+  box-shadow:0 10px 20px rgba(115,87,217,.25);
 }
 
-/* ---------------- MAIN ---------------- */
+.primary-btn:hover{
+  transform:translateY(-3px);
+  background:var(--purple-dark);
+}
 
-.container{
-  width:min(1100px,94%);
-  margin:auto;
+.secondary-btn{
+  background:white;
+  color:var(--purple-dark);
+  border:2px solid var(--lavender);
+}
+
+.secondary-btn:hover{
+  transform:translateY(-3px);
+  background:var(--lavender);
+}
+
+.hero-art{
+  min-height:380px;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+
+.hero-book{
+  width:min(440px,95%);
+  height:255px;
+  background:white;
+  border:7px solid white;
+  border-radius:30px;
+  box-shadow:var(--shadow-big);
+  display:flex;
+  overflow:hidden;
+  transform:rotate(-2deg);
+  position:relative;
+  z-index:2;
+}
+
+.book-page{
+  width:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.book-page:first-child{
+  background:#fff5c9;
+}
+
+.book-page:last-child{
+  background:#e8f8ff;
+}
+
+.book-letter{
+  font-size:110px;
+  font-weight:1000;
+  color:var(--purple);
+}
+
+.book-word{
+  font-weight:900;
+}
+
+.mascot{
+  position:absolute;
+  right:4%;
+  bottom:0;
+  font-size:90px;
+  z-index:5;
+  filter:drop-shadow(0 10px 8px rgba(0,0,0,.1));
+}
+
+.star{
+  position:absolute;
+  color:var(--yellow);
+  font-size:30px;
+  animation:float 3s ease-in-out infinite;
+  z-index:6;
+}
+
+.s1{left:8%;top:12%}
+.s2{right:4%;top:35%}
+.s3{left:10%;bottom:8%}
+
+@keyframes float{
+  50%{
+    transform:translateY(-12px) rotate(10deg);
+  }
+}
+
+/* ================= GENERAL ================= */
+
+section{
+  padding:65px 0;
 }
 
 .section-title{
   text-align:center;
-  margin:35px 0 20px;
+  margin-bottom:35px;
+}
+
+.eyebrow{
+  display:inline-block;
+  background:var(--lavender);
+  color:var(--purple-dark);
+  padding:8px 14px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:1000;
+  margin-bottom:12px;
 }
 
 .section-title h2{
-  margin:0;
-  font-size:28px;
-  color:#554267;
+  font-size:clamp(30px,5vw,46px);
+  margin-bottom:10px;
 }
 
 .section-title p{
-  margin:7px 0 0;
-  color:#8a7e91;
-  font-size:14px;
+  color:var(--muted);
+  max-width:700px;
+  margin:auto;
+  line-height:1.6;
 }
 
-/* ---------------- LETTER GRID ---------------- */
+/* ================= AUDIENCE ================= */
 
-.letter-grid{
+.audience-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
-  gap:14px;
-  padding-bottom:35px;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.letter-card{
-  position:relative;
-  border:1px solid #eee4f3;
-  background:white;
-  border-radius:24px;
-  min-height:145px;
-  padding:15px 10px;
+.audience-card{
+  padding:28px;
+  border-radius:28px;
+  min-height:255px;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.audience-card:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow-big);
+}
+
+.audience-card:nth-child(1){
+  background:var(--blue-light);
+}
+
+.audience-card:nth-child(2){
+  background:var(--pink-light);
+}
+
+.audience-card:nth-child(3){
+  background:var(--green-light);
+}
+
+.audience-icon{
+  font-size:48px;
+  margin-bottom:14px;
+}
+
+.audience-card h3{
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.audience-card p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.audience-list{
+  list-style:none;
+  margin-top:15px;
+}
+
+.audience-list li{
+  margin:7px 0;
+  font-weight:700;
+}
+
+/* ================= LEVELS ================= */
+
+.level-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.level-card{
+  border:0;
+  min-height:285px;
+  border-radius:28px;
+  padding:25px;
+  text-align:left;
   cursor:pointer;
-  box-shadow:0 7px 22px rgba(85,63,100,.08);
-  transition:.2s ease;
-  text-align:center;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.level-card:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow-big);
+}
+
+.beginner{
+  background:linear-gradient(145deg,#fff4c9,#fffaf0);
+}
+
+.elementary{
+  background:linear-gradient(145deg,#e5f7ff,#f7fdff);
+}
+
+.middle{
+  background:linear-gradient(145deg,#eee7ff,#faf8ff);
+}
+
+.advanced{
+  background:linear-gradient(145deg,#ffe7f0,#fff7fa);
+}
+
+.level-number{
+  width:48px;
+  height:48px;
+  background:white;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  font-weight:1000;
+  margin-bottom:18px;
+  box-shadow:0 7px 15px rgba(0,0,0,.08);
+}
+
+.level-card h3{
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.level-card p{
+  color:var(--muted);
+  line-height:1.55;
+}
+
+.level-topics{
+  list-style:none;
+  margin-top:16px;
+}
+
+.level-topics li{
+  margin:7px 0;
+  font-size:13px;
+  font-weight:800;
+}
+
+.level-topics li:before{
+  content:"✓";
+  color:var(--green);
+  margin-right:7px;
+}
+
+/* ================= LEARNING ================= */
+
+#learningSection{
+  display:none;
+}
+
+.learning-hub{
+  background:white;
+  border-radius:35px;
+  padding:30px;
+  box-shadow:var(--shadow-big);
+}
+
+.hub-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:25px;
+}
+
+.hub-head h3{
+  font-size:32px;
+}
+
+.back-btn{
+  border:0;
+  background:var(--lavender);
+  color:var(--purple-dark);
+  padding:11px 17px;
+  border-radius:14px;
+  font-weight:1000;
+  cursor:pointer;
+}
+
+.topic-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.topic-card{
+  border:2px solid #eee9ff;
+  background:white;
+  border-radius:22px;
+  padding:22px;
+  min-height:175px;
+  text-align:left;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.topic-card:hover{
+  transform:translateY(-4px);
+  border-color:#b9a9ef;
+  box-shadow:var(--shadow);
+}
+
+.topic-icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.topic-card h4{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.topic-card p{
+  color:var(--muted);
+  line-height:1.5;
+  font-size:13px;
+}
+
+.lesson-tag{
+  display:inline-block;
+  margin-top:12px;
+  background:#f3f0fb;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* ================= ALPHABET ================= */
+
+.alphabet-area{
+  margin-top:30px;
+  background:linear-gradient(180deg,#f6f2ff,#fff);
+  border-radius:35px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.alphabet-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:25px;
+}
+
+.alphabet-head h3{
+  font-size:32px;
+}
+
+.progress-box{
+  min-width:200px;
+}
+
+.progress-text{
+  font-size:12px;
+  font-weight:900;
+  color:var(--muted);
+  margin-bottom:7px;
+}
+
+.progress{
+  height:10px;
+  background:#e7e3f1;
+  border-radius:20px;
   overflow:hidden;
 }
 
+.progress-bar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,var(--purple),var(--pink));
+  transition:.3s;
+}
+
+.letter-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:15px;
+}
+
+.letter-card{
+  border:0;
+  min-height:180px;
+  border-radius:25px;
+  cursor:pointer;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 9px 20px rgba(74,53,120,.1);
+  transition:.22s;
+}
+
+.letter-card:nth-child(4n+1){
+  background:#fff1b9;
+}
+
+.letter-card:nth-child(4n+2){
+  background:#dff5ff;
+}
+
+.letter-card:nth-child(4n+3){
+  background:#ffe1ee;
+}
+
+.letter-card:nth-child(4n+4){
+  background:#e4f8e9;
+}
+
 .letter-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 28px rgba(85,63,100,.13);
+  transform:translateY(-7px) rotate(-1deg);
+  box-shadow:0 15px 27px rgba(74,53,120,.17);
 }
 
-.letter-card:active{
-  transform:scale(.97);
+.letter-big{
+  font-size:72px;
+  line-height:.9;
+  font-weight:1000;
+  color:var(--purple-dark);
 }
 
-.card-letter{
-  font-size:55px;
-  line-height:1;
-  font-weight:850;
-  color:#67479a;
+.letter-picture{
+  font-size:40px;
+  margin:9px 0 4px;
 }
 
-.card-small{
-  font-size:24px;
-  font-weight:700;
-  color:#df668f;
+.letter-word{
+  font-weight:1000;
+  font-size:14px;
 }
 
-.card-word{
-  margin-top:7px;
-  font-size:13px;
-  color:#81758a;
-  font-weight:600;
+.letter-sound{
+  display:inline-block;
+  margin-top:6px;
+  padding:4px 8px;
+  border-radius:20px;
+  background:rgba(255,255,255,.78);
+  font-size:10px;
+  font-weight:900;
 }
 
-.card-emoji{
-  font-size:25px;
-  margin-top:5px;
-}
+/* ================= LETTER DETAIL ================= */
 
-/* ---------------- LEARNING PANEL ---------------- */
-
-#learningPanel{
+.detail-area{
   display:none;
-  margin:15px auto 50px;
-  background:white;
-  border:1px solid #eee2f5;
-  border-radius:30px;
-  padding:25px;
-  box-shadow:0 12px 40px rgba(80,55,100,.1);
+  margin-top:30px;
 }
 
-#learningPanel.active{
+.detail-area.active{
   display:block;
 }
 
-.close-btn{
-  float:right;
-  border:0;
-  background:#f4edf8;
-  color:#68469a;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  font-size:20px;
-  cursor:pointer;
+.letter-detail{
+  background:white;
+  border-radius:35px;
+  padding:30px;
+  box-shadow:var(--shadow-big);
 }
 
-.lesson-top{
-  text-align:center;
-  clear:both;
+.detail-top{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:30px;
+  align-items:center;
 }
 
-.big-letter{
-  font-size:100px;
-  line-height:1;
-  font-weight:900;
-  color:#6d4ba1;
-}
-
-.big-small{
-  font-size:46px;
-  font-weight:800;
-  color:#df628d;
-}
-
-.lesson-word{
-  font-size:23px;
-  font-weight:750;
-  color:#564466;
-  margin-top:8px;
-}
-
-.lesson-emoji{
-  font-size:65px;
-  margin:8px;
-}
-
-/* ---------------- ACTIONS ---------------- */
-
-.action-row{
+.detail-letter{
+  min-height:285px;
+  border-radius:30px;
+  background:linear-gradient(145deg,#fff2b8,#ffe3ed);
   display:flex;
+  flex-direction:column;
   justify-content:center;
+  align-items:center;
+}
+
+.detail-letter-main{
+  font-size:150px;
+  line-height:.8;
+  font-weight:1000;
+  color:var(--purple-dark);
+}
+
+.detail-letter-word{
+  margin-top:20px;
+  font-size:20px;
+  font-weight:1000;
+}
+
+.detail-intro h3{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.detail-intro p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.detail-buttons{
+  display:flex;
   flex-wrap:wrap;
-  gap:10px;
-  margin:20px 0;
+  gap:9px;
+  margin-top:20px;
 }
 
 .action-btn{
   border:0;
-  padding:11px 16px;
-  border-radius:20px;
-  background:#f4eafb;
-  color:#67459b;
-  font-weight:700;
+  border-radius:15px;
+  padding:12px 15px;
+  font-weight:1000;
   cursor:pointer;
+  transition:.2s;
 }
 
 .action-btn:hover{
-  background:#eadcf5;
+  transform:translateY(-2px);
 }
 
-.action-btn:active{
-  transform:scale(.97);
+.blue{
+  background:var(--blue-light);
+  color:#28739c;
 }
 
-/* ---------------- INFO BOXES ---------------- */
+.pink{
+  background:var(--pink-light);
+  color:#a9356b;
+}
 
-.learning-sections{
+.orange{
+  background:var(--orange-light);
+  color:#a5521d;
+}
+
+.green{
+  background:var(--green-light);
+  color:#267c49;
+}
+
+.purple{
+  background:var(--lavender);
+  color:var(--purple-dark);
+}
+
+/* ================= DETAIL BOXES ================= */
+
+.detail-sections{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:30px;
+}
+
+.detail-box{
+  background:#faf9ff;
+  border:2px solid #eeeaff;
+  border-radius:25px;
+  padding:23px;
+}
+
+.detail-box h4{
+  font-size:21px;
+  margin-bottom:13px;
+}
+
+.detail-box p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ================= SIX PICTURES ================= */
+
+.picture-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.picture-card{
+  background:white;
+  border-radius:19px;
+  padding:13px 8px;
+  text-align:center;
+  border:1px solid #eee;
+  transition:.2s;
+}
+
+.picture-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.picture-emoji{
+  display:block;
+  font-size:45px;
+  margin-bottom:6px;
+}
+
+.picture-name{
+  display:block;
+  font-size:13px;
+  font-weight:1000;
+  margin-bottom:8px;
+}
+
+.say-word{
+  border:0;
+  background:var(--blue-light);
+  color:#27729d;
+  padding:6px 10px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:1000;
+}
+
+/* ================= VIDEO ================= */
+
+.video-box{
+  background:#fff;
+  border-radius:22px;
+  padding:12px;
+  border:2px solid #eeeaff;
+}
+
+.video-frame{
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  border-radius:17px;
+  display:block;
+}
+
+.video-note{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+  padding:10px 5px 2px;
+}
+
+/* ================= POEM ================= */
+
+.poem{
+  background:#ffeaf4;
+  border-radius:20px;
+  padding:18px;
+  line-height:1.8;
+  font-weight:800;
+  white-space:pre-line;
+}
+
+/* ================= STORY ================= */
+
+.story{
+  background:#fff8dd;
+  border-radius:20px;
+  padding:18px;
+  line-height:1.7;
+}
+
+/* ================= SOUND ================= */
+
+.sound-display{
+  background:#eaf8ff;
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+}
+
+.sound-letter{
+  font-size:55px;
+  font-weight:1000;
+  color:var(--purple);
+}
+
+.sound-symbol{
+  font-size:28px;
+  font-weight:1000;
+  margin:8px 0 15px;
+}
+
+/* ================= TRACING ================= */
+
+.trace-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.trace-card{
+  background:white;
+  border-radius:22px;
+  padding:15px;
+  border:2px solid #eeeaff;
+}
+
+.trace-card h5{
+  text-align:center;
+  font-size:17px;
+  margin-bottom:10px;
+}
+
+.trace-canvas{
+  width:100%;
+  height:230px;
+  border-radius:17px;
+  border:2px dashed #c9bdf0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fff 0,
+      #fff 53px,
+      #d8d0ee 54px,
+      #fff 55px
+    );
+  touch-action:none;
+  display:block;
+}
+
+.clear-trace{
+  margin-top:10px;
+  border:0;
+  background:#f1edff;
+  color:var(--purple-dark);
+  padding:9px 13px;
+  border-radius:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* ================= ACTIVITIES ================= */
+
+.activity-list{
+  display:grid;
+  gap:13px;
+}
+
+.activity{
+  background:white;
+  border-radius:19px;
+  border:2px solid #eeeaff;
+  padding:17px;
+}
+
+.activity-question{
+  font-weight:1000;
+  margin-bottom:12px;
+}
+
+.options{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+
+.option{
+  border:2px solid #e6e0f5;
+  background:white;
+  padding:10px 15px;
+  border-radius:13px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.option.correct{
+  background:#dff8e8;
+  border-color:#63c58a;
+  color:#267c49;
+}
+
+.option.wrong{
+  background:#ffe5eb;
+  border-color:#ef7e9a;
+  color:#a83a55;
+}
+
+.answer-msg{
+  min-height:18px;
+  margin-top:9px;
+  font-size:13px;
+  font-weight:900;
+}
+
+/* ================= ROADMAP ================= */
+
+.future-section{
+  background:linear-gradient(135deg,#f0eaff,#fff0f7);
+  border-radius:30px;
+  padding:28px;
+}
+
+.future-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:15px;
   margin-top:20px;
 }
 
-.info-box{
-  background:#fffafd;
-  border:1px solid #eee3f4;
-  border-radius:22px;
-  padding:18px;
-}
-
-.info-box h3{
-  margin:0 0 10px;
-  color:#65469a;
-  font-size:18px;
-}
-
-.info-box p{
-  color:#71667b;
-  line-height:1.65;
-  font-size:14px;
-  margin:0;
-}
-
-/* ---------------- PICTURES ---------------- */
-
-.picture-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:10px;
-}
-
-.picture-item{
+.future-card{
   background:white;
-  border:1px solid #eee4f4;
-  border-radius:18px;
-  padding:12px 5px;
-  text-align:center;
-}
-
-.picture-item .emoji{
-  font-size:34px;
-  display:block;
-}
-
-.picture-item span:last-child{
-  font-size:12px;
-  font-weight:650;
-  color:#71677c;
-}
-
-/* ---------------- TRACING ---------------- */
-
-.tracing-area{
-  margin-top:18px;
-  text-align:center;
-}
-
-.tracing-area h3{
-  color:#65469a;
-}
-
-.canvas-wrap{
-  width:min(620px,100%);
-  margin:auto;
-  position:relative;
-}
-
-canvas{
-  width:100%;
-  height:250px;
-  display:block;
-  border:2px dashed #d8c5e8;
-  border-radius:22px;
-  background:
-    linear-gradient(#fff,#fff),
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 49px,
-      #f0e6f5 50px
-    );
-  touch-action:none;
-  cursor:crosshair;
-}
-
-.trace-hint{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:115px;
-  font-weight:900;
-  color:#eadff2;
-  pointer-events:none;
-  user-select:none;
-}
-
-/* ---------------- QUIZ ---------------- */
-
-.quiz-box{
-  margin-top:20px;
-  background:#fdf8ff;
-  border-radius:22px;
   padding:18px;
-  text-align:center;
-}
-
-.quiz-question{
-  font-size:18px;
-  font-weight:750;
-  color:#554166;
-  margin-bottom:15px;
-}
-
-.quiz-options{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.quiz-option{
-  min-width:110px;
-  border:2px solid #eadff1;
-  background:white;
-  padding:12px 15px;
-  border-radius:18px;
-  font-size:15px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-.quiz-option:hover{
-  border-color:#b993d0;
-}
-
-.quiz-result{
-  min-height:25px;
-  margin-top:13px;
-  font-weight:750;
-}
-
-/* ---------------- BLENDING ---------------- */
-
-.blend{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
-  margin:12px 0;
-}
-
-.sound-box{
-  min-width:48px;
-  padding:12px;
-  background:#f3eafa;
-  border-radius:14px;
-  font-size:22px;
-  font-weight:800;
-  color:#68469a;
-}
-
-/* ---------------- PROGRESS ---------------- */
-
-.progress-area{
-  margin:20px auto;
-  max-width:600px;
-}
-
-.progress-bar{
-  height:13px;
-  background:#eee7f2;
   border-radius:20px;
-  overflow:hidden;
 }
 
-.progress-fill{
-  width:0%;
-  height:100%;
-  background:linear-gradient(90deg,#7350a5,#df638f);
-  transition:.3s;
+.future-card strong{
+  display:block;
+  margin-bottom:7px;
 }
 
-.progress-text{
-  text-align:center;
-  margin-top:7px;
-  color:#7d7285;
+.future-card p{
+  color:var(--muted);
   font-size:13px;
+  line-height:1.5;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* ================= FOOTER ================= */
 
 footer{
-  margin-top:50px;
-  padding:30px 20px;
-  text-align:center;
-  background:#faf5fd;
-  border-top:1px solid #eee5f4;
+  background:#31294b;
+  color:white;
+  padding:35px 0;
+  margin-top:40px;
 }
 
-.footer-logo{
+.footer-inner{
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
   align-items:center;
-  gap:8px;
-  font-weight:800;
-  color:#65469a;
 }
 
-footer p{
-  margin:7px 0 0;
-  font-size:12px;
-  color:#897e91;
+.footer-brand{
+  font-size:22px;
+  font-weight:1000;
 }
 
-/* ---------------- WATERMARK ---------------- */
-
-.page-watermark{
-  position:fixed;
-  right:-100px;
-  bottom:-100px;
-  width:330px;
-  height:330px;
-  opacity:.025;
-  pointer-events:none;
-  z-index:-1;
+.footer-text{
+  color:#c9c2dc;
 }
 
-/* ---------------- MOBILE ---------------- */
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-copy{
+    text-align:center;
+  }
+
+  .hero-copy p{
+    margin:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .level-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .letter-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+}
 
 @media(max-width:700px){
 
-  .site-header{
-    min-height:68px;
-    padding:7px 12px;
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:white;
+    padding:12px;
+    flex-direction:column;
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
   }
 
-  .logo-link,
-  .logo-svg{
-    width:48px;
-    height:48px;
+  .nav-links.open{
+    display:flex;
   }
 
-  .brand-text h1{
-    font-size:18px;
-  }
-
-  .brand-text p{
-    font-size:9px;
+  .nav-links button{
+    width:100%;
   }
 
   .menu-btn{
     display:block;
   }
 
-  nav{
-    display:none;
-    position:absolute;
-    right:12px;
-    top:66px;
-    width:190px;
-    padding:10px;
-    background:white;
-    border-radius:20px;
-    box-shadow:0 12px 35px rgba(80,60,100,.15);
+  .audience-grid,
+  .level-grid,
+  .topic-grid{
+    grid-template-columns:1fr;
+  }
+
+  .alphabet-area{
+    padding:20px;
+  }
+
+  .alphabet-head{
     flex-direction:column;
-    align-items:stretch;
+    align-items:flex-start;
   }
 
-  nav.show{
-    display:flex;
-  }
-
-  nav a{
-    padding:12px;
-  }
-
-  .hero{
-    padding-top:35px;
+  .progress-box{
+    width:100%;
   }
 
   .letter-grid{
     grid-template-columns:repeat(3,1fr);
-    gap:10px;
   }
 
   .letter-card{
-    min-height:125px;
-    border-radius:19px;
+    min-height:150px;
   }
 
-  .card-letter{
-    font-size:45px;
+  .letter-big{
+    font-size:58px;
   }
 
-  .card-small{
-    font-size:20px;
+  .detail-top{
+    grid-template-columns:1fr;
   }
 
-  .card-word{
-    font-size:11px;
+  .detail-sections{
+    grid-template-columns:1fr;
+  }
+
+  .trace-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .future-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+}
+
+@media(max-width:420px){
+
+  .letter-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .picture-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  #learningPanel{
-    padding:17px;
-    border-radius:23px;
+  .hero-copy h1{
+    font-size:45px;
   }
 
-  .big-letter{
-    font-size:80px;
-  }
-
-  .big-small{
-    font-size:38px;
-  }
-
-  canvas{
-    height:220px;
-  }
-
-  .trace-hint{
-    font-size:90px;
-  }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================================================
-     INLINE KD INITIATIVE LOGO
-     No separate image file required
-     ========================================================= -->
-
-<svg class="page-watermark"
-     viewBox="0 0 200 200"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-hidden="true">
-
-  <circle cx="100" cy="100" r="88"
-          fill="#f4eafb"
-          stroke="#7650a5"
-          stroke-width="5"/>
-
-  <text x="48" y="113"
-        font-size="68"
-        font-weight="900"
-        fill="#67459a">K</text>
-
-  <text x="100" y="113"
-        font-size="68"
-        font-weight="900"
-        fill="#df628d">D</text>
-
-  <path d="M68 135 Q100 115 132 135"
-        fill="none"
-        stroke="#70a66b"
-        stroke-width="7"
-        stroke-linecap="round"/>
-</svg>
-
-
-<!-- =========================================================
+<!-- =====================================================
      HEADER
-     ========================================================= -->
+===================================================== -->
 
-<header class="site-header">
+<header>
 
-  <a href="#" class="logo-link" aria-label="KD Initiative Home">
+<div class="container nav">
 
-    <svg class="logo-svg"
-         viewBox="0 0 200 200"
-         xmlns="http://www.w3.org/2000/svg">
-
-      <circle cx="100" cy="100" r="88"
-              fill="#fff"
-              stroke="#7650a5"
-              stroke-width="5"/>
-
-      <circle cx="100" cy="100" r="78"
-              fill="#f8f0fc"/>
-
-      <text x="48" y="113"
-            font-size="68"
-            font-weight="900"
-            fill="#67459a">K</text>
-
-      <text x="100" y="113"
-            font-size="68"
-            font-weight="900"
-            fill="#df628d">D</text>
-
-      <circle cx="147" cy="48" r="7" fill="#f3c85b"/>
-      <circle cx="39" cy="66" r="6" fill="#76aa71"/>
-
-      <path d="M68 135 Q100 115 132 135"
-            fill="none"
-            stroke="#70a66b"
-            stroke-width="7"
-            stroke-linecap="round"/>
-
-    </svg>
-
-  </a>
-
-  <div class="brand-text">
-    <h1>KD Initiative</h1>
-    <p>Learn • Grow • Succeed</p>
+  <div class="brand">
+    <div class="brand-mark">📚</div>
+    <span>Kids Creativity Lab</span>
   </div>
 
-  <button class="menu-btn"
-          id="menuBtn"
-          aria-label="Open menu">
-    ☰
-  </button>
+  <button class="menu-btn" id="menuBtn">☰</button>
 
-  <nav id="mainNav">
-    <a href="#home">Home</a>
-    <a href="#letters">Letters</a>
-    <a href="#practice">Practice</a>
+  <nav class="nav-links" id="navLinks">
+
+    <button onclick="goTo('home')">Home</button>
+
+    <button onclick="goTo('audience')">
+      Who We Help
+    </button>
+
+    <button onclick="goTo('levels')">
+      Levels
+    </button>
+
+    <button onclick="openLevel('beginner')">
+      Start Learning
+    </button>
+
   </nav>
+
+</div>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =====================================================
      HERO
-     ========================================================= -->
+===================================================== -->
 
-<section class="hero" id="home">
+<main id="home">
 
-  <div class="hero-badge">
-    🌸 Welcome to KD Initiative
-  </div>
+<section class="hero">
 
-  <h2>Let's Learn English!</h2>
+<div class="container hero-grid">
 
-  <p>
-    Explore letters, sounds, words, stories and fun activities.
-    Tap a letter to begin your learning journey.
-  </p>
+<div class="hero-copy">
 
-  <button class="start-btn"
-          id="startLearning">
-    🚀 Start Learning
-  </button>
+<h1>
+Learn.<br>
+<span>Create.</span><br>
+<em>Grow.</em>
+</h1>
+
+<p>
+
+Welcome to <strong>Kids Creativity Lab</strong> —
+a structured learning space for children,
+parents and teachers.
+
+From the first letter and sound to words,
+sentences, stories and creative learning.
+
+</p>
+
+<div class="hero-buttons">
+
+<button
+class="primary-btn"
+onclick="openLevel('beginner')">
+
+🚀 Start Learning
+
+</button>
+
+<button
+class="secondary-btn"
+onclick="goTo('levels')">
+
+📚 Explore Levels
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="hero-art">
+
+<div class="star s1">★</div>
+<div class="star s2">✦</div>
+<div class="star s3">★</div>
+
+<div class="hero-book">
+
+<div class="book-page">
+
+<div class="book-letter">A</div>
+
+<div class="book-word">
+Apple • Ant
+</div>
+
+</div>
+
+
+<div class="book-page">
+
+<div class="book-letter">B</div>
+
+<div class="book-word">
+Ball • Bus
+</div>
+
+</div>
+
+</div>
+
+<div class="mascot">🦉</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================================================
-     ALPHABET
-     ========================================================= -->
+<!-- =====================================================
+     TARGET AUDIENCE
+===================================================== -->
 
-<main class="container">
+<section id="audience">
 
-<section id="letters">
+<div class="container">
 
-  <div class="section-title">
-    <h2>🔤 Explore A–Z</h2>
-    <p>Tap any letter to learn more.</p>
-  </div>
+<div class="section-title">
 
-  <div class="letter-grid" id="letterGrid"></div>
+<span class="eyebrow">
+OUR MAIN TARGET
+</span>
+
+<h2>
+Made for the Whole Learning Circle
+</h2>
+
+<p>
+Three important groups are at the heart of
+Kids Creativity Lab.
+</p>
+
+</div>
+
+
+<div class="audience-grid">
+
+
+<div class="audience-card">
+
+<div class="audience-icon">🧒</div>
+
+<h3>
+For Children
+</h3>
+
+<p>
+Interactive learning designed to keep
+children involved while they learn.
+</p>
+
+<ul class="audience-list">
+
+<li>✓ Letters & Sounds</li>
+<li>✓ Pictures & Words</li>
+<li>✓ Stories & Poems</li>
+<li>✓ Games & Activities</li>
+
+</ul>
+
+</div>
+
+
+<div class="audience-card">
+
+<div class="audience-icon">👨‍👩‍👧</div>
+
+<h3>
+For Parents
+</h3>
+
+<p>
+Simple ways to understand and support
+a child's learning journey.
+</p>
+
+<ul class="audience-list">
+
+<li>✓ Home Practice</li>
+<li>✓ Reading Support</li>
+<li>✓ Progress Ideas</li>
+<li>✓ Activity Suggestions</li>
+
+</ul>
+
+</div>
+
+
+<div class="audience-card">
+
+<div class="audience-icon">👩‍🏫</div>
+
+<h3>
+For Teachers
+</h3>
+
+<p>
+Structured learning material and activity
+ideas for classroom use.
+</p>
+
+<ul class="audience-list">
+
+<li>✓ Teaching Activities</li>
+<li>✓ Phonics Practice</li>
+<li>✓ Worksheets</li>
+<li>✓ Classroom Ideas</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================================================
-     DYNAMIC LEARNING PANEL
-     ========================================================= -->
+<!-- =====================================================
+     LEVELS
+===================================================== -->
 
-<section id="learningPanel">
+<section id="levels">
 
-  <button class="close-btn" id="closeLesson">×</button>
+<div class="container">
 
-  <div class="lesson-top">
+<div class="section-title">
 
-    <div class="big-letter" id="bigLetter">A</div>
+<span class="eyebrow">
+LEARNING JOURNEY
+</span>
 
-    <div class="big-small" id="bigSmall">a</div>
+<h2>
+Choose a Level
+</h2>
 
-    <div class="lesson-emoji" id="lessonEmoji">🍎</div>
+<p>
+A clear progression from foundational learning
+to independent reading and creative expression.
+</p>
 
-    <div class="lesson-word" id="lessonWord">
-      Apple
-    </div>
+</div>
 
-  </div>
 
+<div class="level-grid">
 
-  <!-- AUDIO BUTTONS -->
 
-  <div class="action-row">
+<button
+class="level-card beginner"
+onclick="openLevel('beginner')">
 
-    <button class="action-btn" id="soundBtn">
-      🔊 Phonics Sound
-    </button>
+<div class="level-number">
+01
+</div>
 
-    <button class="action-btn" id="rhymeBtn">
-      🎵 Hear Rhyme
-    </button>
+<h3>
+Beginning Level
+</h3>
 
-    <button class="action-btn" id="wordBtn">
-      🗣️ Say Word
-    </button>
+<p>
+Start from the basics and build strong
+letter, sound and early reading skills.
+</p>
 
-  </div>
+<ul class="level-topics">
 
+<li>Capital Letters</li>
+<li>Small Letters</li>
+<li>Phonics Groups</li>
+<li>Basic Words</li>
+<li>Simple Sentences</li>
 
-  <!-- PICTURES -->
+</ul>
 
-  <div class="info-box">
+</button>
 
-    <h3>🌈 Words Beginning With <span id="pictureLetter">A</span></h3>
 
-    <div class="picture-grid" id="pictureGrid"></div>
+<button
+class="level-card elementary"
+onclick="openLevel('elementary')">
 
-  </div>
+<div class="level-number">
+02
+</div>
 
+<h3>
+Elementary
+</h3>
 
-  <!-- PHONICS -->
+<p>
+Develop vocabulary, reading and
+sentence-building skills.
+</p>
 
-  <div class="learning-sections">
+<ul class="level-topics">
 
-    <div class="info-box">
+<li>CVC Words</li>
+<li>4-Letter Words</li>
+<li>Grammar Basics</li>
+<li>Reading Practice</li>
+<li>Picture Description</li>
 
-      <h3>🔤 Phonics</h3>
+</ul>
 
-      <p id="phonicsText">
-        A makes the short /a/ sound.
-      </p>
+</button>
 
-    </div>
 
+<button
+class="level-card middle"
+onclick="openLevel('middle')">
 
-    <div class="info-box">
+<div class="level-number">
+03
+</div>
 
-      <h3>📖 Mini Story</h3>
+<h3>
+Middle Level
+</h3>
 
-      <p id="storyText"></p>
+<p>
+Build independent reading, writing
+and communication skills.
+</p>
 
-    </div>
+<ul class="level-topics">
 
-  </div>
+<li>Comprehension</li>
+<li>Grammar</li>
+<li>Paragraph Writing</li>
+<li>Dialogue</li>
+<li>Vocabulary</li>
 
+</ul>
 
-  <!-- BLENDING -->
+</button>
 
-  <div class="info-box" style="margin-top:15px">
 
-    <h3>🧩 Let's Blend</h3>
+<button
+class="level-card advanced"
+onclick="openLevel('advanced')">
 
-    <div class="blend" id="blendBox"></div>
+<div class="level-number">
+04
+</div>
 
-    <p id="blendText" style="text-align:center"></p>
+<h3>
+Advanced Level
+</h3>
 
-  </div>
+<p>
+Develop confident communication and
+creative English expression.
+</p>
 
+<ul class="level-topics">
 
-  <!-- TRACING -->
+<li>Advanced Reading</li>
+<li>Advanced Writing</li>
+<li>Grammar</li>
+<li>Vocabulary</li>
+<li>Projects</li>
 
-  <div class="info-box tracing-area">
+</ul>
 
-    <h3>✍️ Trace the Letter</h3>
+</button>
 
-    <p>
-      Use your finger and trace the letter.
-    </p>
 
-    <div class="canvas-wrap">
+</div>
 
-      <canvas id="traceCanvas"
-              width="800"
-              height="300">
-      </canvas>
+</div>
 
-      <div class="trace-hint"
-           id="traceHint">
-        A
-      </div>
+</section>
 
-    </div>
 
-    <div class="action-row">
+<!-- =====================================================
+     LEARNING SECTION
+===================================================== -->
 
-      <button class="action-btn" id="clearTrace">
-        🧹 Clear
-      </button>
+<section id="learningSection">
 
-      <button class="action-btn" id="traceAgain">
-        🔄 Try Again
-      </button>
+<div class="container">
 
-    </div>
+<div class="learning-hub">
 
-  </div>
 
+<div class="hub-head">
 
-  <!-- QUIZ -->
+<div>
 
-  <div class="quiz-box" id="practice">
+<span
+class="eyebrow"
+id="hubEyebrow">
+LEARNING LEVEL
+</span>
 
-    <div class="quiz-question"
-         id="quizQuestion">
-      Which word begins with A?
-    </div>
+<h3 id="hubTitle">
+Beginning Level
+</h3>
 
-    <div class="quiz-options"
-         id="quizOptions">
-    </div>
+</div>
 
-    <div class="quiz-result"
-         id="quizResult">
-    </div>
 
-  </div>
+<button
+class="back-btn"
+onclick="closeLearning()">
 
+← Back to Levels
 
-  <!-- PROGRESS -->
+</button>
 
-  <div class="progress-area">
+</div>
 
-    <div class="progress-bar">
 
-      <div class="progress-fill"
-           id="progressFill">
-      </div>
+<div
+class="topic-grid"
+id="topicGrid">
+</div>
 
-    </div>
 
-    <div class="progress-text"
-         id="progressText">
-      0 / 26 letters explored
-    </div>
+<div id="alphabetArea">
+</div>
 
-  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ROADMAP
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span class="eyebrow">
+THE BIG PLAN
+</span>
+
+<h2>
+From Letters to Real Reading
+</h2>
+
+<p>
+The learning journey grows step-by-step.
+</p>
+
+</div>
+
+
+<div class="future-section">
+
+<div class="future-grid">
+
+
+<div class="future-card">
+
+<strong>
+🔤 Letters
+</strong>
+
+<p>
+Capital → Small → Cursive → Letter Sounds
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<strong>
+🔊 Phonics
+</strong>
+
+<p>
+Sounds → Groups → Blending → Word Reading
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<strong>
+🧩 Words
+</strong>
+
+<p>
+3-letter words → 4-letter words → Vocabulary
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<strong>
+📝 Sentences
+</strong>
+
+<p>
+Simple sentences → Grammar → Writing
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<strong>
+📖 Reading
+</strong>
+
+<p>
+Stories → Comprehension → Independent Reading
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<strong>
+🎨 Creativity
+</strong>
+
+<p>
+Picture Description → Dialogue → Creative Writing
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 </main>
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-     ========================================================= -->
+===================================================== -->
 
 <footer>
 
-  <div class="footer-logo">
+<div class="container footer-inner">
 
-    <span>✦</span>
-    <span>KD Initiative</span>
-    <span>✦</span>
+<div class="footer-brand">
+📚 Kids Creativity Lab
+</div>
 
-  </div>
+<div class="footer-text">
+Learn • Create • Grow
+</div>
 
-  <p>
-    Learn • Grow • Succeed
-  </p>
+</div>
 
 </footer>
 
 
 <script>
 
-/* =========================================================
-   LETTER DATA
-   ========================================================= */
+/* =====================================================
+   MENU
+===================================================== */
 
-const letters = [
+const menuBtn =
+document.getElementById("menuBtn");
 
-{
-  letter:"A",
-  small:"a",
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+
+  navLinks.classList.toggle("open");
+
+});
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function goTo(id){
+
+  const element =
+  document.getElementById(id);
+
+  if(element){
+
+    element.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  }
+
+  navLinks.classList.remove("open");
+
+}
+
+
+/* =====================================================
+   PHONETIC LETTER DATA
+
+   IMPORTANT:
+   Pictures are selected according to the
+   INITIAL SOUND, not merely the spelling.
+
+   A = /æ/
+   E = /ɛ/
+   I = /ɪ/
+   O = /ɒ/ or /ɑ/
+   U = /ʌ/
+
+   Consonants use their intended initial sound.
+===================================================== */
+
+
+const letters = {
+
+
+A:{
   word:"Apple",
-  emoji:"🍎",
+  picture:"🍎",
+  sound:"/æ/",
+  soundName:"short A",
   pictures:[
     ["🍎","Apple"],
     ["🐜","Ant"],
-    ["🐊","Alligator"],
     ["🏹","Arrow"],
-    ["✈️","Aeroplane"]
+    ["🐊","Alligator"],
+    ["👩‍🚀","Astronaut"],
+    ["🐾","Animal"]
   ],
-  sound:"a",
-  phonics:"A makes the short /a/ sound, as in apple.",
-  rhyme:"A is for apple, red and round. A is for ant, crawling on the ground.",
-  story:"An ant saw a red apple under a tree. It called its friends and they happily shared the apple.",
-  blend:["a","t"],
-  blendWord:"at",
-  quiz:["Apple","Ball","Cat"],
-  answer:"Apple"
+  poem:
+`A, A and so on my arms,
+A, A and so on my arms,
+They causing me alarm!`,
+  story:
+`Ava has an apple.
+An ant walks near the apple.
+Ava points to the ant and says,
+“A is for Apple and Ant!”`,
+  questions:[
+    ["Which word begins with the /æ/ sound?","Apple",["Apple","Ball","Moon"]],
+    ["Find another short-A word.","Ant",["Dog","Ant","Sun"]],
+    ["Which word has the A sound?","Arrow",["Fish","Arrow","Bus"]]
+  ]
 },
 
-{
-  letter:"B",
-  small:"b",
+
+B:{
   word:"Ball",
-  emoji:"⚽",
+  picture:"⚽",
+  sound:"/b/",
+  soundName:"B sound",
   pictures:[
     ["⚽","Ball"],
-    ["🐝","Bee"],
-    ["🦋","Butterfly"],
+    ["🦇","Bat"],
+    ["🚌","Bus"],
     ["🍌","Banana"],
-    ["🐻","Bear"]
+    ["👶","Baby"],
+    ["🦋","Butterfly"]
   ],
-  sound:"b",
-  phonics:"B makes the /b/ sound, as in ball.",
-  rhyme:"B is for ball, bouncing high. B is for bird, flying in the sky.",
-  story:"Ben had a blue ball. He bounced it gently and played with his friends.",
-  blend:["b","a","t"],
-  blendWord:"bat",
-  quiz:["Cat","Ball","Sun"],
-  answer:"Ball"
+  poem:
+`B is for a bouncing ball,
+B is for a big blue ball!`,
+  story:
+`Ben has a blue ball.
+He bounces the ball beside the bus.
+Ben smiles and says,
+“B is for Ball!”`,
+  questions:[
+    ["Which word begins with B?","Ball",["Ball","Cat","Dog"]],
+    ["Find the B word.","Bus",["Sun","Bus","Fish"]],
+    ["Which starts with B?","Banana",["Banana","Apple","Egg"]]
+  ]
 },
 
-{
-  letter:"C",
-  small:"c",
+
+C:{
   word:"Cat",
-  emoji:"🐱",
+  picture:"🐱",
+  sound:"/k/",
+  soundName:"hard C sound",
   pictures:[
     ["🐱","Cat"],
-    ["🍪","Cookie"],
     ["🚗","Car"],
+    ["🥤","Cup"],
     ["🐄","Cow"],
-    ["🥕","Carrot"]
+    ["🍰","Cake"],
+    ["🐫","Camel"]
   ],
-  sound:"k",
-  phonics:"C can make the /k/ sound, as in cat.",
-  rhyme:"C is for cat, soft and small. C is for car, driving down the road.",
-  story:"A little cat sat beside a red car. It watched the cars go by.",
-  blend:["c","a","t"],
-  blendWord:"cat",
-  quiz:["Dog","Cat","Fish"],
-  answer:"Cat"
+  poem:
+`C is for a curious cat,
+C is for a cosy cap!`,
+  story:
+`Charlie sees a cute cat.
+The cat sits beside a car.
+Charlie says,
+“C is for Cat!”`,
+  questions:[
+    ["Which word begins with /k/?","Cat",["Cat","Dog","Fish"]],
+    ["Find the C word.","Car",["Apple","Car","Bus"]],
+    ["Which starts with C?","Cake",["Cake","Sun","Moon"]]
+  ]
 },
 
-{
-  letter:"D",
-  small:"d",
+
+D:{
   word:"Dog",
-  emoji:"🐶",
+  picture:"🐶",
+  sound:"/d/",
+  soundName:"D sound",
   pictures:[
     ["🐶","Dog"],
     ["🦆","Duck"],
     ["🥁","Drum"],
-    ["🐬","Dolphin"],
-    ["🦌","Deer"]
+    ["🍩","Donut"],
+    ["🦌","Deer"],
+    ["🦖","Dinosaur"]
   ],
-  sound:"d",
-  phonics:"D makes the /d/ sound, as in dog.",
-  rhyme:"D is for dog, happy and bright. D is for duck, taking a flight.",
-  story:"Dolly the dog loved running in the garden. Every morning she chased a little ball.",
-  blend:["d","o","g"],
-  blendWord:"dog",
-  quiz:["Dog","Cat","Sun"],
-  answer:"Dog"
+  poem:
+`D is for a dancing dog,
+D is for a little drum!`,
+  story:
+`Danny has a dog.
+The dog dances when Danny plays the drum.`,
+  questions:[
+    ["Which word begins with D?","Dog",["Dog","Cat","Ball"]],
+    ["Find the D word.","Duck",["Duck","Sun","Fish"]],
+    ["Which starts with D?","Drum",["Apple","Drum","Bus"]]
+  ]
 },
 
-{
-  letter:"E",
-  small:"e",
+
+E:{
   word:"Egg",
-  emoji:"🥚",
+  picture:"🥚",
+  sound:"/ɛ/",
+  soundName:"short E",
   pictures:[
     ["🥚","Egg"],
     ["🐘","Elephant"],
-    ["🦅","Eagle"],
+    ["🚂","Engine"],
+    ["💪","Elbow"],
     ["✉️","Envelope"],
-    ["👁️","Eye"]
+    ["🧝","Elf"]
   ],
-  sound:"e",
-  phonics:"E makes the short /e/ sound, as in egg.",
-  rhyme:"E is for egg, smooth and white. E is for elephant, big in sight.",
-  story:"Ella found an egg in the kitchen. She carefully placed it in a bowl.",
-  blend:["e","n"],
-  blendWord:"en",
-  quiz:["Egg","Dog","Cat"],
-  answer:"Egg"
+  poem:
+`E is for an elephant,
+E is for an egg!
+E is a happy sound to learn!`,
+  story:
+`Emma sees an elephant.
+Then she finds an egg beside an envelope.
+Emma says,
+“E is for Egg and Elephant!”`,
+  questions:[
+    ["Which word begins with the short E sound?","Egg",["Egg","Ice","Orange"]],
+    ["Find the E sound word.","Elephant",["Apple","Elephant","Umbrella"]],
+    ["Which starts with short E?","Engine",["Engine","Igloo","Octopus"]]
+  ]
 },
 
-{
-  letter:"F",
-  small:"f",
+
+F:{
   word:"Fish",
-  emoji:"🐟",
+  picture:"🐟",
+  sound:"/f/",
+  soundName:"F sound",
   pictures:[
     ["🐟","Fish"],
-    ["🦊","Fox"],
-    ["🌸","Flower"],
     ["🐸","Frog"],
-    ["🔥","Fire"]
+    ["🌸","Flower"],
+    ["🦊","Fox"],
+    ["🪭","Fan"],
+    ["🍴","Fork"]
   ],
-  sound:"f",
-  phonics:"F makes the /f/ sound, as in fish.",
-  rhyme:"F is for fish, swimming blue. F is for frog, jumping too.",
-  story:"A little fish swam around the pond. It played near the green plants.",
-  blend:["f","i","t"],
-  blendWord:"fit",
-  quiz:["Fish","Ball","Dog"],
-  answer:"Fish"
+  poem:
+`F is for a funny fish,
+F is for a fluffy fox!`,
+  story:
+`Finn sees a fish.
+A frog jumps near a flower.
+Finn says,
+“F is for Fish!”`,
+  questions:[
+    ["Which word begins with F?","Fish",["Fish","Dog","Cat"]],
+    ["Find the F word.","Frog",["Sun","Frog","Ball"]],
+    ["Which starts with F?","Flower",["Flower","Bus","Apple"]]
+  ]
 },
 
-{
-  letter:"G",
-  small:"g",
+
+G:{
   word:"Goat",
-  emoji:"🐐",
+  picture:"🐐",
+  sound:"/g/",
+  soundName:"G sound",
   pictures:[
     ["🐐","Goat"],
     ["🍇","Grapes"],
-    ["🦒","Giraffe"],
     ["🎁","Gift"],
-    ["🌍","Globe"]
+    ["🦒","Giraffe"],
+    ["🦍","Gorilla"],
+    ["🪿","Goose"]
   ],
-  sound:"g",
-  phonics:"G makes the /g/ sound, as in goat.",
-  rhyme:"G is for goat, walking slow. G is for grapes, growing in a row.",
-  story:"Golu the goat loved green grass. He happily walked around the garden.",
-  blend:["g","o","t"],
-  blendWord:"got",
-  quiz:["Goat","Cat","Fish"],
-  answer:"Goat"
+  poem:
+`G is for a green garden,
+G is for a goat!`,
+  story:
+`Gina sees a goat near a green garden.
+She gives the goat some grapes.`,
+  questions:[
+    ["Which word begins with G?","Goat",["Goat","Cat","Fish"]],
+    ["Find the G word.","Grapes",["Apple","Grapes","Bus"]],
+    ["Which starts with G?","Gift",["Gift","Dog","Sun"]]
+  ]
 },
 
-{
-  letter:"H",
-  small:"h",
-  word:"Hen",
-  emoji:"🐔",
+
+H:{
+  word:"Hat",
+  picture:"🎩",
+  sound:"/h/",
+  soundName:"H sound",
   pictures:[
-    ["🐔","Hen"],
-    ["🏠","House"],
     ["🎩","Hat"],
+    ["🏠","House"],
     ["🐴","Horse"],
-    ["❤️","Heart"]
+    ["❤️","Heart"],
+    ["🐹","Hamster"],
+    ["🍯","Honey"]
   ],
-  sound:"h",
-  phonics:"H makes the /h/ sound, as in hen.",
-  rhyme:"H is for hen, happy and neat. H is for hat, worn on your head.",
-  story:"A hen walked around the little house. She found some grains and ate them happily.",
-  blend:["h","e","n"],
-  blendWord:"hen",
-  quiz:["Hen","Dog","Ball"],
-  answer:"Hen"
+  poem:
+`H is for a happy hat,
+H is for a happy horse!`,
+  story:
+`Hari wears a hat.
+He walks towards his house and sees a horse.`,
+  questions:[
+    ["Which word begins with H?","Hat",["Hat","Ball","Cat"]],
+    ["Find the H word.","House",["House","Dog","Fish"]],
+    ["Which starts with H?","Horse",["Sun","Horse","Apple"]]
+  ]
 },
 
-{
-  letter:"I",
-  small:"i",
-  word:"Ink",
-  emoji:"🖋️",
+
+I:{
+  word:"Igloo",
+  picture:"🏠",
+  sound:"/ɪ/",
+  soundName:"short I",
   pictures:[
+    ["🏠","Igloo"],
     ["🖋️","Ink"],
-    ["🍦","Ice cream"],
-    ["🧊","Ice"],
     ["🐜","Insect"],
-    ["🏝️","Island"]
+    ["💉","Injection"],
+    ["📏","Inch"],
+    ["🦎","Iguana"]
   ],
-  sound:"i",
-  phonics:"I makes the short /i/ sound, as in ink.",
-  rhyme:"I is for ink, dark and blue. I is for insect, tiny too.",
-  story:"Isha opened her ink bottle carefully and started writing in her notebook.",
-  blend:["i","n"],
-  blendWord:"in",
-  quiz:["Ink","Cat","Dog"],
-  answer:"Ink"
+  poem:
+`I is for an igloo,
+I is for ink!
+I is a little sound,
+So stop and think!`,
+  story:
+`Isha sees an igloo.
+She writes with ink and sees an insect.
+Isha says,
+“I is for Igloo and Insect!”`,
+  questions:[
+    ["Which word begins with short I /ɪ/?","Igloo",["Ice","Igloo","Orange"]],
+    ["Find the I sound word.","Insect",["Egg","Insect","Umbrella"]],
+    ["Which starts with short I?","Ink",["Ink","Apple","Octopus"]]
+  ]
 },
 
-{
-  letter:"J",
-  small:"j",
+
+J:{
   word:"Jam",
-  emoji:"🍓",
+  picture:"🍓",
+  sound:"/dʒ/",
+  soundName:"J sound",
   pictures:[
     ["🍓","Jam"],
     ["🧃","Juice"],
-    ["🦘","Jellyfish"],
     ["🧥","Jacket"],
-    ["🫙","Jar"]
+    ["🫙","Jar"],
+    ["🤹","Juggler"],
+    ["🪼","Jellyfish"]
   ],
-  sound:"j",
-  phonics:"J makes the /j/ sound, as in jam.",
-  rhyme:"J is for jam, sweet and bright. J is for juice, a tasty delight.",
-  story:"Jiya spread strawberry jam on her toast. She smiled after taking the first bite.",
-  blend:["j","a","m"],
-  blendWord:"jam",
-  quiz:["Jam","Fish","Dog"],
-  answer:"Jam"
+  poem:
+`J is for jam,
+J is for juice,
+J makes learning
+Fun to use!`,
+  story:
+`Jiya spreads jam on bread.
+Then she drinks some juice.`,
+  questions:[
+    ["Which word begins with J?","Jam",["Jam","Cat","Ball"]],
+    ["Find the J word.","Juice",["Sun","Juice","Dog"]],
+    ["Which starts with J?","Jacket",["Fish","Jacket","Apple"]]
+  ]
 },
 
-{
-  letter:"K",
-  small:"k",
+
+K:{
   word:"Kite",
-  emoji:"🪁",
+  picture:"🪁",
+  sound:"/k/",
+  soundName:"K sound",
   pictures:[
     ["🪁","Kite"],
     ["🐨","Koala"],
     ["🔑","Key"],
     ["🥝","Kiwi"],
-    ["👑","King"]
+    ["👑","King"],
+    ["🐨","Kangaroo"]
   ],
-  sound:"k",
-  phonics:"K makes the /k/ sound, as in kite.",
-  rhyme:"K is for kite, flying high. K is for key, kept nearby.",
-  story:"Karan flew his kite on a windy afternoon. The kite danced high in the sky.",
-  blend:["k","i","t"],
-  blendWord:"kit",
-  quiz:["Kite","Cat","Ball"],
-  answer:"Kite"
+  poem:
+`K is for a kite up high,
+K is flying in the sky!`,
+  story:
+`Kabir flies a kite.
+The kite goes high into the sky.`,
+  questions:[
+    ["Which word begins with K?","Kite",["Dog","Kite","Cat"]],
+    ["Find the K word.","Key",["Apple","Key","Bus"]],
+    ["Which starts with K?","Kiwi",["Kiwi","Sun","Fish"]]
+  ]
 },
 
-{
-  letter:"L",
-  small:"l",
+
+L:{
   word:"Lion",
-  emoji:"🦁",
+  picture:"🦁",
+  sound:"/l/",
+  soundName:"L sound",
   pictures:[
     ["🦁","Lion"],
     ["🍋","Lemon"],
-    ["🪷","Lotus"],
+    ["🦎","Lizard"],
     ["💡","Lamp"],
-    ["🍃","Leaf"]
+    ["🍃","Leaf"],
+    ["🦙","Llama"]
   ],
-  sound:"l",
-  phonics:"L makes the /l/ sound, as in lion.",
-  rhyme:"L is for lion, strong and proud. L is for leaf, falling from a cloud.",
-  story:"Leo the lion liked sitting under a big tree. He enjoyed the cool shade.",
-  blend:["l","e","t"],
-  blendWord:"let",
-  quiz:["Lion","Dog","Fish"],
-  answer:"Lion"
+  poem:
+`L is for a little lion,
+L is for a lemon bright!`,
+  story:
+`Leo sees a lion picture.
+He also sees a yellow lemon.`,
+  questions:[
+    ["Which word begins with L?","Lion",["Lion","Dog","Cat"]],
+    ["Find the L word.","Lemon",["Bus","Lemon","Ball"]],
+    ["Which starts with L?","Lamp",["Fish","Lamp","Apple"]]
+  ]
 },
 
-{
-  letter:"M",
-  small:"m",
+
+M:{
   word:"Moon",
-  emoji:"🌙",
+  picture:"🌙",
+  sound:"/m/",
+  soundName:"M sound",
   pictures:[
     ["🌙","Moon"],
     ["🐒","Monkey"],
     ["🥭","Mango"],
     ["🐭","Mouse"],
+    ["🗺️","Map"],
     ["🥛","Milk"]
   ],
-  sound:"m",
-  phonics:"M makes the /m/ sound, as in moon.",
-  rhyme:"M is for moon, shining bright. M is for monkey, full of delight.",
-  story:"Mia looked at the moon before going to bed. It looked bright in the quiet sky.",
-  blend:["m","a","p"],
-  blendWord:"map",
-  quiz:["Moon","Cat","Dog"],
-  answer:"Moon"
+  poem:
+`M is for the moon at night,
+M makes learning shine bright!`,
+  story:
+`Maya looks at the moon.
+She eats a sweet mango before bedtime.`,
+  questions:[
+    ["Which word begins with M?","Moon",["Dog","Moon","Cat"]],
+    ["Find the M word.","Mango",["Sun","Mango","Bus"]],
+    ["Which starts with M?","Monkey",["Fish","Monkey","Apple"]]
+  ]
 },
 
-{
-  letter:"N",
-  small:"n",
+
+N:{
   word:"Nest",
-  emoji:"🪺",
+  picture:"🪺",
+  sound:"/n/",
+  soundName:"N sound",
   pictures:[
     ["🪺","Nest"],
     ["👃","Nose"],
     ["🌙","Night"],
-    ["📰","Newspaper"],
+    ["📓","Notebook"],
+    ["🪺","Nightingale"],
     ["🍜","Noodles"]
   ],
-  sound:"n",
-  phonics:"N makes the /n/ sound, as in nest.",
-  rhyme:"N is for nest, warm and small. N is for nose, on your face.",
-  story:"A bird made a tiny nest in a tree. Soon, three little eggs were inside.",
-  blend:["n","e","t"],
-  blendWord:"net",
-  quiz:["Nest","Ball","Cat"],
-  answer:"Nest"
+  poem:
+`N is for a nest so neat,
+N makes learning nice and sweet!`,
+  story:
+`Nina finds a nest in a tree.
+She sees little birds inside.`,
+  questions:[
+    ["Which word begins with N?","Nest",["Nest","Dog","Cat"]],
+    ["Find the N word.","Nose",["Ball","Nose","Sun"]],
+    ["Which starts with N?","Notebook",["Fish","Notebook","Apple"]]
+  ]
 },
 
-{
-  letter:"O",
-  small:"o",
-  word:"Orange",
-  emoji:"🍊",
+
+O:{
+  word:"Octopus",
+  picture:"🐙",
+  sound:"/ɒ/",
+  soundName:"short O",
   pictures:[
-    ["🍊","Orange"],
     ["🐙","Octopus"],
-    ["🦉","Owl"],
+    ["🫒","Olive"],
+    ["🦤","Ostrich"],
     ["🐂","Ox"],
-    ["🌊","Ocean"]
+    ["🧅","Onion"],
+    ["🍊","Orange"]
   ],
-  sound:"o",
-  phonics:"O makes the short /o/ sound, as in orange.",
-  rhyme:"O is for orange, round and sweet. O is for owl, with silent feet.",
-  story:"Omi peeled an orange after school. The sweet smell filled the kitchen.",
-  blend:["o","x"],
-  blendWord:"ox",
-  quiz:["Orange","Dog","Fish"],
-  answer:"Orange"
+  poem:
+`O is round like an octopus,
+O is open, bright and fun!`,
+  story:
+`Olivia sees an octopus.
+Then she finds an orange and an olive.`,
+  questions:[
+    ["Which word begins with short O?","Octopus",["Dog","Octopus","Cat"]],
+    ["Find the O sound word.","Olive",["Sun","Olive","Bus"]],
+    ["Which starts with short O?","Orange",["Fish","Orange","Apple"]]
+  ]
 },
 
-{
-  letter:"P",
-  small:"p",
+
+P:{
   word:"Pen",
-  emoji:"🖊️",
+  picture:"🖊️",
+  sound:"/p/",
+  soundName:"P sound",
   pictures:[
     ["🖊️","Pen"],
     ["🐼","Panda"],
     ["🍕","Pizza"],
-    ["🦜","Parrot"],
-    ["🐷","Pig"]
+    ["🐷","Pig"],
+    ["🍐","Pear"],
+    ["🦜","Parrot"]
   ],
-  sound:"p",
-  phonics:"P makes the /p/ sound, as in pen.",
-  rhyme:"P is for pen, used to write. P is for panda, black and white.",
-  story:"Priya picked up her blue pen and wrote her name neatly.",
-  blend:["p","e","n"],
-  blendWord:"pen",
-  quiz:["Pen","Cat","Dog"],
-  answer:"Pen"
+  poem:
+`P is for a pink pig,
+P is for a pen!`,
+  story:
+`Priya picks up a pen.
+She draws a panda and a parrot.`,
+  questions:[
+    ["Which word begins with P?","Pen",["Pen","Dog","Cat"]],
+    ["Find the P word.","Panda",["Ball","Panda","Sun"]],
+    ["Which starts with P?","Pizza",["Fish","Pizza","Apple"]]
+  ]
 },
 
-{
-  letter:"Q",
-  small:"q",
+
+Q:{
   word:"Queen",
-  emoji:"👑",
+  picture:"👑",
+  sound:"/kw/",
+  soundName:"QU sound",
   pictures:[
     ["👑","Queen"],
     ["❓","Question"],
     ["🪶","Quill"],
-    ["🛏️","Quilt"],
-    ["🐦","Quail"]
+    ["🪙","Quarter"],
+    ["🦆","Quail"],
+    ["🛏️","Quilt"]
   ],
-  sound:"kw",
-  phonics:"Q usually works with U and makes the /kw/ sound.",
-  rhyme:"Q is for queen, wearing a crown. Q is for question, write it down.",
-  story:"The queen sat on her chair and listened carefully to the children.",
-  blend:["q","u","i","z"],
-  blendWord:"quiz",
-  quiz:["Queen","Dog","Ball"],
-  answer:"Queen"
+  poem:
+`Q is for a queen so grand,
+Q is a special sound to understand!`,
+  story:
+`The queen asks a question.
+She writes it with a quill.`,
+  questions:[
+    ["Which word begins with Q?","Queen",["Dog","Queen","Cat"]],
+    ["Find the Q word.","Question",["Ball","Question","Sun"]],
+    ["Which starts with Q?","Quilt",["Fish","Quilt","Apple"]]
+  ]
 },
 
-{
-  letter:"R",
-  small:"r",
+
+R:{
   word:"Rabbit",
-  emoji:"🐰",
+  picture:"🐰",
+  sound:"/r/",
+  soundName:"R sound",
   pictures:[
     ["🐰","Rabbit"],
     ["🌈","Rainbow"],
+    ["🤖","Robot"],
     ["🌹","Rose"],
     ["🚀","Rocket"],
-    ["🌧️","Rain"]
+    ["🐀","Rat"]
   ],
-  sound:"r",
-  phonics:"R makes the /r/ sound, as in rabbit.",
-  rhyme:"R is for rabbit, quick and small. R is for rainbow, bright for all.",
-  story:"A rabbit hopped across the garden and disappeared behind a bush.",
-  blend:["r","a","t"],
-  blendWord:"rat",
-  quiz:["Rabbit","Fish","Cat"],
-  answer:"Rabbit"
+  poem:
+`R is for a rabbit fast,
+R is for a rainbow vast!`,
+  story:
+`Riya sees a rabbit under a rainbow.
+She picks a red rose.`,
+  questions:[
+    ["Which word begins with R?","Rabbit",["Rabbit","Dog","Cat"]],
+    ["Find the R word.","Rainbow",["Ball","Rainbow","Sun"]],
+    ["Which starts with R?","Robot",["Fish","Robot","Apple"]]
+  ]
 },
 
-{
-  letter:"S",
-  small:"s",
+
+S:{
   word:"Sun",
-  emoji:"☀️",
+  picture:"☀️",
+  sound:"/s/",
+  soundName:"S sound",
   pictures:[
     ["☀️","Sun"],
     ["🐍","Snake"],
     ["⭐","Star"],
-    ["🦢","Swan"],
-    ["🥪","Sandwich"]
+    ["🥪","Sandwich"],
+    ["🧦","Sock"],
+    ["🕷️","Spider"]
   ],
-  sound:"s",
-  phonics:"S makes the /s/ sound, as in sun.",
-  rhyme:"S is for sun, shining bright. S is for star, glowing at night.",
-  story:"Sam looked at the sunny sky and smiled. It was a perfect day to play.",
-  blend:["s","a","t"],
-  blendWord:"sat",
-  quiz:["Sun","Dog","Ball"],
-  answer:"Sun"
+  poem:
+`S is for the shining sun,
+S makes learning lots of fun!`,
+  story:
+`Sam looks at the sun.
+He sees a star and a spider in his book.`,
+  questions:[
+    ["Which word begins with S?","Sun",["Dog","Sun","Cat"]],
+    ["Find the S word.","Snake",["Ball","Snake","Bus"]],
+    ["Which starts with S?","Star",["Fish","Star","Apple"]]
+  ]
 },
 
-{
-  letter:"T",
-  small:"t",
+
+T:{
   word:"Tiger",
-  emoji:"🐯",
+  picture:"🐯",
+  sound:"/t/",
+  soundName:"T sound",
   pictures:[
     ["🐯","Tiger"],
     ["🌳","Tree"],
     ["🚂","Train"],
-    ["🐢","Turtle"],
-    ["🍅","Tomato"]
+    ["🍅","Tomato"],
+    ["🦃","Turkey"],
+    ["🧸","Teddy"]
   ],
-  sound:"t",
-  phonics:"T makes the /t/ sound, as in tiger.",
-  rhyme:"T is for tiger, strong and fast. T is for tree, standing tall.",
-  story:"A tiger walked quietly through the forest. It stopped beside a tall tree.",
-  blend:["t","a","p"],
-  blendWord:"tap",
-  quiz:["Tiger","Cat","Fish"],
-  answer:"Tiger"
+  poem:
+`T is for a tall tree,
+T is for a tiger!`,
+  story:
+`Tom sees a tiger in a book.
+Then he draws a tall tree.`,
+  questions:[
+    ["Which word begins with T?","Tiger",["Tiger","Dog","Cat"]],
+    ["Find the T word.","Tree",["Ball","Tree","Sun"]],
+    ["Which starts with T?","Train",["Fish","Train","Apple"]]
+  ]
 },
 
-{
-  letter:"U",
-  small:"u",
+
+U:{
   word:"Umbrella",
-  emoji:"☂️",
+  picture:"☂️",
+  sound:"/ʌ/",
+  soundName:"short U",
   pictures:[
     ["☂️","Umbrella"],
-    ["🦄","Unicorn"],
-    ["🩲","Underwear"],
+    ["👨","Uncle"],
     ["⬆️","Up"],
-    ["☝️","Under"]
+    ["⚾","Umpire"],
+    ["⬇️","Under"],
+    ["😬","Ugly"]
   ],
-  sound:"u",
-  phonics:"U makes the short /u/ sound, as in umbrella.",
-  rhyme:"U is for umbrella, open wide. U is for up, look to the sky.",
-  story:"Uma opened her umbrella when the rain started falling.",
-  blend:["u","p"],
-  blendWord:"up",
-  quiz:["Umbrella","Dog","Cat"],
-  answer:"Umbrella"
+  poem:
+`U is for an umbrella,
+U keeps us dry!`,
+  story:
+`Uma opens her umbrella.
+Rain falls from the sky.`,
+  questions:[
+    ["Which word begins with short U?","Umbrella",["Umbrella","Dog","Cat"]],
+    ["Find the U sound word.","Uncle",["Ball","Uncle","Sun"]],
+    ["Which starts with short U?","Under",["Fish","Under","Apple"]]
+  ]
 },
 
-{
-  letter:"V",
-  small:"v",
+
+V:{
   word:"Van",
-  emoji:"🚐",
+  picture:"🚐",
+  sound:"/v/",
+  soundName:"V sound",
   pictures:[
     ["🚐","Van"],
     ["🌋","Volcano"],
     ["🎻","Violin"],
-    ["💜","Violet"],
-    ["🦺","Vest"]
+    ["🥕","Vegetable"],
+    ["🦅","Vulture"],
+    ["🎟️","Voucher"]
   ],
-  sound:"v",
-  phonics:"V makes the /v/ sound, as in van.",
-  rhyme:"V is for van, moving along. V is for violin, making a song.",
-  story:"Vani travelled in a van with her family. They sang songs on the way.",
-  blend:["v","a","n"],
-  blendWord:"van",
-  quiz:["Van","Ball","Cat"],
-  answer:"Van"
+  poem:
+`V is for a van so bright,
+V is fun to learn and write!`,
+  story:
+`Vina sees a blue van.
+She hears a violin.`,
+  questions:[
+    ["Which word begins with V?","Van",["Van","Dog","Cat"]],
+    ["Find the V word.","Violin",["Ball","Violin","Sun"]],
+    ["Which starts with V?","Volcano",["Fish","Volcano","Apple"]]
+  ]
 },
 
-{
-  letter:"W",
-  small:"w",
-  word:"Water",
-  emoji:"💧",
+
+W:{
+  word:"Watch",
+  picture:"⌚",
+  sound:"/w/",
+  soundName:"W sound",
   pictures:[
-    ["💧","Water"],
-    ["🐋","Whale"],
     ["⌚","Watch"],
+    ["🐋","Whale"],
     ["🍉","Watermelon"],
-    ["🌳","Wood"]
+    ["🌊","Water"],
+    ["🪟","Window"],
+    ["🐺","Wolf"]
   ],
-  sound:"w",
-  phonics:"W makes the /w/ sound, as in water.",
-  rhyme:"W is for water, fresh and clear. W is for whale, swimming near.",
-  story:"Willy drank a glass of water after playing outside.",
-  blend:["w","e","b"],
-  blendWord:"web",
-  quiz:["Water","Dog","Cat"],
-  answer:"Water"
+  poem:
+`W is for the wind that blows,
+W is for the water!`,
+  story:
+`Will looks at his watch.
+Then he eats a slice of watermelon.`,
+  questions:[
+    ["Which word begins with W?","Watch",["Watch","Dog","Cat"]],
+    ["Find the W word.","Whale",["Ball","Whale","Sun"]],
+    ["Which starts with W?","Watermelon",["Fish","Watermelon","Apple"]]
+  ]
 },
 
-{
-  letter:"X",
-  small:"x",
+
+X:{
   word:"X-ray",
-  emoji:"🩻",
+  picture:"🩻",
+  sound:"/ks/",
+  soundName:"X sound",
   pictures:[
     ["🩻","X-ray"],
     ["🎼","Xylophone"],
     ["❌","X mark"],
-    ["📦","Box"],
-    ["🦊","Fox"]
+    ["🎮","Xbox"],
+    ["✖️","X shape"],
+    ["📍","X spot"]
   ],
-  sound:"ks",
-  phonics:"X often makes the /ks/ sound, as in box.",
-  rhyme:"X is for xylophone, play a tune. X is in box, very soon.",
-  story:"The doctor showed X-ray pictures to explain how bones look inside the body.",
-  blend:["b","o","x"],
-  blendWord:"box",
-  quiz:["Box","Cat","Dog"],
-  answer:"Box"
+  poem:
+`X is a special sound,
+Look for X words all around!`,
+  story:
+`Xavier sees an X-ray picture.
+Then he plays a xylophone.`,
+  questions:[
+    ["Which word begins with X?","X-ray",["X-ray","Dog","Cat"]],
+    ["Find the X word.","Xylophone",["Ball","Xylophone","Sun"]],
+    ["Which starts with X?","Xbox",["Fish","Xbox","Apple"]]
+  ]
 },
 
-{
-  letter:"Y",
-  small:"y",
+
+Y:{
   word:"Yak",
-  emoji:"🐂",
+  picture:"🐂",
+  sound:"/j/",
+  soundName:"Y sound",
   pictures:[
     ["🐂","Yak"],
     ["🧶","Yarn"],
-    ["🛥️","Yacht"],
-    ["🪀","Yo-yo"],
-    ["🟡","Yellow"]
+    ["🛳️","Yacht"],
+    ["💛","Yellow"],
+    ["🍳","Yolk"],
+    ["🪀","Yo-yo"]
   ],
-  sound:"y",
-  phonics:"Y can make the /y/ sound, as in yak.",
-  rhyme:"Y is for yellow, bright and sunny. Y is for yarn, soft and funny.",
-  story:"Yash played with a yellow yo-yo. He practised until he could do it smoothly.",
-  blend:["y","e","s"],
-  blendWord:"yes",
-  quiz:["Yak","Cat","Ball"],
-  answer:"Yak"
+  poem:
+`Y is yellow,
+Y is you,
+Y has lots of words
+For us to do!`,
+  story:
+`Yash sees a yellow yarn ball.
+He learns about a yak.`,
+  questions:[
+    ["Which word begins with Y?","Yak",["Yak","Dog","Cat"]],
+    ["Find the Y word.","Yarn",["Ball","Yarn","Sun"]],
+    ["Which starts with Y?","Yellow",["Fish","Yellow","Apple"]]
+  ]
 },
 
-{
-  letter:"Z",
-  small:"z",
+
+Z:{
   word:"Zebra",
-  emoji:"🦓",
+  picture:"🦓",
+  sound:"/z/",
+  soundName:"Z sound",
   pictures:[
     ["🦓","Zebra"],
     ["🦁","Zoo"],
     ["🤐","Zip"],
-    ["⚡","Zigzag"],
-    ["🦟","Zebra insect"]
+    ["0️⃣","Zero"],
+    ["⚡","Zap"],
+    ["🧟","Zombie"]
   ],
-  sound:"z",
-  phonics:"Z makes the /z/ sound, as in zebra.",
-  rhyme:"Z is for zebra, black and white. Z is for zigzag, left and right.",
-  story:"Zara saw a zebra at the zoo. She noticed its beautiful black and white stripes.",
-  blend:["z","i","p"],
-  blendWord:"zip",
-  quiz:["Zebra","Dog","Cat"],
-  answer:"Zebra"
+  poem:
+`Z is for a zebra
+Black and white,
+Z is the final letter
+We write!`,
+  story:
+`Zoya visits the zoo.
+She sees a zebra walking near the trees.`,
+  questions:[
+    ["Which word begins with Z?","Zebra",["Zebra","Dog","Cat"]],
+    ["Find the Z word.","Zoo",["Ball","Zoo","Sun"]],
+    ["Which starts with Z?","Zero",["Fish","Zero","Apple"]]
+  ]
 }
 
-];
+};
 
 
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
+/* =====================================================
+   LEVEL DATA
+===================================================== */
 
-const letterGrid = document.getElementById("letterGrid");
-const learningPanel = document.getElementById("learningPanel");
+const levels={
 
-const bigLetter = document.getElementById("bigLetter");
-const bigSmall = document.getElementById("bigSmall");
-const lessonEmoji = document.getElementById("lessonEmoji");
-const lessonWord = document.getElementById("lessonWord");
+beginner:{
+  title:"Beginning Level",
+  topics:[
+    ["🔠","Capital Letters",
+     "A–Z with sound, phonetic pictures, video, tracing, stories and activities.",
+     "capital"],
+    ["🔡","Small Letters",
+     "Lowercase letters and capital-small connection.",
+     "future"],
+    ["🔊","Phonics Groups",
+     "Step-by-step phonics groups and sound practice.",
+     "future"],
+    ["🧩","Word Builder",
+     "Build simple words after learning sounds.",
+     "future"],
+    ["📝","Sentence Builder",
+     "Use learned words in simple sentences.",
+     "future"],
+    ["📖","First Reading",
+     "Small stories and first reading practice.",
+     "future"]
+  ]
+},
 
-const pictureLetter = document.getElementById("pictureLetter");
-const pictureGrid = document.getElementById("pictureGrid");
+elementary:{
+  title:"Elementary Level",
+  topics:[
+    ["🔤","CVC Words","3-letter words and blending.","future"],
+    ["🧱","4-Letter Words","Move towards longer words.","future"],
+    ["⚙️","Grammar Basics","Nouns, pronouns and basic grammar.","future"],
+    ["🖼️","Picture Description","Make sentences from pictures.","future"],
+    ["📖","Reading Practice","Short passages and questions.","future"],
+    ["🗣️","Speaking Practice","Everyday English sentences.","future"]
+  ]
+},
 
-const phonicsText = document.getElementById("phonicsText");
-const storyText = document.getElementById("storyText");
+middle:{
+  title:"Middle Level",
+  topics:[
+    ["📖","Reading Comprehension","Read and understand passages.","future"],
+    ["⚙️","Grammar","Develop stronger grammar.","future"],
+    ["✍️","Paragraph Writing","Organise ideas into paragraphs.","future"],
+    ["💬","Dialogue","Practise conversations.","future"],
+    ["🧠","Vocabulary","Expand vocabulary.","future"],
+    ["🎨","Creative Writing","Stories and creative expression.","future"]
+  ]
+},
 
-const blendBox = document.getElementById("blendBox");
-const blendText = document.getElementById("blendText");
+advanced:{
+  title:"Advanced Level",
+  topics:[
+    ["📚","Advanced Reading","Longer texts and comprehension.","future"],
+    ["✍️","Advanced Writing","Structured and creative writing.","future"],
+    ["⚙️","Advanced Grammar","Advanced sentence construction.","future"],
+    ["🧠","Vocabulary Builder","Synonyms, antonyms and usage.","future"],
+    ["🎤","Communication","Confident English communication.","future"],
+    ["🚀","Projects","Creative English projects.","future"]
+  ]
+}
 
-const quizQuestion = document.getElementById("quizQuestion");
-const quizOptions = document.getElementById("quizOptions");
-const quizResult = document.getElementById("quizResult");
-
-const traceCanvas = document.getElementById("traceCanvas");
-const traceHint = document.getElementById("traceHint");
-const ctx = traceCanvas.getContext("2d");
-
-const progressFill = document.getElementById("progressFill");
-const progressText = document.getElementById("progressText");
+};
 
 
-/* =========================================================
-   CREATE A-Z CARDS
-   ========================================================= */
+/* =====================================================
+   OPEN LEVEL
+===================================================== */
 
-letters.forEach((item,index)=>{
+function openLevel(name){
 
-  const card = document.createElement("button");
+  const level=levels[name];
 
-  card.className = "letter-card";
+  const section=
+  document.getElementById("learningSection");
 
-  card.innerHTML = `
-    <div class="card-letter">${item.letter}</div>
-    <div class="card-small">${item.small}</div>
-    <div class="card-emoji">${item.emoji}</div>
-    <div class="card-word">${item.word}</div>
-  `;
+  const title=
+  document.getElementById("hubTitle");
 
-  card.addEventListener("click",()=>{
-    openLesson(index);
+  const eyebrow=
+  document.getElementById("hubEyebrow");
+
+  const grid=
+  document.getElementById("topicGrid");
+
+
+  section.style.display="block";
+
+  title.textContent=level.title;
+
+  eyebrow.textContent=
+  name.toUpperCase()+" LEVEL";
+
+
+  grid.innerHTML="";
+
+
+  level.topics.forEach(topic=>{
+
+    const card=
+    document.createElement("button");
+
+    card.className="topic-card";
+
+    card.innerHTML=`
+
+      <div class="topic-icon">
+        ${topic[0]}
+      </div>
+
+      <h4>
+        ${topic[1]}
+      </h4>
+
+      <p>
+        ${topic[2]}
+      </p>
+
+      <span class="lesson-tag">
+        ${topic[3]==="capital"
+          ?"OPEN LESSON →"
+          :"COMING IN NEXT STAGE →"}
+      </span>
+
+    `;
+
+
+    card.onclick=()=>{
+
+      if(topic[3]==="capital"){
+
+        showCapitalLetters();
+
+      }else{
+
+        alert(
+          topic[1]+
+          " is part of the next development stage of the learning system."
+        );
+
+      }
+
+    };
+
+
+    grid.appendChild(card);
+
   });
 
-  letterGrid.appendChild(card);
 
-});
+  document.getElementById("alphabetArea").innerHTML="";
 
 
-/* =========================================================
-   PROGRESS
-   ========================================================= */
-
-const explored = new Set();
-
-function updateProgress(){
-
-  const count = explored.size;
-
-  const percentage = (count / letters.length) * 100;
-
-  progressFill.style.width = percentage + "%";
-
-  progressText.textContent =
-    `${count} / ${letters.length} letters explored`;
+  section.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 
 }
 
 
-/* =========================================================
-   OPEN LESSON
-   ========================================================= */
+/* =====================================================
+   CLOSE LEVEL
+===================================================== */
 
-let currentIndex = 0;
+function closeLearning(){
 
-function openLesson(index){
+  document.getElementById(
+    "learningSection"
+  ).style.display="none";
 
-  currentIndex = index;
+  goTo("levels");
 
-  const item = letters[index];
+}
 
-  explored.add(item.letter);
+
+/* =====================================================
+   SHOW A-Z
+===================================================== */
+
+const exploredLetters=new Set();
+
+
+function showCapitalLetters(){
+
+  const area=
+  document.getElementById("alphabetArea");
+
+
+  area.innerHTML=`
+
+  <div class="alphabet-area">
+
+    <div class="alphabet-head">
+
+      <div>
+
+        <span class="eyebrow">
+          BEGINNING LEVEL • CAPITAL LETTERS
+        </span>
+
+        <h3>
+          Let's Learn A–Z
+        </h3>
+
+        <p style="color:var(--muted);margin-top:7px;">
+          Tap any letter to open its complete learning page.
+        </p>
+
+      </div>
+
+
+      <div class="progress-box">
+
+        <div class="progress-text">
+          Letters explored:
+          <span id="progressCount">0</span>/26
+        </div>
+
+        <div class="progress">
+          <div
+          class="progress-bar"
+          id="progressBar">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+    class="letter-grid"
+    id="letterGrid">
+    </div>
+
+
+    <div
+    class="detail-area"
+    id="detailArea">
+    </div>
+
+  </div>
+
+  `;
+
+
+  const grid=
+  document.getElementById("letterGrid");
+
+
+  Object.keys(letters).forEach(letter=>{
+
+    const data=letters[letter];
+
+    const card=
+    document.createElement("button");
+
+    card.className="letter-card";
+
+
+    card.innerHTML=`
+
+      <div class="letter-big">
+        ${letter}
+      </div>
+
+      <div class="letter-picture">
+        ${data.picture}
+      </div>
+
+      <div class="letter-word">
+        ${data.word}
+      </div>
+
+      <span class="letter-sound">
+        ${data.sound}
+      </span>
+
+    `;
+
+
+    card.onclick=()=>{
+      openLetter(letter);
+    };
+
+
+    grid.appendChild(card);
+
+  });
+
+
+  area.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+
+/* =====================================================
+   OPEN INDIVIDUAL LETTER
+===================================================== */
+
+function openLetter(letter){
+
+  const data=letters[letter];
+
+  if(!data) return;
+
+
+  exploredLetters.add(letter);
 
   updateProgress();
 
-  bigLetter.textContent = item.letter;
-  bigSmall.textContent = item.small;
 
-  lessonEmoji.textContent = item.emoji;
-  lessonWord.textContent = item.word;
+  const detail=
+  document.getElementById("detailArea");
 
-  pictureLetter.textContent = item.letter;
 
-  phonicsText.textContent = item.phonics;
+  /* SIX PICTURES */
 
-  storyText.textContent = item.story;
+  const pictures=
+  data.pictures.map((item,index)=>`
 
-  traceHint.textContent = item.letter;
+    <div class="picture-card">
 
-  /* Pictures */
+      <span class="picture-emoji">
+        ${item[0]}
+      </span>
 
-  pictureGrid.innerHTML = "";
+      <span class="picture-name">
+        ${item[1]}
+      </span>
 
-  item.pictures.forEach(pic=>{
+      <button
+      class="say-word"
+      onclick="speakWord('${item[1]}')">
 
-    const box = document.createElement("div");
+      🔊 Say ${item[1]}
 
-    box.className = "picture-item";
+      </button>
 
-    box.innerHTML = `
-      <span class="emoji">${pic[0]}</span>
-      <span>${pic[1]}</span>
+    </div>
+
+  `).join("");
+
+
+  /* QUESTIONS */
+
+  const questions=
+  data.questions.map((q,index)=>{
+
+    const question=q[0];
+    const answer=q[1];
+    const options=q[2];
+
+
+    return `
+
+      <div class="activity">
+
+        <div class="activity-question">
+
+          ${index+1}. ${question}
+
+        </div>
+
+
+        <div class="options">
+
+          ${options.map(option=>`
+
+            <button
+            class="option"
+            onclick="
+            checkAnswer(
+              this,
+              '${option.replace(/'/g,"\\'")}',
+              '${answer.replace(/'/g,"\\'")}'
+            )">
+
+              ${option}
+
+            </button>
+
+          `).join("")}
+
+        </div>
+
+
+        <div class="answer-msg"></div>
+
+      </div>
+
     `;
 
-    pictureGrid.appendChild(box);
-
-  });
+  }).join("");
 
 
-  /* Blending */
+  detail.innerHTML=`
 
-  blendBox.innerHTML = "";
-
-  item.blend.forEach(sound=>{
-
-    const box = document.createElement("div");
-
-    box.className = "sound-box";
-
-    box.textContent = sound;
-
-    blendBox.appendChild(box);
-
-  });
-
-  blendText.textContent =
-    `Blend the sounds → ${item.blendWord}`;
+  <div class="letter-detail">
 
 
-  /* Quiz */
+    <!-- TOP -->
 
-  createQuiz(item);
+    <div class="detail-top">
 
 
-  /* Reset tracing */
+      <div class="detail-letter">
 
-  clearCanvas();
+        <div class="detail-letter-main">
+          ${letter}
+        </div>
 
-  learningPanel.classList.add("active");
+        <div class="detail-letter-word">
+          ${data.picture} ${data.word}
+        </div>
+
+      </div>
+
+
+      <div class="detail-intro">
+
+        <span class="eyebrow">
+          LETTER ${letter}
+        </span>
+
+        <h3>
+          ${letter} is for ${data.word}
+        </h3>
+
+        <p>
+          Target sound:
+          <strong>${data.sound}</strong>
+          — ${data.soundName}.
+          All six picture words below are selected
+          according to their initial sound.
+        </p>
+
+
+        <div class="detail-buttons">
+
+
+          <button
+          class="action-btn blue"
+          onclick="speakLetter('${letter}')">
+
+            🔊 Letter Sound
+
+          </button>
+
+
+          <button
+          class="action-btn pink"
+          onclick="speakText(letters['${letter}'].poem)">
+
+            🎵 Hear Rhyme
+
+          </button>
+
+
+          <button
+          class="action-btn green"
+          onclick="speakText(letters['${letter}'].story)">
+
+            📖 Hear Story
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SIX PICTURES -->
+
+    <div class="detail-sections">
+
+
+      <div class="detail-box">
+
+        <h4>
+          🖼️ Six Phonic Picture Words
+        </h4>
+
+        <p style="margin-bottom:15px;">
+          Tap 🔊 under any picture to hear the word.
+        </p>
+
+
+        <div class="picture-grid">
+
+          ${pictures}
+
+        </div>
+
+      </div>
+
+
+      <!-- SOUND -->
+
+      <div class="detail-box">
+
+        <h4>
+          🔊 ${letter} Sound
+        </h4>
+
+
+        <div class="sound-display">
+
+          <div class="sound-letter">
+            ${letter}
+          </div>
+
+          <div class="sound-symbol">
+            ${data.sound}
+          </div>
+
+          <button
+          class="primary-btn"
+          onclick="speakLetter('${letter}')">
+
+            🔊 Listen to ${letter}
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIDEO -->
+
+      <div class="detail-box">
+
+        <h4>
+          🎬 Phonics Music / Video
+        </h4>
+
+
+        <div class="video-box">
+
+          <iframe
+          class="video-frame"
+          src="https://www.youtube.com/embed/wDmDWi-JaAc"
+          title="Phonics learning video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+          </iframe>
+
+
+          <div class="video-note">
+
+            🎵 The video link you provided is placed
+            directly inside the letter lesson.
+            Later, this can be replaced with individual
+            audio files for A, B, C and so on.
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- POEM -->
+
+      <div class="detail-box">
+
+        <h4>
+          🎵 ${letter} Rhyme
+        </h4>
+
+
+        <div class="poem">
+          ${data.poem}
+        </div>
+
+
+        <button
+        class="action-btn pink"
+        style="margin-top:12px;"
+        onclick="speakText(letters['${letter}'].poem)">
+
+          ▶ Play Rhyme
+
+        </button>
+
+      </div>
+
+
+      <!-- STORY -->
+
+      <div class="detail-box">
+
+        <h4>
+          📖 ${letter} Story
+        </h4>
+
+
+        <div class="story">
+          ${data.story}
+        </div>
+
+
+        <button
+        class="action-btn green"
+        style="margin-top:12px;"
+        onclick="speakText(letters['${letter}'].story)">
+
+          🔊 Listen to Story
+
+        </button>
+
+      </div>
+
+
+      <!-- TRACING -->
+
+      <div class="detail-box">
+
+        <h4>
+          ✏️ Trace the Letter
+        </h4>
+
+
+        <div class="trace-wrap">
+
+
+          <div class="trace-card">
+
+            <h5>
+              Capital ${letter}
+            </h5>
+
+            <canvas
+            class="trace-canvas"
+            id="traceCapital"
+            width="600"
+            height="230">
+            </canvas>
+
+            <button
+            class="clear-trace"
+            onclick="clearCanvas('traceCapital')">
+
+              Clear
+
+            </button>
+
+          </div>
+
+
+          <div class="trace-card">
+
+            <h5>
+              Small ${letter.toLowerCase()}
+            </h5>
+
+            <canvas
+            class="trace-canvas"
+            id="traceSmall"
+            width="600"
+            height="230">
+            </canvas>
+
+            <button
+            class="clear-trace"
+            onclick="clearCanvas('traceSmall')">
+
+              Clear
+
+            </button>
+
+          </div>
+
+
+        </div>
+
+
+        <p style="margin-top:12px;font-size:12px;">
+
+          Trace with your finger, mouse or stylus.
+
+        </p>
+
+      </div>
+
+
+      <!-- ACTIVITIES -->
+
+      <div class="detail-box">
+
+        <h4>
+          🧩 ${letter} Sound Activities
+        </h4>
+
+
+        <div class="activity-list">
+
+          ${questions}
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div style="text-align:center;margin-top:25px;">
+
+      <button
+      class="secondary-btn"
+      onclick="closeLetterDetail()">
+
+        ↑ Back to A–Z
+
+      </button>
+
+    </div>
+
+
+  </div>
+
+  `;
+
+
+  detail.classList.add("active");
+
 
   setTimeout(()=>{
-    learningPanel.scrollIntoView({
+
+    setupCanvas(
+      document.getElementById("traceCapital"),
+      letter
+    );
+
+
+    setupCanvas(
+      document.getElementById("traceSmall"),
+      letter.toLowerCase()
+    );
+
+
+    detail.scrollIntoView({
       behavior:"smooth",
       block:"start"
     });
+
   },50);
 
 }
 
 
-/* =========================================================
-   QUIZ
-   ========================================================= */
-
-function createQuiz(item){
-
-  quizQuestion.textContent =
-    `Which word begins with ${item.letter}?`;
-
-  quizOptions.innerHTML = "";
-
-  quizResult.textContent = "";
-
-  item.quiz.forEach(option=>{
-
-    const button = document.createElement("button");
-
-    button.className = "quiz-option";
-
-    button.textContent = option;
-
-    button.addEventListener("click",()=>{
-
-      if(option === item.answer){
-
-        quizResult.textContent =
-          "🎉 Correct! Great job!";
-
-        quizResult.style.color = "#4d9b67";
-
-      }else{
-
-        quizResult.textContent =
-          "🌸 Try again!";
-
-        quizResult.style.color = "#d85e86";
-
-      }
-
-    });
-
-    quizOptions.appendChild(button);
-
-  });
-
-}
-
-
-/* =========================================================
+/* =====================================================
    SPEECH
-   ========================================================= */
+===================================================== */
 
-function speak(text){
+function speakText(text){
 
   if(!("speechSynthesis" in window)){
 
-    alert("Audio is not supported in this browser.");
+    alert(
+      "Your browser does not support speech playback."
+    );
 
     return;
 
   }
 
-  window.speechSynthesis.cancel();
 
-  const speech = new SpeechSynthesisUtterance(text);
-
-  speech.lang = "en-IN";
-  speech.rate = .82;
-  speech.pitch = 1;
-
-  window.speechSynthesis.speak(speech);
-
-}
+  speechSynthesis.cancel();
 
 
-/* PHONICS SOUND */
-
-document.getElementById("soundBtn")
-.addEventListener("click",()=>{
-
-  const item = letters[currentIndex];
-
-  speak(item.sound);
-
-});
+  const utterance=
+  new SpeechSynthesisUtterance(text);
 
 
-/* WORD */
-
-document.getElementById("wordBtn")
-.addEventListener("click",()=>{
-
-  const item = letters[currentIndex];
-
-  speak(item.word);
-
-});
+  utterance.lang="en-US";
+  utterance.rate=.78;
+  utterance.pitch=1.05;
 
 
-/* RHYME */
-
-document.getElementById("rhymeBtn")
-.addEventListener("click",()=>{
-
-  const item = letters[currentIndex];
-
-  speak(item.rhyme);
-
-});
-
-
-/* =========================================================
-   TRACING CANVAS
-   Pointer events work with finger, mouse and stylus.
-   ========================================================= */
-
-let drawing = false;
-let lastX = 0;
-let lastY = 0;
-
-function getCanvasPosition(event){
-
-  const rect = traceCanvas.getBoundingClientRect();
-
-  const scaleX =
-    traceCanvas.width / rect.width;
-
-  const scaleY =
-    traceCanvas.height / rect.height;
-
-  return {
-
-    x:(event.clientX - rect.left) * scaleX,
-
-    y:(event.clientY - rect.top) * scaleY
-
-  };
+  speechSynthesis.speak(utterance);
 
 }
 
 
-function startDrawing(event){
+/* =====================================================
+   SPEAK INDIVIDUAL WORD
+===================================================== */
 
-  event.preventDefault();
+function speakWord(word){
 
-  drawing = true;
-
-  const position =
-    getCanvasPosition(event);
-
-  lastX = position.x;
-  lastY = position.y;
-
-  traceHint.style.opacity = ".18";
-
-  traceCanvas.setPointerCapture?.(event.pointerId);
+  speakText(word);
 
 }
 
 
-function draw(event){
+/* =====================================================
+   SPEAK LETTER + KEYWORD
+===================================================== */
 
-  if(!drawing) return;
+function speakLetter(letter){
 
-  event.preventDefault();
+  const data=letters[letter];
 
-  const position =
-    getCanvasPosition(event);
-
-  ctx.beginPath();
-
-  ctx.moveTo(lastX,lastY);
-
-  ctx.lineTo(position.x,position.y);
-
-  ctx.lineWidth = 10;
-
-  ctx.lineCap = "round";
-
-  ctx.lineJoin = "round";
-
-  ctx.strokeStyle = "#7650a5";
-
-  ctx.stroke();
-
-  lastX = position.x;
-  lastY = position.y;
+  speakText(
+    `${letter}. ${data.word}.`
+  );
 
 }
 
 
-function stopDrawing(event){
+/* =====================================================
+   PROGRESS
+===================================================== */
 
-  drawing = false;
+function updateProgress(){
 
-  try{
-    traceCanvas.releasePointerCapture?.(event.pointerId);
-  }catch(e){}
+  const count=
+  document.getElementById("progressCount");
+
+  const bar=
+  document.getElementById("progressBar");
+
+
+  if(!count || !bar) return;
+
+
+  const total=
+  Object.keys(letters).length;
+
+
+  const current=
+  exploredLetters.size;
+
+
+  count.textContent=current;
+
+
+  bar.style.width=
+  `${current/total*100}%`;
 
 }
 
 
-traceCanvas.addEventListener(
-  "pointerdown",
-  startDrawing
-);
+/* =====================================================
+   ANSWERS
+===================================================== */
 
-traceCanvas.addEventListener(
-  "pointermove",
-  draw
-);
+function checkAnswer(
+  button,
+  selected,
+  correct
+){
 
-traceCanvas.addEventListener(
-  "pointerup",
-  stopDrawing
-);
-
-traceCanvas.addEventListener(
-  "pointercancel",
-  stopDrawing
-);
+  const activity=
+  button.closest(".activity");
 
 
-/* =========================================================
-   CLEAR CANVAS
-   ========================================================= */
+  const message=
+  activity.querySelector(".answer-msg");
 
-function clearCanvas(){
+
+  const all=
+  activity.querySelectorAll(".option");
+
+
+  all.forEach(btn=>{
+    btn.classList.remove(
+      "correct",
+      "wrong"
+    );
+  });
+
+
+  if(selected===correct){
+
+    button.classList.add("correct");
+
+    message.textContent=
+    "🎉 Correct! Great job!";
+
+    message.style.color=
+    "#267c49";
+
+
+    speakText("Correct! Great job!");
+
+  }else{
+
+    button.classList.add("wrong");
+
+    message.textContent=
+    "💡 Try again!";
+
+    message.style.color=
+    "#a83a55";
+
+  }
+
+}
+
+
+/* =====================================================
+   CLOSE LETTER
+===================================================== */
+
+function closeLetterDetail(){
+
+  const detail=
+  document.getElementById("detailArea");
+
+
+  detail.classList.remove("active");
+
+  detail.innerHTML="";
+
+
+  document
+  .querySelector(".alphabet-area")
+  .scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+
+/* =====================================================
+   TRACING
+===================================================== */
+
+function setupCanvas(canvas,letter){
+
+  if(!canvas) return;
+
+
+  const ctx=
+  canvas.getContext("2d");
+
+
+  function drawGuide(){
+
+    ctx.clearRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+
+    ctx.save();
+
+
+    ctx.globalAlpha=.12;
+
+    ctx.fillStyle="#7357d9";
+
+    ctx.font="bold 185px Arial";
+
+    ctx.textAlign="center";
+
+    ctx.textBaseline="middle";
+
+
+    ctx.fillText(
+      letter,
+      canvas.width/2,
+      canvas.height/2+5
+    );
+
+
+    ctx.restore();
+
+  }
+
+
+  drawGuide();
+
+
+  let drawing=false;
+
+
+  function getPosition(event){
+
+    const rect=
+    canvas.getBoundingClientRect();
+
+
+    return {
+
+      x:
+      (event.clientX-rect.left)
+      *(canvas.width/rect.width),
+
+      y:
+      (event.clientY-rect.top)
+      *(canvas.height/rect.height)
+
+    };
+
+  }
+
+
+  canvas.addEventListener(
+    "pointerdown",
+    event=>{
+
+      event.preventDefault();
+
+      drawing=true;
+
+      canvas.setPointerCapture(
+        event.pointerId
+      );
+
+
+      const p=
+      getPosition(event);
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        p.x,
+        p.y
+      );
+
+    }
+  );
+
+
+  canvas.addEventListener(
+    "pointermove",
+    event=>{
+
+      if(!drawing) return;
+
+      event.preventDefault();
+
+
+      const p=
+      getPosition(event);
+
+
+      ctx.lineWidth=7;
+
+      ctx.lineCap="round";
+
+      ctx.lineJoin="round";
+
+      ctx.strokeStyle="#ff76ad";
+
+
+      ctx.lineTo(
+        p.x,
+        p.y
+      );
+
+
+      ctx.stroke();
+
+    }
+  );
+
+
+  function stopDrawing(event){
+
+    drawing=false;
+
+
+    try{
+
+      canvas.releasePointerCapture(
+        event.pointerId
+      );
+
+    }catch(error){}
+
+  }
+
+
+  canvas.addEventListener(
+    "pointerup",
+    stopDrawing
+  );
+
+
+  canvas.addEventListener(
+    "pointercancel",
+    stopDrawing
+  );
+
+}
+
+
+/* =====================================================
+   CLEAR TRACE
+===================================================== */
+
+function clearCanvas(id){
+
+  const canvas=
+  document.getElementById(id);
+
+
+  if(!canvas) return;
+
+
+  const ctx=
+  canvas.getContext("2d");
+
 
   ctx.clearRect(
     0,
     0,
-    traceCanvas.width,
-    traceCanvas.height
+    canvas.width,
+    canvas.height
   );
-
-  traceHint.style.opacity = ".8";
 
 }
 
 
-document.getElementById("clearTrace")
-.addEventListener(
-  "click",
-  clearCanvas
+/* =====================================================
+   PAGE LOAD
+===================================================== */
+
+window.addEventListener(
+  "load",
+  ()=>{
+
+    /*
+      Main page remains clean.
+      User opens a level only after tapping.
+    */
+
+  }
 );
-
-
-document.getElementById("traceAgain")
-.addEventListener(
-  "click",
-  clearCanvas
-);
-
-
-/* =========================================================
-   CLOSE LESSON
-   ========================================================= */
-
-document.getElementById("closeLesson")
-.addEventListener("click",()=>{
-
-  learningPanel.classList.remove("active");
-
-  window.scrollTo({
-    top:document.getElementById("letters").offsetTop - 80,
-    behavior:"smooth"
-  });
-
-});
-
-
-/* =========================================================
-   START BUTTON
-   ========================================================= */
-
-document.getElementById("startLearning")
-.addEventListener("click",()=>{
-
-  document.getElementById("letters")
-  .scrollIntoView({
-    behavior:"smooth"
-  });
-
-});
-
-
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
-
-const menuBtn =
-  document.getElementById("menuBtn");
-
-const mainNav =
-  document.getElementById("mainNav");
-
-menuBtn.addEventListener("click",()=>{
-
-  mainNav.classList.toggle("show");
-
-});
-
-
-/* Close mobile menu after link */
-
-mainNav.querySelectorAll("a")
-.forEach(link=>{
-
-  link.addEventListener("click",()=>{
-
-    mainNav.classList.remove("show");
-
-  });
-
-});
-
-
-/* =========================================================
-   FIRST LOAD
-   ========================================================= */
-
-updateProgress();
 
 </script>
 
 </body>
-  </html>
+                </html>
