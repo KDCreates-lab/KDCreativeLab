@@ -1,3722 +1,1728 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#7357d9">
-
-<title>Kids Creativity Lab | Learn • Create • Grow</title>
-
-<style>
-
-:root{
-  --purple:#7357d9;
-  --purple-dark:#4e389f;
-  --lavender:#f0eaff;
-  --pink:#ff76ad;
-  --pink-light:#fff0f7;
-  --yellow:#ffd85a;
-  --yellow-light:#fff8d8;
-  --blue:#55b9f5;
-  --blue-light:#eaf8ff;
-  --green:#67c587;
-  --green-light:#eaffef;
-  --orange:#ff995c;
-  --orange-light:#fff0e6;
-  --ink:#30294a;
-  --muted:#716b84;
-  --white:#fff;
-  --shadow:0 12px 30px rgba(65,45,110,.12);
-  --shadow-big:0 20px 50px rgba(65,45,110,.18);
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:"Trebuchet MS",Arial,sans-serif;
-  color:var(--ink);
-  background:
-    radial-gradient(circle at 10% 10%,rgba(255,216,90,.18),transparent 22%),
-    radial-gradient(circle at 90% 20%,rgba(255,118,173,.14),transparent 25%),
-    linear-gradient(180deg,#fffaff,#f7f5ff);
-  min-height:100vh;
-}
-
-button{
-  font-family:inherit;
-  -webkit-tap-highlight-color:transparent;
-}
-
-button:focus{
-  outline:3px solid rgba(115,87,217,.22);
-  outline-offset:2px;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(115,87,217,.1);
-}
-
-.nav{
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:19px;
-  font-weight:1000;
-  color:var(--purple-dark);
-}
-
-.brand-mark{
-  width:48px;
-  height:48px;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,#8064ed,#b59cff);
-  color:white;
-  font-size:25px;
-  box-shadow:0 8px 18px rgba(115,87,217,.25);
-}
-
-.nav-links{
-  display:flex;
-  gap:7px;
-}
-
-.nav-links button{
-  border:0;
-  background:transparent;
-  padding:11px 15px;
-  border-radius:14px;
-  color:var(--ink);
-  font-weight:800;
-  cursor:pointer;
-}
-
-.nav-links button:hover{
-  background:var(--lavender);
-  color:var(--purple-dark);
-}
-
-.menu-btn{
-  display:none;
-  border:0;
-  background:var(--lavender);
-  width:45px;
-  height:45px;
-  border-radius:14px;
-  font-size:22px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  padding:60px 0 40px;
-  overflow:hidden;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:35px;
-  align-items:center;
-}
-
-.hero-copy h1{
-  font-size:clamp(45px,7vw,78px);
-  line-height:.95;
-  letter-spacing:-3px;
-  margin-bottom:22px;
-}
-
-.hero-copy h1 span{
-  color:var(--purple);
-}
-
-.hero-copy h1 em{
-  color:var(--pink);
-  font-style:normal;
-}
-
-.hero-copy p{
-  color:var(--muted);
-  max-width:650px;
-  line-height:1.7;
-  font-size:18px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:28px;
-}
-
-.primary-btn,
-.secondary-btn{
-  border:0;
-  padding:15px 22px;
-  border-radius:17px;
-  font-weight:1000;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.primary-btn{
-  background:var(--purple);
-  color:white;
-  box-shadow:0 10px 20px rgba(115,87,217,.25);
-}
-
-.primary-btn:hover{
-  transform:translateY(-3px);
-  background:var(--purple-dark);
-}
-
-.secondary-btn{
-  background:white;
-  color:var(--purple-dark);
-  border:2px solid var(--lavender);
-}
-
-.secondary-btn:hover{
-  transform:translateY(-3px);
-  background:var(--lavender);
-}
-
-.hero-art{
-  min-height:380px;
-  position:relative;
-  display:grid;
-  place-items:center;
-}
-
-.hero-book{
-  width:min(440px,95%);
-  height:255px;
-  background:white;
-  border:7px solid white;
-  border-radius:30px;
-  box-shadow:var(--shadow-big);
-  display:flex;
-  overflow:hidden;
-  transform:rotate(-2deg);
-  position:relative;
-  z-index:2;
-}
-
-.book-page{
-  width:50%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.book-page:first-child{
-  background:#fff5c9;
-}
-
-.book-page:last-child{
-  background:#e8f8ff;
-}
-
-.book-letter{
-  font-size:110px;
-  font-weight:1000;
-  color:var(--purple);
-}
-
-.book-word{
-  font-weight:900;
-}
-
-.mascot{
-  position:absolute;
-  right:4%;
-  bottom:0;
-  font-size:90px;
-  z-index:5;
-  filter:drop-shadow(0 10px 8px rgba(0,0,0,.1));
-}
-
-.star{
-  position:absolute;
-  color:var(--yellow);
-  font-size:30px;
-  animation:float 3s ease-in-out infinite;
-  z-index:6;
-}
-
-.s1{left:8%;top:12%}
-.s2{right:4%;top:35%}
-.s3{left:10%;bottom:8%}
-
-@keyframes float{
-  50%{
-    transform:translateY(-12px) rotate(10deg);
-  }
-}
-
-/* ================= GENERAL ================= */
-
-section{
-  padding:65px 0;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.eyebrow{
-  display:inline-block;
-  background:var(--lavender);
-  color:var(--purple-dark);
-  padding:8px 14px;
-  border-radius:50px;
-  font-size:12px;
-  font-weight:1000;
-  margin-bottom:12px;
-}
-
-.section-title h2{
-  font-size:clamp(30px,5vw,46px);
-  margin-bottom:10px;
-}
-
-.section-title p{
-  color:var(--muted);
-  max-width:700px;
-  margin:auto;
-  line-height:1.6;
-}
-
-/* ================= AUDIENCE ================= */
-
-.audience-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.audience-card{
-  padding:28px;
-  border-radius:28px;
-  min-height:255px;
-  box-shadow:var(--shadow);
-  transition:.25s;
-}
-
-.audience-card:hover{
-  transform:translateY(-7px);
-  box-shadow:var(--shadow-big);
-}
-
-.audience-card:nth-child(1){
-  background:var(--blue-light);
-}
-
-.audience-card:nth-child(2){
-  background:var(--pink-light);
-}
-
-.audience-card:nth-child(3){
-  background:var(--green-light);
-}
-
-.audience-icon{
-  font-size:48px;
-  margin-bottom:14px;
-}
-
-.audience-card h3{
-  font-size:25px;
-  margin-bottom:10px;
-}
-
-.audience-card p{
-  color:var(--muted);
-  line-height:1.6;
-}
-
-.audience-list{
-  list-style:none;
-  margin-top:15px;
-}
-
-.audience-list li{
-  margin:7px 0;
-  font-weight:700;
-}
-
-/* ================= LEVELS ================= */
-
-.level-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.level-card{
-  border:0;
-  min-height:285px;
-  border-radius:28px;
-  padding:25px;
-  text-align:left;
-  cursor:pointer;
-  box-shadow:var(--shadow);
-  transition:.25s;
-}
-
-.level-card:hover{
-  transform:translateY(-7px);
-  box-shadow:var(--shadow-big);
-}
-
-.beginner{
-  background:linear-gradient(145deg,#fff4c9,#fffaf0);
-}
-
-.elementary{
-  background:linear-gradient(145deg,#e5f7ff,#f7fdff);
-}
-
-.middle{
-  background:linear-gradient(145deg,#eee7ff,#faf8ff);
-}
-
-.advanced{
-  background:linear-gradient(145deg,#ffe7f0,#fff7fa);
-}
-
-.level-number{
-  width:48px;
-  height:48px;
-  background:white;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  font-weight:1000;
-  margin-bottom:18px;
-  box-shadow:0 7px 15px rgba(0,0,0,.08);
-}
-
-.level-card h3{
-  font-size:25px;
-  margin-bottom:8px;
-}
-
-.level-card p{
-  color:var(--muted);
-  line-height:1.55;
-}
-
-.level-topics{
-  list-style:none;
-  margin-top:16px;
-}
-
-.level-topics li{
-  margin:7px 0;
-  font-size:13px;
-  font-weight:800;
-}
-
-.level-topics li:before{
-  content:"✓";
-  color:var(--green);
-  margin-right:7px;
-}
-
-/* ================= LEARNING ================= */
-
-#learningSection{
-  display:none;
-}
-
-.learning-hub{
-  background:white;
-  border-radius:35px;
-  padding:30px;
-  box-shadow:var(--shadow-big);
-}
-
-.hub-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:25px;
-}
-
-.hub-head h3{
-  font-size:32px;
-}
-
-.back-btn{
-  border:0;
-  background:var(--lavender);
-  color:var(--purple-dark);
-  padding:11px 17px;
-  border-radius:14px;
-  font-weight:1000;
-  cursor:pointer;
-}
-
-.topic-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
-}
-
-.topic-card{
-  border:2px solid #eee9ff;
-  background:white;
-  border-radius:22px;
-  padding:22px;
-  min-height:175px;
-  text-align:left;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.topic-card:hover{
-  transform:translateY(-4px);
-  border-color:#b9a9ef;
-  box-shadow:var(--shadow);
-}
-
-.topic-icon{
-  font-size:38px;
-  margin-bottom:12px;
-}
-
-.topic-card h4{
-  font-size:20px;
-  margin-bottom:8px;
-}
-
-.topic-card p{
-  color:var(--muted);
-  line-height:1.5;
-  font-size:13px;
-}
-
-.lesson-tag{
-  display:inline-block;
-  margin-top:12px;
-  background:#f3f0fb;
-  padding:5px 9px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:900;
-}
-
-/* ================= ALPHABET ================= */
-
-.alphabet-area{
-  margin-top:30px;
-  background:linear-gradient(180deg,#f6f2ff,#fff);
-  border-radius:35px;
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-
-.alphabet-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:25px;
-}
-
-.alphabet-head h3{
-  font-size:32px;
-}
-
-.progress-box{
-  min-width:200px;
-}
-
-.progress-text{
-  font-size:12px;
-  font-weight:900;
-  color:var(--muted);
-  margin-bottom:7px;
-}
-
-.progress{
-  height:10px;
-  background:#e7e3f1;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.progress-bar{
-  width:0%;
-  height:100%;
-  background:linear-gradient(90deg,var(--purple),var(--pink));
-  transition:.3s;
-}
-
-.letter-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:15px;
-}
-
-.letter-card{
-  border:0;
-  min-height:180px;
-  border-radius:25px;
-  cursor:pointer;
-  padding:15px;
-  text-align:center;
-  box-shadow:0 9px 20px rgba(74,53,120,.1);
-  transition:.22s;
-}
-
-.letter-card:nth-child(4n+1){
-  background:#fff1b9;
-}
-
-.letter-card:nth-child(4n+2){
-  background:#dff5ff;
-}
-
-.letter-card:nth-child(4n+3){
-  background:#ffe1ee;
-}
-
-.letter-card:nth-child(4n+4){
-  background:#e4f8e9;
-}
-
-.letter-card:hover{
-  transform:translateY(-7px) rotate(-1deg);
-  box-shadow:0 15px 27px rgba(74,53,120,.17);
-}
-
-.letter-big{
-  font-size:72px;
-  line-height:.9;
-  font-weight:1000;
-  color:var(--purple-dark);
-}
-
-.letter-picture{
-  font-size:40px;
-  margin:9px 0 4px;
-}
-
-.letter-word{
-  font-weight:1000;
-  font-size:14px;
-}
-
-.letter-sound{
-  display:inline-block;
-  margin-top:6px;
-  padding:4px 8px;
-  border-radius:20px;
-  background:rgba(255,255,255,.78);
-  font-size:10px;
-  font-weight:900;
-}
-
-/* ================= LETTER DETAIL ================= */
-
-.detail-area{
-  display:none;
-  margin-top:30px;
-}
-
-.detail-area.active{
-  display:block;
-}
-
-.letter-detail{
-  background:white;
-  border-radius:35px;
-  padding:30px;
-  box-shadow:var(--shadow-big);
-}
-
-.detail-top{
-  display:grid;
-  grid-template-columns:260px 1fr;
-  gap:30px;
-  align-items:center;
-}
-
-.detail-letter{
-  min-height:285px;
-  border-radius:30px;
-  background:linear-gradient(145deg,#fff2b8,#ffe3ed);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-.detail-letter-main{
-  font-size:150px;
-  line-height:.8;
-  font-weight:1000;
-  color:var(--purple-dark);
-}
-
-.detail-letter-word{
-  margin-top:20px;
-  font-size:20px;
-  font-weight:1000;
-}
-
-.detail-intro h3{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-.detail-intro p{
-  color:var(--muted);
-  line-height:1.6;
-}
-
-.detail-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-top:20px;
-}
-
-.action-btn{
-  border:0;
-  border-radius:15px;
-  padding:12px 15px;
-  font-weight:1000;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.action-btn:hover{
-  transform:translateY(-2px);
-}
-
-.blue{
-  background:var(--blue-light);
-  color:#28739c;
-}
-
-.pink{
-  background:var(--pink-light);
-  color:#a9356b;
-}
-
-.orange{
-  background:var(--orange-light);
-  color:#a5521d;
-}
-
-.green{
-  background:var(--green-light);
-  color:#267c49;
-}
-
-.purple{
-  background:var(--lavender);
-  color:var(--purple-dark);
-}
-
-/* ================= DETAIL BOXES ================= */
-
-.detail-sections{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-  margin-top:30px;
-}
-
-.detail-box{
-  background:#faf9ff;
-  border:2px solid #eeeaff;
-  border-radius:25px;
-  padding:23px;
-}
-
-.detail-box h4{
-  font-size:21px;
-  margin-bottom:13px;
-}
-
-.detail-box p{
-  color:var(--muted);
-  line-height:1.6;
-}
-
-/* ================= SIX PICTURES ================= */
-
-.picture-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.picture-card{
-  background:white;
-  border-radius:19px;
-  padding:13px 8px;
-  text-align:center;
-  border:1px solid #eee;
-  transition:.2s;
-}
-
-.picture-card:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow);
-}
-
-.picture-emoji{
-  display:block;
-  font-size:45px;
-  margin-bottom:6px;
-}
-
-.picture-name{
-  display:block;
-  font-size:13px;
-  font-weight:1000;
-  margin-bottom:8px;
-}
-
-.say-word{
-  border:0;
-  background:var(--blue-light);
-  color:#27729d;
-  padding:6px 10px;
-  border-radius:10px;
-  cursor:pointer;
-  font-size:11px;
-  font-weight:1000;
-}
-
-/* ================= VIDEO ================= */
-
-.video-box{
-  background:#fff;
-  border-radius:22px;
-  padding:12px;
-  border:2px solid #eeeaff;
-}
-
-.video-frame{
-  width:100%;
-  aspect-ratio:16/9;
-  border:0;
-  border-radius:17px;
-  display:block;
-}
-
-.video-note{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-  padding:10px 5px 2px;
-}
-
-/* ================= POEM ================= */
-
-.poem{
-  background:#ffeaf4;
-  border-radius:20px;
-  padding:18px;
-  line-height:1.8;
-  font-weight:800;
-  white-space:pre-line;
-}
-
-/* ================= STORY ================= */
-
-.story{
-  background:#fff8dd;
-  border-radius:20px;
-  padding:18px;
-  line-height:1.7;
-}
-
-/* ================= SOUND ================= */
-
-.sound-display{
-  background:#eaf8ff;
-  border-radius:20px;
-  padding:20px;
-  text-align:center;
-}
-
-.sound-letter{
-  font-size:55px;
-  font-weight:1000;
-  color:var(--purple);
-}
-
-.sound-symbol{
-  font-size:28px;
-  font-weight:1000;
-  margin:8px 0 15px;
-}
-
-/* ================= TRACING ================= */
-
-.trace-wrap{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.trace-card{
-  background:white;
-  border-radius:22px;
-  padding:15px;
-  border:2px solid #eeeaff;
-}
-
-.trace-card h5{
-  text-align:center;
-  font-size:17px;
-  margin-bottom:10px;
-}
-
-.trace-canvas{
-  width:100%;
-  height:230px;
-  border-radius:17px;
-  border:2px dashed #c9bdf0;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #fff 0,
-      #fff 53px,
-      #d8d0ee 54px,
-      #fff 55px
-    );
-  touch-action:none;
-  display:block;
-}
-
-.clear-trace{
-  margin-top:10px;
-  border:0;
-  background:#f1edff;
-  color:var(--purple-dark);
-  padding:9px 13px;
-  border-radius:12px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-/* ================= ACTIVITIES ================= */
-
-.activity-list{
-  display:grid;
-  gap:13px;
-}
-
-.activity{
-  background:white;
-  border-radius:19px;
-  border:2px solid #eeeaff;
-  padding:17px;
-}
-
-.activity-question{
-  font-weight:1000;
-  margin-bottom:12px;
-}
-
-.options{
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-}
-
-.option{
-  border:2px solid #e6e0f5;
-  background:white;
-  padding:10px 15px;
-  border-radius:13px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.option.correct{
-  background:#dff8e8;
-  border-color:#63c58a;
-  color:#267c49;
-}
-
-.option.wrong{
-  background:#ffe5eb;
-  border-color:#ef7e9a;
-  color:#a83a55;
-}
-
-.answer-msg{
-  min-height:18px;
-  margin-top:9px;
-  font-size:13px;
-  font-weight:900;
-}
-
-/* ================= ROADMAP ================= */
-
-.future-section{
-  background:linear-gradient(135deg,#f0eaff,#fff0f7);
-  border-radius:30px;
-  padding:28px;
-}
-
-.future-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin-top:20px;
-}
-
-.future-card{
-  background:white;
-  padding:18px;
-  border-radius:20px;
-}
-
-.future-card strong{
-  display:block;
-  margin-bottom:7px;
-}
-
-.future-card p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.5;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#31294b;
-  color:white;
-  padding:35px 0;
-  margin-top:40px;
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.footer-brand{
-  font-size:22px;
-  font-weight:1000;
-}
-
-.footer-text{
-  color:#c9c2dc;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:950px){
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-copy{
-    text-align:center;
-  }
-
-  .hero-copy p{
-    margin:auto;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .level-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .letter-grid{
-    grid-template-columns:repeat(4,1fr);
-  }
-
-}
-
-@media(max-width:700px){
-
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:76px;
-    left:0;
-    right:0;
-    background:white;
-    padding:12px;
-    flex-direction:column;
-    box-shadow:0 12px 25px rgba(0,0,0,.08);
-  }
-
-  .nav-links.open{
-    display:flex;
-  }
-
-  .nav-links button{
-    width:100%;
-  }
-
-  .menu-btn{
-    display:block;
-  }
-
-  .audience-grid,
-  .level-grid,
-  .topic-grid{
-    grid-template-columns:1fr;
-  }
-
-  .alphabet-area{
-    padding:20px;
-  }
-
-  .alphabet-head{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .progress-box{
-    width:100%;
-  }
-
-  .letter-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .letter-card{
-    min-height:150px;
-  }
-
-  .letter-big{
-    font-size:58px;
-  }
-
-  .detail-top{
-    grid-template-columns:1fr;
-  }
-
-  .detail-sections{
-    grid-template-columns:1fr;
-  }
-
-  .trace-wrap{
-    grid-template-columns:1fr;
-  }
-
-  .future-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-inner{
-    flex-direction:column;
-    gap:10px;
-    text-align:center;
-  }
-
-}
-
-@media(max-width:420px){
-
-  .letter-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .picture-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero-copy h1{
-    font-size:45px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kids Creativity Lab | Learn • Create • Grow</title>
+
+  <meta name="description"
+        content="Kids Creativity Lab is a child-friendly learning platform for English, phonics, reading, creativity and foundational learning.">
+
+  <style>
+    /* ==============================
+       RESET
+    ============================== */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      background:#fbf9ff;
+      color:#302b46;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    button{
+      font-family:inherit;
+    }
+
+    /* ==============================
+       TOP DECORATION
+    ============================== */
+    .top-cloud{
+      position:absolute;
+      width:150px;
+      height:55px;
+      background:#e8f7ff;
+      border-radius:50px;
+      opacity:.85;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .top-cloud::before,
+    .top-cloud::after{
+      content:"";
+      position:absolute;
+      background:#e8f7ff;
+      border-radius:50%;
+    }
+
+    .top-cloud::before{
+      width:65px;
+      height:65px;
+      left:25px;
+      bottom:15px;
+    }
+
+    .top-cloud::after{
+      width:80px;
+      height:80px;
+      right:20px;
+      bottom:10px;
+    }
+
+    .cloud-one{
+      top:105px;
+      left:-45px;
+    }
+
+    .cloud-two{
+      top:155px;
+      right:-50px;
+      transform:scale(.8);
+    }
+
+    /* ==============================
+       HEADER
+    ============================== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid #eee8fa;
+      box-shadow:0 5px 20px rgba(77,55,120,.07);
+    }
+
+    .nav{
+      width:min(1180px,94%);
+      margin:auto;
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-icon{
+      width:52px;
+      height:52px;
+      flex-shrink:0;
+      border-radius:17px;
+      background:linear-gradient(145deg,#a276ff,#7654d8);
+      display:grid;
+      place-items:center;
+      font-size:29px;
+      box-shadow:0 8px 18px rgba(116,80,210,.22);
+    }
+
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand-title{
+      font-size:22px;
+      font-weight:900;
+      color:#50358e;
+      line-height:1.1;
+    }
+
+    .brand-subtitle{
+      font-size:11px;
+      color:#8c83a5;
+      font-weight:700;
+      letter-spacing:1px;
+      margin-top:3px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:800;
+      color:#5c5672;
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      background:#f1ebff;
+      color:#6742b7;
+    }
+
+    .nav-start{
+      background:#6844ba !important;
+      color:#fff !important;
+      box-shadow:0 6px 14px rgba(104,68,186,.2);
+    }
+
+    .mobile-menu{
+      display:none;
+      width:48px;
+      height:48px;
+      border:0;
+      border-radius:15px;
+      background:#f0eaff;
+      font-size:24px;
+      color:#47376d;
+      cursor:pointer;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+    .hero{
+      position:relative;
+      min-height:590px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      padding:75px 0 80px;
+      background:
+        radial-gradient(circle at 15% 20%,#fff2d9 0,transparent 24%),
+        radial-gradient(circle at 85% 25%,#e8ddff 0,transparent 27%),
+        linear-gradient(135deg,#fffdf9,#f6f1ff);
+    }
+
+    .hero-inner{
+      width:min(1180px,92%);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:50px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      color:#6d4bb0;
+      border:1px solid #e7dcfa;
+      border-radius:30px;
+      padding:8px 15px;
+      font-size:13px;
+      font-weight:900;
+      box-shadow:0 6px 18px rgba(81,58,120,.07);
+      margin-bottom:20px;
+    }
+
+    .hero h1{
+      font-size:clamp(42px,6vw,72px);
+      line-height:1.02;
+      color:#4d3488;
+      font-weight:950;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    .hero h1 span{
+      color:#f28b55;
+    }
+
+    .hero-text{
+      max-width:650px;
+      font-size:18px;
+      color:#67617a;
+      margin-bottom:30px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:13px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:50px;
+      padding:13px 21px;
+      border-radius:17px;
+      font-size:15px;
+      font-weight:900;
+      transition:.2s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:#6944bc;
+      color:#fff;
+      box-shadow:0 10px 20px rgba(105,68,188,.22);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 25px rgba(105,68,188,.27);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:#5c438f;
+      border:2px solid #e7ddf8;
+    }
+
+    .btn-secondary:hover{
+      background:#f7f1ff;
+      transform:translateY(-2px);
+    }
+
+    /* ==============================
+       HERO ILLUSTRATION
+    ============================== */
+    .hero-art{
+      position:relative;
+      min-height:400px;
+      display:grid;
+      place-items:center;
+    }
+
+    .art-card{
+      width:min(420px,100%);
+      min-height:355px;
+      position:relative;
+      background:#fff;
+      border:3px solid #eee7fb;
+      border-radius:42px;
+      box-shadow:0 22px 55px rgba(75,53,120,.13);
+      overflow:hidden;
+      padding:30px;
+    }
+
+    .art-sun{
+      position:absolute;
+      top:25px;
+      right:30px;
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      background:#ffd45d;
+      box-shadow:0 0 0 12px rgba(255,212,93,.15);
+    }
+
+    .art-cloud{
+      position:absolute;
+      width:95px;
+      height:32px;
+      border-radius:40px;
+      background:#dff5ff;
+    }
+
+    .art-cloud::before,
+    .art-cloud::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:#dff5ff;
+    }
+
+    .art-cloud::before{
+      width:42px;
+      height:42px;
+      left:18px;
+      bottom:10px;
+    }
+
+    .art-cloud::after{
+      width:48px;
+      height:48px;
+      right:13px;
+      bottom:7px;
+    }
+
+    .cloud-a{
+      top:68px;
+      left:25px;
+    }
+
+    .cloud-b{
+      top:125px;
+      right:15px;
+      transform:scale(.7);
+    }
+
+    .book{
+      position:absolute;
+      left:50%;
+      bottom:48px;
+      transform:translateX(-50%) rotate(-2deg);
+      width:275px;
+      height:135px;
+      background:#fff;
+      border-radius:14px 20px 20px 14px;
+      box-shadow:0 14px 20px rgba(66,52,97,.15);
+      display:flex;
+      overflow:hidden;
+      border:4px solid #f1e8dc;
+    }
+
+    .book-page{
+      width:50%;
+      padding:20px 15px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .book-page:first-child{
+      border-right:2px dashed #d7c9b5;
+      background:#fffdf7;
+    }
+
+    .book-page:last-child{
+      background:#fffaf0;
+    }
+
+    .book-letter{
+      font-size:54px;
+      font-weight:950;
+      color:#6a45ba;
+      line-height:1;
+    }
+
+    .book-word{
+      font-size:14px;
+      font-weight:900;
+      color:#655c75;
+      margin-top:5px;
+    }
+
+    .mascot{
+      position:absolute;
+      bottom:160px;
+      font-size:75px;
+      filter:drop-shadow(0 8px 8px rgba(60,45,80,.1));
+    }
+
+    .mascot-left{
+      left:38px;
+    }
+
+    .mascot-right{
+      right:35px;
+      font-size:70px;
+    }
+
+    .art-sign{
+      position:absolute;
+      top:25px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#fff;
+      padding:7px 17px;
+      border-radius:30px;
+      font-weight:950;
+      color:#e8794b;
+      font-size:13px;
+      box-shadow:0 6px 15px rgba(74,56,90,.1);
+    }
+
+    /* ==============================
+       SECTION COMMON
+    ============================== */
+    .section{
+      width:min(1180px,92%);
+      margin:auto;
+      padding:75px 0;
+    }
+
+    .section-heading{
+      text-align:center;
+      max-width:750px;
+      margin:0 auto 42px;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      color:#e27c50;
+      font-size:13px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      margin-bottom:8px;
+    }
+
+    .section-heading h2{
+      color:#49357d;
+      font-size:clamp(30px,4vw,45px);
+      line-height:1.15;
+      margin-bottom:10px;
+    }
+
+    .section-heading p{
+      color:#777087;
+      font-size:16px;
+    }
+
+    /* ==============================
+       AUDIENCE
+    ============================== */
+    .audience-section{
+      background:#fff;
+    }
+
+    .audience-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .audience-card{
+      background:#fff;
+      border:2px solid #eee8f8;
+      border-radius:25px;
+      padding:28px 24px;
+      box-shadow:0 9px 25px rgba(70,52,105,.06);
+      transition:.25s ease;
+    }
+
+    .audience-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 15px 32px rgba(70,52,105,.1);
+    }
+
+    .audience-icon{
+      width:62px;
+      height:62px;
+      border-radius:20px;
+      display:grid;
+      place-items:center;
+      font-size:32px;
+      margin-bottom:17px;
+    }
+
+    .children .audience-icon{
+      background:#fff0d5;
+    }
+
+    .parents .audience-icon{
+      background:#e7f8ee;
+    }
+
+    .teachers .audience-icon{
+      background:#eae4ff;
+    }
+
+    .audience-card h3{
+      font-size:22px;
+      color:#4f3b7e;
+      margin-bottom:8px;
+    }
+
+    .audience-card p{
+      color:#777087;
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .mini-list{
+      list-style:none;
+      display:grid;
+      gap:7px;
+    }
+
+    .mini-list li{
+      color:#5e586f;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .mini-list li::before{
+      content:"✓";
+      color:#66aa79;
+      margin-right:7px;
+      font-weight:950;
+    }
+
+    /* ==============================
+       LEVELS
+    ============================== */
+    .levels-section{
+      background:
+        linear-gradient(180deg,#f8f4ff 0%,#fff 100%);
+    }
+
+    .levels-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .level-card{
+      position:relative;
+      min-height:320px;
+      background:#fff;
+      border:2px solid #ece5f8;
+      border-radius:27px;
+      padding:25px 21px;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 10px 26px rgba(70,52,105,.06);
+      transition:.25s ease;
+      overflow:hidden;
+    }
+
+    .level-card::after{
+      content:"";
+      position:absolute;
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      right:-40px;
+      bottom:-40px;
+      background:#f5efff;
+      pointer-events:none;
+    }
+
+    .level-card.active{
+      border:3px solid #7a56d3;
+      box-shadow:0 14px 34px rgba(105,72,180,.14);
+    }
+
+    .level-card.active:hover{
+      transform:translateY(-7px);
+    }
+
+    .level-number{
+      font-size:12px;
+      font-weight:950;
+      color:#a096b6;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .level-icon{
+      font-size:39px;
+      margin-bottom:10px;
+    }
+
+    .level-card h3{
+      color:#4d3b7b;
+      font-size:21px;
+      margin-bottom:7px;
+    }
+
+    .level-description{
+      color:#797288;
+      font-size:13px;
+      margin-bottom:16px;
+    }
+
+    .level-topics{
+      list-style:none;
+      display:grid;
+      gap:6px;
+      margin-bottom:20px;
+      flex:1;
+    }
+
+    .level-topics li{
+      color:#5d566d;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .level-topics li::before{
+      content:"•";
+      color:#8c68d2;
+      font-size:18px;
+      margin-right:7px;
+      vertical-align:-2px;
+    }
+
+    .level-button{
+      position:relative;
+      z-index:2;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      min-height:45px;
+      border-radius:14px;
+      font-size:13px;
+      font-weight:950;
+    }
+
+    .level-button.open{
+      background:#6944bc;
+      color:#fff;
+      box-shadow:0 7px 15px rgba(105,68,188,.18);
+    }
+
+    .level-button.disabled{
+      background:#f1eef6;
+      color:#9b95a9;
+      cursor:default;
+    }
+
+    /* ==============================
+       ROADMAP
+    ============================== */
+    .roadmap-section{
+      background:#fff;
+    }
+
+    .roadmap{
+      max-width:920px;
+      margin:auto;
+      display:grid;
+      gap:15px;
+    }
+
+    .roadmap-row{
+      display:grid;
+      grid-template-columns:145px 1fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .roadmap-label{
+      border-radius:18px;
+      background:#f0e9ff;
+      color:#6244a2;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:15px;
+      font-weight:950;
+      font-size:14px;
+    }
+
+    .roadmap-content{
+      border:2px solid #eee8f7;
+      border-radius:18px;
+      padding:16px 20px;
+      background:#fff;
+    }
+
+    .roadmap-content strong{
+      color:#4e4070;
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .roadmap-content span{
+      color:#777087;
+      font-size:13px;
+    }
+
+    /* ==============================
+       CTA
+    ============================== */
+    .cta-section{
+      width:min(1080px,92%);
+      margin:20px auto 75px;
+      padding:45px 35px;
+      border-radius:35px;
+      background:
+        radial-gradient(circle at 85% 20%,rgba(255,255,255,.25),transparent 20%),
+        linear-gradient(135deg,#6843b8,#8d6bd4);
+      color:#fff;
+      text-align:center;
+      box-shadow:0 20px 45px rgba(90,61,150,.18);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-section::before,
+    .cta-section::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,.09);
+      pointer-events:none;
+    }
+
+    .cta-section::before{
+      width:180px;
+      height:180px;
+      left:-60px;
+      bottom:-90px;
+    }
+
+    .cta-section::after{
+      width:130px;
+      height:130px;
+      right:-35px;
+      top:-50px;
+    }
+
+    .cta-section h2{
+      position:relative;
+      z-index:2;
+      font-size:34px;
+      margin-bottom:8px;
+    }
+
+    .cta-section p{
+      position:relative;
+      z-index:2;
+      color:#eee8ff;
+      margin-bottom:23px;
+    }
+
+    .cta-section .btn{
+      position:relative;
+      z-index:2;
+      background:#fff;
+      color:#5c3d9e;
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer{
+      background:#302647;
+      color:#fff;
+      padding:40px 0 25px;
+    }
+
+    .footer-inner{
+      width:min(1180px,92%);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:35px;
+    }
+
+    .footer-brand{
+      font-size:21px;
+      font-weight:950;
+      margin-bottom:8px;
+    }
+
+    .footer-text{
+      color:#bdb5cf;
+      font-size:13px;
+      max-width:360px;
+    }
+
+    .footer-title{
+      font-weight:900;
+      margin-bottom:10px;
+      color:#fff;
+    }
+
+    .footer-links{
+      list-style:none;
+      display:grid;
+      gap:6px;
+    }
+
+    .footer-links a{
+      color:#c9c1d8;
+      font-size:13px;
+    }
+
+    .footer-links a:hover{
+      color:#fff;
+    }
+
+    .copyright{
+      width:min(1180px,92%);
+      margin:30px auto 0;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.1);
+      color:#9991aa;
+      font-size:12px;
+      text-align:center;
+    }
+
+    /* ==============================
+       MOBILE MENU
+    ============================== */
+    @media(max-width:850px){
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:3%;
+        right:3%;
+        background:#fff;
+        border:1px solid #eee7f7;
+        border-radius:20px;
+        padding:10px;
+        box-shadow:0 15px 30px rgba(50,35,80,.12);
+        flex-direction:column;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a{
+        width:100%;
+        text-align:center;
+      }
+
+      .mobile-menu{
+        display:block;
+      }
+
+      .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-art{
+        min-height:350px;
+      }
+
+      .levels-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .audience-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:560px){
+
+      .nav{
+        min-height:68px;
+      }
+
+      .brand-icon{
+        width:45px;
+        height:45px;
+        font-size:25px;
+        border-radius:14px;
+      }
+
+      .brand-title{
+        font-size:18px;
+      }
+
+      .brand-subtitle{
+        display:none;
+      }
+
+      .hero{
+        min-height:auto;
+        padding:55px 0 55px;
+      }
+
+      .hero h1{
+        font-size:43px;
+        letter-spacing:-1.3px;
+      }
+
+      .hero-text{
+        font-size:16px;
+      }
+
+      .art-card{
+        min-height:315px;
+        padding:20px;
+        border-radius:30px;
+      }
+
+      .book{
+        width:235px;
+        height:115px;
+        bottom:35px;
+      }
+
+      .book-letter{
+        font-size:44px;
+      }
+
+      .book-word{
+        font-size:11px;
+      }
+
+      .mascot{
+        font-size:58px;
+        bottom:135px;
+      }
+
+      .mascot-right{
+        font-size:55px;
+      }
+
+      .levels-grid{
+        grid-template-columns:1fr;
+      }
+
+      .level-card{
+        min-height:285px;
+      }
+
+      .roadmap-row{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+
+      .roadmap-label{
+        justify-content:flex-start;
+      }
+
+      .cta-section{
+        padding:35px 20px;
+      }
+
+      .cta-section h2{
+        font-size:28px;
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+    }
+
+    /* ==============================
+       ACCESSIBILITY
+    ============================== */
+    a:focus-visible,
+    button:focus-visible{
+      outline:3px solid #f3b45d;
+      outline-offset:3px;
+    }
+
+    /* Decorative items never block clicks */
+    .top-cloud,
+    .art-sun,
+    .art-cloud,
+    .mascot,
+    .art-sign,
+    .cta-section::before,
+    .cta-section::after{
+      pointer-events:none;
+    }
+  </style>
 </head>
-
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+  <!-- Decorative clouds -->
+  <div class="top-cloud cloud-one"></div>
+  <div class="top-cloud cloud-two"></div>
 
-<header>
 
-<div class="container nav">
+  <!-- ==============================
+       HEADER
+  ============================== -->
+  <header>
+    <div class="nav">
 
-  <div class="brand">
-    <div class="brand-mark">📚</div>
-    <span>Kids Creativity Lab</span>
-  </div>
+      <a href="index.html" class="brand" aria-label="Kids Creativity Lab Home">
+        <div class="brand-icon">📚</div>
 
-  <button class="menu-btn" id="menuBtn">☰</button>
+        <div class="brand-text">
+          <div class="brand-title">Kids Creativity Lab</div>
+          <div class="brand-subtitle">LEARN • CREATE • GROW</div>
+        </div>
+      </a>
 
-  <nav class="nav-links" id="navLinks">
+      <button
+        type="button"
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Open menu">
+        ☰
+      </button>
 
-    <button onclick="goTo('home')">Home</button>
+      <nav class="nav-links" id="navLinks">
 
-    <button onclick="goTo('audience')">
-      Who We Help
-    </button>
+        <a href="index.html">
+          🏠 Home
+        </a>
 
-    <button onclick="goTo('levels')">
-      Levels
-    </button>
+        <!-- This goes to a REAL separate page -->
+        <a href="beginner.html" class="nav-start">
+          🚀 Start Learning
+        </a>
 
-    <button onclick="openLevel('beginner')">
-      Start Learning
-    </button>
+        <!-- These are roadmap items for now -->
+        <a href="#audience">
+          👨‍👩‍👧 Families
+        </a>
 
-  </nav>
+        <a href="#levels">
+          🎓 Levels
+        </a>
 
-</div>
+      </nav>
 
-</header>
+    </div>
+  </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <main>
 
-<main id="home">
+    <section class="hero">
 
-<section class="hero">
+      <div class="hero-inner">
 
-<div class="container hero-grid">
+        <div class="hero-content">
 
-<div class="hero-copy">
+          <div class="hero-badge">
+            🌟 A joyful place to learn
+          </div>
 
-<h1>
-Learn.<br>
-<span>Create.</span><br>
-<em>Grow.</em>
-</h1>
+          <h1>
+            Learn.<br>
+            <span>Create.</span><br>
+            Grow!
+          </h1>
 
-<p>
+          <p class="hero-text">
+            Welcome to <strong>Kids Creativity Lab</strong> — a child-friendly
+            learning space designed to build strong foundations in English,
+            phonics, reading, vocabulary and creative learning.
+          </p>
 
-Welcome to <strong>Kids Creativity Lab</strong> —
-a structured learning space for children,
-parents and teachers.
+          <div class="hero-buttons">
 
-From the first letter and sound to words,
-sentences, stories and creative learning.
+            <!-- IMPORTANT:
+                 This opens a NEW PAGE, not a scroll section -->
+            <a href="beginner.html" class="btn btn-primary">
+              🚀 Start Learning
+            </a>
 
-</p>
+            <!-- This opens the actual levels section on the home page -->
+            <a href="#levels" class="btn btn-secondary">
+              🧩 Explore Levels
+            </a>
 
-<div class="hero-buttons">
+          </div>
 
-<button
-class="primary-btn"
-onclick="openLevel('beginner')">
+        </div>
 
-🚀 Start Learning
 
-</button>
+        <!-- Cute visual area -->
+        <div class="hero-art">
 
-<button
-class="secondary-btn"
-onclick="goTo('levels')">
+          <div class="art-card">
 
-📚 Explore Levels
+            <div class="art-sun"></div>
 
-</button>
+            <div class="art-cloud cloud-a"></div>
+            <div class="art-cloud cloud-b"></div>
 
-</div>
+            <div class="art-sign">
+              ✏️ Learn • Create • Grow
+            </div>
 
-</div>
+            <div class="mascot mascot-left">
+              🦉
+            </div>
 
+            <div class="mascot mascot-right">
+              🦊
+            </div>
 
-<div class="hero-art">
+            <div class="book">
 
-<div class="star s1">★</div>
-<div class="star s2">✦</div>
-<div class="star s3">★</div>
+              <div class="book-page">
+                <div class="book-letter">A</div>
+                <div class="book-word">Apple 🍎</div>
+              </div>
 
-<div class="hero-book">
+              <div class="book-page">
+                <div class="book-letter">B</div>
+                <div class="book-word">Ball ⚽</div>
+              </div>
 
-<div class="book-page">
+            </div>
 
-<div class="book-letter">A</div>
+          </div>
 
-<div class="book-word">
-Apple • Ant
-</div>
+        </div>
 
-</div>
-
-
-<div class="book-page">
-
-<div class="book-letter">B</div>
-
-<div class="book-word">
-Ball • Bus
-</div>
-
-</div>
-
-</div>
-
-<div class="mascot">🦉</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     TARGET AUDIENCE
-===================================================== -->
-
-<section id="audience">
-
-<div class="container">
-
-<div class="section-title">
-
-<span class="eyebrow">
-OUR MAIN TARGET
-</span>
-
-<h2>
-Made for the Whole Learning Circle
-</h2>
-
-<p>
-Three important groups are at the heart of
-Kids Creativity Lab.
-</p>
-
-</div>
-
-
-<div class="audience-grid">
-
-
-<div class="audience-card">
-
-<div class="audience-icon">🧒</div>
-
-<h3>
-For Children
-</h3>
-
-<p>
-Interactive learning designed to keep
-children involved while they learn.
-</p>
-
-<ul class="audience-list">
-
-<li>✓ Letters & Sounds</li>
-<li>✓ Pictures & Words</li>
-<li>✓ Stories & Poems</li>
-<li>✓ Games & Activities</li>
-
-</ul>
-
-</div>
-
-
-<div class="audience-card">
-
-<div class="audience-icon">👨‍👩‍👧</div>
-
-<h3>
-For Parents
-</h3>
-
-<p>
-Simple ways to understand and support
-a child's learning journey.
-</p>
-
-<ul class="audience-list">
-
-<li>✓ Home Practice</li>
-<li>✓ Reading Support</li>
-<li>✓ Progress Ideas</li>
-<li>✓ Activity Suggestions</li>
-
-</ul>
-
-</div>
-
-
-<div class="audience-card">
-
-<div class="audience-icon">👩‍🏫</div>
-
-<h3>
-For Teachers
-</h3>
-
-<p>
-Structured learning material and activity
-ideas for classroom use.
-</p>
-
-<ul class="audience-list">
-
-<li>✓ Teaching Activities</li>
-<li>✓ Phonics Practice</li>
-<li>✓ Worksheets</li>
-<li>✓ Classroom Ideas</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     LEVELS
-===================================================== -->
-
-<section id="levels">
-
-<div class="container">
-
-<div class="section-title">
-
-<span class="eyebrow">
-LEARNING JOURNEY
-</span>
-
-<h2>
-Choose a Level
-</h2>
-
-<p>
-A clear progression from foundational learning
-to independent reading and creative expression.
-</p>
-
-</div>
-
-
-<div class="level-grid">
-
-
-<button
-class="level-card beginner"
-onclick="openLevel('beginner')">
-
-<div class="level-number">
-01
-</div>
-
-<h3>
-Beginning Level
-</h3>
-
-<p>
-Start from the basics and build strong
-letter, sound and early reading skills.
-</p>
-
-<ul class="level-topics">
-
-<li>Capital Letters</li>
-<li>Small Letters</li>
-<li>Phonics Groups</li>
-<li>Basic Words</li>
-<li>Simple Sentences</li>
-
-</ul>
-
-</button>
-
-
-<button
-class="level-card elementary"
-onclick="openLevel('elementary')">
-
-<div class="level-number">
-02
-</div>
-
-<h3>
-Elementary
-</h3>
-
-<p>
-Develop vocabulary, reading and
-sentence-building skills.
-</p>
-
-<ul class="level-topics">
-
-<li>CVC Words</li>
-<li>4-Letter Words</li>
-<li>Grammar Basics</li>
-<li>Reading Practice</li>
-<li>Picture Description</li>
-
-</ul>
-
-</button>
-
-
-<button
-class="level-card middle"
-onclick="openLevel('middle')">
-
-<div class="level-number">
-03
-</div>
-
-<h3>
-Middle Level
-</h3>
-
-<p>
-Build independent reading, writing
-and communication skills.
-</p>
-
-<ul class="level-topics">
-
-<li>Comprehension</li>
-<li>Grammar</li>
-<li>Paragraph Writing</li>
-<li>Dialogue</li>
-<li>Vocabulary</li>
-
-</ul>
-
-</button>
-
-
-<button
-class="level-card advanced"
-onclick="openLevel('advanced')">
-
-<div class="level-number">
-04
-</div>
-
-<h3>
-Advanced Level
-</h3>
-
-<p>
-Develop confident communication and
-creative English expression.
-</p>
-
-<ul class="level-topics">
-
-<li>Advanced Reading</li>
-<li>Advanced Writing</li>
-<li>Grammar</li>
-<li>Vocabulary</li>
-<li>Projects</li>
-
-</ul>
-
-</button>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     LEARNING SECTION
-===================================================== -->
-
-<section id="learningSection">
-
-<div class="container">
-
-<div class="learning-hub">
-
-
-<div class="hub-head">
-
-<div>
-
-<span
-class="eyebrow"
-id="hubEyebrow">
-LEARNING LEVEL
-</span>
-
-<h3 id="hubTitle">
-Beginning Level
-</h3>
-
-</div>
-
-
-<button
-class="back-btn"
-onclick="closeLearning()">
-
-← Back to Levels
-
-</button>
-
-</div>
-
-
-<div
-class="topic-grid"
-id="topicGrid">
-</div>
-
-
-<div id="alphabetArea">
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     ROADMAP
-===================================================== -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<span class="eyebrow">
-THE BIG PLAN
-</span>
-
-<h2>
-From Letters to Real Reading
-</h2>
-
-<p>
-The learning journey grows step-by-step.
-</p>
-
-</div>
-
-
-<div class="future-section">
-
-<div class="future-grid">
-
-
-<div class="future-card">
-
-<strong>
-🔤 Letters
-</strong>
-
-<p>
-Capital → Small → Cursive → Letter Sounds
-</p>
-
-</div>
-
-
-<div class="future-card">
-
-<strong>
-🔊 Phonics
-</strong>
-
-<p>
-Sounds → Groups → Blending → Word Reading
-</p>
-
-</div>
-
-
-<div class="future-card">
-
-<strong>
-🧩 Words
-</strong>
-
-<p>
-3-letter words → 4-letter words → Vocabulary
-</p>
-
-</div>
-
-
-<div class="future-card">
-
-<strong>
-📝 Sentences
-</strong>
-
-<p>
-Simple sentences → Grammar → Writing
-</p>
-
-</div>
-
-
-<div class="future-card">
-
-<strong>
-📖 Reading
-</strong>
-
-<p>
-Stories → Comprehension → Independent Reading
-</p>
-
-</div>
-
-
-<div class="future-card">
-
-<strong>
-🎨 Creativity
-</strong>
-
-<p>
-Picture Description → Dialogue → Creative Writing
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div class="container footer-inner">
-
-<div class="footer-brand">
-📚 Kids Creativity Lab
-</div>
-
-<div class="footer-text">
-Learn • Create • Grow
-</div>
-
-</div>
-
-</footer>
-
-
-<script>
-
-/* =====================================================
-   MENU
-===================================================== */
-
-const menuBtn =
-document.getElementById("menuBtn");
-
-const navLinks =
-document.getElementById("navLinks");
-
-menuBtn.addEventListener("click",()=>{
-
-  navLinks.classList.toggle("open");
-
-});
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-function goTo(id){
-
-  const element =
-  document.getElementById(id);
-
-  if(element){
-
-    element.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
-  }
-
-  navLinks.classList.remove("open");
-
-}
-
-
-/* =====================================================
-   PHONETIC LETTER DATA
-
-   IMPORTANT:
-   Pictures are selected according to the
-   INITIAL SOUND, not merely the spelling.
-
-   A = /æ/
-   E = /ɛ/
-   I = /ɪ/
-   O = /ɒ/ or /ɑ/
-   U = /ʌ/
-
-   Consonants use their intended initial sound.
-===================================================== */
-
-
-const letters = {
-
-
-A:{
-  word:"Apple",
-  picture:"🍎",
-  sound:"/æ/",
-  soundName:"short A",
-  pictures:[
-    ["🍎","Apple"],
-    ["🐜","Ant"],
-    ["🏹","Arrow"],
-    ["🐊","Alligator"],
-    ["👩‍🚀","Astronaut"],
-    ["🐾","Animal"]
-  ],
-  poem:
-`A, A and so on my arms,
-A, A and so on my arms,
-They causing me alarm!`,
-  story:
-`Ava has an apple.
-An ant walks near the apple.
-Ava points to the ant and says,
-“A is for Apple and Ant!”`,
-  questions:[
-    ["Which word begins with the /æ/ sound?","Apple",["Apple","Ball","Moon"]],
-    ["Find another short-A word.","Ant",["Dog","Ant","Sun"]],
-    ["Which word has the A sound?","Arrow",["Fish","Arrow","Bus"]]
-  ]
-},
-
-
-B:{
-  word:"Ball",
-  picture:"⚽",
-  sound:"/b/",
-  soundName:"B sound",
-  pictures:[
-    ["⚽","Ball"],
-    ["🦇","Bat"],
-    ["🚌","Bus"],
-    ["🍌","Banana"],
-    ["👶","Baby"],
-    ["🦋","Butterfly"]
-  ],
-  poem:
-`B is for a bouncing ball,
-B is for a big blue ball!`,
-  story:
-`Ben has a blue ball.
-He bounces the ball beside the bus.
-Ben smiles and says,
-“B is for Ball!”`,
-  questions:[
-    ["Which word begins with B?","Ball",["Ball","Cat","Dog"]],
-    ["Find the B word.","Bus",["Sun","Bus","Fish"]],
-    ["Which starts with B?","Banana",["Banana","Apple","Egg"]]
-  ]
-},
-
-
-C:{
-  word:"Cat",
-  picture:"🐱",
-  sound:"/k/",
-  soundName:"hard C sound",
-  pictures:[
-    ["🐱","Cat"],
-    ["🚗","Car"],
-    ["🥤","Cup"],
-    ["🐄","Cow"],
-    ["🍰","Cake"],
-    ["🐫","Camel"]
-  ],
-  poem:
-`C is for a curious cat,
-C is for a cosy cap!`,
-  story:
-`Charlie sees a cute cat.
-The cat sits beside a car.
-Charlie says,
-“C is for Cat!”`,
-  questions:[
-    ["Which word begins with /k/?","Cat",["Cat","Dog","Fish"]],
-    ["Find the C word.","Car",["Apple","Car","Bus"]],
-    ["Which starts with C?","Cake",["Cake","Sun","Moon"]]
-  ]
-},
-
-
-D:{
-  word:"Dog",
-  picture:"🐶",
-  sound:"/d/",
-  soundName:"D sound",
-  pictures:[
-    ["🐶","Dog"],
-    ["🦆","Duck"],
-    ["🥁","Drum"],
-    ["🍩","Donut"],
-    ["🦌","Deer"],
-    ["🦖","Dinosaur"]
-  ],
-  poem:
-`D is for a dancing dog,
-D is for a little drum!`,
-  story:
-`Danny has a dog.
-The dog dances when Danny plays the drum.`,
-  questions:[
-    ["Which word begins with D?","Dog",["Dog","Cat","Ball"]],
-    ["Find the D word.","Duck",["Duck","Sun","Fish"]],
-    ["Which starts with D?","Drum",["Apple","Drum","Bus"]]
-  ]
-},
-
-
-E:{
-  word:"Egg",
-  picture:"🥚",
-  sound:"/ɛ/",
-  soundName:"short E",
-  pictures:[
-    ["🥚","Egg"],
-    ["🐘","Elephant"],
-    ["🚂","Engine"],
-    ["💪","Elbow"],
-    ["✉️","Envelope"],
-    ["🧝","Elf"]
-  ],
-  poem:
-`E is for an elephant,
-E is for an egg!
-E is a happy sound to learn!`,
-  story:
-`Emma sees an elephant.
-Then she finds an egg beside an envelope.
-Emma says,
-“E is for Egg and Elephant!”`,
-  questions:[
-    ["Which word begins with the short E sound?","Egg",["Egg","Ice","Orange"]],
-    ["Find the E sound word.","Elephant",["Apple","Elephant","Umbrella"]],
-    ["Which starts with short E?","Engine",["Engine","Igloo","Octopus"]]
-  ]
-},
-
-
-F:{
-  word:"Fish",
-  picture:"🐟",
-  sound:"/f/",
-  soundName:"F sound",
-  pictures:[
-    ["🐟","Fish"],
-    ["🐸","Frog"],
-    ["🌸","Flower"],
-    ["🦊","Fox"],
-    ["🪭","Fan"],
-    ["🍴","Fork"]
-  ],
-  poem:
-`F is for a funny fish,
-F is for a fluffy fox!`,
-  story:
-`Finn sees a fish.
-A frog jumps near a flower.
-Finn says,
-“F is for Fish!”`,
-  questions:[
-    ["Which word begins with F?","Fish",["Fish","Dog","Cat"]],
-    ["Find the F word.","Frog",["Sun","Frog","Ball"]],
-    ["Which starts with F?","Flower",["Flower","Bus","Apple"]]
-  ]
-},
-
-
-G:{
-  word:"Goat",
-  picture:"🐐",
-  sound:"/g/",
-  soundName:"G sound",
-  pictures:[
-    ["🐐","Goat"],
-    ["🍇","Grapes"],
-    ["🎁","Gift"],
-    ["🦒","Giraffe"],
-    ["🦍","Gorilla"],
-    ["🪿","Goose"]
-  ],
-  poem:
-`G is for a green garden,
-G is for a goat!`,
-  story:
-`Gina sees a goat near a green garden.
-She gives the goat some grapes.`,
-  questions:[
-    ["Which word begins with G?","Goat",["Goat","Cat","Fish"]],
-    ["Find the G word.","Grapes",["Apple","Grapes","Bus"]],
-    ["Which starts with G?","Gift",["Gift","Dog","Sun"]]
-  ]
-},
-
-
-H:{
-  word:"Hat",
-  picture:"🎩",
-  sound:"/h/",
-  soundName:"H sound",
-  pictures:[
-    ["🎩","Hat"],
-    ["🏠","House"],
-    ["🐴","Horse"],
-    ["❤️","Heart"],
-    ["🐹","Hamster"],
-    ["🍯","Honey"]
-  ],
-  poem:
-`H is for a happy hat,
-H is for a happy horse!`,
-  story:
-`Hari wears a hat.
-He walks towards his house and sees a horse.`,
-  questions:[
-    ["Which word begins with H?","Hat",["Hat","Ball","Cat"]],
-    ["Find the H word.","House",["House","Dog","Fish"]],
-    ["Which starts with H?","Horse",["Sun","Horse","Apple"]]
-  ]
-},
-
-
-I:{
-  word:"Igloo",
-  picture:"🏠",
-  sound:"/ɪ/",
-  soundName:"short I",
-  pictures:[
-    ["🏠","Igloo"],
-    ["🖋️","Ink"],
-    ["🐜","Insect"],
-    ["💉","Injection"],
-    ["📏","Inch"],
-    ["🦎","Iguana"]
-  ],
-  poem:
-`I is for an igloo,
-I is for ink!
-I is a little sound,
-So stop and think!`,
-  story:
-`Isha sees an igloo.
-She writes with ink and sees an insect.
-Isha says,
-“I is for Igloo and Insect!”`,
-  questions:[
-    ["Which word begins with short I /ɪ/?","Igloo",["Ice","Igloo","Orange"]],
-    ["Find the I sound word.","Insect",["Egg","Insect","Umbrella"]],
-    ["Which starts with short I?","Ink",["Ink","Apple","Octopus"]]
-  ]
-},
-
-
-J:{
-  word:"Jam",
-  picture:"🍓",
-  sound:"/dʒ/",
-  soundName:"J sound",
-  pictures:[
-    ["🍓","Jam"],
-    ["🧃","Juice"],
-    ["🧥","Jacket"],
-    ["🫙","Jar"],
-    ["🤹","Juggler"],
-    ["🪼","Jellyfish"]
-  ],
-  poem:
-`J is for jam,
-J is for juice,
-J makes learning
-Fun to use!`,
-  story:
-`Jiya spreads jam on bread.
-Then she drinks some juice.`,
-  questions:[
-    ["Which word begins with J?","Jam",["Jam","Cat","Ball"]],
-    ["Find the J word.","Juice",["Sun","Juice","Dog"]],
-    ["Which starts with J?","Jacket",["Fish","Jacket","Apple"]]
-  ]
-},
-
-
-K:{
-  word:"Kite",
-  picture:"🪁",
-  sound:"/k/",
-  soundName:"K sound",
-  pictures:[
-    ["🪁","Kite"],
-    ["🐨","Koala"],
-    ["🔑","Key"],
-    ["🥝","Kiwi"],
-    ["👑","King"],
-    ["🐨","Kangaroo"]
-  ],
-  poem:
-`K is for a kite up high,
-K is flying in the sky!`,
-  story:
-`Kabir flies a kite.
-The kite goes high into the sky.`,
-  questions:[
-    ["Which word begins with K?","Kite",["Dog","Kite","Cat"]],
-    ["Find the K word.","Key",["Apple","Key","Bus"]],
-    ["Which starts with K?","Kiwi",["Kiwi","Sun","Fish"]]
-  ]
-},
-
-
-L:{
-  word:"Lion",
-  picture:"🦁",
-  sound:"/l/",
-  soundName:"L sound",
-  pictures:[
-    ["🦁","Lion"],
-    ["🍋","Lemon"],
-    ["🦎","Lizard"],
-    ["💡","Lamp"],
-    ["🍃","Leaf"],
-    ["🦙","Llama"]
-  ],
-  poem:
-`L is for a little lion,
-L is for a lemon bright!`,
-  story:
-`Leo sees a lion picture.
-He also sees a yellow lemon.`,
-  questions:[
-    ["Which word begins with L?","Lion",["Lion","Dog","Cat"]],
-    ["Find the L word.","Lemon",["Bus","Lemon","Ball"]],
-    ["Which starts with L?","Lamp",["Fish","Lamp","Apple"]]
-  ]
-},
-
-
-M:{
-  word:"Moon",
-  picture:"🌙",
-  sound:"/m/",
-  soundName:"M sound",
-  pictures:[
-    ["🌙","Moon"],
-    ["🐒","Monkey"],
-    ["🥭","Mango"],
-    ["🐭","Mouse"],
-    ["🗺️","Map"],
-    ["🥛","Milk"]
-  ],
-  poem:
-`M is for the moon at night,
-M makes learning shine bright!`,
-  story:
-`Maya looks at the moon.
-She eats a sweet mango before bedtime.`,
-  questions:[
-    ["Which word begins with M?","Moon",["Dog","Moon","Cat"]],
-    ["Find the M word.","Mango",["Sun","Mango","Bus"]],
-    ["Which starts with M?","Monkey",["Fish","Monkey","Apple"]]
-  ]
-},
-
-
-N:{
-  word:"Nest",
-  picture:"🪺",
-  sound:"/n/",
-  soundName:"N sound",
-  pictures:[
-    ["🪺","Nest"],
-    ["👃","Nose"],
-    ["🌙","Night"],
-    ["📓","Notebook"],
-    ["🪺","Nightingale"],
-    ["🍜","Noodles"]
-  ],
-  poem:
-`N is for a nest so neat,
-N makes learning nice and sweet!`,
-  story:
-`Nina finds a nest in a tree.
-She sees little birds inside.`,
-  questions:[
-    ["Which word begins with N?","Nest",["Nest","Dog","Cat"]],
-    ["Find the N word.","Nose",["Ball","Nose","Sun"]],
-    ["Which starts with N?","Notebook",["Fish","Notebook","Apple"]]
-  ]
-},
-
-
-O:{
-  word:"Octopus",
-  picture:"🐙",
-  sound:"/ɒ/",
-  soundName:"short O",
-  pictures:[
-    ["🐙","Octopus"],
-    ["🫒","Olive"],
-    ["🦤","Ostrich"],
-    ["🐂","Ox"],
-    ["🧅","Onion"],
-    ["🍊","Orange"]
-  ],
-  poem:
-`O is round like an octopus,
-O is open, bright and fun!`,
-  story:
-`Olivia sees an octopus.
-Then she finds an orange and an olive.`,
-  questions:[
-    ["Which word begins with short O?","Octopus",["Dog","Octopus","Cat"]],
-    ["Find the O sound word.","Olive",["Sun","Olive","Bus"]],
-    ["Which starts with short O?","Orange",["Fish","Orange","Apple"]]
-  ]
-},
-
-
-P:{
-  word:"Pen",
-  picture:"🖊️",
-  sound:"/p/",
-  soundName:"P sound",
-  pictures:[
-    ["🖊️","Pen"],
-    ["🐼","Panda"],
-    ["🍕","Pizza"],
-    ["🐷","Pig"],
-    ["🍐","Pear"],
-    ["🦜","Parrot"]
-  ],
-  poem:
-`P is for a pink pig,
-P is for a pen!`,
-  story:
-`Priya picks up a pen.
-She draws a panda and a parrot.`,
-  questions:[
-    ["Which word begins with P?","Pen",["Pen","Dog","Cat"]],
-    ["Find the P word.","Panda",["Ball","Panda","Sun"]],
-    ["Which starts with P?","Pizza",["Fish","Pizza","Apple"]]
-  ]
-},
-
-
-Q:{
-  word:"Queen",
-  picture:"👑",
-  sound:"/kw/",
-  soundName:"QU sound",
-  pictures:[
-    ["👑","Queen"],
-    ["❓","Question"],
-    ["🪶","Quill"],
-    ["🪙","Quarter"],
-    ["🦆","Quail"],
-    ["🛏️","Quilt"]
-  ],
-  poem:
-`Q is for a queen so grand,
-Q is a special sound to understand!`,
-  story:
-`The queen asks a question.
-She writes it with a quill.`,
-  questions:[
-    ["Which word begins with Q?","Queen",["Dog","Queen","Cat"]],
-    ["Find the Q word.","Question",["Ball","Question","Sun"]],
-    ["Which starts with Q?","Quilt",["Fish","Quilt","Apple"]]
-  ]
-},
-
-
-R:{
-  word:"Rabbit",
-  picture:"🐰",
-  sound:"/r/",
-  soundName:"R sound",
-  pictures:[
-    ["🐰","Rabbit"],
-    ["🌈","Rainbow"],
-    ["🤖","Robot"],
-    ["🌹","Rose"],
-    ["🚀","Rocket"],
-    ["🐀","Rat"]
-  ],
-  poem:
-`R is for a rabbit fast,
-R is for a rainbow vast!`,
-  story:
-`Riya sees a rabbit under a rainbow.
-She picks a red rose.`,
-  questions:[
-    ["Which word begins with R?","Rabbit",["Rabbit","Dog","Cat"]],
-    ["Find the R word.","Rainbow",["Ball","Rainbow","Sun"]],
-    ["Which starts with R?","Robot",["Fish","Robot","Apple"]]
-  ]
-},
-
-
-S:{
-  word:"Sun",
-  picture:"☀️",
-  sound:"/s/",
-  soundName:"S sound",
-  pictures:[
-    ["☀️","Sun"],
-    ["🐍","Snake"],
-    ["⭐","Star"],
-    ["🥪","Sandwich"],
-    ["🧦","Sock"],
-    ["🕷️","Spider"]
-  ],
-  poem:
-`S is for the shining sun,
-S makes learning lots of fun!`,
-  story:
-`Sam looks at the sun.
-He sees a star and a spider in his book.`,
-  questions:[
-    ["Which word begins with S?","Sun",["Dog","Sun","Cat"]],
-    ["Find the S word.","Snake",["Ball","Snake","Bus"]],
-    ["Which starts with S?","Star",["Fish","Star","Apple"]]
-  ]
-},
-
-
-T:{
-  word:"Tiger",
-  picture:"🐯",
-  sound:"/t/",
-  soundName:"T sound",
-  pictures:[
-    ["🐯","Tiger"],
-    ["🌳","Tree"],
-    ["🚂","Train"],
-    ["🍅","Tomato"],
-    ["🦃","Turkey"],
-    ["🧸","Teddy"]
-  ],
-  poem:
-`T is for a tall tree,
-T is for a tiger!`,
-  story:
-`Tom sees a tiger in a book.
-Then he draws a tall tree.`,
-  questions:[
-    ["Which word begins with T?","Tiger",["Tiger","Dog","Cat"]],
-    ["Find the T word.","Tree",["Ball","Tree","Sun"]],
-    ["Which starts with T?","Train",["Fish","Train","Apple"]]
-  ]
-},
-
-
-U:{
-  word:"Umbrella",
-  picture:"☂️",
-  sound:"/ʌ/",
-  soundName:"short U",
-  pictures:[
-    ["☂️","Umbrella"],
-    ["👨","Uncle"],
-    ["⬆️","Up"],
-    ["⚾","Umpire"],
-    ["⬇️","Under"],
-    ["😬","Ugly"]
-  ],
-  poem:
-`U is for an umbrella,
-U keeps us dry!`,
-  story:
-`Uma opens her umbrella.
-Rain falls from the sky.`,
-  questions:[
-    ["Which word begins with short U?","Umbrella",["Umbrella","Dog","Cat"]],
-    ["Find the U sound word.","Uncle",["Ball","Uncle","Sun"]],
-    ["Which starts with short U?","Under",["Fish","Under","Apple"]]
-  ]
-},
-
-
-V:{
-  word:"Van",
-  picture:"🚐",
-  sound:"/v/",
-  soundName:"V sound",
-  pictures:[
-    ["🚐","Van"],
-    ["🌋","Volcano"],
-    ["🎻","Violin"],
-    ["🥕","Vegetable"],
-    ["🦅","Vulture"],
-    ["🎟️","Voucher"]
-  ],
-  poem:
-`V is for a van so bright,
-V is fun to learn and write!`,
-  story:
-`Vina sees a blue van.
-She hears a violin.`,
-  questions:[
-    ["Which word begins with V?","Van",["Van","Dog","Cat"]],
-    ["Find the V word.","Violin",["Ball","Violin","Sun"]],
-    ["Which starts with V?","Volcano",["Fish","Volcano","Apple"]]
-  ]
-},
-
-
-W:{
-  word:"Watch",
-  picture:"⌚",
-  sound:"/w/",
-  soundName:"W sound",
-  pictures:[
-    ["⌚","Watch"],
-    ["🐋","Whale"],
-    ["🍉","Watermelon"],
-    ["🌊","Water"],
-    ["🪟","Window"],
-    ["🐺","Wolf"]
-  ],
-  poem:
-`W is for the wind that blows,
-W is for the water!`,
-  story:
-`Will looks at his watch.
-Then he eats a slice of watermelon.`,
-  questions:[
-    ["Which word begins with W?","Watch",["Watch","Dog","Cat"]],
-    ["Find the W word.","Whale",["Ball","Whale","Sun"]],
-    ["Which starts with W?","Watermelon",["Fish","Watermelon","Apple"]]
-  ]
-},
-
-
-X:{
-  word:"X-ray",
-  picture:"🩻",
-  sound:"/ks/",
-  soundName:"X sound",
-  pictures:[
-    ["🩻","X-ray"],
-    ["🎼","Xylophone"],
-    ["❌","X mark"],
-    ["🎮","Xbox"],
-    ["✖️","X shape"],
-    ["📍","X spot"]
-  ],
-  poem:
-`X is a special sound,
-Look for X words all around!`,
-  story:
-`Xavier sees an X-ray picture.
-Then he plays a xylophone.`,
-  questions:[
-    ["Which word begins with X?","X-ray",["X-ray","Dog","Cat"]],
-    ["Find the X word.","Xylophone",["Ball","Xylophone","Sun"]],
-    ["Which starts with X?","Xbox",["Fish","Xbox","Apple"]]
-  ]
-},
-
-
-Y:{
-  word:"Yak",
-  picture:"🐂",
-  sound:"/j/",
-  soundName:"Y sound",
-  pictures:[
-    ["🐂","Yak"],
-    ["🧶","Yarn"],
-    ["🛳️","Yacht"],
-    ["💛","Yellow"],
-    ["🍳","Yolk"],
-    ["🪀","Yo-yo"]
-  ],
-  poem:
-`Y is yellow,
-Y is you,
-Y has lots of words
-For us to do!`,
-  story:
-`Yash sees a yellow yarn ball.
-He learns about a yak.`,
-  questions:[
-    ["Which word begins with Y?","Yak",["Yak","Dog","Cat"]],
-    ["Find the Y word.","Yarn",["Ball","Yarn","Sun"]],
-    ["Which starts with Y?","Yellow",["Fish","Yellow","Apple"]]
-  ]
-},
-
-
-Z:{
-  word:"Zebra",
-  picture:"🦓",
-  sound:"/z/",
-  soundName:"Z sound",
-  pictures:[
-    ["🦓","Zebra"],
-    ["🦁","Zoo"],
-    ["🤐","Zip"],
-    ["0️⃣","Zero"],
-    ["⚡","Zap"],
-    ["🧟","Zombie"]
-  ],
-  poem:
-`Z is for a zebra
-Black and white,
-Z is the final letter
-We write!`,
-  story:
-`Zoya visits the zoo.
-She sees a zebra walking near the trees.`,
-  questions:[
-    ["Which word begins with Z?","Zebra",["Zebra","Dog","Cat"]],
-    ["Find the Z word.","Zoo",["Ball","Zoo","Sun"]],
-    ["Which starts with Z?","Zero",["Fish","Zero","Apple"]]
-  ]
-}
-
-};
-
-
-/* =====================================================
-   LEVEL DATA
-===================================================== */
-
-const levels={
-
-beginner:{
-  title:"Beginning Level",
-  topics:[
-    ["🔠","Capital Letters",
-     "A–Z with sound, phonetic pictures, video, tracing, stories and activities.",
-     "capital"],
-    ["🔡","Small Letters",
-     "Lowercase letters and capital-small connection.",
-     "future"],
-    ["🔊","Phonics Groups",
-     "Step-by-step phonics groups and sound practice.",
-     "future"],
-    ["🧩","Word Builder",
-     "Build simple words after learning sounds.",
-     "future"],
-    ["📝","Sentence Builder",
-     "Use learned words in simple sentences.",
-     "future"],
-    ["📖","First Reading",
-     "Small stories and first reading practice.",
-     "future"]
-  ]
-},
-
-elementary:{
-  title:"Elementary Level",
-  topics:[
-    ["🔤","CVC Words","3-letter words and blending.","future"],
-    ["🧱","4-Letter Words","Move towards longer words.","future"],
-    ["⚙️","Grammar Basics","Nouns, pronouns and basic grammar.","future"],
-    ["🖼️","Picture Description","Make sentences from pictures.","future"],
-    ["📖","Reading Practice","Short passages and questions.","future"],
-    ["🗣️","Speaking Practice","Everyday English sentences.","future"]
-  ]
-},
-
-middle:{
-  title:"Middle Level",
-  topics:[
-    ["📖","Reading Comprehension","Read and understand passages.","future"],
-    ["⚙️","Grammar","Develop stronger grammar.","future"],
-    ["✍️","Paragraph Writing","Organise ideas into paragraphs.","future"],
-    ["💬","Dialogue","Practise conversations.","future"],
-    ["🧠","Vocabulary","Expand vocabulary.","future"],
-    ["🎨","Creative Writing","Stories and creative expression.","future"]
-  ]
-},
-
-advanced:{
-  title:"Advanced Level",
-  topics:[
-    ["📚","Advanced Reading","Longer texts and comprehension.","future"],
-    ["✍️","Advanced Writing","Structured and creative writing.","future"],
-    ["⚙️","Advanced Grammar","Advanced sentence construction.","future"],
-    ["🧠","Vocabulary Builder","Synonyms, antonyms and usage.","future"],
-    ["🎤","Communication","Confident English communication.","future"],
-    ["🚀","Projects","Creative English projects.","future"]
-  ]
-}
-
-};
-
-
-/* =====================================================
-   OPEN LEVEL
-===================================================== */
-
-function openLevel(name){
-
-  const level=levels[name];
-
-  const section=
-  document.getElementById("learningSection");
-
-  const title=
-  document.getElementById("hubTitle");
-
-  const eyebrow=
-  document.getElementById("hubEyebrow");
-
-  const grid=
-  document.getElementById("topicGrid");
-
-
-  section.style.display="block";
-
-  title.textContent=level.title;
-
-  eyebrow.textContent=
-  name.toUpperCase()+" LEVEL";
-
-
-  grid.innerHTML="";
-
-
-  level.topics.forEach(topic=>{
-
-    const card=
-    document.createElement("button");
-
-    card.className="topic-card";
-
-    card.innerHTML=`
-
-      <div class="topic-icon">
-        ${topic[0]}
       </div>
 
-      <h4>
-        ${topic[1]}
-      </h4>
+    </section>
+
+
+    <!-- ==============================
+         TARGET AUDIENCE
+    ============================== -->
+    <section class="section audience-section" id="audience">
+
+      <div class="section-heading">
+
+        <div class="section-kicker">
+          Made for the whole learning journey
+        </div>
+
+        <h2>
+          Who is Kids Creativity Lab for?
+        </h2>
+
+        <p>
+          One learning space with resources planned for children,
+          parents and teachers.
+        </p>
+
+      </div>
+
+
+      <div class="audience-grid">
+
+        <!-- CHILDREN -->
+        <div class="audience-card children">
+
+          <div class="audience-icon">
+            🧒
+          </div>
+
+          <h3>Children</h3>
+
+          <p>
+            Learn through colourful activities, sounds, pictures,
+            stories and practice.
+          </p>
+
+          <ul class="mini-list">
+            <li>Alphabet & phonics</li>
+            <li>Word building</li>
+            <li>Reading practice</li>
+            <li>Creative activities</li>
+          </ul>
+
+        </div>
+
+
+        <!-- PARENTS -->
+        <div class="audience-card parents">
+
+          <div class="audience-icon">
+            👨‍👩‍👧
+          </div>
+
+          <h3>Parents</h3>
+
+          <p>
+            Understand what your child is learning and support
+            learning at home.
+          </p>
+
+          <ul class="mini-list">
+            <li>Learning roadmap</li>
+            <li>Home practice ideas</li>
+            <li>Simple activities</li>
+            <li>Progress support</li>
+          </ul>
+
+        </div>
+
+
+        <!-- TEACHERS -->
+        <div class="audience-card teachers">
+
+          <div class="audience-icon">
+            👩‍🏫
+          </div>
+
+          <h3>Teachers</h3>
+
+          <p>
+            A structured roadmap for planning foundational English
+            and classroom learning.
+          </p>
+
+          <ul class="mini-list">
+            <li>Phonics sequence</li>
+            <li>Vocabulary building</li>
+            <li>Reading activities</li>
+            <li>Practice ideas</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         LEVELS
+    ============================== -->
+    <section class="section levels-section" id="levels">
+
+      <div class="section-heading">
+
+        <div class="section-kicker">
+          A systematic learning path
+        </div>
+
+        <h2>
+          Choose Your Learning Level
+        </h2>
+
+        <p>
+          Learning moves step-by-step from foundational skills
+          towards confident reading, language and creative learning.
+        </p>
+
+      </div>
+
+
+      <div class="levels-grid">
+
+
+        <!-- ==========================
+             BEGINNING — ACTIVE
+        ========================== -->
+        <article class="level-card active">
+
+          <div class="level-number">
+            LEVEL 01
+          </div>
+
+          <div class="level-icon">
+            🌱
+          </div>
+
+          <h3>
+            Beginning Level
+          </h3>
+
+          <p class="level-description">
+            Build the first strong foundation in English.
+          </p>
+
+          <ul class="level-topics">
+
+            <li>Capital Letters</li>
+            <li>Small Letters</li>
+            <li>Jolly Phonics</li>
+            <li>Sound & Picture Words</li>
+            <li>Word Building</li>
+            <li>Early Sentence Reading</li>
+
+          </ul>
+
+          <!-- REAL PAGE LINK -->
+          <a
+            href="beginner.html"
+            class="level-button open">
+            Open Beginning Level →
+          </a>
+
+        </article>
+
+
+        <!-- ==========================
+             ELEMENTARY
+        ========================== -->
+        <article class="level-card">
+
+          <div class="level-number">
+            LEVEL 02
+          </div>
+
+          <div class="level-icon">
+            🌿
+          </div>
+
+          <h3>
+            Elementary Level
+          </h3>
+
+          <p class="level-description">
+            Develop vocabulary, grammar and reading confidence.
+          </p>
+
+          <ul class="level-topics">
+
+            <li>Word Families</li>
+            <li>Blending & Segmenting</li>
+            <li>Vocabulary</li>
+            <li>Basic Grammar</li>
+            <li>Reading Practice</li>
+            <li>Short Writing</li>
+
+          </ul>
+
+          <div class="level-button disabled">
+            Coming Soon
+          </div>
+
+        </article>
+
+
+        <!-- ==========================
+             MIDDLE
+        ========================== -->
+        <article class="level-card">
+
+          <div class="level-number">
+            LEVEL 03
+          </div>
+
+          <div class="level-icon">
+            🌳
+          </div>
+
+          <h3>
+            Middle Level
+          </h3>
+
+          <p class="level-description">
+            Build stronger language, comprehension and expression.
+          </p>
+
+          <ul class="level-topics">
+
+            <li>Reading Comprehension</li>
+            <li>Grammar in Use</li>
+            <li>Paragraph Writing</li>
+            <li>Vocabulary Expansion</li>
+            <li>Speaking Practice</li>
+            <li>Creative Writing</li>
+
+          </ul>
+
+          <div class="level-button disabled">
+            Coming Soon
+          </div>
+
+        </article>
+
+
+        <!-- ==========================
+             ADVANCED
+        ========================== -->
+        <article class="level-card">
+
+          <div class="level-number">
+            LEVEL 04
+          </div>
+
+          <div class="level-icon">
+            🚀
+          </div>
+
+          <h3>
+            Advanced Level
+          </h3>
+
+          <p class="level-description">
+            Move towards confident communication and independent learning.
+          </p>
+
+          <ul class="level-topics">
+
+            <li>Advanced Reading</li>
+            <li>Advanced Grammar</li>
+            <li>Writing Skills</li>
+            <li>Communication</li>
+            <li>Critical Thinking</li>
+            <li>Creative Projects</li>
+
+          </ul>
+
+          <div class="level-button disabled">
+            Coming Soon
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         LEARNING ROADMAP
+    ============================== -->
+    <section class="section roadmap-section">
+
+      <div class="section-heading">
+
+        <div class="section-kicker">
+          Our roadmap
+        </div>
+
+        <h2>
+          From Letters to Confident Learning
+        </h2>
+
+        <p>
+          Each stage will have its own dedicated pages and activities.
+        </p>
+
+      </div>
+
+
+      <div class="roadmap">
+
+        <div class="roadmap-row">
+
+          <div class="roadmap-label">
+            🌱 Beginning
+          </div>
+
+          <div class="roadmap-content">
+            <strong>
+              Letters → Sounds → Words → Sentences
+            </strong>
+
+            <span>
+              Capital Letters, Small Letters, Jolly Phonics,
+              picture words, word building and early reading.
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="roadmap-row">
+
+          <div class="roadmap-label">
+            🌿 Elementary
+          </div>
+
+          <div class="roadmap-content">
+            <strong>
+              Words → Reading → Grammar → Writing
+            </strong>
+
+            <span>
+              Vocabulary, word families, blending, basic grammar,
+              reading and short writing.
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="roadmap-row">
+
+          <div class="roadmap-label">
+            🌳 Middle
+          </div>
+
+          <div class="roadmap-content">
+            <strong>
+              Understanding → Expression
+            </strong>
+
+            <span>
+              Comprehension, grammar in context, speaking,
+              vocabulary and creative writing.
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="roadmap-row">
+
+          <div class="roadmap-label">
+            🚀 Advanced
+          </div>
+
+          <div class="roadmap-content">
+            <strong>
+              Independent & Confident Learning
+            </strong>
+
+            <span>
+              Advanced reading, writing, communication,
+              critical thinking and creative projects.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         START LEARNING CTA
+    ============================== -->
+    <section class="cta-section">
+
+      <h2>
+        Ready to Start Learning? 🌟
+      </h2>
 
       <p>
-        ${topic[2]}
+        Begin with the foundation and move step-by-step.
       </p>
 
-      <span class="lesson-tag">
-        ${topic[3]==="capital"
-          ?"OPEN LESSON →"
-          :"COMING IN NEXT STAGE →"}
-      </span>
+      <!-- REAL PAGE — NO SCROLL -->
+      <a href="beginner.html" class="btn">
+        🚀 Open Beginning Level
+      </a>
 
-    `;
+    </section>
 
-
-    card.onclick=()=>{
-
-      if(topic[3]==="capital"){
-
-        showCapitalLetters();
-
-      }else{
-
-        alert(
-          topic[1]+
-          " is part of the next development stage of the learning system."
-        );
-
-      }
-
-    };
+  </main>
 
 
-    grid.appendChild(card);
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer>
 
-  });
-
-
-  document.getElementById("alphabetArea").innerHTML="";
-
-
-  section.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-}
-
-
-/* =====================================================
-   CLOSE LEVEL
-===================================================== */
-
-function closeLearning(){
-
-  document.getElementById(
-    "learningSection"
-  ).style.display="none";
-
-  goTo("levels");
-
-}
-
-
-/* =====================================================
-   SHOW A-Z
-===================================================== */
-
-const exploredLetters=new Set();
-
-
-function showCapitalLetters(){
-
-  const area=
-  document.getElementById("alphabetArea");
-
-
-  area.innerHTML=`
-
-  <div class="alphabet-area">
-
-    <div class="alphabet-head">
+    <div class="footer-inner">
 
       <div>
 
-        <span class="eyebrow">
-          BEGINNING LEVEL • CAPITAL LETTERS
-        </span>
+        <div class="footer-brand">
+          📚 Kids Creativity Lab
+        </div>
 
-        <h3>
-          Let's Learn A–Z
-        </h3>
-
-        <p style="color:var(--muted);margin-top:7px;">
-          Tap any letter to open its complete learning page.
+        <p class="footer-text">
+          A colourful learning space designed to help children
+          learn, create and grow with confidence.
         </p>
 
       </div>
 
 
-      <div class="progress-box">
+      <div>
 
-        <div class="progress-text">
-          Letters explored:
-          <span id="progressCount">0</span>/26
+        <div class="footer-title">
+          Learning
         </div>
 
-        <div class="progress">
-          <div
-          class="progress-bar"
-          id="progressBar">
-          </div>
+        <ul class="footer-links">
+
+          <li>
+            <a href="beginner.html">
+              Beginning Level
+            </a>
+          </li>
+
+          <li>
+            <a href="capital-letters.html">
+              Capital Letters
+            </a>
+          </li>
+
+          <li>
+            <a href="small-letters.html">
+              Small Letters
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <div class="footer-title">
+          Platform
         </div>
+
+        <ul class="footer-links">
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#audience">
+              Children • Parents • Teachers
+            </a>
+          </li>
+
+          <li>
+            <a href="#levels">
+              Learning Levels
+            </a>
+          </li>
+
+        </ul>
 
       </div>
 
     </div>
 
 
-    <div
-    class="letter-grid"
-    id="letterGrid">
+    <div class="copyright">
+      © 2026 Kids Creativity Lab • Learn • Create • Grow
     </div>
 
+  </footer>
 
-    <div
-    class="detail-area"
-    id="detailArea">
-    </div>
 
-  </div>
+  <!-- ==============================
+       MOBILE MENU SCRIPT
+  ============================== -->
+  <script>
 
-  `;
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navLinks = document.getElementById("navLinks");
 
+    mobileMenu.addEventListener("click", function(){
 
-  const grid=
-  document.getElementById("letterGrid");
+      navLinks.classList.toggle("show");
 
-
-  Object.keys(letters).forEach(letter=>{
-
-    const data=letters[letter];
-
-    const card=
-    document.createElement("button");
-
-    card.className="letter-card";
-
-
-    card.innerHTML=`
-
-      <div class="letter-big">
-        ${letter}
-      </div>
-
-      <div class="letter-picture">
-        ${data.picture}
-      </div>
-
-      <div class="letter-word">
-        ${data.word}
-      </div>
-
-      <span class="letter-sound">
-        ${data.sound}
-      </span>
-
-    `;
-
-
-    card.onclick=()=>{
-      openLetter(letter);
-    };
-
-
-    grid.appendChild(card);
-
-  });
-
-
-  area.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-}
-
-
-/* =====================================================
-   OPEN INDIVIDUAL LETTER
-===================================================== */
-
-function openLetter(letter){
-
-  const data=letters[letter];
-
-  if(!data) return;
-
-
-  exploredLetters.add(letter);
-
-  updateProgress();
-
-
-  const detail=
-  document.getElementById("detailArea");
-
-
-  /* SIX PICTURES */
-
-  const pictures=
-  data.pictures.map((item,index)=>`
-
-    <div class="picture-card">
-
-      <span class="picture-emoji">
-        ${item[0]}
-      </span>
-
-      <span class="picture-name">
-        ${item[1]}
-      </span>
-
-      <button
-      class="say-word"
-      onclick="speakWord('${item[1]}')">
-
-      🔊 Say ${item[1]}
-
-      </button>
-
-    </div>
-
-  `).join("");
-
-
-  /* QUESTIONS */
-
-  const questions=
-  data.questions.map((q,index)=>{
-
-    const question=q[0];
-    const answer=q[1];
-    const options=q[2];
-
-
-    return `
-
-      <div class="activity">
-
-        <div class="activity-question">
-
-          ${index+1}. ${question}
-
-        </div>
-
-
-        <div class="options">
-
-          ${options.map(option=>`
-
-            <button
-            class="option"
-            onclick="
-            checkAnswer(
-              this,
-              '${option.replace(/'/g,"\\'")}',
-              '${answer.replace(/'/g,"\\'")}'
-            )">
-
-              ${option}
-
-            </button>
-
-          `).join("")}
-
-        </div>
-
-
-        <div class="answer-msg"></div>
-
-      </div>
-
-    `;
-
-  }).join("");
-
-
-  detail.innerHTML=`
-
-  <div class="letter-detail">
-
-
-    <!-- TOP -->
-
-    <div class="detail-top">
-
-
-      <div class="detail-letter">
-
-        <div class="detail-letter-main">
-          ${letter}
-        </div>
-
-        <div class="detail-letter-word">
-          ${data.picture} ${data.word}
-        </div>
-
-      </div>
-
-
-      <div class="detail-intro">
-
-        <span class="eyebrow">
-          LETTER ${letter}
-        </span>
-
-        <h3>
-          ${letter} is for ${data.word}
-        </h3>
-
-        <p>
-          Target sound:
-          <strong>${data.sound}</strong>
-          — ${data.soundName}.
-          All six picture words below are selected
-          according to their initial sound.
-        </p>
-
-
-        <div class="detail-buttons">
-
-
-          <button
-          class="action-btn blue"
-          onclick="speakLetter('${letter}')">
-
-            🔊 Letter Sound
-
-          </button>
-
-
-          <button
-          class="action-btn pink"
-          onclick="speakText(letters['${letter}'].poem)">
-
-            🎵 Hear Rhyme
-
-          </button>
-
-
-          <button
-          class="action-btn green"
-          onclick="speakText(letters['${letter}'].story)">
-
-            📖 Hear Story
-
-          </button>
-
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- SIX PICTURES -->
-
-    <div class="detail-sections">
-
-
-      <div class="detail-box">
-
-        <h4>
-          🖼️ Six Phonic Picture Words
-        </h4>
-
-        <p style="margin-bottom:15px;">
-          Tap 🔊 under any picture to hear the word.
-        </p>
-
-
-        <div class="picture-grid">
-
-          ${pictures}
-
-        </div>
-
-      </div>
-
-
-      <!-- SOUND -->
-
-      <div class="detail-box">
-
-        <h4>
-          🔊 ${letter} Sound
-        </h4>
-
-
-        <div class="sound-display">
-
-          <div class="sound-letter">
-            ${letter}
-          </div>
-
-          <div class="sound-symbol">
-            ${data.sound}
-          </div>
-
-          <button
-          class="primary-btn"
-          onclick="speakLetter('${letter}')">
-
-            🔊 Listen to ${letter}
-
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <!-- VIDEO -->
-
-      <div class="detail-box">
-
-        <h4>
-          🎬 Phonics Music / Video
-        </h4>
-
-
-        <div class="video-box">
-
-          <iframe
-          class="video-frame"
-          src="https://www.youtube.com/embed/wDmDWi-JaAc"
-          title="Phonics learning video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-          </iframe>
-
-
-          <div class="video-note">
-
-            🎵 The video link you provided is placed
-            directly inside the letter lesson.
-            Later, this can be replaced with individual
-            audio files for A, B, C and so on.
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- POEM -->
-
-      <div class="detail-box">
-
-        <h4>
-          🎵 ${letter} Rhyme
-        </h4>
-
-
-        <div class="poem">
-          ${data.poem}
-        </div>
-
-
-        <button
-        class="action-btn pink"
-        style="margin-top:12px;"
-        onclick="speakText(letters['${letter}'].poem)">
-
-          ▶ Play Rhyme
-
-        </button>
-
-      </div>
-
-
-      <!-- STORY -->
-
-      <div class="detail-box">
-
-        <h4>
-          📖 ${letter} Story
-        </h4>
-
-
-        <div class="story">
-          ${data.story}
-        </div>
-
-
-        <button
-        class="action-btn green"
-        style="margin-top:12px;"
-        onclick="speakText(letters['${letter}'].story)">
-
-          🔊 Listen to Story
-
-        </button>
-
-      </div>
-
-
-      <!-- TRACING -->
-
-      <div class="detail-box">
-
-        <h4>
-          ✏️ Trace the Letter
-        </h4>
-
-
-        <div class="trace-wrap">
-
-
-          <div class="trace-card">
-
-            <h5>
-              Capital ${letter}
-            </h5>
-
-            <canvas
-            class="trace-canvas"
-            id="traceCapital"
-            width="600"
-            height="230">
-            </canvas>
-
-            <button
-            class="clear-trace"
-            onclick="clearCanvas('traceCapital')">
-
-              Clear
-
-            </button>
-
-          </div>
-
-
-          <div class="trace-card">
-
-            <h5>
-              Small ${letter.toLowerCase()}
-            </h5>
-
-            <canvas
-            class="trace-canvas"
-            id="traceSmall"
-            width="600"
-            height="230">
-            </canvas>
-
-            <button
-            class="clear-trace"
-            onclick="clearCanvas('traceSmall')">
-
-              Clear
-
-            </button>
-
-          </div>
-
-
-        </div>
-
-
-        <p style="margin-top:12px;font-size:12px;">
-
-          Trace with your finger, mouse or stylus.
-
-        </p>
-
-      </div>
-
-
-      <!-- ACTIVITIES -->
-
-      <div class="detail-box">
-
-        <h4>
-          🧩 ${letter} Sound Activities
-        </h4>
-
-
-        <div class="activity-list">
-
-          ${questions}
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-    <div style="text-align:center;margin-top:25px;">
-
-      <button
-      class="secondary-btn"
-      onclick="closeLetterDetail()">
-
-        ↑ Back to A–Z
-
-      </button>
-
-    </div>
-
-
-  </div>
-
-  `;
-
-
-  detail.classList.add("active");
-
-
-  setTimeout(()=>{
-
-    setupCanvas(
-      document.getElementById("traceCapital"),
-      letter
-    );
-
-
-    setupCanvas(
-      document.getElementById("traceSmall"),
-      letter.toLowerCase()
-    );
-
-
-    detail.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
     });
 
-  },50);
 
-}
+    /* Close mobile menu after clicking a link */
+    document.querySelectorAll(".nav-links a").forEach(function(link){
 
+      link.addEventListener("click", function(){
 
-/* =====================================================
-   SPEECH
-===================================================== */
+        navLinks.classList.remove("show");
 
-function speakText(text){
+      });
 
-  if(!("speechSynthesis" in window)){
+    });
 
-    alert(
-      "Your browser does not support speech playback."
-    );
-
-    return;
-
-  }
-
-
-  speechSynthesis.cancel();
-
-
-  const utterance=
-  new SpeechSynthesisUtterance(text);
-
-
-  utterance.lang="en-US";
-  utterance.rate=.78;
-  utterance.pitch=1.05;
-
-
-  speechSynthesis.speak(utterance);
-
-}
-
-
-/* =====================================================
-   SPEAK INDIVIDUAL WORD
-===================================================== */
-
-function speakWord(word){
-
-  speakText(word);
-
-}
-
-
-/* =====================================================
-   SPEAK LETTER + KEYWORD
-===================================================== */
-
-function speakLetter(letter){
-
-  const data=letters[letter];
-
-  speakText(
-    `${letter}. ${data.word}.`
-  );
-
-}
-
-
-/* =====================================================
-   PROGRESS
-===================================================== */
-
-function updateProgress(){
-
-  const count=
-  document.getElementById("progressCount");
-
-  const bar=
-  document.getElementById("progressBar");
-
-
-  if(!count || !bar) return;
-
-
-  const total=
-  Object.keys(letters).length;
-
-
-  const current=
-  exploredLetters.size;
-
-
-  count.textContent=current;
-
-
-  bar.style.width=
-  `${current/total*100}%`;
-
-}
-
-
-/* =====================================================
-   ANSWERS
-===================================================== */
-
-function checkAnswer(
-  button,
-  selected,
-  correct
-){
-
-  const activity=
-  button.closest(".activity");
-
-
-  const message=
-  activity.querySelector(".answer-msg");
-
-
-  const all=
-  activity.querySelectorAll(".option");
-
-
-  all.forEach(btn=>{
-    btn.classList.remove(
-      "correct",
-      "wrong"
-    );
-  });
-
-
-  if(selected===correct){
-
-    button.classList.add("correct");
-
-    message.textContent=
-    "🎉 Correct! Great job!";
-
-    message.style.color=
-    "#267c49";
-
-
-    speakText("Correct! Great job!");
-
-  }else{
-
-    button.classList.add("wrong");
-
-    message.textContent=
-    "💡 Try again!";
-
-    message.style.color=
-    "#a83a55";
-
-  }
-
-}
-
-
-/* =====================================================
-   CLOSE LETTER
-===================================================== */
-
-function closeLetterDetail(){
-
-  const detail=
-  document.getElementById("detailArea");
-
-
-  detail.classList.remove("active");
-
-  detail.innerHTML="";
-
-
-  document
-  .querySelector(".alphabet-area")
-  .scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-}
-
-
-/* =====================================================
-   TRACING
-===================================================== */
-
-function setupCanvas(canvas,letter){
-
-  if(!canvas) return;
-
-
-  const ctx=
-  canvas.getContext("2d");
-
-
-  function drawGuide(){
-
-    ctx.clearRect(
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-
-
-    ctx.save();
-
-
-    ctx.globalAlpha=.12;
-
-    ctx.fillStyle="#7357d9";
-
-    ctx.font="bold 185px Arial";
-
-    ctx.textAlign="center";
-
-    ctx.textBaseline="middle";
-
-
-    ctx.fillText(
-      letter,
-      canvas.width/2,
-      canvas.height/2+5
-    );
-
-
-    ctx.restore();
-
-  }
-
-
-  drawGuide();
-
-
-  let drawing=false;
-
-
-  function getPosition(event){
-
-    const rect=
-    canvas.getBoundingClientRect();
-
-
-    return {
-
-      x:
-      (event.clientX-rect.left)
-      *(canvas.width/rect.width),
-
-      y:
-      (event.clientY-rect.top)
-      *(canvas.height/rect.height)
-
-    };
-
-  }
-
-
-  canvas.addEventListener(
-    "pointerdown",
-    event=>{
-
-      event.preventDefault();
-
-      drawing=true;
-
-      canvas.setPointerCapture(
-        event.pointerId
-      );
-
-
-      const p=
-      getPosition(event);
-
-
-      ctx.beginPath();
-
-      ctx.moveTo(
-        p.x,
-        p.y
-      );
-
-    }
-  );
-
-
-  canvas.addEventListener(
-    "pointermove",
-    event=>{
-
-      if(!drawing) return;
-
-      event.preventDefault();
-
-
-      const p=
-      getPosition(event);
-
-
-      ctx.lineWidth=7;
-
-      ctx.lineCap="round";
-
-      ctx.lineJoin="round";
-
-      ctx.strokeStyle="#ff76ad";
-
-
-      ctx.lineTo(
-        p.x,
-        p.y
-      );
-
-
-      ctx.stroke();
-
-    }
-  );
-
-
-  function stopDrawing(event){
-
-    drawing=false;
-
-
-    try{
-
-      canvas.releasePointerCapture(
-        event.pointerId
-      );
-
-    }catch(error){}
-
-  }
-
-
-  canvas.addEventListener(
-    "pointerup",
-    stopDrawing
-  );
-
-
-  canvas.addEventListener(
-    "pointercancel",
-    stopDrawing
-  );
-
-}
-
-
-/* =====================================================
-   CLEAR TRACE
-===================================================== */
-
-function clearCanvas(id){
-
-  const canvas=
-  document.getElementById(id);
-
-
-  if(!canvas) return;
-
-
-  const ctx=
-  canvas.getContext("2d");
-
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-}
-
-
-/* =====================================================
-   PAGE LOAD
-===================================================== */
-
-window.addEventListener(
-  "load",
-  ()=>{
-
-    /*
-      Main page remains clean.
-      User opens a level only after tapping.
-    */
-
-  }
-);
-
-</script>
+  </script>
 
 </body>
-                </html>
+  </html>
