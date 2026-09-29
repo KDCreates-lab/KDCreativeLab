@@ -1,1779 +1,1421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Capital Letters | KD CreativeLab</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f7f9fc;
-  color:#182033;
-  line-height:1.6;
-}
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #e7eaf0;
-}
-
-.nav{
-  max-width:1200px;
-  margin:auto;
-  padding:14px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.logo{
-  font-size:24px;
-  font-weight:800;
-  text-decoration:none;
-  color:#182033;
-}
-
-.logo span{
-  color:#7c5cff;
-}
-
-.back-btn{
-  text-decoration:none;
-  background:#182033;
-  color:white;
-  padding:9px 15px;
-  border-radius:10px;
-  font-size:14px;
-}
-
-.hero{
-  padding:55px 20px 35px;
-  text-align:center;
-  background:
-    radial-gradient(circle at 20% 20%,#ffe7f2,transparent 35%),
-    radial-gradient(circle at 80% 20%,#e4f0ff,transparent 35%),
-    linear-gradient(135deg,#fff,#f4f7ff);
-}
-
-.badge{
-  display:inline-block;
-  background:#eee9ff;
-  color:#6545d8;
-  padding:7px 14px;
-  border-radius:50px;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:15px;
-}
-
-.hero h1{
-  font-size:clamp(32px,6vw,58px);
-  line-height:1.1;
-  margin-bottom:12px;
-}
-
-.hero p{
-  max-width:720px;
-  margin:auto;
-  color:#667085;
-}
-
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:30px 20px 70px;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.section-title h2{
-  font-size:28px;
-}
-
-.section-title p{
-  color:#667085;
-}
-
-.letter-nav{
-  display:grid;
-  grid-template-columns:repeat(13,1fr);
-  gap:8px;
-  margin:25px auto 35px;
-  max-width:900px;
-}
-
-.letter-nav button{
-  border:1px solid #dfe4ee;
-  background:white;
-  padding:11px 5px;
-  border-radius:10px;
-  font-size:17px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.letter-nav button:hover{
-  transform:translateY(-2px);
-  border-color:#7c5cff;
-}
-
-.letter-nav button.active{
-  background:#7c5cff;
-  color:white;
-  border-color:#7c5cff;
-}
-
-.progress-wrap{
-  max-width:900px;
-  margin:0 auto 30px;
-}
-
-.progress-top{
-  display:flex;
-  justify-content:space-between;
-  font-size:14px;
-  color:#667085;
-  margin-bottom:7px;
-}
-
-.progress{
-  height:9px;
-  background:#e7eaf0;
-  border-radius:50px;
-  overflow:hidden;
-}
-
-.progress-bar{
-  height:100%;
-  width:3.84%;
-  background:#7c5cff;
-  transition:.3s;
-}
-
-.lesson{
-  background:white;
-  border:1px solid #e7eaf0;
-  border-radius:25px;
-  padding:25px;
-  box-shadow:0 10px 35px rgba(25,35,60,.06);
-}
-
-.letter-head{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.big-letter{
-  width:145px;
-  height:145px;
-  margin:0 auto 15px;
-  border-radius:35px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#7c5cff,#9c85ff);
-  color:white;
-  font-size:95px;
-  font-weight:900;
-  box-shadow:0 18px 35px rgba(124,92,255,.25);
-}
-
-.sound{
-  display:inline-block;
-  background:#eef8ff;
-  color:#1769aa;
-  border-radius:50px;
-  padding:7px 16px;
-  font-weight:700;
-  margin-top:8px;
-}
-
-.lesson-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.card{
-  border:1px solid #e8ebf2;
-  border-radius:20px;
-  padding:20px;
-  background:#fbfcff;
-}
-
-.card h3{
-  margin-bottom:12px;
-  font-size:20px;
-}
-
-.words{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.word-card{
-  background:white;
-  border:1px solid #e4e8ef;
-  border-radius:16px;
-  padding:14px 8px;
-  text-align:center;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.word-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 20px rgba(0,0,0,.07);
-}
-
-.word-emoji{
-  font-size:40px;
-  display:block;
-  margin-bottom:5px;
-}
-
-.word-name{
-  font-weight:800;
-}
-
-.word-btn{
-  margin-top:8px;
-  border:0;
-  background:#eee9ff;
-  color:#6046cf;
-  padding:5px 9px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:12px;
-  font-weight:700;
-}
-
-.audio-box{
-  background:linear-gradient(135deg,#fff4df,#fff9ef);
-  border:1px solid #f5dfb5;
-}
-
-.audio-box p{
-  color:#6d5a36;
-  font-size:14px;
-  margin-bottom:13px;
-}
-
-.audio-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.audio-btn,
-.resource-btn{
-  display:inline-block;
-  text-decoration:none;
-  border:0;
-  cursor:pointer;
-  padding:11px 16px;
-  border-radius:11px;
-  font-weight:800;
-  font-size:14px;
-}
-
-.audio-btn{
-  background:#f2a900;
-  color:white;
-}
-
-.resource-btn{
-  background:#182033;
-  color:white;
-}
-
-.audio-note{
-  margin-top:12px;
-  font-size:12px;
-  color:#7b6a4b;
-}
-
-.story{
-  background:#f4f1ff;
-}
-
-.story p{
-  color:#40385c;
-}
-
-.trace-area{
-  text-align:center;
-}
-
-.trace-board{
-  position:relative;
-  width:100%;
-  max-width:420px;
-  height:260px;
-  margin:15px auto;
-  background:white;
-  border:2px dashed #bfc5d4;
-  border-radius:18px;
-  overflow:hidden;
-}
-
-.guide-letter{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:205px;
-  font-weight:900;
-  color:#dfe3ec;
-  user-select:none;
-  pointer-events:none;
-}
-
-#traceCanvas{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  touch-action:none;
-  cursor:crosshair;
-}
-
-.trace-controls{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.small-btn{
-  border:0;
-  background:#182033;
-  color:white;
-  padding:9px 14px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:700;
-}
-
-.practice-options{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-
-.option{
-  border:1px solid #dfe4ee;
-  background:white;
-  border-radius:12px;
-  padding:12px;
-  cursor:pointer;
-  font-weight:800;
-  transition:.2s;
-}
-
-.option:hover{
-  background:#f3f0ff;
-}
-
-.feedback{
-  margin-top:12px;
-  min-height:25px;
-  font-weight:800;
-  text-align:center;
-}
-
-.blend{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:12px 0;
-}
-
-.sound-box{
-  min-width:55px;
-  padding:10px 13px;
-  border-radius:10px;
-  background:#eaf5ff;
-  color:#1769aa;
-  font-weight:900;
-  text-align:center;
-}
-
-.arrow{
-  font-size:22px;
-  color:#777;
-}
-
-.result-message{
-  text-align:center;
-  padding:15px;
-  background:#eefbf2;
-  border-radius:14px;
-  color:#21683b;
-  font-weight:700;
-}
-
-.navigation{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  margin-top:25px;
-}
-
-.nav-btn{
-  flex:1;
-  border:0;
-  padding:13px;
-  border-radius:12px;
-  background:#182033;
-  color:white;
-  cursor:pointer;
-  font-weight:800;
-}
-
-.nav-btn:disabled{
-  opacity:.35;
-  cursor:not-allowed;
-}
-
-footer{
-  background:#182033;
-  color:#cbd1df;
-  text-align:center;
-  padding:30px 20px;
-}
-
-footer strong{
-  color:white;
-}
-
-@media(max-width:800px){
-  .letter-nav{
-    grid-template-columns:repeat(7,1fr);
-  }
-
-  .lesson-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:520px){
-  .nav{
-    padding:12px 14px;
-  }
-
-  .logo{
-    font-size:20px;
-  }
-
-  .back-btn{
-    font-size:12px;
-    padding:8px 10px;
-  }
-
-  .hero{
-    padding:40px 16px 30px;
-  }
-
-  .container{
-    padding:22px 12px 50px;
-  }
-
-  .lesson{
-    padding:15px;
-    border-radius:18px;
-  }
-
-  .big-letter{
-    width:120px;
-    height:120px;
-    font-size:78px;
-  }
-
-  .words{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .practice-options{
-    grid-template-columns:1fr;
-  }
-
-  .trace-board{
-    height:220px;
-  }
-
-  .guide-letter{
-    font-size:170px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Capital Letters | Kids Creativity Lab</title>
+
+  <meta
+    name="description"
+    content="Learn capital letters A to Z with pictures, sounds and phonics at Kids Creativity Lab."
+  >
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background:#fbf9ff;
+      color:#302b46;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(12px);
+
+      border-bottom:1px solid #eee7f7;
+
+      box-shadow:
+        0 5px 18px rgba(70,50,105,.07);
+    }
+
+    .nav{
+      width:min(1180px,94%);
+      min-height:76px;
+      margin:auto;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+    }
+
+    .brand-icon{
+      width:51px;
+      height:51px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:17px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #a47cff,
+          #7652d4
+        );
+
+      font-size:27px;
+
+      box-shadow:
+        0 8px 18px rgba(106,75,190,.22);
+    }
+
+    .brand-title{
+      color:#50358e;
+      font-size:21px;
+      font-weight:950;
+      line-height:1.1;
+    }
+
+    .brand-subtitle{
+      color:#938aa8;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:1px;
+      margin-top:3px;
+    }
+
+    .back-button{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+
+      padding:10px 15px;
+
+      border-radius:14px;
+
+      background:#f0eaff;
+      color:#5e4199;
+
+      font-size:13px;
+      font-weight:900;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+
+      padding:58px 0 62px;
+
+      text-align:center;
+
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          #fff0d5 0,
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 90% 20%,
+          #e9e0ff 0,
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #fffdf9,
+          #f6f1ff
+        );
+    }
+
+    .hero-inner{
+      width:min(900px,92%);
+      margin:auto;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+
+      padding:8px 16px;
+
+      border-radius:30px;
+
+      background:#fff;
+
+      border:1px solid #e8def8;
+
+      color:#7653b2;
+
+      font-size:12px;
+      font-weight:950;
+
+      margin-bottom:17px;
+
+      box-shadow:
+        0 6px 17px rgba(80,55,115,.07);
+    }
+
+    .hero h1{
+      color:#4d3488;
+
+      font-size:
+        clamp(40px,6vw,62px);
+
+      line-height:1.05;
+
+      font-weight:950;
+
+      letter-spacing:-1.5px;
+
+      margin-bottom:13px;
+    }
+
+    .hero h1 span{
+      color:#ef8854;
+    }
+
+    .hero p{
+      max-width:690px;
+      margin:auto;
+
+      color:#716a80;
+
+      font-size:16px;
+    }
+
+    /* =========================
+       LETTER SECTION
+    ========================= */
+
+    .letters-section{
+      width:min(1180px,92%);
+      margin:auto;
+
+      padding:55px 0 70px;
+    }
+
+    .section-heading{
+      text-align:center;
+      margin-bottom:32px;
+    }
+
+    .section-heading h2{
+      color:#4d3a7d;
+      font-size:30px;
+      margin-bottom:5px;
+    }
+
+    .section-heading p{
+      color:#7c748a;
+      font-size:14px;
+    }
+
+    /* =========================
+       LETTER GRID
+    ========================= */
+
+    .letter-grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+      gap:18px;
+    }
+
+    .letter-card{
+      position:relative;
+
+      min-height:245px;
+
+      background:#fff;
+
+      border:2px solid #eee7f7;
+
+      border-radius:25px;
+
+      padding:20px 16px;
+
+      text-align:center;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+
+      box-shadow:
+        0 9px 24px rgba(70,52,105,.065);
+
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+
+      overflow:hidden;
+
+      cursor:pointer;
+    }
+
+    .letter-card::before{
+      content:"";
+
+      position:absolute;
+
+      width:100px;
+      height:100px;
+
+      border-radius:50%;
+
+      top:-55px;
+      right:-40px;
+
+      background:#f3edff;
+
+      pointer-events:none;
+    }
+
+    .letter-card:hover{
+      transform:translateY(-7px);
+
+      border-color:#cfc0f2;
+
+      box-shadow:
+        0 17px 34px rgba(70,52,105,.12);
+    }
+
+    .letter{
+      position:relative;
+      z-index:2;
+
+      width:82px;
+      height:82px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:25px;
+
+      font-size:55px;
+      line-height:1;
+
+      font-weight:950;
+
+      color:#fff;
+
+      margin-bottom:11px;
+
+      box-shadow:
+        0 9px 17px rgba(80,60,110,.12);
+    }
+
+    .picture{
+      font-size:45px;
+      line-height:1;
+
+      min-height:51px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      margin-bottom:7px;
+    }
+
+    .word{
+      color:#403753;
+
+      font-size:16px;
+
+      font-weight:950;
+
+      margin-bottom:2px;
+    }
+
+    .sound{
+      color:#82798f;
+
+      font-size:12px;
+
+      font-weight:800;
+
+      margin-bottom:13px;
+    }
+
+    .open-letter{
+      margin-top:auto;
+
+      width:100%;
+
+      min-height:39px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:12px;
+
+      background:#f1ebff;
+
+      color:#6544a3;
+
+      font-size:12px;
+
+      font-weight:950;
+    }
+
+    /* =========================
+       LETTER COLOURS
+    ========================= */
+
+    .a .letter{background:#ef8b68;}
+    .b .letter{background:#65a9e8;}
+    .c .letter{background:#7d69d5;}
+    .d .letter{background:#e9799c;}
+    .e .letter{background:#e5ad55;}
+    .f .letter{background:#69b99a;}
+    .g .letter{background:#e77958;}
+    .h .letter{background:#718fd2;}
+    .i .letter{background:#d67dc2;}
+    .j .letter{background:#68b8c4;}
+    .k .letter{background:#e28d55;}
+    .l .letter{background:#75aa68;}
+    .m .letter{background:#9a76d3;}
+    .n .letter{background:#5da5d8;}
+    .o .letter{background:#e98262;}
+    .p .letter{background:#d9769c;}
+    .q .letter{background:#7e8fc9;}
+    .r .letter{background:#e09a57;}
+    .s .letter{background:#62aa7d;}
+    .t .letter{background:#6c82ca;}
+    .u .letter{background:#c982c4;}
+    .v .letter{background:#e17b59;}
+    .w .letter{background:#63a7a4;}
+    .x .letter{background:#8b76c8;}
+    .y .letter{background:#e4a35d;}
+    .z .letter{background:#d56e83;}
+
+    /* =========================
+       INFO BOX
+    ========================= */
+
+    .info-box{
+      margin:0 auto 55px;
+
+      width:min(900px,92%);
+
+      background:#fff;
+
+      border:2px solid #ece5f8;
+
+      border-radius:23px;
+
+      padding:23px 25px;
+
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+
+      box-shadow:
+        0 8px 22px rgba(70,52,105,.05);
+    }
+
+    .info-icon{
+      width:48px;
+      height:48px;
+
+      flex-shrink:0;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:15px;
+
+      background:#fff0d8;
+
+      font-size:25px;
+    }
+
+    .info-box h3{
+      color:#503d79;
+      font-size:17px;
+      margin-bottom:3px;
+    }
+
+    .info-box p{
+      color:#777083;
+      font-size:13px;
+    }
+
+    /* =========================
+       BOTTOM NAV
+    ========================= */
+
+    .bottom-nav{
+      width:min(900px,92%);
+      margin:0 auto 65px;
+
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+    }
+
+    .bottom-nav a{
+      min-height:46px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:10px 18px;
+
+      border-radius:15px;
+
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .back{
+      background:#eeeaf5;
+      color:#625a71;
+    }
+
+    .next{
+      background:#6944bc;
+      color:#fff;
+
+      box-shadow:
+        0 7px 15px rgba(105,68,188,.2);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      background:#302647;
+
+      color:#fff;
+
+      padding:35px 0 23px;
+    }
+
+    .footer-inner{
+      width:min(1100px,92%);
+      margin:auto;
+
+      display:flex;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .footer-brand{
+      font-size:20px;
+      font-weight:950;
+      margin-bottom:5px;
+    }
+
+    .footer-text{
+      color:#bdb5cf;
+      font-size:12px;
+      max-width:430px;
+    }
+
+    .footer-right{
+      color:#bdb5cf;
+      font-size:12px;
+      text-align:right;
+    }
+
+    .copyright{
+      width:min(1100px,92%);
+      margin:23px auto 0;
+
+      padding-top:15px;
+
+      border-top:
+        1px solid rgba(255,255,255,.1);
+
+      color:#9991aa;
+
+      text-align:center;
+
+      font-size:11px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:950px){
+
+      .letter-grid{
+        grid-template-columns:
+          repeat(3,minmax(0,1fr));
+      }
+    }
+
+    @media(max-width:650px){
+
+      .nav{
+        min-height:68px;
+      }
+
+      .brand-icon{
+        width:45px;
+        height:45px;
+        font-size:24px;
+        border-radius:14px;
+      }
+
+      .brand-title{
+        font-size:18px;
+      }
+
+      .brand-subtitle{
+        display:none;
+      }
+
+      .back-button{
+        font-size:12px;
+        padding:9px 11px;
+      }
+
+      .hero{
+        padding:48px 0 52px;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:14px;
+      }
+
+      .letter-grid{
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+
+        gap:14px;
+      }
+
+      .letter-card{
+        min-height:230px;
+        padding:17px 12px;
+      }
+
+      .letter{
+        width:70px;
+        height:70px;
+        font-size:47px;
+      }
+
+      .picture{
+        font-size:40px;
+      }
+
+      .word{
+        font-size:14px;
+      }
+
+      .sound{
+        font-size:11px;
+      }
+
+      .info-box{
+        padding:19px;
+      }
+
+      .bottom-nav{
+        flex-direction:column;
+      }
+
+      .bottom-nav a{
+        width:100%;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+      }
+
+      .footer-right{
+        text-align:left;
+      }
+    }
+
+    @media(max-width:360px){
+
+      .letter-grid{
+        gap:10px;
+      }
+
+      .letter-card{
+        padding:14px 8px;
+      }
+
+      .letter{
+        width:62px;
+        height:62px;
+        font-size:42px;
+      }
+
+      .picture{
+        font-size:35px;
+      }
+
+      .word{
+        font-size:13px;
+      }
+    }
+
+    a:focus-visible{
+      outline:3px solid #f1b35d;
+      outline-offset:3px;
+    }
+  </style>
 </head>
+
 
 <body>
 
-<header>
-  <nav class="nav">
-    <a href="index.html" class="logo">KD<span>CreativeLab</span></a>
-    <a href="beginner.html" class="back-btn">← Beginner</a>
-  </nav>
-</header>
 
-<section class="hero">
-  <span class="badge">🔤 Capital Letters</span>
-  <h1>Learn Capital Letters</h1>
-  <p>
-    See the letter, hear the sound, learn new words,
-    trace the letter and practise.
-  </p>
-</section>
+  <!-- =====================================
+       HEADER
+  ====================================== -->
 
-<main class="container">
+  <header>
 
-  <div class="section-title">
-    <h2>A–Z Letter Journey</h2>
-    <p>Tap any letter to start learning.</p>
-  </div>
+    <div class="nav">
 
-  <div class="letter-nav" id="letterNav"></div>
+      <a href="index.html" class="brand">
 
-  <div class="progress-wrap">
-    <div class="progress-top">
-      <span id="progressText">Letter 1 of 26</span>
-      <span id="progressPercent">4%</span>
-    </div>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-  </div>
+        <div class="brand-icon">
+          📚
+        </div>
 
-  <section class="lesson">
+        <div>
 
-    <div class="letter-head">
-      <div class="big-letter" id="bigLetter">A</div>
-      <h2 id="letterTitle">Letter A</h2>
-      <div class="sound" id="soundText">Sound: /æ/</div>
+          <div class="brand-title">
+            Kids Creativity Lab
+          </div>
+
+          <div class="brand-subtitle">
+            LEARN • CREATE • GROW
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <a href="beginner.html" class="back-button">
+        ← Beginning Level
+      </a>
+
     </div>
 
-    <div class="lesson-grid">
+  </header>
 
-      <!-- WORDS -->
-      <div class="card">
-        <h3>🖼️ Six Picture Words</h3>
-        <p style="color:#667085;font-size:14px;margin-bottom:14px;">
-          Tap a word to hear the complete English word.
-        </p>
 
-        <div class="words" id="wordList"></div>
-      </div>
+  <!-- =====================================
+       HERO
+  ====================================== -->
 
-      <!-- JOLLY AUDIO -->
-      <div class="card audio-box">
-        <h3>🎵 Jolly Phonics Song</h3>
+  <main>
 
-        <p id="audioDescription">
-          Listen to the Jolly Phonics song for this sound.
-        </p>
+    <section class="hero">
 
-        <div class="audio-actions">
+      <div class="hero-inner">
 
-          <a
-            id="jollyAudioLink"
-            class="audio-btn"
-            href="#"
-            target="_blank"
-            rel="noopener"
-          >
-            ▶ Listen to Jolly Song
-          </a>
-
-          <a
-            class="resource-btn"
-            href="https://jollylearning.com/en-us/our-programmes/jolly-phonics/jolly-songs"
-            target="_blank"
-            rel="noopener"
-          >
-            🎵 Official Jolly Songs
-          </a>
-
+        <div class="badge">
+          🔤 BEGINNING LEVEL • MODULE 01
         </div>
 
-        <div class="audio-note" id="audioNote">
-          Official Jolly Learning audio resource.
-        </div>
-      </div>
+        <h1>
+          Capital <span>Letters</span>
+        </h1>
 
-      <!-- STORY -->
-      <div class="card story">
-        <h3>📖 Letter Story</h3>
-        <p id="storyText"></p>
-
-        <button class="small-btn" onclick="readStory()">
-          🔊 Hear Story
-        </button>
-      </div>
-
-      <!-- BLENDING -->
-      <div class="card">
-        <h3>🔤 Blend & Read</h3>
-        <p style="color:#667085;font-size:14px;">
-          Put sounds together to read a word.
+        <p>
+          Meet the letters A–Z through colourful pictures,
+          letter sounds and playful learning.
         </p>
 
-        <div class="blend" id="blendArea"></div>
-
-        <div style="text-align:center;">
-          <strong id="blendWord"></strong>
-        </div>
       </div>
 
-      <!-- TRACING -->
-      <div class="card trace-area">
-        <h3>✏️ Trace the Letter</h3>
+    </section>
 
-        <p style="color:#667085;font-size:14px;">
-          Follow the light letter guide.
-        </p>
 
-        <div class="trace-board">
-          <div class="guide-letter" id="guideLetter">A</div>
-          <canvas id="traceCanvas"></canvas>
-        </div>
+    <!-- =====================================
+         INFORMATION
+    ====================================== -->
 
-        <div class="trace-controls">
-          <button class="small-btn" onclick="clearTrace()">
-            Clear
-          </button>
-        </div>
+    <div class="info-box">
+
+      <div class="info-icon">
+        💡
       </div>
 
-      <!-- BEGINNING SOUND -->
-      <div class="card">
-        <h3>👂 Beginning Sound</h3>
+      <div>
 
-        <p id="questionText">
-          Which word begins with this sound?
+        <h3>
+          How to learn
+        </h3>
+
+        <p>
+          Tap any letter card to enter that letter's
+          dedicated learning page. There you will learn
+          its sound, picture words, story, rhyme, tracing
+          and practice activities.
         </p>
 
-        <div class="practice-options" id="practiceOptions"></div>
-
-        <div class="feedback" id="feedback"></div>
-      </div>
-
-      <!-- FIND LETTER -->
-      <div class="card">
-        <h3>🎯 Find the Letter</h3>
-
-        <p style="color:#667085;font-size:14px;">
-          Tap the correct capital letter.
-        </p>
-
-        <div class="practice-options" id="findOptions"></div>
-
-        <div class="feedback" id="findFeedback"></div>
       </div>
 
     </div>
 
-    <div class="navigation">
-      <button class="nav-btn" id="prevBtn" onclick="previousLetter()">
-        ← Previous
-      </button>
 
-      <button class="nav-btn" id="nextBtn" onclick="nextLetter()">
-        Next →
-      </button>
+    <!-- =====================================
+         A-Z LETTERS
+    ====================================== -->
+
+    <section class="letters-section">
+
+      <div class="section-heading">
+
+        <h2>
+          Explore A–Z
+        </h2>
+
+        <p>
+          Choose a letter to begin learning.
+        </p>
+
+      </div>
+
+
+      <div class="letter-grid">
+
+
+        <!-- A -->
+        <a href="letter-a.html" class="letter-card a">
+
+          <div class="letter">A</div>
+
+          <div class="picture">🍎</div>
+
+          <div class="word">Apple</div>
+
+          <div class="sound">
+            Sound: /æ/
+          </div>
+
+          <div class="open-letter">
+            Open A →
+          </div>
+
+        </a>
+
+
+        <!-- B -->
+        <a href="letter-b.html" class="letter-card b">
+
+          <div class="letter">B</div>
+
+          <div class="picture">⚽</div>
+
+          <div class="word">Ball</div>
+
+          <div class="sound">
+            Sound: /b/
+          </div>
+
+          <div class="open-letter">
+            Open B →
+          </div>
+
+        </a>
+
+
+        <!-- C -->
+        <a href="letter-c.html" class="letter-card c">
+
+          <div class="letter">C</div>
+
+          <div class="picture">🐱</div>
+
+          <div class="word">Cat</div>
+
+          <div class="sound">
+            Sound: /k/
+          </div>
+
+          <div class="open-letter">
+            Open C →
+          </div>
+
+        </a>
+
+
+        <!-- D -->
+        <a href="letter-d.html" class="letter-card d">
+
+          <div class="letter">D</div>
+
+          <div class="picture">🐶</div>
+
+          <div class="word">Dog</div>
+
+          <div class="sound">
+            Sound: /d/
+          </div>
+
+          <div class="open-letter">
+            Open D →
+          </div>
+
+        </a>
+
+
+        <!-- E -->
+        <a href="letter-e.html" class="letter-card e">
+
+          <div class="letter">E</div>
+
+          <div class="picture">🥚</div>
+
+          <div class="word">Egg</div>
+
+          <div class="sound">
+            Sound: /ɛ/
+          </div>
+
+          <div class="open-letter">
+            Open E →
+          </div>
+
+        </a>
+
+
+        <!-- F -->
+        <a href="letter-f.html" class="letter-card f">
+
+          <div class="letter">F</div>
+
+          <div class="picture">🐟</div>
+
+          <div class="word">Fish</div>
+
+          <div class="sound">
+            Sound: /f/
+          </div>
+
+          <div class="open-letter">
+            Open F →
+          </div>
+
+        </a>
+
+
+        <!-- G -->
+        <a href="letter-g.html" class="letter-card g">
+
+          <div class="letter">G</div>
+
+          <div class="picture">🐐</div>
+
+          <div class="word">Goat</div>
+
+          <div class="sound">
+            Sound: /g/
+          </div>
+
+          <div class="open-letter">
+            Open G →
+          </div>
+
+        </a>
+
+
+        <!-- H -->
+        <a href="letter-h.html" class="letter-card h">
+
+          <div class="letter">H</div>
+
+          <div class="picture">🎩</div>
+
+          <div class="word">Hat</div>
+
+          <div class="sound">
+            Sound: /h/
+          </div>
+
+          <div class="open-letter">
+            Open H →
+          </div>
+
+        </a>
+
+
+        <!-- I -->
+        <a href="letter-i.html" class="letter-card i">
+
+          <div class="letter">I</div>
+
+          <div class="picture">🏠</div>
+
+          <div class="word">Igloo</div>
+
+          <div class="sound">
+            Sound: /ɪ/
+          </div>
+
+          <div class="open-letter">
+            Open I →
+          </div>
+
+        </a>
+
+
+        <!-- J -->
+        <a href="letter-j.html" class="letter-card j">
+
+          <div class="letter">J</div>
+
+          <div class="picture">🫙</div>
+
+          <div class="word">Jam</div>
+
+          <div class="sound">
+            Sound: /dʒ/
+          </div>
+
+          <div class="open-letter">
+            Open J →
+          </div>
+
+        </a>
+
+
+        <!-- K -->
+        <a href="letter-k.html" class="letter-card k">
+
+          <div class="letter">K</div>
+
+          <div class="picture">🪁</div>
+
+          <div class="word">Kite</div>
+
+          <div class="sound">
+            Sound: /k/
+          </div>
+
+          <div class="open-letter">
+            Open K →
+          </div>
+
+        </a>
+
+
+        <!-- L -->
+        <a href="letter-l.html" class="letter-card l">
+
+          <div class="letter">L</div>
+
+          <div class="picture">🦁</div>
+
+          <div class="word">Lion</div>
+
+          <div class="sound">
+            Sound: /l/
+          </div>
+
+          <div class="open-letter">
+            Open L →
+          </div>
+
+        </a>
+
+
+        <!-- M -->
+        <a href="letter-m.html" class="letter-card m">
+
+          <div class="letter">M</div>
+
+          <div class="picture">🌙</div>
+
+          <div class="word">Moon</div>
+
+          <div class="sound">
+            Sound: /m/
+          </div>
+
+          <div class="open-letter">
+            Open M →
+          </div>
+
+        </a>
+
+
+        <!-- N -->
+        <a href="letter-n.html" class="letter-card n">
+
+          <div class="letter">N</div>
+
+          <div class="picture">🪺</div>
+
+          <div class="word">Nest</div>
+
+          <div class="sound">
+            Sound: /n/
+          </div>
+
+          <div class="open-letter">
+            Open N →
+          </div>
+
+        </a>
+
+
+        <!-- O -->
+        <a href="letter-o.html" class="letter-card o">
+
+          <div class="letter">O</div>
+
+          <div class="picture">🐙</div>
+
+          <div class="word">Octopus</div>
+
+          <div class="sound">
+            Short O
+          </div>
+
+          <div class="open-letter">
+            Open O →
+          </div>
+
+        </a>
+
+
+        <!-- P -->
+        <a href="letter-p.html" class="letter-card p">
+
+          <div class="letter">P</div>
+
+          <div class="picture">🐷</div>
+
+          <div class="word">Pig</div>
+
+          <div class="sound">
+            Sound: /p/
+          </div>
+
+          <div class="open-letter">
+            Open P →
+          </div>
+
+        </a>
+
+
+        <!-- Q -->
+        <a href="letter-q.html" class="letter-card q">
+
+          <div class="letter">Q</div>
+
+          <div class="picture">👑</div>
+
+          <div class="word">Queen</div>
+
+          <div class="sound">
+            Sound: /kw/
+          </div>
+
+          <div class="open-letter">
+            Open Q →
+          </div>
+
+        </a>
+
+
+        <!-- R -->
+        <a href="letter-r.html" class="letter-card r">
+
+          <div class="letter">R</div>
+
+          <div class="picture">🐰</div>
+
+          <div class="word">Rabbit</div>
+
+          <div class="sound">
+            Sound: /r/
+          </div>
+
+          <div class="open-letter">
+            Open R →
+          </div>
+
+        </a>
+
+
+        <!-- S -->
+        <a href="letter-s.html" class="letter-card s">
+
+          <div class="letter">S</div>
+
+          <div class="picture">☀️</div>
+
+          <div class="word">Sun</div>
+
+          <div class="sound">
+            Sound: /s/
+          </div>
+
+          <div class="open-letter">
+            Open S →
+          </div>
+
+        </a>
+
+
+        <!-- T -->
+        <a href="letter-t.html" class="letter-card t">
+
+          <div class="letter">T</div>
+
+          <div class="picture">🐯</div>
+
+          <div class="word">Tiger</div>
+
+          <div class="sound">
+            Sound: /t/
+          </div>
+
+          <div class="open-letter">
+            Open T →
+          </div>
+
+        </a>
+
+
+        <!-- U -->
+        <a href="letter-u.html" class="letter-card u">
+
+          <div class="letter">U</div>
+
+          <div class="picture">☂️</div>
+
+          <div class="word">Umbrella</div>
+
+          <div class="sound">
+            Sound: /ʌ/
+          </div>
+
+          <div class="open-letter">
+            Open U →
+          </div>
+
+        </a>
+
+
+        <!-- V -->
+        <a href="letter-v.html" class="letter-card v">
+
+          <div class="letter">V</div>
+
+          <div class="picture">🚐</div>
+
+          <div class="word">Van</div>
+
+          <div class="sound">
+            Sound: /v/
+          </div>
+
+          <div class="open-letter">
+            Open V →
+          </div>
+
+        </a>
+
+
+        <!-- W -->
+        <a href="letter-w.html" class="letter-card w">
+
+          <div class="letter">W</div>
+
+          <div class="picture">🐋</div>
+
+          <div class="word">Whale</div>
+
+          <div class="sound">
+            Sound: /w/
+          </div>
+
+          <div class="open-letter">
+            Open W →
+          </div>
+
+        </a>
+
+
+        <!-- X -->
+        <a href="letter-x.html" class="letter-card x">
+
+          <div class="letter">X</div>
+
+          <div class="picture">📦</div>
+
+          <div class="word">Box</div>
+
+          <div class="sound">
+            Special: /ks/
+          </div>
+
+          <div class="open-letter">
+            Open X →
+          </div>
+
+        </a>
+
+
+        <!-- Y -->
+        <a href="letter-y.html" class="letter-card y">
+
+          <div class="letter">Y</div>
+
+          <div class="picture">🪀</div>
+
+          <div class="word">Yo-yo</div>
+
+          <div class="sound">
+            Sound: /y/
+          </div>
+
+          <div class="open-letter">
+            Open Y →
+          </div>
+
+        </a>
+
+
+        <!-- Z -->
+        <a href="letter-z.html" class="letter-card z">
+
+          <div class="letter">Z</div>
+
+          <div class="picture">🦓</div>
+
+          <div class="word">Zebra</div>
+
+          <div class="sound">
+            Sound: /z/
+          </div>
+
+          <div class="open-letter">
+            Open Z →
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         BOTTOM NAVIGATION
+    ====================================== -->
+
+    <div class="bottom-nav">
+
+      <a
+        href="beginner.html"
+        class="back">
+
+        ← Back to Beginning Level
+
+      </a>
+
+
+      <a
+        href="small-letters.html"
+        class="next">
+
+        Continue to Small Letters →
+
+      </a>
+
     </div>
 
-  </section>
+  </main>
 
-</main>
 
-<footer>
-  <strong>KD CreativeLab</strong>
-  <br>
-  Learn English. Grow with Confidence.
-</footer>
+  <!-- =====================================
+       FOOTER
+    ====================================== -->
 
-<script>
+  <footer>
 
-/* =========================================================
-   LETTER DATA
-   ========================================================= */
+    <div class="footer-inner">
 
-const letters = {
+      <div>
 
-A:{
-  sound:"/æ/",
-  words:[
-    ["Apple","🍎"],
-    ["Ant","🐜"],
-    ["Alligator","🐊"],
-    ["Arrow","🏹"],
-    ["Aeroplane","✈️"],
-    ["Astronaut","👩‍🚀"]
-  ],
-  story:
-  "Ava saw an ant near an apple. She picked up an arrow-shaped leaf and smiled at the little ant.",
-  blend:["a","t"],
-  blendWord:"at",
-  practice:["Apple","Ball","Ant"],
-  correct:"Apple"
-},
+        <div class="footer-brand">
+          📚 Kids Creativity Lab
+        </div>
 
-B:{
-  sound:"/b/",
-  words:[
-    ["Ball","⚽"],
-    ["Banana","🍌"],
-    ["Bus","🚌"],
-    ["Bear","🐻"],
-    ["Butterfly","🦋"],
-    ["Balloon","🎈"]
-  ],
-  story:
-  "Ben had a blue ball. He bounced it beside a big tree and laughed.",
-  blend:["b","a","t"],
-  blendWord:"bat",
-  practice:["Ball","Cat","Dog"],
-  correct:"Ball"
-},
+        <p class="footer-text">
+          Learn • Create • Grow — building strong foundations
+          through joyful and systematic learning.
+        </p>
 
-C:{
-  sound:"/k/",
-  words:[
-    ["Cat","🐱"],
-    ["Cake","🎂"],
-    ["Car","🚗"],
-    ["Cow","🐄"],
-    ["Cup","🥤"],
-    ["Camel","🐪"]
-  ],
-  story:
-  "Cathy saw a cat sitting beside a cup. The cat looked at her and meowed.",
-  blend:["c","a","t"],
-  blendWord:"cat",
-  practice:["Cat","Fish","Sun"],
-  correct:"Cat"
-},
+      </div>
 
-D:{
-  sound:"/d/",
-  words:[
-    ["Dog","🐶"],
-    ["Drum","🥁"],
-    ["Duck","🦆"],
-    ["Door","🚪"],
-    ["Deer","🦌"],
-    ["Dinosaur","🦖"]
-  ],
-  story:
-  "Dino the dog heard a drum. He ran to the door to see what was happening.",
-  blend:["d","o","g"],
-  blendWord:"dog",
-  practice:["Dog","Apple","Fish"],
-  correct:"Dog"
-},
 
-E:{
-  sound:"/e/",
-  words:[
-    ["Egg","🥚"],
-    ["Elephant","🐘"],
-    ["Elf","🧝"],
-    ["Elbow","💪"],
-    ["Engine","🚂"],
-    ["Exit","🚪"]
-  ],
-  story:
-  "Emma found an egg near the elephant picture. She carefully put it in a basket.",
-  blend:["e","g","g"],
-  blendWord:"egg",
-  practice:["Egg","Sun","Dog"],
-  correct:"Egg"
-},
+      <div class="footer-right">
 
-F:{
-  sound:"/f/",
-  words:[
-    ["Fish","🐟"],
-    ["Fox","🦊"],
-    ["Flower","🌸"],
-    ["Frog","🐸"],
-    ["Fire","🔥"],
-    ["Feather","🪶"]
-  ],
-  story:
-  "Fred saw a frog near a flower. A soft feather floated down beside him.",
-  blend:["f","i","t"],
-  blendWord:"fit",
-  practice:["Fish","Cat","Ball"],
-  correct:"Fish"
-},
+        <div>
+          🔤 Capital Letters
+        </div>
 
-G:{
-  sound:"/g/",
-  words:[
-    ["Goat","🐐"],
-    ["Gift","🎁"],
-    ["Grass","🌱"],
-    ["Gum","🫧"],
-    ["Garden","🌳"],
-    ["Gorilla","🦍"]
-  ],
-  story:
-  "Gina walked into the garden. She saw a goat eating fresh green grass.",
-  blend:["g","o","t"],
-  blendWord:"got",
-  practice:["Goat","Apple","Sun"],
-  correct:"Goat"
-},
+        <div>
+          A • B • C • D • E • F • G • H • I • J • K • L • M
+        </div>
 
-H:{
-  sound:"/h/",
-  words:[
-    ["Hat","🎩"],
-    ["Horse","🐴"],
-    ["House","🏠"],
-    ["Hamster","🐹"],
-    ["Hand","✋"],
-    ["Heart","❤️"]
-  ],
-  story:
-  "Harry wore his hat and walked home. His little hamster was waiting at the house.",
-  blend:["h","e","n"],
-  blendWord:"hen",
-  practice:["Hat","Dog","Fish"],
-  correct:"Hat"
-},
+      </div>
 
-I:{
-  sound:"/ɪ/",
-  words:[
-    ["Ink","🖋️"],
-    ["Insect","🐞"],
-    ["Igloo","🧊"],
-    ["Iguana","🦎"],
-    ["Inch","📏"],
-    ["Inside","🏠"]
-  ],
-  story:
-  "Ivy saw an insect near the igloo. She went inside and drew it with blue ink.",
-  blend:["i","n"],
-  blendWord:"in",
-  practice:["Insect","Ball","Cat"],
-  correct:"Insect"
-},
+    </div>
 
-J:{
-  sound:"/dʒ/",
-  words:[
-    ["Jelly","🍮"],
-    ["Jar","🫙"],
-    ["Juice","🧃"],
-    ["Jaguar","🐆"],
-    ["Jacket","🧥"],
-    ["Jungle","🌴"]
-  ],
-  story:
-  "Jack put jelly in a jar. Then he wore his jacket and went to the jungle.",
-  blend:["j","a","m"],
-  blendWord:"jam",
-  practice:["Jelly","Fish","Sun"],
-  correct:"Jelly"
-},
 
-K:{
-  sound:"/k/",
-  words:[
-    ["Kite","🪁"],
-    ["Key","🔑"],
-    ["King","👑"],
-    ["Koala","🐨"],
-    ["Kiwi","🥝"],
-    ["Kangaroo","🦘"]
-  ],
-  story:
-  "Kiran flew a kite while a koala watched from a tree.",
-  blend:["k","i","t"],
-  blendWord:"kit",
-  practice:["Kite","Dog","Apple"],
-  correct:"Kite"
-},
+    <div class="copyright">
+      © 2026 Kids Creativity Lab • Beginning Level
+    </div>
 
-L:{
-  sound:"/l/",
-  words:[
-    ["Lion","🦁"],
-    ["Lemon","🍋"],
-    ["Leaf","🍃"],
-    ["Lamp","💡"],
-    ["Lizard","🦎"],
-    ["Log","🪵"]
-  ],
-  story:
-  "Leo saw a lion near a large tree. A yellow leaf fell beside him.",
-  blend:["l","e","g"],
-  blendWord:"leg",
-  practice:["Lion","Ball","Fish"],
-  correct:"Lion"
-},
-
-M:{
-  sound:"/m/",
-  words:[
-    ["Mango","🥭"],
-    ["Monkey","🐒"],
-    ["Moon","🌙"],
-    ["Mouse","🐭"],
-    ["Milk","🥛"],
-    ["Map","🗺️"]
-  ],
-  story:
-  "Mia ate a mango while looking at the moon. A tiny mouse ran past her.",
-  blend:["m","a","p"],
-  blendWord:"map",
-  practice:["Mango","Cat","Dog"],
-  correct:"Mango"
-},
-
-N:{
-  sound:"/n/",
-  words:[
-    ["Nest","🪺"],
-    ["Nose","👃"],
-    ["Night","🌙"],
-    ["Nurse","👩‍⚕️"],
-    ["Newspaper","📰"],
-    ["Nut","🥜"]
-  ],
-  story:
-  "Nina found a nest in a tree. She looked at it quietly and saw a little bird.",
-  blend:["n","a","p"],
-  blendWord:"nap",
-  practice:["Nest","Ball","Fish"],
-  correct:"Nest"
-},
-
-O:{
-  sound:"/ɒ/",
-  words:[
-    ["Orange","🍊"],
-    ["Octopus","🐙"],
-    ["Ox","🐂"],
-    ["Otter","🦦"],
-    ["Ostrich","🦤"],
-    ["Opera","🎭"]
-  ],
-  story:
-  "Oliver ate an orange while watching an otter swim in the water.",
-  blend:["o","n"],
-  blendWord:"on",
-  practice:["Orange","Dog","Fish"],
-  correct:"Orange"
-},
-
-P:{
-  sound:"/p/",
-  words:[
-    ["Pig","🐷"],
-    ["Pizza","🍕"],
-    ["Pencil","✏️"],
-    ["Penguin","🐧"],
-    ["Plant","🪴"],
-    ["Pancake","🥞"]
-  ],
-  story:
-  "Pia drew a penguin with a pencil. Then she ate a warm pancake.",
-  blend:["p","i","n"],
-  blendWord:"pin",
-  practice:["Pig","Cat","Sun"],
-  correct:"Pig"
-},
-
-Q:{
-  sound:"/kw/",
-  words:[
-    ["Queen","👸"],
-    ["Question","❓"],
-    ["Quack","🦆"],
-    ["Quill","🪶"],
-    ["Quilt","🛏️"],
-    ["Quick","⚡"]
-  ],
-  story:
-  "The queen asked a question. A duck nearby gave a loud quack.",
-  blend:["qu","i","t"],
-  blendWord:"quit",
-  practice:["Queen","Apple","Dog"],
-  correct:"Queen"
-},
-
-R:{
-  sound:"/r/",
-  words:[
-    ["Rabbit","🐰"],
-    ["Rainbow","🌈"],
-    ["Rocket","🚀"],
-    ["Rose","🌹"],
-    ["Road","🛣️"],
-    ["Ring","💍"]
-  ],
-  story:
-  "Riya saw a rainbow after the rain. A rabbit hopped across the road.",
-  blend:["r","e","d"],
-  blendWord:"red",
-  practice:["Rabbit","Fish","Ball"],
-  correct:"Rabbit"
-},
-
-S:{
-  sound:"/s/",
-  words:[
-    ["Snake","🐍"],
-    ["Sun","☀️"],
-    ["Star","⭐"],
-    ["Spoon","🥄"],
-    ["Sheep","🐑"],
-    ["Sock","🧦"]
-  ],
-  story:
-  "Sam saw the sun shining above a star-shaped cloud. A sheep stood nearby.",
-  blend:["s","a","t"],
-  blendWord:"sat",
-  practice:["Snake","Dog","Apple"],
-  correct:"Snake"
-},
-
-T:{
-  sound:"/t/",
-  words:[
-    ["Tiger","🐯"],
-    ["Tree","🌳"],
-    ["Turtle","🐢"],
-    ["Tennis","🎾"],
-    ["Teddy","🧸"],
-    ["Train","🚆"]
-  ],
-  story:
-  "Tom watched a train pass a tall tree. His teddy bear sat beside him.",
-  blend:["t","a","p"],
-  blendWord:"tap",
-  practice:["Tiger","Fish","Ball"],
-  correct:"Tiger"
-},
-
-U:{
-  sound:"/ʌ/",
-  words:[
-    ["Umbrella","☂️"],
-    ["Uncle","👨"],
-    ["Up","⬆️"],
-    ["Under","⬇️"],
-    ["Ugly","🙂"],
-    ["Us","👨‍👩‍👧‍👦"]
-  ],
-  story:
-  "Uma held an umbrella and looked under a tree. She smiled and walked up the path.",
-  blend:["u","p"],
-  blendWord:"up",
-  practice:["Umbrella","Cat","Dog"],
-  correct:"Umbrella"
-},
-
-V:{
-  sound:"/v/",
-  words:[
-    ["Van","🚐"],
-    ["Vulture","🦅"],
-    ["Volcano","🌋"],
-    ["Violin","🎻"],
-    ["Vegetable","🥕"],
-    ["Volleyball","🏐"]
-  ],
-  story:
-  "Vikram saw a van near the volcano. Later, he played volleyball.",
-  blend:["v","a","n"],
-  blendWord:"van",
-  practice:["Van","Apple","Fish"],
-  correct:"Van"
-},
-
-W:{
-  sound:"/w/",
-  words:[
-    ["Wind","💨"],
-    ["Whale","🐋"],
-    ["Watermelon","🍉"],
-    ["Watch","⌚"],
-    ["Wolf","🐺"],
-    ["Water","💧"]
-  ],
-  story:
-  "Wendy watched a whale in the water. The wind moved the leaves around her.",
-  blend:["w","e","t"],
-  blendWord:"wet",
-  practice:["Whale","Dog","Cat"],
-  correct:"Whale"
-},
-
-X:{
-  sound:"/ks/",
-  words:[
-    ["Fox","🦊"],
-    ["Box","📦"],
-    ["Wax","🕯️"],
-    ["Six","6️⃣"],
-    ["Ox","🐂"],
-    ["Axe","🪓"]
-  ],
-  story:
-  "Max found a box with six little toys. He put them away carefully.",
-  blend:["s","i","x"],
-  blendWord:"six",
-  practice:["Fox","Ball","Sun"],
-  correct:"Fox"
-},
-
-Y:{
-  sound:"/j/",
-  words:[
-    ["Yo-yo","🪀"],
-    ["Yak","🐂"],
-    ["Yarn","🧶"],
-    ["Yacht","🛥️"],
-    ["Yellow","💛"],
-    ["Yawn","🥱"]
-  ],
-  story:
-  "Yash played with a yellow yo-yo while his friend watched from a yacht picture.",
-  blend:["y","e","s"],
-  blendWord:"yes",
-  practice:["Yo-yo","Dog","Fish"],
-  correct:"Yo-yo"
-},
-
-Z:{
-  sound:"/z/",
-  words:[
-    ["Zebra","🦓"],
-    ["Zoo","🦁"],
-    ["Zero","0️⃣"],
-    ["Zip","🤐"],
-    ["Zipper","🤐"],
-    ["Zigzag","〰️"]
-  ],
-  story:
-  "Zara saw a zebra at the zoo. She drew a zigzag line in her notebook.",
-  blend:["z","i","p"],
-  blendWord:"zip",
-  practice:["Zebra","Cat","Ball"],
-  correct:"Zebra"
-}
-
-};
-
-
-/* =========================================================
-   JOLLY SONG LINKS
-   =========================================================
-
-   IMPORTANT:
-   Only A uses the exact link supplied by Kajal.
-   The official Jolly Songs page is used for the others
-   until individual verified links are available.
-*/
-
-const officialJollySongs =
-"https://jollylearning.com/en-us/our-programmes/jolly-phonics/jolly-songs";
-
-const jollyLinks = {
-  A:"https://youtu.be/ZDDAh7ut0mw"
-};
-
-
-/* =========================================================
-   STATE
-   ========================================================= */
-
-const alphabet = Object.keys(letters);
-let currentIndex = 0;
-
-
-/* =========================================================
-   LETTER NAVIGATION
-   ========================================================= */
-
-const letterNav = document.getElementById("letterNav");
-
-alphabet.forEach((letter,index)=>{
-
-  const btn = document.createElement("button");
-
-  btn.textContent = letter;
-
-  btn.onclick = ()=>{
-    currentIndex = index;
-    renderLetter();
-  };
-
-  letterNav.appendChild(btn);
-
-});
-
-
-/* =========================================================
-   RENDER LETTER
-   ========================================================= */
-
-function renderLetter(){
-
-  const letter = alphabet[currentIndex];
-  const data = letters[letter];
-
-  document.getElementById("bigLetter").textContent = letter;
-  document.getElementById("guideLetter").textContent = letter;
-
-  document.getElementById("letterTitle").textContent =
-    "Letter " + letter;
-
-  document.getElementById("soundText").textContent =
-    "Sound: " + data.sound;
-
-  document.getElementById("storyText").textContent =
-    data.story;
-
-  document.getElementById("blendWord").textContent =
-    data.blendWord;
-
-  /* WORDS */
-
-  const wordList = document.getElementById("wordList");
-  wordList.innerHTML = "";
-
-  data.words.forEach(item=>{
-
-    const word = item[0];
-    const emoji = item[1];
-
-    const card = document.createElement("div");
-
-    card.className = "word-card";
-
-    card.innerHTML = `
-      <span class="word-emoji">${emoji}</span>
-      <div class="word-name">${word}</div>
-      <button class="word-btn">🔊 Hear</button>
-    `;
-
-    card.onclick = ()=>{
-      speakWord(word);
-    };
-
-    wordList.appendChild(card);
-
-  });
-
-
-  /* JOLLY AUDIO */
-
-  const audioLink =
-    document.getElementById("jollyAudioLink");
-
-  const audioNote =
-    document.getElementById("audioNote");
-
-  const audioDescription =
-    document.getElementById("audioDescription");
-
-  if(jollyLinks[letter]){
-
-    audioLink.href = jollyLinks[letter];
-    audioLink.textContent =
-      "▶ Play A Jolly Song";
-
-    audioDescription.textContent =
-      "This is the A Jolly Phonics song link you provided.";
-
-    audioNote.textContent =
-      "Your supplied A-song link is connected here.";
-
-  }else{
-
-    audioLink.href = officialJollySongs;
-    audioLink.textContent =
-      "▶ Listen to " + letter + " Jolly Song";
-
-    audioDescription.textContent =
-      "Open the official Jolly Songs resource to listen to the song for this sound.";
-
-    audioNote.textContent =
-      "Official Jolly Learning resource. Individual verified links will be connected here.";
-
-  }
-
-
-  /* BLENDING */
-
-  const blendArea =
-    document.getElementById("blendArea");
-
-  blendArea.innerHTML = "";
-
-  data.blend.forEach((sound,index)=>{
-
-    const box = document.createElement("div");
-
-    box.className = "sound-box";
-    box.textContent = sound;
-
-    blendArea.appendChild(box);
-
-    if(index < data.blend.length-1){
-
-      const arrow = document.createElement("span");
-
-      arrow.className = "arrow";
-      arrow.textContent = "+";
-
-      blendArea.appendChild(arrow);
-
-    }
-
-  });
-
-
-  /* PRACTICE */
-
-  createPractice(data);
-
-  createFindLetter(letter);
-
-  updateProgress();
-
-  updateNavigation();
-
-  updateLetterButtons();
-
-  prepareCanvas();
-
-}
-
-
-/* =========================================================
-   WORD SPEECH
-   ========================================================= */
-
-function speakWord(word){
-
-  if(!("speechSynthesis" in window)){
-    alert("Your browser does not support word audio.");
-    return;
-  }
-
-  window.speechSynthesis.cancel();
-
-  const utterance =
-    new SpeechSynthesisUtterance(word);
-
-  utterance.lang = "en-GB";
-  utterance.rate = 0.82;
-  utterance.pitch = 1;
-
-  const voices =
-    window.speechSynthesis.getVoices();
-
-  const british =
-    voices.find(v =>
-      v.lang &&
-      v.lang.toLowerCase().startsWith("en-gb")
-    );
-
-  if(british){
-    utterance.voice = british;
-  }
-
-  window.speechSynthesis.speak(utterance);
-
-}
-
-
-/* =========================================================
-   STORY AUDIO
-   ========================================================= */
-
-function readStory(){
-
-  if(!("speechSynthesis" in window)){
-    return;
-  }
-
-  const text =
-    document.getElementById("storyText").textContent;
-
-  window.speechSynthesis.cancel();
-
-  const utterance =
-    new SpeechSynthesisUtterance(text);
-
-  utterance.lang = "en-GB";
-  utterance.rate = 0.82;
-
-  window.speechSynthesis.speak(utterance);
-
-}
-
-
-/* =========================================================
-   BEGINNING SOUND PRACTICE
-   ========================================================= */
-
-function createPractice(data){
-
-  const box =
-    document.getElementById("practiceOptions");
-
-  const feedback =
-    document.getElementById("feedback");
-
-  box.innerHTML = "";
-  feedback.textContent = "";
-
-  data.practice.forEach(word=>{
-
-    const btn =
-      document.createElement("button");
-
-    btn.className = "option";
-    btn.textContent = word;
-
-    btn.onclick = ()=>{
-
-      if(word === data.correct){
-
-        feedback.textContent =
-          "✅ Correct! Great job!";
-
-        feedback.style.color =
-          "#21834a";
-
-      }else{
-
-        feedback.textContent =
-          "❌ Try again.";
-
-        feedback.style.color =
-          "#d64545";
-
-      }
-
-    };
-
-    box.appendChild(btn);
-
-  });
-
-}
-
-
-/* =========================================================
-   FIND LETTER
-   ========================================================= */
-
-function createFindLetter(correctLetter){
-
-  const box =
-    document.getElementById("findOptions");
-
-  const feedback =
-    document.getElementById("findFeedback");
-
-  box.innerHTML = "";
-  feedback.textContent = "";
-
-  let options = [correctLetter];
-
-  while(options.length < 3){
-
-    const random =
-      alphabet[Math.floor(Math.random()*alphabet.length)];
-
-    if(!options.includes(random)){
-      options.push(random);
-    }
-
-  }
-
-  options.sort(()=>Math.random()-.5);
-
-  options.forEach(letter=>{
-
-    const btn =
-      document.createElement("button");
-
-    btn.className = "option";
-    btn.textContent = letter;
-
-    btn.onclick = ()=>{
-
-      if(letter === correctLetter){
-
-        feedback.textContent =
-          "🎉 Correct! You found " + correctLetter + "!";
-
-        feedback.style.color =
-          "#21834a";
-
-      }else{
-
-        feedback.textContent =
-          "❌ Not this one. Try again.";
-
-        feedback.style.color =
-          "#d64545";
-
-      }
-
-    };
-
-    box.appendChild(btn);
-
-  });
-
-}
-
-
-/* =========================================================
-   PROGRESS
-   ========================================================= */
-
-function updateProgress(){
-
-  const number = currentIndex + 1;
-
-  const percent =
-    Math.round((number / alphabet.length)*100);
-
-  document.getElementById("progressText").textContent =
-    "Letter " + number + " of 26";
-
-  document.getElementById("progressPercent").textContent =
-    percent + "%";
-
-  document.getElementById("progressBar").style.width =
-    percent + "%";
-
-}
-
-
-/* =========================================================
-   LETTER BUTTON ACTIVE STATE
-   ========================================================= */
-
-function updateLetterButtons(){
-
-  const buttons =
-    letterNav.querySelectorAll("button");
-
-  buttons.forEach((button,index)=>{
-
-    button.classList.toggle(
-      "active",
-      index === currentIndex
-    );
-
-  });
-
-}
-
-
-/* =========================================================
-   PREVIOUS / NEXT
-   ========================================================= */
-
-function updateNavigation(){
-
-  document.getElementById("prevBtn").disabled =
-    currentIndex === 0;
-
-  document.getElementById("nextBtn").disabled =
-    currentIndex === alphabet.length-1;
-
-}
-
-
-function previousLetter(){
-
-  if(currentIndex > 0){
-
-    currentIndex--;
-
-    renderLetter();
-
-    window.scrollTo({
-      top:300,
-      behavior:"smooth"
-    });
-
-  }
-
-}
-
-
-function nextLetter(){
-
-  if(currentIndex < alphabet.length-1){
-
-    currentIndex++;
-
-    renderLetter();
-
-    window.scrollTo({
-      top:300,
-      behavior:"smooth"
-    });
-
-  }
-
-}
-
-
-/* =========================================================
-   TRACING CANVAS
-   ========================================================= */
-
-const canvas =
-  document.getElementById("traceCanvas");
-
-const ctx =
-  canvas.getContext("2d");
-
-let drawing = false;
-
-
-function prepareCanvas(){
-
-  const rect =
-    canvas.getBoundingClientRect();
-
-  const dpr =
-    window.devicePixelRatio || 1;
-
-  canvas.width =
-    rect.width * dpr;
-
-  canvas.height =
-    rect.height * dpr;
-
-  ctx.setTransform(
-    dpr,0,0,dpr,0,0
-  );
-
-  ctx.lineWidth = 5;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-  ctx.strokeStyle = "#7c5cff";
-
-}
-
-
-function getPosition(e){
-
-  const rect =
-    canvas.getBoundingClientRect();
-
-  return {
-    x:e.clientX - rect.left,
-    y:e.clientY - rect.top
-  };
-
-}
-
-
-canvas.addEventListener("pointerdown",(e)=>{
-
-  drawing = true;
-
-  const p = getPosition(e);
-
-  ctx.beginPath();
-
-  ctx.moveTo(p.x,p.y);
-
-});
-
-
-canvas.addEventListener("pointermove",(e)=>{
-
-  if(!drawing) return;
-
-  const p = getPosition(e);
-
-  ctx.lineTo(p.x,p.y);
-
-  ctx.stroke();
-
-});
-
-
-canvas.addEventListener("pointerup",()=>{
-
-  drawing = false;
-
-});
-
-
-canvas.addEventListener("pointerleave",()=>{
-
-  drawing = false;
-
-});
-
-
-function clearTrace(){
-
-  const rect =
-    canvas.getBoundingClientRect();
-
-  ctx.clearRect(
-    0,
-    0,
-    rect.width,
-    rect.height
-  );
-
-}
-
-
-/* =========================================================
-   START
-   ========================================================= */
-
-window.addEventListener("resize",prepareCanvas);
-
-renderLetter();
-
-</script>
+  </footer>
 
 </body>
-  </html>
+                                 </html>
